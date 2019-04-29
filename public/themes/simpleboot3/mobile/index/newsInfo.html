@@ -1,0 +1,33 @@
+<extend name="Layout/layout" />
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/details/news_content.css" />
+</block>
+<block name="banner"></block>
+<block name="main">
+    <div class="header">
+        <ul>
+            <li>新闻动态</li>
+            <li>
+                <img src="__STATIC__/mobile/img/details/icon_bg_tel.png"/><a href="tel:028-85565012">85565012</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content" style="width: auto;border-radius: 0">
+        <div class="caption">
+            {$newsInfo.post_title}
+        </div>
+        <ul class="time">
+            <li>来源：{$newsInfo.post_source|default='网络'}</li>
+            <li>发布时间：{$newsInfo.create_time|date="Y-m-d",###} 阅读量：{$newsInfo.post_hits+489}</li>
+        </ul>
+    </div>
+    <div class="info" style="padding: .1rem;overflow: hidden">
+        {$newsInfo.post_content}
+    </div>
+</block>
+<block name="footerJs">
+    <script>
+        $(".info img").css({width:'100%'});
+    </script>
+</block>
+<block name="register"></block>

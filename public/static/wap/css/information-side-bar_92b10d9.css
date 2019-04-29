@@ -1,0 +1,111 @@
+﻿.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.pull-right {
+    float: right !important
+}
+
+.navinnerBox .navList li {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 21px
+}
+
+.navinnerBox .navList li a {
+    border-radius: 20px;
+    text-decoration: none
+}
+
+.navinnerBox .navList li a:hover {
+    color: #fff
+}
+
+.navinnerBox .navList li.active.tuijian a {
+    background-image: url(../images/1-active_336433d.png)
+}
+
+.navinnerBox .navList li.active.zixun a {
+    background-image: url(../images/2-active_f0a88f2.png)
+}
+
+.navinnerBox .navList li.active.xinwen a {
+    background: url(../images/3-active_28d9a40.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.active.jiazhang a {
+    background: url(../images/4-active_89b7840.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.active.xuesheng a {
+    background: url(../images/5-active_0e2dbe3.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.active a {
+    color: #fff;
+    border-radius: 20px;
+    background-color: #c32016 !important
+}
+
+.navinnerBox .navList li.tuijian a {
+    background: url(../images/1_b314453.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.tuijian a:hover {
+    background: url(../images/1-active_336433d.png) no-repeat 23px center;
+    background-color: #c32016
+}
+
+.navinnerBox .navList li.zixun a {
+    background: url(../images/2_83ace7f.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.zixun a:hover {
+    background-image: url(../images/2-active_f0a88f2.png);
+    background-color: #c32016
+}
+
+.navinnerBox .navList li.xinwen a {
+    background: url(../images/3_46fb4f3.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.xinwen a:hover {
+    background: url(../images/3-active_28d9a40.png) no-repeat 23px center;
+    background-color: #c32016
+}
+
+.navinnerBox .navList li.jiazhang a {
+    background: url(../images/4_1c1f125.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.jiazhang a:hover {
+    background: url(../images/4-active_89b7840.png) no-repeat 23px center;
+    background-color: #c32016
+}
+
+.navinnerBox .navList li.xuesheng a {
+    background: url(../images/5_6a234c6.png) no-repeat 23px center
+}
+
+.navinnerBox .navList li.xuesheng a:hover {
+    background: url(../images/5-active_0e2dbe3.png) no-repeat 23px center;
+    background-color: #c32016
+}
+
+.navinnerBox .navList li a {
+    padding: 0 0 0 52px;
+    display: inline-block;
+    width: 88px;
+    height: 100%;
+    font-size: 16px;
+    color: #666
+}

@@ -1,0 +1,95 @@
+<extend name="Layout/layout" />
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/drop/dropload.css" />
+</block>
+<block name="banner"></block>
+<block name="main">
+    <div class="content">
+        <ul class="menu">
+            <li <if condition="$cid eq 11">class="actived"</if> onclick="window.location.href='{:url(\'\',[\'cid\'=>11])}'">新闻资讯</li>
+            <li <if condition="$cid eq 12">class="actived"</if> onclick="window.location.href='{:url(\'\',[\'cid\'=>12])}'">教育资讯</li>
+            <li <if condition="$cid eq 13">class="actived"</if> onclick="window.location.href='{:url(\'\',[\'cid\'=>13])}'">学校新闻</li>
+            <li <if condition="$cid eq 14">class="actived"</if> onclick="window.location.href='{:url(\'\',[\'cid\'=>14])}'">家长课堂</li>
+        </ul>
+        <ul class="news_detail">
+            <li id="content">
+                {$article}
+            </li>
+        </ul>
+    </div>
+    <div class="dropload-down"><div class="dropload-refresh">↑↑↑　上拉加载更多</div></div>
+</block>
+<block name="footerJs">
+    <script type="text/javascript" src="__STATIC__/mobile/drop/dropload.js"></script>
+    <script type="text/javascript">
+        //切换卡片
+        /*$('.menu li').on('click',function(){
+            var index = $(this).index();
+            $(this).addClass('actived');
+            $(this).siblings().removeClass('actived');
+            $(this).parent('.menu').siblings(".news_detail").children('li').css('display','none');
+            $(this).parent('.menu').siblings(".news_detail").children('li').eq(index).css('display','block');
+        })*/
+
+        /**********=====---- 下拉分页 ----Mod by w 2019/4/20 11:37=====**********/
+        //文章分类id
+        var cid = "{$cid}";
+        // 当前页
+        var currentPage = 1;
+
+        // dropload
+        $('#content').dropload({
+            scrollArea : window,
+            upInsertDOM : false,
+            autoLoad : true,                                                     // 自动加载
+            distance : 50,                                                       // 拉动距离
+            domUp : {
+                domClass   : 'dropload-up',
+                domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+                domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
+                domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
+            },
+            domDown : {
+                domClass   : 'dropload-down',
+                domRefresh : '<div class="dropload-refresh">↑↑↑　上拉加载更多</div>',
+                domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+                domNoData  : '<div class="dropload-noData">到底了</div>'
+            },
+            loadUpFn_ : function(me){
+                console.log('刷新')
+                return false;
+            },
+            loadDownFn : function(me){
+                $.ajax({
+                    type: 'GET',
+                    url: '{:url()}',
+                    data:{page:++currentPage,cid:cid},
+                    dataType: 'json',
+                    success: function(data){
+                        setTimeout(function(){
+                            console.log(data)
+                            // 每次数据加载完，必须重置
+                            if (data.status) {
+                                /**********=====---- 追加到li标签的后面 ----Mod by w 2019/4/21 9:09=====**********/
+                                $('#content').append(data.html)
+                                me.resetload();
+                            }else{
+                                me.lock('down');
+                                me.noData();
+                                me.resetload();
+                            }
+                        },1000);
+                    },
+                    error: function(xhr, type){
+                        console.log('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            },
+            threshold : 0
+        });
+    </script>
+</block>
+<block name="register"></block>

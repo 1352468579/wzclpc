@@ -1,0 +1,17 @@
+<div class="address_infoWraper">
+    <foreach name="schoolList" item="school">
+        <ul class="address_info" onclick="window.location.href='/Mobile/Index/schoolInfo/id/{$school.id}'">
+            <li>
+                <div>{$school.title}</div>
+                <div class="number">联系电话：{$school.tel}</div>
+            </li>
+            <li>
+                <if condition="empty($school.school_logo)">
+                    <img src="__STATIC__/mobile/img/others/address_info.png" alt="">
+                    <else/>
+                    <img src="{:cmf_get_image_preview_url($school.school_logo)}" alt="">
+                </if>
+            </li>
+        </ul>
+    </foreach>
+</div>

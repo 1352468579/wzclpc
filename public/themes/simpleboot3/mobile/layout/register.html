@@ -1,0 +1,63 @@
+<div class="choose" id="register">
+    <h3>注册<span style="color: #d74c42;">免费</span>获取试听课</h3>
+    <form action="" method="post" class="register_info">
+        <input type="text" name="name" value="" placeholder="请输入您的姓名" />
+        <input type="text" name="mobile" value="" placeholder="请输入您的电话号码" />
+        <select name="grade" style="-webkit-appearance: none;">
+            <option value="">请选择孩子的年级</option>
+            <foreach name="grade" item="g">
+                <option value="{$g['id']}">{$g['name']}</option>
+            </foreach>
+        </select>
+        <select name="course" style="-webkit-appearance: none;">
+            <option value="">请选择孩子补习科目</option>
+        </select>
+        <div class="agree"><input type="checkbox" name="agree" value="" />同意我们的<span>《用户隐私条款》</span></div>
+        <input type="hidden" name="token" value="{$token}"/>
+        <button type="button" class="submit">立即注册 </button>
+    </form>
+</div>
+<script>
+    $(function(){
+        $("select[name=grade]").on('change',function(){
+            var grade = $(this).val();
+//            console.log($("select[name=grade] option:selected").html())
+            $.post("{:url('getCourseByGrade')}",{grade:grade},function(data){
+                $("select[name=course]").html(data)
+            })
+        })
+        $('.submit').on('click',function(){
+            /**********=====---- 防抖 ----Mod by w 2019/4/21 16:22=====**********/
+            $(this).attr('disabled',true)
+            var name = Trim($('input[name=name]').val());
+            var mobile = Trim($('input[name=mobile]').val());
+            var grade = Trim($('select[name=grade]').val());
+            var course = Trim($('select[name=course]').val());
+            var token = $('input[name=token]').val();
+            /**********=====---- 字段为空判断 ----Mod by w 2019/4/21 16:21=====**********/
+            if (name.length == 0) {myError('姓名必须填写！');return false;}
+            if (!mobile.match(/^(1\d{10})$/)) {myError('手机格式不对！');return false;}
+            if (grade.length == 0) {myError('年级必须！');return false;}
+            if (course.length == 0) {myError('课程必须！');return false;}
+            if (!$('input[name=agree]').get(0).checked) {myError('必须同意用户隐私条款！');return false;}
+            $.post("{:url('register')}",{
+                name:name,
+                mobile:mobile,
+                token:token,
+                grade:$("select[name=grade] option:selected").html(),
+                weakSubject:$("select[name=course] option:selected").html()},
+                function(data){
+                        myError(data.msg);
+                }
+            )
+        })
+        function myError(msg){
+            layer.msg(msg,{time:1000});
+            $('.submit').attr('disabled',false);
+        }
+        function Trim(str){
+            str = str.replace(/(^\s*)|(\s*$)/g, "");
+            return str;
+        }
+    })
+</script>

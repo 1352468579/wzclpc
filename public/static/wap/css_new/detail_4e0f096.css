@@ -1,0 +1,404 @@
+﻿.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.pull-right {
+    float: right !important
+}
+
+.to-top {
+    position: fixed;
+    right: 12px;
+    bottom: 62px;
+    width: 36px;
+    height: 36px;
+    z-index: 1111;
+    cursor: pointer;
+    display: none
+}
+
+.l-col {
+    float: left
+}
+
+.l-col a {
+    display: inline-block;
+    text-decoration: none
+}
+
+.r-col {
+    float: right
+}
+
+#wrapper #banner {
+    height: 620px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover
+}
+
+#wrapper #banner .banner {
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+#wrapper #banner .layout {
+    height: 440px;
+    padding-top: 180px
+}
+
+#wrapper #banner .layout .content {
+    margin: 0 0 0 68px
+}
+
+#wrapper #banner .layout .content h3 {
+    font-family: SourceHanSansCN-Normal;
+    font-size: 32px;
+    font-weight: 400;
+    color: #FFF;
+    line-height: 1
+}
+
+#wrapper #banner .layout .content h2 {
+    margin: 25px 0 17px;
+    font-family: SourceHanSansCN-Bold;
+    font-weight: 700;
+    font-size: 60px;
+    color: #FFF
+}
+
+#wrapper #banner .layout .content .class-title {
+    float: left;
+    position: relative;
+    left: 203px;
+    bottom: 15px;
+    margin-bottom: 10px
+}
+
+#wrapper #banner .layout .content .class-title h4 {
+    float: left;
+    font-size: 50px;
+    color: #FFF;
+    line-height: 70px;
+    text-align: right;
+    font-weight: 200
+}
+
+#wrapper #banner .layout .content .class-title .line {
+    float: left;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 85px;
+    height: 4px;
+    background-color: #fff;
+    position: relative;
+    top: 27px;
+    right: 19px
+}
+
+#wrapper #banner .layout .content .class-type-text {
+    vertical-align: top;
+    color: #fff;
+    font-size: 20px;
+    line-height: 47px
+}
+
+#wrapper #banner .layout .content .list {
+    width: 468px;
+    *zoom: 1
+}
+
+#wrapper #banner .layout .content .list:before, #wrapper #banner .layout .content .list:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#wrapper #banner .layout .content .list:after {
+    clear: both
+}
+
+#wrapper #banner .layout .content .list li {
+    position: relative;
+    float: left;
+    margin-bottom: 26px;
+    margin-right: 30px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 100px;
+    *zoom: 1
+}
+
+#wrapper #banner .layout .content .list li:before, #wrapper #banner .layout .content .list li:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#wrapper #banner .layout .content .list li:after {
+    clear: both
+}
+
+#wrapper #banner .layout .content .list li a {
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-family: SourceHanSansCN-Bold;
+    color: #fff
+}
+
+#wrapper #banner .layout .content .list li a i {
+    position: relative;
+    top: 8px;
+    right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px
+}
+
+#wrapper #banner .layout .content .list li a:hover {
+    text-decoration: none
+}
+
+#wrapper #banner .layout .content .list li .qr-code {
+    display: none;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 200px;
+    height: 165px
+}
+
+#wrapper #banner .layout .content .list li .qr-code img {
+    margin: 0 auto;
+    display: block
+}
+
+#wrapper #banner .layout .content .list li:hover .qr-code {
+    display: block;
+    opacity: 1;
+    -webkit-animation-name: qrCodeAnimatedIn;
+    -webkit-animation-delay: .1s;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-direction: normal;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-name: qrCodeAnimatedIn;
+    -moz-animation-delay: .1s;
+    -moz-animation-duration: .5s;
+    -moz-animation-fill-mode: both;
+    -moz-animation-direction: normal;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-name: qrCodeAnimatedIn;
+    -ms-animation-delay: .1s;
+    -ms-animation-duration: .5s;
+    -ms-animation-fill-mode: both;
+    -ms-animation-direction: normal;
+    -ms-animation-iteration-count: 1;
+    animation-name: qrCodeAnimatedIn;
+    animation-delay: .1s;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    visibility: visible !important
+}
+
+#wrapper #banner .layout .content .list li:hover {
+    background-color: rgba(255, 255, 255, .2)
+}
+
+#wrapper #banner .layout .content .list li:active {
+    background-color: rgba(255, 255, 255, .5)
+}
+
+#wrapper #banner .layout .content .class-list {
+    display: inline-block;
+    width: 468px;
+    padding-left: 20px;
+    *zoom: 1
+}
+
+#wrapper #banner .layout .content .class-list:before, #wrapper #banner .layout .content .class-list:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#wrapper #banner .layout .content .class-list:after {
+    clear: both
+}
+
+#wrapper #banner .layout .content .class-list li {
+    position: relative;
+    float: left;
+    margin-bottom: 26px;
+    margin-right: 30px;
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+    color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 90px;
+    *zoom: 1
+}
+
+#wrapper #banner .layout .content .class-list li:before, #wrapper #banner .layout .content .class-list li:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#wrapper #banner .layout .content .class-list li:after {
+    clear: both
+}
+
+#wrapper #banner .layout .content .class-list li a {
+    float: left;
+    width: 180px;
+    height: 45px;
+    line-height: 46px;
+    text-align: center;
+    font-family: SourceHanSansCN-Bold;
+    color: #fff;
+    position: relative;
+    left: 3px
+}
+
+#wrapper #banner .layout .content .class-list li a i {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    display: inline-block;
+    width: 27px;
+    height: 27px
+}
+
+#wrapper #banner .layout .content .class-list li a:hover {
+    text-decoration: none
+}
+
+#wrapper #banner .layout .content .class-list li .qr-code {
+    display: none;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 200px;
+    height: 165px
+}
+
+#wrapper #banner .layout .content .class-list li .qr-code img {
+    margin: 0 auto;
+    display: block
+}
+
+#wrapper #banner .layout .content .class-list li:hover .qr-code {
+    display: block;
+    opacity: 1;
+    -webkit-animation-name: qrCodeAnimatedIn;
+    -webkit-animation-delay: .1s;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-direction: normal;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-name: qrCodeAnimatedIn;
+    -moz-animation-delay: .1s;
+    -moz-animation-duration: .5s;
+    -moz-animation-fill-mode: both;
+    -moz-animation-direction: normal;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-name: qrCodeAnimatedIn;
+    -ms-animation-delay: .1s;
+    -ms-animation-duration: .5s;
+    -ms-animation-fill-mode: both;
+    -ms-animation-direction: normal;
+    -ms-animation-iteration-count: 1;
+    animation-name: qrCodeAnimatedIn;
+    animation-delay: .1s;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    visibility: visible !important
+}
+
+#wrapper #banner .layout .class {
+    margin: -35px 0 0 68px
+}
+
+#wrapper #banner .studentAndPhone {
+    background-image: url(../images/pic_student_phone_45325a4.png)
+}
+
+#wrapper #banner .teacherAndPhone {
+    background-image: url(../images/pic_student_phone_45325a4.png)
+}
+
+#wrapper #content .module-item {
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+#wrapper #content .module-item .text {
+    height: 441px;
+    padding-top: 259px;
+    padding-left: 765px
+}
+
+#wrapper #content .module-item .text h2 {
+    position: relative;
+    font-family: SourceHanSansCN-Medium;
+    font-size: 48px;
+    color: #DE1328;
+    padding-bottom: 23px
+}
+
+#wrapper #content .module-item .text p {
+    font-family: SourceHanSansCN-Normal;
+    font-size: 32px;
+    color: #666;
+    letter-spacing: 8px;
+    line-height: 50px
+}
+
+#wrapper #content .module-item .left {
+    padding-left: 0;
+    padding-top: 260px;
+    padding-right: 786px
+}
+
+#wrapper #content .module-item .left h2 {
+    text-align: right
+}
+
+#wrapper #content .module-item .left p {
+    text-align: right
+}
+
+#wrapper #content .module-item .left .line {
+    right: 0
+}
+
+#wrapper #content .odd {
+    background-color: #f4f7f9;
+}
+
+#wrapper #content .diff {
+    background-position: center;
+    background-repeat: no-repeat
+}

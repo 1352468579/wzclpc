@@ -1,0 +1,202 @@
+<div id="n-footer">
+    <div class="guarantee">
+        <div class="layout mods">
+            <div class="mod listen-first">
+                <div class="wrap">
+                    <img src="__WAPSTATIC__/images/enroll_1.png" alt="">
+                    <h3>先听课 后交钱</h3>
+                    <p>赠送首节测评课免费试听，满意再付钱</p>
+                </div>
+            </div>
+            <div class="mod change-teacher">
+                <div class="wrap">
+                    <img src="__WAPSTATIC__/images/enroll_2.png" alt="">
+                    <h3>不满意 换老师</h3>
+                    <p>50000+来自名校的老师任您选</p>
+                </div>
+            </div>
+            <div class="mod refund-full">
+                <div class="wrap">
+                    <img src="__WAPSTATIC__/images/enroll_3.png" alt="">
+                    <h3>没效果 退余额</h3>
+                    <p>多年丰富教学经验 严格培训 再上岗</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newsShowBtn">
+        <div class="layout">
+            <a id="a-footer" class="play1"></a>
+        </div>
+    </div>
+
+
+    <div class="newsInfo">
+        <div class="layout">
+            <notempty name="newList">
+                <foreach name="newList" item="nl" key="nli">
+                    <ul
+                    <if condition="$nli eq 0">class="firstNewsInfoUl"
+                        <elseif condition="!isset($newList[$nli+1])"/>
+                        class="lastNewsInfoUl"
+                    </if>
+                    data-id="{$nl.id}">
+                    <li class="more"><span>{$nl.name|default=''}</span><a href="/Wap/News/newList/cid/{$nl.id}">更多</a>
+                    </li>
+                    <li class="greyLine"><span></span></li>
+                    <div class="newcon">
+                        <notempty name="nl.articles">
+                            <foreach name="nl.articles" item="nl1" key="nli1">
+                                <li><a href={:url('/Wap/News/newArticle/id/'.$nl1.id)}>{$nl1.post_title|default=''}</a>
+                                </li>
+                            </foreach>
+                        </notempty>
+                    </div>
+                    </ul>
+                </foreach>
+            </notempty>
+        </div>
+    </div>
+    <div class="contactUs">
+        <div class="layout">
+            <div class="AboutUs">
+                <ul class="Logo">
+                    <li>
+                        <a href="/"><img src="__WAPSTATIC__/picture/logo2.png"/></a>
+                    </li>
+                </ul>
+                <ul class="advantage">
+                    <li class="titInfo">中国教育领导品牌</li>
+                    <li>{$footer.one|default=''}</li>
+                    <li>{$footer.two|default=''}</li>
+                    <li>{$footer.three|default=''}</li>
+                    <li>{$footer.four|default=''}</li>
+                </ul>
+                <ul class="zixun">
+                    <li class="titInfo"><a href="{:url('/Wap/News/newList',['cid'=>11])}">新闻资讯</a></li>
+                    <foreach name="news" item="n">
+                        <li><a href="/Wap/News/newList/cid/{$n.id|default=''}"
+                               class="zixunItem">{$n.name|default=''}</a></li>
+                    </foreach>
+                </ul>
+                <ul class="about-us">
+                    <li class="titInfo">关于我们</li>
+                    <li><a href="{:url('/Wap/About/index')}">学校介绍</a></li>
+                    <li><a href="{:url('/Wap/About/school')}">校区分布</a></li>
+                </ul>
+            </div>
+            <ul class="lastUl">
+                <li class="titInfo">下载与支持</li>
+                <li class="download"><a href="#">APP下载</a></li>
+            </ul>
+            <div class="callPhone">
+                <span class="callInfo">全国统一客服电话</span>
+                <span class="callNum"><i>{$site_info.tel|default='028-85565012'}</i></span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="contactWay">
+        <div class="layout">
+            <ul class="contactWay">
+                <li class="footWei">
+                    <img src="__WAPSTATIC__/picture/footwei_6da1af3.png"/>
+                    <div class="dropdown">
+                        <img src="{:cmf_get_image_preview_url($site_info.recode)}" alt="望子成龙网络科技有限公司"/>
+                    </div>
+                </li>
+                <li class="footMusic">
+                    <a class="zhiCustomBtn" href="http://p.qiao.baidu.com/cps/chat?siteId=442954&userId=2659729">
+                        <img src="__WAPSTATIC__/picture/footmusic_087e8c9.png"/>
+                    </a>
+                </li>
+                <li class="footHome"><img
+                        src="__WAPSTATIC__/picture/foothome_d84f2d2.png"/><span>{$site_info.company_name|default='成都望子成龙学校'} </span>
+                </li>
+                <li class="footPosition"><img
+                        src="__WAPSTATIC__/picture/footposition_acb1bbc.png"/><span>{$site_info.company_address|default='四川省成都市华达商城17楼'}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="other" style="border-top: none;">
+        <div class="layout">
+            <div class="firends-website2">
+                <div class="copyright">
+                    <div class="linkmap linkmap1">
+                        <a class="im" href="javascript:;" target="_blank">热门标签：</a>
+                        <notempty name="hotTag">
+                            <foreach name="hotTag" item="ht">
+                                <!--<a class="im" href="{:url('/Wap/News/newArticle',['id'=>$ht['id']])}" target="_blank">{$ht.post_title|default=''}</a>-->
+                                <a class="im" href="{$ht.url|default='#'}" target="{$ht.target|default=''}">{$ht.name|default=''}</a>
+                            </foreach>
+                        </notempty>
+                    </div>
+                    <!--<div class="showLinks play1">-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="firends-website2">
+                <div class="copyright">
+                    <div class="linkmap linkmap2">
+                        <a class="im" href="javascript:;" target="_blank">热门课程：</a>
+                        <notempty name="hotClass">
+                            <foreach name="hotClass" item="hc">
+                                <a class="im" href="{$hc.url|default='#'}" target="{$hc.target|default=''}">{$hc.name|default=''}</a>
+                            </foreach>
+                        </notempty>
+                    </div>
+                    <!--<div class="showLinks play1">-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div class="firends-website2">
+                <div class="copyright">
+                    <div class="linkmap">
+                        <a class="im" href="javascript:;" target="_blank">友情链接：</a>
+                        <foreach name="links" item="l">
+                            <a class="im" href="{$l.url|default='#'}" target="{$l.target|default=''}">{$l.name|default=''}</a>
+                        </foreach>
+                    </div>
+                    <!--<div class="showLinks play1">-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div class="copyright-content" style="position: relative">
+                <div class="copyright col-ll">
+
+                    <p>{$site_info.site_icp|default='Copyright 2017 www.WZCLXX.com All Rights Reserved'}</p>
+                    <p style="position: absolute;bottom: 25px;left: 0;">
+                        {$site_info.company_name|default='望子成龙网络科技有限公司'}</p>
+                    <p style="position: absolute;bottom: 25px;left: 400px;">
+                        {$site_info.company_address|default='四川省成都市华达商城17楼'}</p>
+                </div>
+                <!--品牌宝代码-->
+                <div class="cerfication col-rr">
+                    <div class="authentication col-ll">
+                        <a class="anquan" key="574bdb6fefbfb00a5a3c3e43" logo_size="83x30" logo_type="business"
+                           href="javascript:void (0);"
+                           target="_blank" rel="nofollow">
+                            <img src="__WAPSTATIC__/picture/safe_230f939.png" alt="安全联盟认证" width="83"
+                                 height="30"
+                                 style="border: none;">
+                        </a>
+                    </div>
+                    <!--href="https://v.pinpaibao.com.cn/authenticate/cert/?site=www.wzclxx.com&at=business"-->
+
+                    <div class="col-rr" style="width:270px;margin:0 auto; padding:20px 0;text-align: right;">
+                        <a class="police" target="_blank" rel="nofollow" {if condition="$site_info['site_gwa']"} href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={$site_info.site_gwa}"{else} href="javascript:void (0);"{endif}
+                           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img
+                                src="__WAPSTATIC__/picture/beian_a5438bd.png" style="float:left;"/>
+                            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
+                                蜀公网安备 {$site_info.site_gwa|default='xxxxxxxxxxxxxxxx'}号</p></a>
+                    </div>
+                </div>
+            </div>
+            <!--品牌宝代码 end-->
+        </div>
+    </div>
+</div>

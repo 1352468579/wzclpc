@@ -1,0 +1,125 @@
+<extend name="Layout/layout" />
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/wordOfMouth.css" />
+</block>
+<block name="banner"></block>
+<block name="main">
+    <div class="content">
+        <div class="registered">
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="__STATIC__/mobile/img/others/bg_mouth.png" />
+                        <div class="carousel-caption">
+                            <div class="recommend">多位学员亲身推荐</div>
+                            <div class="recommend">让成绩实现快速提升</div>
+                            <div class="improve"> 精英陪伴式学习 学习成绩高效提升</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="primary_school">
+                <h3><img src="__STATIC__/mobile/img/black_line.png"/>小学部<img src="__STATIC__/mobile/img/black_line.png"/></h3>
+                <div class="English_cap">Primary School Department</div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <foreach name="model_1" item="model">
+                            <div class="swiper-slide">
+                                <div class="personal">
+                                    <if condition="empty($model.thumbnail)">
+                                        <img src="__STATIC__/mobile/img/others/personal.png" />
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($model.thumbnail)}" alt="">
+                                    </if>
+                                    <div class="school">{$model.school|default='成都市实验外国语小学'}
+                                        <if condition="$model.is_good eq 1">
+                                            <img src="__STATIC__/mobile/img/others/Champion.png" alt="" />
+                                        </if>
+                                    </div>
+                                </div>
+                                <div class="name">{$model.name}</div>
+                                <div class="hobby">{$model.value}</div>
+                            </div>
+                        </foreach>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <img src="__STATIC__/mobile/img/advantage/border-dash.png" class="border-dash"/>
+            </div>
+            <div class="junior_high_school">
+                <h3><img src="__STATIC__/mobile/img/black_line.png"/>初中部<img src="__STATIC__/mobile/img/black_line.png"/></h3>
+                <div class="English_cap">Junior Middle School Department</div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <foreach name="model_2" item="model">
+                            <div class="swiper-slide">
+                                <div class="personal">
+                                    <if condition="empty($model.thumbnail)">
+                                        <img src="__STATIC__/mobile/img/others/personal.png" />
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($model.thumbnail)}" alt="">
+                                    </if>
+                                    <div class="school">{$model.school|default='成都市实验外国语小学'}
+                                        <if condition="$model.is_good eq 1">
+                                            <img src="__STATIC__/mobile/img/others/Champion.png" alt="" />
+                                        </if>
+                                    </div>
+                                </div>
+                                <div class="name">{$model.name}</div>
+                                <div class="hobby">{$model.value}</div>
+                            </div>
+                        </foreach>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <img src="__STATIC__/mobile/img/advantage/border-dash.png" class="border-dash"/>
+            </div>
+            <div class="high_school">
+                <h3><img src="__STATIC__/mobile/img/black_line.png"/>高中部<img src="__STATIC__/mobile/img/black_line.png"/></h3>
+                <div class="English_cap">High School Department</div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <foreach name="model_3" item="model">
+                            <div class="swiper-slide">
+                                <div class="personal">
+                                    <if condition="empty($model.thumbnail)">
+                                        <img src="__STATIC__/mobile/img/others/personal.png" />
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($model.thumbnail)}" alt="">
+                                    </if>
+                                    <div class="school">{$model.school|default='成都市实验外国语小学'}
+                                        <if condition="$model.is_good eq 1">
+                                            <img src="__STATIC__/mobile/img/others/Champion.png" alt="" />
+                                        </if>
+                                    </div>
+                                </div>
+                                <div class="name">{$model.name}</div>
+                                <div class="hobby">{$model.value}</div>
+                            </div>
+                        </foreach>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <img src="__STATIC__/mobile/img/advantage/border-dash.png" class="border-dash"/>
+            </div>
+            <include file="layout/register"/>
+        </div>
+    </div>
+</block>
+<block name="footerJs">
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            initialSlide:1,
+            spaceBetween: 0,
+            centeredSlides: true,
+            loop:true,
+            debugger: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            }
+        });
+    </script>
+</block>
+<block name="register"></block>

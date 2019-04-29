@@ -1,0 +1,220 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('Activity/index')}">活动管理</a></li>
+        <li class="active"><a href="{:url('Activity/add')}">添加活动</a></li>
+    </ul>
+    <form action="{:url('Activity/addPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>活动名<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[title]"
+                                   id="title" required value="" placeholder="活动名"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>活动简介</th>
+                        <td>
+                            <textarea class="form-control" name="post[excerpt]" style="height: 50px;"
+                                      placeholder="请填写活动简介"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>活动详情</th>
+                        <td>
+                            <script type="text/plain" id="content" name="post[content]"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>活动规则</th>
+                        <td>
+                            <script type="text/plain" id="rule" name="post[rule]"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>活动奖励</th>
+                        <td>
+                            <script type="text/plain" id="reward" name="post[reward]" ></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>活动区域</td>
+                        <td>
+                            <div class="js-address-select" url="{:url('Activity/getRegion')}">
+                                <select class="province-select" name="province[]">
+                                    <option value="0">不限</option>
+                                    {$province|default=''}
+                                </select>
+                                <select class="city-select" name="city[]">
+                                    <option value="0">不限</option>
+                                </select>
+                                <select class="district-select" name="district[]">
+                                    <option value="0">不限</option>
+                                </select>
+                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr hidden>
+                        <th>添加人员</th>
+                        <td>
+                            <button type="button" onclick="addActivityUsers()">添加人员</button>
+                            <div class="append_users" style="max-height:120px;overflow:auto;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>有效期</td>
+                        <td>
+                            开始时间:<input type="text" class="form-control js-bootstrap-datetime" name="start_time" value="" style="width: 140px;display: inline-block;" autocomplete="off">-
+                            结束时间:<input type="text" class="form-control js-bootstrap-datetime" name="end_time" value="" style="width: 140px;display: inline-block;" autocomplete="off">
+                        </td>
+                    <tr>
+                        <th>活动图</th>
+                        <td>
+                            <div>
+                                <input type="hidden" name="post[more][thumbnail]" id="thumbnail" value="">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                    <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                         id="thumbnail-preview"
+                                         width="135" style="cursor: pointer"/>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('Activity/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent1 = new baidu.editor.ui.Editor();
+        editorcontent2 = new baidu.editor.ui.Editor();
+        editorcontent.render('content');
+        editorcontent1.render('rule');
+        editorcontent2.render('reward');
+        try {
+            editorcontent.sync();
+            editorcontent1.sync();
+            editorcontent2.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+        $('.js-address-select').on('click','i',function () {
+            var p = $(this).parent('div').clone();
+            p.each(function (e) {
+                $(this).find('.city-select,.district-select').html('<option value="0">不限</option>')
+            })
+            $(p).find('i').remove();
+            $(p).append('<i class="fa fa-minus-square-o" aria-hidden="true"></i>')
+            $(p).find('.province-select,.city-select,.district-select').on('change',function () {
+                var $this = $(this)
+                var url = $this.parent().attr('url')
+                var id = $this.selected().val()
+                $.ajax({url:url,data:{id:id},type:"POST",dataType:"JSON",success:function(data){
+                    if(data.code == 200)
+                    {
+                        id==0?$this.nextAll('select').html('<option value="0">不限</option>'):$this.next('select').html('<option value="0">不限</option>'+data.data)
+                    }
+                },error:function (e) {
+                    console.log(e)
+                }})
+            })
+            $(p).on('click','i',function () {
+                $(this).parent().remove()
+            })
+            $(this).parent().parent().append(p)
+        })
+        $('.province-select,.city-select,.district-select').on('change',function () {
+            var $this = $(this)
+            var url = $this.parent().attr('url')
+            var id = $this.selected().val()
+            $.ajax({url:url,data:{id:id},type:"POST",dataType:"JSON",success:function(data){
+                console.log(id)
+                if(data.code == 200)
+                {
+                    id==0?$this.nextAll('select').html('<option value="0">不限</option>'):$this.next('select').html('<option value="0">不限</option>'+data.data)
+                }
+            },error:function (e) {
+                    console.log(e)
+                }})
+        })
+        $('.append_users').on('click','i',function()
+        {
+            $(this).parent('li').remove()
+        })
+
+    });
+    var uid = []
+
+    function addActivityUsers() {
+        openIframeLayer("{:url('Activity/select')}", '添加人员', {
+            // area: ['700px', '400px'],
+            btn: ['添加', '取消'],
+            yes: function (index, layero) {
+                //do something
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selected = iframeWin.confirm();
+                var c = false;
+                if (selected.selected.length > 0) {
+                    $(selected.selected).each(function(){
+                        for (var i=0;i<uid.length;i++)
+                        {
+                            if(uid[i] == this.id) c = true;
+                        }
+                        uid.push(this.id)
+                        c?1:$('.append_users').append('<li><span>'+this.user_nickname+'</span><i class="fa fa-minus-square icon" aria-hidden="true"></i><input type="hidden" name="append_users[]" value="'+this.id+'" /></li>')
+                    })
+                }
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+</script>
+</body>
+</html>

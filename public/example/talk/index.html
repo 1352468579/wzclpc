@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>2019成都小升初【最新政策解析讲座】报名</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!--引入laler-->
+    <link rel="stylesheet" href="service/layui/css/layui.css" media="all">
+    <script src="service/layui/layui.js"></script>
+    <!--引入swiper-->
+    <link rel="stylesheet" href="service/swiper/css/swiper.min.css" media="all">
+    <script src="service/swiper/js/swiper.min.js"></script>
+    <!--引入layer-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="service/layer/layer.js"></script><!--调用layer之前先引用jquery-->
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/public.js"></script>
+</head>
+<body>
+    <section class="main">
+        <section class="header">
+            <h1>2019成都小升初【最新政策解析讲座】报名</h1>
+            <h5>注意：讲座时间3月24日（周日）、3月25日（周一）</h5>
+            <p>①本讲座仅限6年级家长参加</p>
+            <p>①本讲座仅限6年级家长参加</p>
+            <h5>报名并到场福利</h5>
+            <p>①本讲座仅限6年级家长参加</p>
+            <p>①本讲座仅限6年级家长参加</p>
+        </section>
+        <section class="content">
+            <form action="/" id="myForm">
+                <div class="form-group">
+                    <label for="feild-1" class="feild-require">请选择参加讲座的时间和校区</label>
+                    <small>校区分布见下面地图</small>
+                    <select class="feild-select" name="school_name" id="feild-1" style="background: #ffffff;box-sizing: border-box;padding-left: 2%;">
+                        <option value="0">请选择</option>
+                        <option value="1">3月24号周日，外双楠校区1</option>
+                        <option value="2">3月24号周日，外双楠校区2</option>
+                        <option value="3">3月24号周日，外双楠校区3</option>
+                        <option value="4">3月24号周日，外双楠校区4</option>
+                    </select>
+                    <p class="error-info error_school_name hidden">请选择参加讲座的时间和校区</p>
+                </div>
+                <div class="form-group">
+                    <label for="feild-2" class="feild-require">孩子姓名</label>
+                    <input type="text" name="stduent_name" class="feild-input" placeholder="孩子姓名" id="feild-2">
+                    <p class="error-info error_stduent_name hidden">请填写孩子姓名</p>
+                </div>
+                <div class="form-group">
+                    <label for="feild-3" class="feild-require">联系电话</label>
+                    <input type="number" name="phone" class="feild-input" placeholder="联系电话" id="feild-3">
+                    <p class="error-info error_phone hidden">请填写联系电话</p>
+                </div>
+                <div class="form-group">
+                    <label for="feild-4" class="feild-require">就读小学</label>
+                    <input type="text" name="current_school" class="feild-input" placeholder="就读小学" id="feild-4">
+                    <p class="error-info error_current_school hidden">请填写就读小学</p>
+                </div>
+                <div class="form-group">
+                    <label for="feild-5" class="feild-require">就读年级</label>
+                    <input type="radio" name="grade" class="feild-radio" id="feild-5"> <span>六年级</span>
+                    <input type="radio" class="feild-radio" name="grade"> <span>其他年级</span>
+                    <p class="error-info error_grade hidden">请选择就读年级</p>
+                </div>
+                <div class="form-group">
+                    <label for="feild-6" class="feild-require">您是从哪里知道本次活动的？</label>
+                    <select class="feild-select" name="source" id="feild-6">
+                        <option value="0">请选择</option>
+                        <option value="1">QQ群</option>
+                        <option value="2">朋友圈</option>
+                        <option value="3">公众号文章</option>
+                        <option value="4">其他</option>
+                    </select>
+                    <p class="error-info error_source hidden">请选择您是从哪儿知道本次活动的？</p>
+                </div>
+            </form>
+            <div class="map" id="my-map">
+                
+            </div>
+        </section>
+        <section class="footer">
+            <a class="formSubmit" href="javascript:">提交预定讲座现场座位</a>
+        </section>
+    </section>
+    <script src="http://api.map.baidu.com/api?v=1.4"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>

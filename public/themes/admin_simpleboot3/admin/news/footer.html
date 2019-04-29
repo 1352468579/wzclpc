@@ -1,0 +1,42 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <div class="row margin-top-20">
+        <div class="col-md-6">
+            <form class="js-ajax-form" action="{:url('News/footerEditPost')}" method="post">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="A">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="footer[one]" value="{$footer.one|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="footer[two]" value="{$footer.two|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="footer[three]" value="{$footer.three|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="footer[four]" value="{$footer.four|default=''}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">{:lang('SAVE')}</button>
+                    <a class="btn btn-default" href="{:url('News/footer')}">{:lang('BACK')}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

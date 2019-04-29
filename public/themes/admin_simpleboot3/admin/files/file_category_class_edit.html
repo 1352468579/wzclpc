@@ -1,0 +1,62 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('Files/fileCategory')}">文件年级管理</a></li>
+        <li><a href="{:url('Files/fileCategoryAdd')}">添加文件年级</a></li>
+        <li><a href="{:url('Files/fileCategoryClass')}">科目管理</a></li>
+        <li><a href="{:url('Files/fileCategoryClassAdd')}">添加科目</a></li>
+        <li class="active"><a href="#">编辑科目</a></li>
+    </ul>
+    <form action="{:url('Files/fileCategoryClassEditPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>年级</th>
+                        <td>
+                            <input class="form-control" disabled type="text" name="grade" value="{$grade|default=''}" placeholder="年级"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>科目</th>
+                        <td>
+                            <input class="form-control" type="text" name="class" value="{$class|default=''}" placeholder="科目"/>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="hidden" name="id" value="{$id|default=''}">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('Files/fileCategoryClass')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

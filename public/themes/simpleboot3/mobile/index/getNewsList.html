@@ -1,0 +1,37 @@
+<foreach name="articles" item="news">
+    <if condition="isset($news.more.photos) && count($news.more.photos) egt 3">
+        <div class="platr_typesetting" onclick="window.location.href='{:url(\'schoolInfo\',[\'id\'=>$news.id])}'">
+            <div class="caption">
+                {$news.post_title}
+            </div>
+            <div class="matching matching_typesetting">
+                <if condition="empty($news.more.photos)">
+                    <img src="__STATIC__/mobile/img/others/matching.png"/>
+                    <img src="__STATIC__/mobile/img/others/matching.png"/>
+                    <img src="__STATIC__/mobile/img/others/matching.png"/>
+                    <else/>
+                    <foreach name="news.more.photos" item="photo">
+                        <img src="{:cmf_get_image_preview_url($photo.url)}" alt="">
+                    </foreach>
+                </if>
+            </div>
+            <div class="time">
+                {$news.name}<span>{$news.create_time|date='Y-m-d H:i',###}</span>
+            </div>
+        </div>
+        <else />
+        <div class="plate" onclick="window.location.href='{:url(\'newsInfo\',[\'id\'=>$news.id])}'">
+            <div class="title">
+                <div class="caption">{$news.post_title}</div>
+                <div class="time">{$news.name} <span>{$news.create_time|date='Y-m-d H:i',###}</span> </div>
+            </div>
+            <div class="matching">
+                <if condition="empty($news.more.thumbnail)">
+                    <img src="__STATIC__/mobile/img/others/matching.png"/>
+                    <else/>
+                    <img src="{:cmf_get_image_preview_url($news.more.thumbnail)}" alt="">
+                </if>
+            </div>
+        </div>
+    </if>
+</foreach>

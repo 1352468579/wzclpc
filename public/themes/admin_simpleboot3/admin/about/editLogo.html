@@ -1,0 +1,127 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('About/schoollist')}">校区分布列表</a></li>
+        <li><a href="{:url('About/schoolAdd')}">添加校区</a></li>
+        <li class="active"><a href="{:url('About/editAreaLogo')}">修改地区Logo</a></li>
+    </ul>
+    <form class="js-ajax-form" action="" method="post">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="60">ID</th>
+                <th width="120">地区名</th>
+                <th width="60">LOGO</th>
+                <th width="60">url</th>
+                <th width="90">操作</th>
+            </tr>
+            </thead>
+            <notempty name="categories.data">
+                <foreach name="categories.data" item="a">
+                    <tr>
+                        <td>{$a.area_id|default=""}</td>
+                        <td>{$a.area|default=""}</td>
+                        <td onclick="javascript:uploadOneImage('图片上传','#logo-{$a.area_id}')">
+                                <if condition="empty($a.logo)">
+                                    <img style="height: 50px;width:50px;cursor: pointer" src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                         id="logo-{$a.area_id}-preview"/>
+                                    <else/>
+                                    <img style="height: 50px;width:50px;cursor: pointer" src="{:cmf_get_image_preview_url($a.logo)}"
+                                         id="logo-{$a.area_id}-preview"/>
+                                    </if>
+                        </td>
+                        <td>{$a.logo|default="http://pc.wzclxx.com/admin/20180911/4759114d6a93d4c73512b96c941aab75.png"}</td>
+                        <td>
+                                <input type="hidden" name="logo-{$a.area_id}" id="logo-{$a.area_id}" required value="{$a.logo|default=''}">
+                                <a onclick="mySubmit(this)" data-id="{$a.area_id}" href="javascript:">修改</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <th width="60">ID</th>
+                <th width="120">地区名</th>
+                <th width="60">LOGO</th>
+                <th width="60">url</th>
+                <th width="90">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+    /************
+    *----==== ajax一步提交表单 ====----
+    *Created by w 2019/4/17 17:13
+    ************/
+    function mySubmit(obj){
+        var area_id = $(obj).data('id'),logo = $("#logo-"+area_id).val(),url="{:url('About/editAreaLogoDeal')}";
+        $.post(url,{area_id:area_id,logo:logo},function(data){
+            console.log(data)
+            noty({
+                text: data.msg,
+                type: 'success',
+                layout: 'topCenter',
+                modal: true,
+                // animation: {
+                //     open: 'animated bounceInDown', // Animate.css class names
+                //     close: 'animated bounceOutUp', // Animate.css class names
+                // },
+                timeout: 800,
+                callback: {
+                    afterClose: function () {
+                        if (data.url) {
+                            //返回带跳转地址
+                            window.location.href = data.url;
+                        } else {
+                            //刷新当前页
+                            reloadPage(window);
+                        }
+                    }
+                }
+            }).show();
+        })
+    }
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+    $(function () {
+        setCookie("refersh_time", 0);
+        Wind.use('ajaxForm', 'artDialog', 'iframeTools', function () {
+            //批量移动
+            $('.js-articles-move').click(function (e) {
+                var ids = [];
+                $("input[name='ids[]']").each(function () {
+                    if ($(this).is(':checked')) {
+                        ids.push($(this).val());
+                    }
+                });
+
+                if (ids.length == 0) {
+                    art.dialog.through({
+                        id: 'error',
+                        icon: 'error',
+                        content: '您没有勾选信息，无法进行操作！',
+                        cancelVal: '关闭',
+                        cancel: true
+                    });
+                    return false;
+                }
+
+                ids = ids.join(',');
+                art.dialog.open("__ROOT__/index.php?g=portal&m=About&a=move&old_term_id={$term.term_id|default=0}&ids=" + ids, {
+                    title: "批量移动",
+                    width: "300px"
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

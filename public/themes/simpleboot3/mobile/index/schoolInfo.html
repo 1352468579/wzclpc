@@ -1,0 +1,189 @@
+<extend name="Layout/layout" />
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/schoolInfo.css" />
+</block>
+<block name="banner"></block>
+<block name="main">
+    <div class="content">
+        <div class="registered">
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <if condition="empty($schoolInfo.school_logo)">
+                            <img src="__STATIC__/mobile/img/others/school.png" alt="">
+                            <else/>
+                            <img src="{:cmf_get_image_preview_url($schoolInfo.school_logo)}" alt="">
+                        </if>
+                        <div class="carousel-caption">{$schoolInfo.title}</div>
+                    </div>
+                </div>
+                <ul class="contact">
+                    <li>
+                        <img src="__STATIC__/mobile/img/others/phone.png"/><a href="tel:{$schoolInfo.tel}" style="color: white;text-decoration: none">联系电话</a>
+                    </li>
+                    <li>
+                        <img src="__STATIC__/mobile/img/others/location.png"/> <a href="https://api.map.baidu.com/marker?location={$schoolInfo.latitude},{$schoolInfo.longitude}&title={$schoolInfo.title}&content={$schoolInfo.title}&output=html"  style="color: white;text-decoration: none">地图导航</a>
+                    </li>
+                </ul>
+                <div class="addressWraper">
+                    <div class="address">
+                        <div class="caption">
+                            报名地址:
+                        </div>
+                        <div class="detail">
+                            {$schoolInfo.address}
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="caption">
+                            咨询电话:
+                        </div>
+                        <div class="detail">
+                            {$schoolInfo.tel}
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="caption">
+                            公交路线:
+                        </div>
+                        <div class="detail">
+                            <span>{$schoolInfo.bus} </span>
+                            <!--<span>2.乘16路在在大柳树南站向北100米，过一个红绿灯 ，路西见如家酒店即到；</span>
+                            <span>3.乘16路在在大柳树南站向北100米，过一个红绿灯 ，路西见如家酒店即到；</span>-->
+                        </div>
+                    </div>
+                    <!--<div class="address">
+                        <div class="caption">
+                            地铁路线:
+                        </div>
+                        <div class="detail">
+                            乘坐地铁二号线到西直门站下车，A口出乘16路公交 车到大柳树北站下车即到。
+                        </div>
+                    </div>-->
+                    <div class="address">
+                        <div class="caption">
+                            地铁路线:
+                        </div>
+                        <div class="detail">
+                            {$schoolInfo.metro}
+                        </div>
+                    </div>
+                    <div id="map" style="height: 4rem;width: 100%;margin: 0 auto;background-color: #000099"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</block>
+<block name="footerJs">
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=YfoOzjXH20F6LGcfi8M1F0N2dGHF1Kjw"></script>
+
+    <script type="text/javascript">
+        //创建和初始化地图函数：
+        function initMap(){
+            createMap();//创建地图
+            setMapEvent();//设置地图事件
+            addMapControl();//向地图添加控件
+            addMarker();//向地图中添加marker
+        }
+
+        //创建地图函数：
+        function createMap(){
+            var map = new BMap.Map("map");//在百度地图容器中创建一个地图
+            var point = new BMap.Point("{$schoolInfo.longitude}","{$schoolInfo.latitude}");//定义一个中心点坐标
+            map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+            window.map = map;//将map变量存储在全局
+        }
+
+        //地图事件设置函数：
+        function setMapEvent(){
+            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+            map.enableKeyboard();//启用键盘上下左右键移动地图
+        }
+
+        //地图控件添加函数：
+        function addMapControl(){
+            //向地图中添加缩放控件
+            var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+            map.addControl(ctrl_nav);
+            //向地图中添加缩略图控件
+            var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+            map.addControl(ctrl_ove);
+            //向地图中添加比例尺控件
+            var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+            map.addControl(ctrl_sca);
+        }
+
+        //标注点数组
+        var markerArr = [{title:"{$schoolInfo.title}",content:"",point:"{$schoolInfo.longitude}|{$schoolInfo.latitude}",isOpen:0,icon:{w:21,h:24,l:92-46,t:44-22,x:6,lb:5}}
+        ];
+        //创建marker
+        function addMarker(){
+            for(var i=0;i<markerArr.length;i++){
+                var json = markerArr[i];
+                var p0 = json.point.split("|")[0];
+                var p1 = json.point.split("|")[1];
+                var point = new BMap.Point(p0,p1);
+                var iconImg = createIcon(json.icon);
+                var marker = new BMap.Marker(point,{icon:iconImg});
+                var iw = createInfoWindow(i);
+                var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+20,-20)});
+                marker.setLabel(label);
+                map.addOverlay(marker);
+                label.setStyle({
+                    display : "block",
+                    color : "#000",
+                    fontSize : "16px",
+                    backgroundColor :"#fff",
+                    border :"1px solid #666",
+                    overflow :"hidden",
+                    maxWidth:"500px",
+                    zIndex:9999,
+                    padding:'5px',
+                    marginTop: '-15px',
+                    marginLeft: '-65px',
+                    fontWeight :"bold"
+                });
+
+                (function(){
+                    var index = i;
+                    var _iw = createInfoWindow(i);
+                    var _marker = marker;
+                    _marker.addEventListener("click",function(){
+                        this.openInfoWindow(_iw);
+                    });
+                    _iw.addEventListener("open",function(){
+                        _marker.getLabel().hide();
+                    })
+                    _iw.addEventListener("close",function(){
+                        _marker.getLabel().show();
+                    })
+                    label.addEventListener("click",function(){
+                        _marker.openInfoWindow(_iw);
+                    })
+                    if(!!json.isOpen){
+                        label.hide();
+                        _marker.openInfoWindow(_iw);
+                    }
+                })()
+            }
+        }
+        //创建InfoWindow
+        function createInfoWindow(i){
+            var json = markerArr[i];
+            var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+            return iw;
+        }
+        //创建一个Icon
+        function createIcon(json){
+            var icon = new BMap.Icon("https://map.baidu.com/image/us_cursor.gif", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+            return icon;
+        }
+
+        initMap();//创建和初始化地图
+    </script>
+</block>
+<block name="register"></block>

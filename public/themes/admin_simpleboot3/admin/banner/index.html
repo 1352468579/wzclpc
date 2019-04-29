@@ -1,0 +1,137 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">banner列表</a></li>
+        <li><a href="{:url('Banner/add')}">添加banner</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('Banner/index')}">
+        所属板块:
+        <select class="form-control" name="type" style="width: 140px;">
+            <option value=''>全部</option>
+            <option value="index" {$type=='index'?'selected':''}>PC-首页</option>
+            <option value="wap" {$type=='wap'?'selected':''}>Wap-首页</option>
+        </select> &nbsp;&nbsp;
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('Banner/index')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+            data-action="{:url('Banner/delete')}" data-subcheck="true" data-msg="您确定删除吗？">
+            {:lang('DELETE')}
+            </button>
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <!--<th width="50">ID</th>-->
+                <th width="50">排序</th>
+                <th width="60">图片</th>
+                <th>banner名</th>
+                <th>banner位置</th>
+                <th width="120">链接</th>
+                <th width="160">创建时间</th>
+                <th width="90">操作</th>
+            </tr>
+            </thead>
+            <notempty name="banner">
+                <foreach name="banner" item="a">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                                   value="{$a.id}" title="ID:{$a.id}">
+                        </td>
+                        <!--<td>{$a.id}</td>-->
+                        <td>{$a.list_order}</td>
+                        <td><img width="50" src="{:cmf_get_image_preview_url($a.thumbnail)}" /></td>
+                        <td>{$a.title|default=""}</td>
+                        <td>
+                            <switch $a.type>
+                                <case index>PC-首页</case>
+                                <case wap>Wap-首页</case>
+                                <default />未知
+                            </switch>
+                        </td>
+                        <td>{$a.href|default=""}</td>
+                        <td>{$a.create_time|default=""}</td>
+                        <td>
+                            <a href="{:url('Banner/edit',array('id'=>$a['id']))}">{:lang('EDIT')}</a>
+                            <a href="{:url('Banner/delete',array('id'=>$a['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">排序</th>
+                <th width="60">图片</th>
+                <th>banner名</th>
+                <th>banner位置</th>
+                <th width="120">链接</th>
+                <th width="160">创建时间</th>
+                <th width="90">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+            data-action="{:url('Banner/delete')}" data-subcheck="true" data-msg="您确定删除吗？">
+            {:lang('DELETE')}
+            </button>
+        </div>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+    $(function () {
+        setCookie("refersh_time", 0);
+        Wind.use('ajaxForm', 'artDialog', 'iframeTools', function () {
+            //批量移动
+            $('.js-articles-move').click(function (e) {
+                var ids = [];
+                $("input[name='ids[]']").each(function () {
+                    if ($(this).is(':checked')) {
+                        ids.push($(this).val());
+                    }
+                });
+
+                if (ids.length == 0) {
+                    art.dialog.through({
+                        id: 'error',
+                        icon: 'error',
+                        content: '您没有勾选信息，无法进行操作！',
+                        cancelVal: '关闭',
+                        cancel: true
+                    });
+                    return false;
+                }
+
+                ids = ids.join(',');
+                art.dialog.open("__ROOT__/index.php?g=portal&m=Banner&a=move&old_term_id={$term.term_id|default=0}&ids=" + ids, {
+                    title: "批量移动",
+                    width: "300px"
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

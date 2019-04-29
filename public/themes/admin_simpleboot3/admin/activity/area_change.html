@@ -1,0 +1,75 @@
+<include file="public@header"/>
+</head>
+<form class="well form-inline margin-top-20" method="post" action="{:url('Activity/areaChange')}">
+    关键字:
+    <input type="text" class="form-control" name="keyword" style="width: 200px;"
+           value="{$keyword|default=''}" placeholder="请输入关键字...">
+    <input type="submit" class="btn btn-primary" value="搜索"/>
+    <a class="btn btn-danger" href="{:url('Activity/areaChange')}">清空</a>
+</form>
+<div class="wrap js-check-wrap">
+    <form class="js-ajax-form" action="" method="post">
+        <!--<div class="table-actions">-->
+            <!--<button class="btn btn-primary btn-sm js-ajax-submit" type="submit"-->
+                    <!--data-action="{:url('Activity/setType')}" data-subcheck="true">设置为员工-->
+            <!--</button>-->
+        <!--</div>-->
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <!--<th width="15">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">-->
+                    <!--</label>-->
+                <!--</th>-->
+                <th>ID</th>
+                <th>微信名</th>
+                <th>用户名</th>
+                <th>审核内容(区域/门店)</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <notempty name="area_change.data">
+                <foreach name="area_change.data" item="vo">
+                    <tr>
+                        <!--<td>-->
+                            <!--<input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"-->
+                                   <!--value="{$vo.id}" title="ID:{$vo.id}" data-user_nickname="{$vo.user_nickname|default=''}">-->
+                        <!--</td>-->
+                        <td>{$vo.id|default=""}</td>
+                        <td>{$vo.user_nickname|default=""}</td>
+                        <td>{$vo.user_name|default=""}</td>
+                        <td>{$vo.more.province|default=""} {$vo.more.city|default=""} {$vo.more.district|default=""} {$vo.more.store|default=""}</td>
+                        <td><if condition="$vo.status eq '0'"><a href="{:url('Activity/areaChangePost',array('id'=>$vo['id'],'status'=>1))}" class="js-ajax-dialog-btn">通过</a>|<a href="{:url('Activity/areaChangePost',array('id'=>$vo['id'],'status'=>2))}" class="js-ajax-dialog-btn">拒绝</a><else /></if></td>
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <!--<th width="15">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">-->
+                    <!--</label>-->
+                <!--</th>-->
+                <th>ID</th>
+                <th>微信名</th>
+                <th>用户名</th>
+                <th>审核内容(区域/门店)</th>
+                <th>操作</th>
+            </tr>
+            </tfoot>
+        </table>
+        <!--<div class="table-actions">-->
+            <!--<button class="btn btn-primary btn-sm js-ajax-submit" type="submit"-->
+                    <!--data-action="{:url('Activity/setType')}" data-subcheck="true">设置为员工-->
+            <!--</button>-->
+        <!--</div>-->
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

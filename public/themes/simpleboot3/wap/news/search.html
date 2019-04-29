@@ -1,0 +1,338 @@
+<extend name="public/layout"/>
+<block name="head">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>搜索</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <!--<meta name="360-site-verification" content="5fa7bea6d97d20b12298027a9bf21c3c" />-->
+
+    <!--<meta name="baidu-site-verification" content="SaIdCNVBqW" />-->
+    <!--<link rel="shortcut icon" href="/static/common/static/lib/img/favicon.ico">-->
+    <!--[if lt IE 9]>
+    <script src="__WAPSTATIC__/js/html5shiv.min_831d9bc.js"></script>
+    <script src="__WAPSTATIC__/js/es5-shim.min_02d3aac.js"></script>
+
+    <![endif]-->
+
+
+    <!-- Piwik -->
+    <!-- End Piwik Code -->
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/all_87c2b88.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/minimalist_04aeee2.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/common_40bb2b7.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/widget_523a7b5.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-article-list_34a49c3.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-hot-bar_63758df.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-hot-article_cdee96c.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-hot-course_2c6218b.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-recommend-plate_1b5cf3e.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-recommend_8cb9b66.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/declaration-popup_e299361.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information-search_1c8b512.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information.css"/>
+</block>
+
+<block name="body">
+    <!--[if lt IE 7]>
+    <body class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>
+    <body class="lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+    <!--[if IE 8]>
+    <body class="lt-ie10 lt-ie9 ie8"> <![endif]-->
+
+    <!--[if IE 9]>
+    <body class="lt-ie10 ie9"> <![endif]-->
+    <!--[if gt IE 9]> -->
+    <body>
+    <!-- <![endif]-->
+    <div id="wrapper">
+        <!---------nav导航---------->
+        <div id="top__nav">
+            <include file="public/header" />
+        </div>
+        <div class="layout">
+            <div class="main-content">
+                <div class="banner">
+                    <a href="javascript:;" class="appointment-btn J-trigger-reservation-form">
+                        <img src="{:cmf_get_image_preview_url($banner.thumbnail)}" alt="前所未有的学习体验, 立即0元试听"
+                             title="前所未有的学习体验, 立即0元试听" style="width: 100%;height: 100%;"/>
+                    </a>
+                    <!--<a onclick="_mvq.push(['custom', 'jzqu1', Math.random(),  '']);_mvq.push(['$logConversion']);"-->
+                       <!--href="javascript:;" class="appointment-btn J-trigger-reservation-form">-->
+                        <!--<img src="__WAPSTATIC__/picture/banner_ca29102.jpg" alt="前所未有的学习体验, 立即0元试听" title="前所未有的学习体验, 立即0元试听"/></a>-->
+                </div>
+                <div class="search-content">
+                    <div class="breadNav">
+                        <a href="/">首页</a>
+                        <i class="arrow"> > </i>
+                        <span class="result">"{$keyword|default=''}"的搜索结果页</span>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="inner-search"/>
+                        <span class="search-btn">搜索</span>
+                    </div>
+                    <p class="result-info">
+                        结果：找到"{$keyword|default=''}"相关结果{$count|default=0}个
+                    </p>
+
+                    <div class="article-content">
+                        <ul class="article-list">
+                            <notempty name="articles">
+                                <foreach name="articles" item="n">
+                                    <li data-tid="{$n.id|default=''}">
+                                        <img src="{:cmf_get_image_preview_url($n.thumbnail)}" alt="{$n.post_title|default=''}"
+                                             title="{$n.post_title|default=''}" class="cover"/>
+                                        <div class="arc-cnt">
+                                            <h1 class="title"><a href="{:url('/Wap/News/newArticle/id/'.$n.id)}">{$n.post_title|default=''}</a></h1>
+                                            <p class="dot-ellipsis dot-height-42 description">{$n.post_excerpt|default=''}</p>
+                                            <div class="footer">
+                                                <span class="time">{:date('Y-m-d H:i',$n['published_time'])}</span>·<span class="section">
+                                                <a href="/Wap/News/newList/cid/{$n.category_id|default=''}">{$n.name|default=''}</a>
+                                                <!--{$n.post_source|default=''}-->
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </foreach>
+                            </notempty>
+                        </ul>
+
+                        <div class="article-content">
+                            <div class="pagination-area">
+                                <div id="pagination" class="theme simple-pagination">
+                                    {$page|default=""}
+                                    <ul>{$page|default=""}</ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hot-side-bar">
+                    <div class="hotinnerBox">
+                        <div class="hot-search">
+                            <h2 class="title"><span class="line"></span>热门搜索</h2>
+                            <ul class="hotList">
+
+                                <notempty name="hotSearch">
+                                    <foreach name="hotSearch" item="hs">
+                                        <li>
+                                            <a href="{$hs.url|default=''}" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width: 80px;">{$hs.post_keywords|default=''}</a>
+                                        </li>
+                                    </foreach>
+                                </notempty>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="articleinnerBox">
+                        <div class="hot-article">
+                            <h2 class="title"><span class="line"></span>热门文章</h2>
+                            <ul class="articleList">
+                                <notempty name="hot_articles">
+                                    <foreach name="hot_articles" item="hn">
+                                        <li data-tid="{$hn.id|default=''}">
+                                            <img src="{:cmf_get_image_preview_url($hn.thumbnail)}"
+                                                 alt="{$hn.post_title|default=''}"/>
+                                            <div class="content">
+                                                <h4 class="title dot-ellipsis dot-height-40"><a href="{:url('/Wap/News/newArticle/id/'.$hn.id)}">{$hn.post_title|default=''}</a>
+                                                </h4>
+                                                <span class="time">{:date('Y-m-d H:i',$hn['published_time'])}</span>
+                                            </div>
+                                        </li>
+                                    </foreach>
+                                </notempty>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="courseinnerBox">
+                        <div class="hot-course">
+                            <h3 class="title"><span class="line"></span>热门课程</h3>
+                            <div class="courseList">
+                                <div class="courseList-content">
+
+                                    <notempty name="hotClassForArticle">
+                                        <foreach name="hotClassForArticle" item="hc" key="hci" offset="0" length="4">
+                                            <div class="course-box">
+                                                <div><img src="{:cmf_get_image_preview_url($hc.image)}"
+                                                          alt="{$hc.name|default=''}"/></div>
+                                                <div><h4 class="title dot-ellipsis dot-height-40"><a>{$hc.name|default=''}</a></h4></div>
+                                            </div>
+                                        </foreach>
+                                    </notempty>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mask">
+                            <div class="qrcode-box">
+                                <img src="{:cmf_get_image_preview_url($options.hotClassRecode)}" alt="" class="qrcode">
+                                <p class="scan">扫描二维码下载APP</p>
+                                <p class="view-lesson">观看精彩课程</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plateinnerBox">
+                        <div class="plate">
+                            <h3 class="title"><span class="line"></span>推荐板块</h3>
+                            <div class="plateList" style="height: auto;">
+                                <div class="plateList-content">
+                                    <notempty name="recommendBlock">
+                                        <foreach name="recommendBlock" item="rb" key="rbi">
+                                            <div class="plate-box" data-tid="630">
+                                                <div><h4 class="title dot-ellipsis dot-height-40"><a href="{:url('/Wap/News/search',['keyword'=>$rb['name'],'searchType'=>'recommendBlock'])}">{$rb.name|default="xx"}</a>
+                                                </h4></div>
+                                            </div>
+                                        </foreach>
+                                    </notempty>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="side-listen-pic">
+
+                        <a href="javascript:;" class="appointment-btn J-trigger-reservation-form">
+                            <notempty name="$adv.news_adv">
+                                <img style="width: 272px;height: 348px;" src="{:cmf_get_image_preview_url($adv.news_adv)}" alt="前所未有的学习体验, 立即0元试听" title="前所未有的学习体验, 立即0元试听"/>
+                            </notempty>
+                        </a>
+                        <!--<a onclick="_mvq.push(['custom', 'jzqu1', Math.random(),  '']);_mvq.push(['$logConversion']);"-->
+                           <!--href="javascript:;" class="appointment-btn J-trigger-reservation-form"></a>-->
+                    </div>
+                </div>
+
+
+                <div class="relatedArticles">
+                    <h3>您可能还会对以下这些文章感兴趣！</h3>
+                    <ul class="leftList">
+                        <notempty name="uLike">
+                            <foreach name="uLike" item="ul" length="5" offset="0">
+                                <li>
+                                    <a href="{:url('/Wap/News/newArticle/id/'.$ul.id)}">{$ul.post_title|default=''}</a>
+                                </li>
+                            </foreach>
+                        </notempty>
+                    </ul>
+                    <ul class="rightList">
+                        <notempty name="uLike">
+                            <foreach name="uLike" item="ul" length="5" offset="5">
+                                <li>
+                                    <a href="{:url('/Wap/News/newArticle/id/'.$ul.id)}">{$ul.post_title|default=''}</a>
+                                </li>
+                            </foreach>
+                        </notempty>
+                    </ul>
+                </div>
+
+
+                <div class="recommend-plate">小编推荐</div>
+                <ul class="recommend-plate-content">
+                    <notempty name="recommendAuthor">
+                        <foreach name="recommendAuthor" item="ra">
+                            <li><a href="{$ra.url|default='#'}" target="{$ra.target|default=''}">{$ra.name|default=''}</a></li>
+                        </foreach>
+                    </notempty>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var _bookUserIdentifier = (typeof localStorage == 'undefined' ? '' : localStorage._bookUserIdentifier) || new Date().getTime() + '' + Math.random();
+        localStorage._bookUserIdentifier = _bookUserIdentifier;
+    </script>
+
+    <div class="img-box">
+        <img class="img" src="__WAPSTATIC__/picture/august-huanglei2_27f76d9.png"/>
+    </div>
+    <include file="public/reservation-bar" />
+
+    <include file="public/reservation" />
+    <!-- <script src="__WAPSTATIC__/js/entrance.js" data-args="manual=true" class="zhiCustomBtn" id="zhichiScript"></script> -->
+    <!----------底部------------>
+    <include file="public/footer" />
+
+
+    <script type="application/json" data-id="wzcl.data.extras">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.gradeTosubject">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.subjectLabel">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.gradeLabel">
+        []
+    </script>
+
+    <script type="text/javascript" src="__WAPSTATIC__/js/mod_96dd55b.js"></script>
+
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/common_e3a1aa0.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/all_a8d1492.js"></script>
+    <!--<script type="text/javascript" src="__WAPSTATIC__/js_new/tj_6aa9dec.js"></script>-->
+    <script type="text/javascript" src="__WAPSTATIC__/js/evaluate_9c498a1.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/tool_857ec5d.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/widget_eb26251.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery.dotdotdot.min_6d72973.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-article-list_45d9e34.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery.windstagball_c0aabf2.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-hot-bar_9a9aa1c.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-hot-article_b3e3741.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-hot-course_0d81703.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-recommend-plate_891313b.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-recommend_c989d48.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/declaration-popup_7b4a0f1.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery.simplepagination_5c2308a.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/information-search_b9725b1.js"></script>
+    <script type="text/javascript">
+        !function () {
+            if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+            require('desktop:widget/nav-version5/nav-version5.js');
+        }();
+        !function () {
+            require('desktop:widget/information-article-list/information-article-list.js');
+        }();
+        !function () {
+            require('desktop:widget/information-hot-bar/information-hot-bar.js');
+        }();
+        !function () {
+            require('desktop:widget/information-hot-article/information-hot-article.js');
+        }();
+        !function () {
+            require('desktop:widget/information-hot-course/information-hot-course.js');
+        }();
+        !function () {
+            require('desktop:widget/information-recommend-plate/information-recommend-plate.js');
+        }();
+        !function () {
+            require("desktop:widget/quick-appoint-renew/quick-appoint-renew.js");
+        }();
+        !function () {
+            require("desktop:widget/footer-version-renew/footer-version-renew.js");
+        }();
+        !function () {
+            require("desktop:widget/declaration-popup/declaration-popup.js");
+        }();
+    </script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/classes.js"></script></body>
+    <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10179248/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+</block>

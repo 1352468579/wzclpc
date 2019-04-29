@@ -1,0 +1,58 @@
+<!--测试视频-->
+<style>
+  .my-phpup{
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.7);
+      margin: auto;
+      z-index: 101;
+      display: none;
+  }
+  .my-phpup>div{
+      width: 80%;
+      margin: 4.8rem auto 0;
+      vertical-align: middle;
+      z-index: 200;
+  }
+  .my-phpup>div>video{
+      z-index: 201;
+      background-color: #000;
+      width: 100%;
+      transition: all .5s;
+      transform:translateY(-10rem);
+  }
+  .my-phpup>div>video.active{
+      transform:translateY(0);
+  }
+  .my-phpup>div>video.destroy{
+      animation: myfirst .5s;
+      animation-fill-mode: forwards;
+  }
+  @keyframes myfirst
+  {
+      from {transform:scale(1);opacity:1}
+      to {transform:scale(5);opacity:0}
+  }
+</style>
+<div class="my-phpup">
+    <div>
+        <video
+                preload="none"
+               src="{:cmf_get_asset_url($index_9.more.video.file_urls)}"
+               poster="" controls="controls" webkit-playsinline="true" playsinline="true"></video>
+    </div>
+</div>
+<script>
+    $(function(){
+        $(".my-phpup").on("click",function(){
+            $(".my-phpup>div>video.active").addClass("destroy");
+            setTimeout(function(){
+                $(".my-phpup").css({display:"none"});
+                $(".my-phpup>div>video").removeClass('active').removeClass('destroy').get(0).pause();
+            },400)
+        })
+    })
+</script>

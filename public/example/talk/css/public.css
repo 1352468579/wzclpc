@@ -1,0 +1,178 @@
+html{ margin:0 auto; padding:0 auto; font-size:15px;}
+*{margin:0 auto; padding:0; font-family:"微软雅黑";}
+body{margin:0 auto; padding:0 auto;overflow-x:hidden;}
+img{border:0;}
+p{word-break: break-all;}
+ul {margin:0; padding:0;}
+ul li{list-style:none;}
+a{ text-decoration: none;}
+@media only screen and (min-width: 320px){
+    html {
+        font-size:9.6px !important;
+    }
+}
+
+@media only screen and (min-width: 360px){
+    html {
+        font-size:11.25px !important;
+    }
+}
+
+@media only screen and (min-width: 400px){
+    html {
+        font-size:12.5px !important;
+    }
+}
+
+@media only screen and (min-width: 480px){
+    html {
+        font-size:15px !important;
+    }
+}
+
+@media only screen and (min-width: 640px){
+    html {
+        font-size:20px !important;
+    }
+}
+
+@media only screen and (min-width: 700px){
+    html {
+        font-size:25px !important;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    html {
+        font-size:30px !important;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    html {
+        font-size:35px !important;
+    }
+}
+/* css样式开始 */
+/* 头部样式start */
+.clearAll{clear: both;}
+body{
+    background-color: #77C8B9;  /* 调试用 */
+    padding: 1rem;
+}
+section.main{
+    width: 100%;
+    min-height: 51rem; 
+    box-shadow: 0px 0px 10px #000;
+    background-color: #EAFFFA;
+}
+/* 内容头部start */
+section.header{
+    padding: .5rem;
+    border-bottom: 1px solid #E6E6E6; 
+}
+section.header h1{
+    font-size: 2rem;
+    margin: .5rem 0;
+    font-weight: bold;
+}
+section.header h5{
+    letter-spacing: .1rem;
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+section.header p{
+    letter-spacing: .1rem;
+    margin: .4rem 0;
+    font-size: 1rem;
+}
+/* 内容头部end */
+
+/* 内容start */
+
+section.content{
+    min-height: 35rem;
+    padding-bottom: 1.5rem; 
+}
+.form-group{
+    position: relative;
+    padding: 1rem .8rem
+}
+.form-group label,.form-group small{
+    display: block;
+    margin: .3rem;
+}
+.form-group label{
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+}
+.form-group small{
+    font-size: .9rem;
+    letter-spacing: .1rem;
+}
+.form-group span,.form-group .feild-radio{
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 1rem;
+    vertical-align: bottom;
+}
+.form-group span{
+    margin-right: 2rem; 
+}
+.form-group label.feild-require:after{
+    color: red;
+    content: "*";
+}
+.error-info{
+    position: absolute;
+    bottom: -1rem;
+    left: 1rem;
+    font-size: 1rem;
+    color: red;
+}
+.hidden{
+    display: none;
+}
+.feild-select,.feild-input{
+    width: 100%;
+    height: 3rem;
+    border: 1px solid #E6E6E6;
+    margin-top: .5rem; 
+    font-size: 1rem
+}
+.feild-input{
+    width: 100%;
+    padding-left: 2%;
+    box-sizing: border-box;
+}
+select.feild-select:focus,input.feild-input:focus{
+    -webkit-appearance: none;
+    border: 1px solid #EDA50F!important;
+    box-shadow: 0px 0px 5px #EDA50F !important;
+}
+.map{
+    margin: 1.5rem auto 0;
+    width: 90%;
+    height: 25rem;
+}
+/* 内容end */
+
+/* 内容尾部start */
+section.footer{
+    border-top: 1px solid #E6E6E6; 
+    padding: 1rem;
+    text-align: center;
+}
+section.footer a{
+    display: inline-block;
+    width: 80%;
+    color: white;
+    background-color: #EDA50F;
+    padding: .5rem;
+    letter-spacing: .1rem;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #EDA50F;
+}
+/* 内容尾部end */

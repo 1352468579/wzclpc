@@ -1,0 +1,64 @@
+<include file="public@header"/>
+<link href="__TMPL__/public/assets/simpleboot3/css/bootstrap-table.min.css" rel="stylesheet">
+<link href="__TMPL__/public/assets/simpleboot3/css/tranfer.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('News/recommendBlock',['type'=>'list'])}">列表推荐版块</a></li>
+        <li><a href="{:url('News/recommendBlock',['type'=>'news'])}">文章推荐版块</a></li>
+    </ul>
+    <form class="js-ajax-form" action="{:url('News/recommendBlockEditPost')}" method="post">
+        <div class="tab-content">
+            <div class="tab-pane active" id="A">
+                <div class="form-group">
+                    <div id="transferContainer" class="row" style="height: 700px;width: 950px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="type" value="{$type|default=''}">
+            <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">{:lang('SAVE')}
+            </button>
+            <a class="btn btn-default" href="{:url('News/recommendBlock',['type'=>'list'])}">{:lang('BACK')}</a>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script src="__TMPL__/public/assets/js/bootstrap-table.min.js"></script>
+<script src="__TMPL__/public/assets/js/bootstrap-table-zh-CN.min.js"></script>
+<script src="__TMPL__/public/assets/js/Transfer.js"></script>
+<script type="text/javascript">
+    var data = {$list};
+    var data1 = [];
+
+    $('#transferContainer').transfer({
+        titles: ['待选推荐版块', '已选推荐版块'],
+        search: true,
+        uniqueId: "id", //唯一id
+        dataSource: data,
+        selectdataSource: {$selectedList},
+        unselectColumns: [{
+            field: 'flag',
+            checkbox: true
+        }, {
+            field: 'name',
+            title: '档案名称'
+        }]
+    });
+    $('.btn.btn-primary').click(function() {
+        var data = $('#transferContainer').transfer('getData', 'selectData', 'id');
+        $(this).parent().append('<input type="hidden" name="recommended" value="'+data+'" >')
+    })
+    // $('#btn2').click(function() {
+    //     $('#transferContainer').transfer('refreshLeft', data1);
+    // })
+</script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+</script>
+</body>
+</html>

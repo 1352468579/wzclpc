@@ -1,0 +1,1 @@
+define("desktop:widget/activity-rule-year/activity-rule.js",function(e){var i=e("common:widget/jquery/1.11.3/jquery.js");!function(){i(".know").click(function(){i("#activity-rule").removeClass("show")}),i(".close-btn").click(function(){i("#activity-rule").removeClass("show")})}()});

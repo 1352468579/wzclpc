@@ -1,0 +1,168 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('About/index')}">模块列表</a></li>
+        <li><a href="{:url('About/add')}">添加模块</a></li>
+        <li class="active"><a href="#">编辑模块</a></li>
+    </ul>
+    <form action="{:url('About/editPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>模块名</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[model_name]" value="{$post.model_name|default=''}" placeholder="模块名"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>标题<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[title]"
+                                   id="title"  value="{$post.title|default=''}" placeholder="标题"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>描述</th>
+                        <td>
+                            <textarea class="form-control" name="post[descript]" style="height: 50px;"
+                                      placeholder="描述">{$post.descript|default=''}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>背景图</th>
+                        <td>
+                            <div>
+                                <input type="hidden" name="post[background]" id="thumbnail"  value="{$post.background|default=''}">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                    <if condition="empty($post.background)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail-preview"
+                                             width="85" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($post.background)}"
+                                             id="thumbnail-preview"
+                                             width="85" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>视频</th>
+                        <td>
+                            <ul class="pic-list list-unstyled form-inline">
+                                <a href="javascript:uploadOne('视频上传','#files','video');"
+                                   class="btn btn-sm btn-default">选择文件</a>
+                                <input type="hidden" name="post[more][video][file_urls]" id="files"  value="{$post.more.video.file_urls|default=''}">
+                                <input class="form-control" type="text" name="post[more][video][file_names]" id="files-name" value="{$post.more.video.file_names|default=''}"
+                                       style="width: 200px;" title="文件名称">
+                                <a href="javascript:(function(){$('#files').val('');$('#files-name').val('');})();">移除</a>
+                            </ul>
+                        </td>
+                    </tr>
+                    <foreach name="post.more.append" item="m">
+                        <if condition="$key eq 0"><tr class="append_field"><else /><tr></if>
+                            <th>附加</th>
+                            <php>$i=$key+1</php>
+                            <td>
+                                <p class="append-span" style="width: 100%;">标题-<input style="display: inline-block" class="form-control" type="text" name="post[more][append][name][]"  value="{$m.name|default=''}" placeholder="标题" /></p>
+                                <p class="append-span">描述-<textarea class="form-control" name="post[more][append][value][]" style="height: 50px;" placeholder="描述">{$m.value|default=''}</textarea></p>
+                                <p class="append-span">配图-
+                                <input type="hidden" name="post[more][append][thumbnail][]" id="thumbnail_{$i}" value="{$m.thumbnail|default=''}">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail_{$i}');">
+                                    <if condition="empty($m.thumbnail)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail_{$i}-preview"
+                                             width="85" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($m.thumbnail)}"
+                                             id="thumbnail_{$i}-preview"
+                                             width="85" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail_{$i}" value="取消图片">
+                                <if condition="$key neq 0"><i class="fa fa-times fa-2x minus" aria-hidden="true"></i></if>
+                                </p>
+                            </td>
+                            <script type="text/javascript">
+                                $('.btn-cancel-thumbnail_{$i}').click(function () {
+                                    console.log($('#thumbnail_{$i}-preview').attr('src'))
+                                    $('#thumbnail_{$i}-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+                                    $('#thumbnail_{$i}').val('');
+                                });
+                                $('.minus').on('click',function () {
+                                    $(this).parent().parent().remove()
+                                });
+                            </script>
+                        </tr>
+                    </foreach>
+                </table>
+                <button class="append" type="button">附加</button>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="hidden" name="post[id]" value="{$post.id|default=''}">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+                        <a class="btn btn-default" href="{:url('About/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+        var i = "{$i+1}";
+        $('.append').on('click',function () {
+            var append_field = $('.append_field').clone()
+            $(append_field).find('input[id="thumbnail_1"]').attr('id','thumbnail_'+i)
+            $(append_field).find('a').attr('href',"javascript:uploadOneImage('图片上传','#thumbnail_"+i+"');");
+            $(append_field).find('img').attr('id',"thumbnail_"+i+"-preview");
+            $(append_field).find('.btn-cancel-thumbnail_1').attr('class','btn btn-sm btn-cancel-thumbnail_'+i)
+            $(append_field).removeClass().children('td').append('<i class="fa fa-times fa-2x minus" aria-hidden="true"></i>');
+            $(append_field).find('.btn-cancel-thumbnail_'+i+'').on('click',function () {
+                $(this).parent().find('a>img').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+                $(this).parent().find('input[id^="thumbnail_"]').val('');
+            });
+            $(append_field).find('.minus').on('click',function () {
+                $(this).parent().parent().remove()
+            });
+            $(append_field).each(function(){
+                $(this).find("input[name^='post']").val('')
+                $(this).find("img[id^='thumbnail_']").attr('src','__TMPL__/public/assets/images/default-thumbnail.png')
+            })
+            $('.table.table-bordered').append(append_field)
+            i++;
+        });
+    });
+</script>
+</body>
+</html>

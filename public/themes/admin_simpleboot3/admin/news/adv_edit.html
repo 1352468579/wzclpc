@@ -1,0 +1,71 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <form action="{:url('News/advEditPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>banner图<span class="form-required">*</span>（宽272px*高348px）</th>
+                        <td>
+                            <div>
+                                <input type="hidden" name="adv" id="thumbnail" required value="{$adv.news_adv|default=''}">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                    <if condition="empty($adv)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($adv.news_adv)}"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+                        <a class="btn btn-default" href="{:url('News/advEdit')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<extend name="public/layout"/>
+<block name="head">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>公开课</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!--[if lt IE 9]>
+    <script src="__WAPSTATIC__/js/html5shiv.min_831d9bc.js"></script>
+    <script src="__WAPSTATIC__/js/es5-shim.min_02d3aac.js"></script>
+
+    <![endif]-->
+    <!-- End Piwik Code -->
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/bootstrap.min.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/all_87c2b88.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/minimalist_04aeee2.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/common_40bb2b7.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/widget_523a7b5.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/lessons.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/information.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/declaration-popup_e299361.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/activity-rule_2be29b7.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/activity-rule_e825414.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/player.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/swiper_cd50bb3.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/index_35c5b5e.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/page.css"/>
+    <style>
+        #banner {
+            height: 450px;
+            background: url({:cmf_get_image_preview_url($banner.thumbnail)}) no-repeat center;
+            /*background: url(__WAPSTATIC__/images/open_class_banner.png) no-repeat center;*/
+        }
+        #video .layout .videoContainer .videoImg{
+            width: 212px;
+            height: 130px;
+            overflow: hidden;
+            border-radius: 5px;
+            vertical-align: middle;
+            float: left;
+        }
+        #video .layout .videoContainer .dot{
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            background: url(__WAPSTATIC__/picture/open_class_video.png) no-repeat center;
+            top: 23%;
+            left: 33%;
+            padding: 40px;
+            cursor: pointer;
+        }
+        #video .layout .videoContainer{
+            margin: 0 0 0 0!important;
+        }
+        .main-content .article-content .pagination-area{
+            margin-left: 38%;
+        }
+        .theme .prev, .theme .next{
+            width: auto;
+        }
+        .rightClass .subtitle {
+            color: #666;
+        }
+        .rightClass .classTeacher span{
+            color: #666;
+        }
+    </style>
+</block>
+<block name="body">
+    <!--[if lt IE 7]>
+    <body class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>
+    <body class="lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+    <!--[if IE 8]>
+    <body class="lt-ie10 lt-ie9 ie8"> <![endif]-->
+    <!--[if IE 9]>
+    <body class="lt-ie10 ie9"> <![endif]-->
+    <!--[if gt IE 9]> -->
+    <body>
+    <!-- <![endif]-->
+    <script>
+
+    </script>
+    <div id="wrapper">
+        <!---------nav导航---------->
+        <include file="public/header" />
+        <div class="main-content">
+            <div id="banner"></div>
+            <!-------中间部分------>
+            <div id="video">
+                <div class="layout">
+                    <div class="openClass_wrap">
+                        <ul>
+                            <notempty name="articles.data">
+                                <foreach name="articles.data" item="a">
+                                    <li style="height: 130px;">
+
+                                            <notempty name="a.more.photos">
+                                                <foreach name="a.more.photos" item="amp" offset="0" length="1">
+                                                    <a href="javascript:parent.imagePreviewDialog('{:cmf_get_image_preview_url($amp.url )}');">
+                                                    <div class="videoContainers" style="    width: 212px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 5px;
+    vertical-align: middle;
+    float: left;" data-src="{:cmf_get_image_preview_url($a.thumbnail)}">
+                                                        <div class="playCircle"></div>
+
+                                                            <img class="videoImgs" style="    width: 212px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 5px;
+    vertical-align: middle;
+    float: left;" data-src="{:cmf_get_image_preview_url($a.thumbnail)}" src="{:cmf_get_image_preview_url($a.thumbnail)}"/>
+                                                    </div>
+                                                    </a>
+                                                </foreach>
+                                            </notempty>
+                                            <!--<span class="dot" data-src="{:cmf_get_image_preview_url($a.thumbnail)}"></span>-->
+
+                                        <div class="rightClass">
+                                            <p class="title">{$a.post_title|default=''}</p>
+                                            <p class="subtitle">{$a.post_excerpt|default=''}</p>
+                                            <p class="classTeacher">
+                                                <span><img src="__WAPSTATIC__/images/teacherBtn.png" alt=""> {$a.post_keywords|default=''}</span>
+                                                <span><img src="__WAPSTATIC__/images/time.png" alt=""> {:date('Y-m-d H:i',$a['published_time'])}</span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                </foreach>
+                            </notempty>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="article-content">
+                <div class="pagination-area">
+                    <div id="pagination" class="theme simple-pagination">
+                        <ul>{$page}</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var _bookUserIdentifier = (typeof localStorage == 'undefined' ? '' : localStorage._bookUserIdentifier) || new Date().getTime() + '' + Math.random();
+            localStorage._bookUserIdentifier = _bookUserIdentifier;
+
+        </script>
+
+        <div class="img-box">
+            <img class="img" src="__WAPSTATIC__/picture/enroll.png"/>
+        </div>
+        <include file="public/reservation-bar" />
+
+        <include file="public/reservation" />
+        <!-- <script src="__WAPSTATIC__/js/entrance.js" data-args="manual=true" class="zhiCustomBtn" id="zhichiScript"></script> -->
+        <!----------底部------------>
+        <include file="public/footer" />
+
+    </div>
+
+    <div id="activity-rule" class="">
+        <div class="inner-box">
+            <h2>活动规则</h2>
+            <span class="close-btn"></span>
+            <div class="grey-con">
+                <div class="grey-desc">
+                    1. 活动期间，购买80课时（含）以上的学员可参与冲刺期中考活动；</br>
+                    2. 参与活动的用户可免费获赠所购买课时包的15%课时数（例如购买80课时可额外获赠12课时课程，购买320课时可额外获赠48课时）；</br>
+                    3.若使用学费分期，则可获赠所购买课时包的10%课时数。
+                </div>
+            </div>
+            <div class="know">我知道了</div>
+        </div>
+        <div class="fox"></div>
+    </div>
+
+
+    <!-- <script type="text/javascript"  data-lxb-uid="8042656" data-lxb-gid="211050" src="__WAPSTATIC__/js/api.js' + new Date().getTime() + '" charset="utf-8"></script> -->
+    <script src="__WAPSTATIC__/js/entrance.js" data-args="manual=true"
+            class="zhiCustomBtn" id="zhichiScript"></script>
+    <div id="callbubble-alert-bg">
+        <div class="callbubble-alert">
+            <div class="callbubble-alert-heard">
+                <div class="callbubble-alert-close" id="callbubble-alert-close"></div>
+            </div>
+            <div class="callbubble-alert-body" id="callbubble-alert-success">
+                <img src="__WAPSTATIC__/picture/alert_success_1af4557.png" alt="">
+                <span class="alert-body-word">
+                <h2>提交成功！</h2>
+                <p>敬请留意
+                    <em> 021 </em>开头的客服电话~</p>
+            </span>
+            </div>
+            <div class="callbubble-alert-body" id="callbubble-alert-err">
+                <img src="__WAPSTATIC__/picture/alert_err_01c5680.png" alt="">
+                <span class="alert-body-word">
+                <h2>请输入正确的手机号 !</h2>
+                <p>请按正确的格式填写~</p>
+            </span>
+            </div>
+            <div class="callbubble-alert-bt" id="callbubble-alert-bt">
+                <div>
+                    确定
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="application/json" data-id="wzcl.data.gradeTosubject">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.subjectLabel">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.gradeLabel">
+        []
+    </script>
+
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/mod_96dd55b.js"></script>
+
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/common_e3a1aa0.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/all_a8d1492.js"></script>
+    <!--<!--<script type="text/javascript" src="__WAPSTATIC__/js_new/tj_6aa9dec.js"></script>-->-->
+    <script type="text/javascript" src="__WAPSTATIC__/js/evaluate_9c498a1.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/tool_857ec5d.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/widget_eb26251.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/lessonsystem_0967e01.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/declaration-popup_7b4a0f1.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/activity-rule_9853212.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/activity-rule_45235fa.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/media_a50316e.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/embed_c9bf5d9.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/flash-media_ca519b3.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/html5-media_e9a7ea9.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/player.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/swiper.jquery_2bbae26.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery.superslide.2.1.1_cc074b2.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/index_840ddb9.js"></script>
+    <!--<script type="text/javascript" src="__WAPSTATIC__/js_new/tj.js"></script>-->
+
+
+
+    <script type="text/javascript">
+    !function () {
+        if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+        require('desktop:widget/nav-version5/nav-version5.js');
+    }();
+
+    !function () {
+        require("desktop:widget/footer-version-renew/footer-version-renew.js");
+    }();
+    !function () {
+        if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+        WZ_CFG.zeroClipboardSwfPath = '/static/common/widget/zeroclipboard/2.0.0/ZeroClipboard_8fd7d9f.swf';
+        require.async('desktop:widget/fixednav-new/fixednav-new.js');
+    }();
+    </script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/classes.js"></script></body>
+    <script type="text/javascript">
+        //全局变量
+        var GV = {
+            ROOT: "__ROOT__/",
+            WEB_ROOT: "__WEB_ROOT__/",
+            JS_ROOT: "static/js/",
+            APP: ''/*当前应用名*/
+        };
+    </script>
+    <script src="__STATIC__/js/wind.js"></script>
+    <script src="__STATIC__/js/admin.js"></script>
+    <!--<script type="text/javascript" src="__WAPSTATIC__/js_new/acc.js" crossorigin defer></script>-->
+    <script>
+        $(function () {
+            $('#myCarousel').carousel({
+                interval: 2000
+            });
+        });
+    </script>
+    <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10179248/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+</block>

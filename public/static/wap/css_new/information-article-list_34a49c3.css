@@ -1,0 +1,89 @@
+﻿.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.pull-right {
+    float: right !important
+}
+
+.article-list li {
+    *zoom: 1;
+    width: 616px;
+    margin-bottom: 40px
+}
+
+.article-list li:before, .article-list li:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.article-list li:after {
+    clear: both
+}
+
+.article-list li img.cover {
+    width: 160px;
+    height: 100px;
+    float: left;
+    cursor: pointer
+}
+
+.article-list li .arc-cnt {
+    width: 434px;
+    float: left;
+    margin-left: 21px;
+    color: #7a7a7a
+}
+
+.article-list li .arc-cnt h1 {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.article-list li .arc-cnt h1 a {
+    color: #333
+}
+
+.article-list li .arc-cnt h1:hover {
+    text-decoration: underline
+}
+
+.article-list li .arc-cnt p {
+    color: #999;
+    line-height: 21px;
+    font-size: 12px;
+    height: 42px;
+    overflow: hidden
+}
+
+.article-list li .arc-cnt .footer {
+    margin-top: 8px
+}
+
+.article-list li .arc-cnt .footer span.time {
+    margin-right: 6px;
+    display: inline-block
+}
+
+.article-list li .arc-cnt .footer span.section {
+    margin-left: 6px;
+    display: inline-block
+}
+
+.article-list li .arc-cnt .footer span.section a {
+    color: #666
+}

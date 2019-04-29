@@ -1,0 +1,46 @@
+<extend name="Layout/layout" />
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/campuses.css" />
+</block>
+<block name="banner"></block>
+<block name="main">
+    <div class="content">
+        <div class="classroom">
+            <div class="explain_text">
+                校区选择
+            </div>
+        </div>
+        <ul class="addressWraper">
+            <foreach name="area_list" item="school">
+                <li onclick="window.location.href='/Mobile/Index/schoolList/id/{$school.area_id}'">
+                    <div class="img_address">
+                        <if condition="empty($school.logo)">
+                            <img src="__STATIC__/mobile/img/others/address.png" alt="">
+                            <else/>
+                            <img src="{:cmf_get_image_preview_url($school.logo)}" alt="">
+                        </if>
+                        <!--<div class="mask_address">
+                            20个精品校区
+                        </div>-->
+                    </div>
+                    <div class="region">{$school.area}</div>
+                </li>
+            </foreach>
+        </ul>
+    </div>
+</block>
+<block name="footerJs">
+    <script>
+        $('.subNav li').on('click', function() {
+            $(this).children("img").css('visibility', 'visible');
+            $(this).siblings().children("img").css('visibility', 'hidden');
+        })
+        $('.addressWraper > li').on('click',function(){
+            $(this).find('.mask_address').addClass('choosed');
+            $(this).siblings().find('.mask_address').removeClass('choosed');
+            $(this).find('.region').addClass('actived');
+            $(this).siblings().find('.region').removeClass('actived');
+        })
+    </script>
+</block>
+<block name="register"></block>

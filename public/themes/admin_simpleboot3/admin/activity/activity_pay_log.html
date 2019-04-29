@@ -1,0 +1,171 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">打赏记录</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('Activity/activityPayLog')}">
+        时间:
+        <input type="text" class="form-control js-bootstrap-datetime" name="start_time"
+               value="{$start_time|default=''}"
+               style="width: 140px;" autocomplete="off">-
+        <input type="text" class="form-control js-bootstrap-datetime" name="end_time"
+               value="{$end_time|default=''}"
+               style="width: 140px;" autocomplete="off"> &nbsp; &nbsp;
+        用户名:
+        <input type="text" class="form-control" name="user_name" style="width: 200px;"
+               value="{$user_name|default=''}" placeholder="请输入关键字...">
+        打赏对象:
+        <input type="text" class="form-control" name="to_user_name" style="width: 200px;"
+               value="{$to_user_name|default=''}" placeholder="请输入关键字...">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('Activity/activityPayLog')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <input type="button" class="btn btn-sm export-all" data-action="{:url('Activity/activityPayLogExport',['type'=>'all','start_time'=>$start_time,'end_time'=>$end_time,'user_name'=>$user_name,'to_user_name'=>$to_user_name])}"
+                    data-msg="您确定打印所有吗？" value="打印所有">
+
+            </input>
+            <input type="button" class="btn btn-sm export" data-action="{:url('Activity/activityPayLogExport')}"
+                    data-subcheck="true" data-msg="您确定打印吗？" value="打印">
+
+            </input>
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">ID</th>
+                <th width="120">用户名</th>
+                <th width="120">打赏礼物</th>
+                <th width="120">活动名</th>
+                <th width="120">打赏对象</th>
+                <th width="160">金额</th>
+                <th width="160">打赏时间</th>
+                <th width="160">支付时间</th>
+                <!--<th width="160">ip</th>-->
+                <th width="160">返票数</th>
+                <th width="160">区域</th>
+                <th width="160">详细地址</th>
+                <th width="160">门店</th>
+                <!--<th width="90">操作</th>-->
+            </tr>
+            </thead>
+            <notempty name="payLog.data">
+                <foreach name="payLog.data" item="a">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                                   value="{$a.id}" title="ID:{$a.id}">
+                        </td>
+                        <td>{$a.id}</td>
+                        <td>{$a.user_name|default=""}</td>
+                        <td>{$a.desc|default=""}</td>
+                        <td>{$a.activity_title|default=""}</td>
+                        <td>{$a.to_user_name|default=""}</td>
+                        <td>{$a.total_fee|default=""}元</td>
+                        <td>{$a.create_time|date="Y-m-d H:i",###}</td>
+                        <td><notempty name="$a.pay_time">{$a.pay_time|date="Y-m-d H:i",###}</notempty></td>
+                        <td>{$a.gift_ticket_num|default=""}</td>
+                        <td>{$a.area|default=""}</td>
+                        <td>{$a.address|default=""}</td>
+                        <td>{$a.store|default=""}</td>
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<a href="{:url('Activity/edit',array('id'=>$a['id']))}">{:lang('EDIT')}</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="{:url('Activity/delete',array('id'=>$a['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>&ndash;&gt;-->
+                        <!--</td>-->
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">ID</th>
+                <th width="120">用户名</th>
+                <th width="120">打赏礼物</th>
+                <th width="120">活动名</th>
+                <th width="120">打赏对象</th>
+                <th width="160">金额</th>
+                <th width="160">打赏时间</th>
+                <th width="160">支付时间</th>
+                <!--<th width="160">ip</th>-->
+                <th width="160">返票数</th>
+                <th width="160">区域</th>
+                <th width="160">详细地址</th>
+                <th width="160">门店</th>
+                <!--<th width="90">操作</th>-->
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <input type="button" class="btn btn-sm export-all" data-action="{:url('Activity/activityPayLogExport',['type'=>'all'])}"
+                   data-msg="您确定打印所有吗？" value="打印所有">
+
+            </input>
+            <input type="button" class="btn btn-sm export" data-action="{:url('Activity/activityPayLogExport')}"
+                   data-subcheck="true" data-msg="您确定打印吗？" value="打印">
+
+            </input>
+        </div>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+    $(function () {
+        setCookie("refersh_time", 0);
+
+        Wind.css('artDialog');
+        Wind.use('ajaxForm', 'artDialog', 'noty', 'validate', function () {
+            $('.export').on('click', function (e) {
+                var btn = $(this);
+                if (btn.data('subcheck')) {
+                    btn.parent().find('span').remove();
+                    if ($('.table-list').find('input.js-check:checked').length) {
+                        btn.data('subcheck', false);
+                    } else {
+                        $('<span class="tips_error">请至少选择一项</span>').appendTo(btn.parent()).fadeIn('fast');
+                        return false;
+                    }
+                }
+                var ids = [];
+                $("input[name='ids[]']").each(function () {
+                    if ($(this).is(':checked')) {
+                        ids.push($(this).val());
+                    }
+                });
+                ids = ids.join(',');
+                if(ids)
+                {
+                    window.location.href="/admin/Activity/activityPayLogExport/ids/"+ids+'.html'
+                    return ;
+                }
+            })
+            $('.export-all').on('click', function (e) {
+                var btn = $(this);
+                if(btn.data('action'))
+                {
+                    window.location.href=btn.data('action')
+                    return ;
+                }
+            })
+        })
+    });
+</script>
+</body>
+</html>

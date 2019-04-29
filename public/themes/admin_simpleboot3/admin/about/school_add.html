@@ -1,0 +1,123 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('About/schoolList')}">校区分布列表</a></li>
+        <li class="active"><a href="{:url('About/schoolAdd')}">添加校区</a></li>
+        <li><a href="{:url('About/editAreaLogo')}">修改地区Logo</a></li>
+    </ul>
+    <form action="{:url('About/schoolAddPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>标题<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[title]"
+                                   id="title"  value="" placeholder="标题"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>地址<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[address]"
+                                    value="" placeholder="地址"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>经度<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[longitude]"
+                                    value="" placeholder="经度"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>纬度<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[latitude]"
+                                   value="" placeholder="纬度"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>联系电话<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[tel]"
+                                   value="" placeholder="联系电话"/>
+                        </td>
+                    </tr>
+                    <!--添加start-->
+                    <tr>
+                        <th>LOGO<span class="form-required">*</span></th>
+                        <td>
+                            <div>
+                                <input type="hidden" name="post[school_logo]" id="school_logo" required value="{$post.school_logo|default=''}">
+                                <a href="javascript:uploadOneImage('图片上传','#school_logo');">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png" id="school_logo-preview" width="135" style="cursor: pointer"/>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-school_logo" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>公交路线<span class="form-required">*</span></th>
+                        <td>
+                            <textarea class="form-control" name="post[bus]" style="height: 50px;resize:vertical"
+                                      placeholder="请填写公交路线"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>地铁路线<span class="form-required">*</span></th>
+                        <td>
+                            <textarea class="form-control" name="post[metro]" style="height: 50px;resize:vertical"
+                                      placeholder="请填写地铁路线"></textarea>
+                        </td>
+                    </tr>
+                    <!--添加end-->
+                    <tr>
+                        <th>区域<span class="form-required">*</span></th>
+                        <td>
+                            <div class="js-address-select" url="{:url('About/getRegion')}">
+                                <select class="province-select" name="post[province]">
+                                    <option value="0">请选择一项</option>
+                                    {$province|default=''}
+                                </select>
+                                <select class="city-select" name="post[city]">
+                                    <option value="0">请选择一项</option>
+                                </select>
+                                <select class="district-select" name="post[district]">
+                                    <option value="0">请选择一项</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('About/schoolList')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript" >
+    $('.province-select,.city-select,.district-select').change(function () {
+        var $this = $(this)
+        var url = $this.parent().attr('url')
+        var id = $this.selected().val()
+        $.ajax({url:url,data:{id:id},type:"POST",dataType:"JSON",success:function(data){
+                if(data.code == 200)
+                {
+                    $this.selected().val()!=0?$this.next().html('<option value="0">请选择一项</option>'+data.data):$this.nextAll().html('<option value="0">请选择一项</option>')
+                }
+            },error:function (e) {
+                console.log(e)
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">意见反馈列表</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('Activity/feedback')}">
+        关键字:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入关键字...">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('Activity/feedback')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <!--<button class="btn btn-danger btn-sm js-ajax-submit" type="submit"-->
+                    <!--data-action="{:url('Activity/delete')}" data-subcheck="true" data-msg="您确定删除吗？">-->
+                <!--{:lang('DELETE')}-->
+            <!--</button>-->
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <!--<th width="15">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">-->
+                    <!--</label>-->
+                <!--</th>-->
+                <th width="50">ID</th>
+                <th>用户名</th>
+                <th width="120">意见内容</th>
+                <th width="160">创建时间</th>
+                <!--<th width="90">操作</th>-->
+            </tr>
+            </thead>
+            <notempty name="feedback.data">
+                <foreach name="feedback.data" item="a">
+                    <tr>
+                        <!--<td>-->
+                            <!--<input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"-->
+                                   <!--value="{$a.id}" title="ID:{$a.id}">-->
+                        <!--</td>-->
+                        <td>{$a.id}</td>
+                        <td>{$a.user_name|default=""}</td>
+                        <td>{$a.content|default=""}</td>
+                        <td>{$a.create_time|default=""}</td>
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<a href="{:url('Activity/delete',array('id'=>$a['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>&ndash;&gt;-->
+                        <!--</td>-->
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <!--<th width="15">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">-->
+                    <!--</label>-->
+                <!--</th>-->
+                <th width="50">ID</th>
+                <th>用户名</th>
+                <th width="120">意见内容</th>
+                <th width="160">创建时间</th>
+                <!--<th width="90">操作</th>-->
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <!--<button class="btn btn-danger btn-sm js-ajax-submit" type="submit"-->
+                    <!--data-action="{:url('Activity/delete')}" data-subcheck="true" data-msg="您确定删除吗？">-->
+                <!--{:lang('DELETE')}-->
+            <!--</button>-->
+        </div>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+    $(function () {
+        setCookie("refersh_time", 0);
+    });
+</script>
+</body>
+</html>

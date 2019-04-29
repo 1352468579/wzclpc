@@ -1,0 +1,107 @@
+﻿<div id="top__nav">
+    <!--[if lt IE 8]>
+    <script src="__WAPSTATIC__/js/json2.js"></script> <![endif]-->
+    <div id="n-top-bar">
+        <div class="layout wrapper">
+            <div class="site-links">
+            </div>
+            <div class="user-links">
+                <span class="question-bank"><a href="{:url('/Wap/About/index')}" class="item">关于我们</a></span>
+                <span class="question-bank"><a href="{:url('/Wap/About/school')}" class="item">校区分布</a></span>
+                <span class="question-bank"><a href="{:url('/Wap/Files')}" class="item">学案下载</a></span>
+           <!-- <span class="question-bank"><a href="{:url('/Wap/About/downloadApp')}" class="item">客户端下载</a></span>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="out-nav-bar">
+        <div id="n-nav-bar">
+            <div class="layout nav-box">
+                <div class="logo" id="logo">
+                    <a href="{:url('/Wap/Index/index')}">
+                        <img src="{:cmf_get_image_preview_url($site_info.logo)}" style="height: 100%;">
+                    </a>
+                </div>
+                <a class="tel link" id="hide_tel" rel="nofollow" style="display: inline-block;">
+                    <i class="icon">&#xe6c0;</i>
+                    <b>{$site_info.tel|default='028-85565012'}</b>
+                </a>
+                <div id="n-nav-area">
+                    <a href="/Wap/Index/" class="item">首页</a>
+                    <a href="/Wap/Advantage/" class="item">办学优势</a>
+                    <a href="#" class="item area-lessons">课程设置</a>
+                    <a href="/Wap/Reputation/" class="item">学员口碑</a>
+                    <a href="/Wap/News/newList/cid/11" class="item area-zixun">新闻资讯</a>
+                    <!--<a href="/Wap/Live/" class="item">公开课</a>-->
+                    <a href="/Wap/Schoolchildren" class="item">儿童学院</a>
+                    <ul class="" id='secoundTag'></ul>
+                    <ul class="wzclLessons" style="position: absolute;top: 32px;left: 149px;"></ul>
+                    <style>
+                        .wzclLessons li {
+                            position: relative;
+                            /*height: 72px;*/
+                            overflow: visible !important;
+                            background-color: #fff;
+                            width: 118px;
+                        }
+                        .wzclLessons li a{
+                            display: block;
+                            width: 102px;
+                            height: 40px;
+                            padding-left: 16px;
+                            font-size: 14px;
+                            color: #666;
+                            text-align: left;
+                            line-height: 40px;
+                            text-decoration: none;
+                            background: url(__WAPSTATIC__/images/right-arr_a58fb1e.png) no-repeat 95px 16px;
+                        }
+                    </style>
+                    <ul class="secondwzclLessons" style="position: absolute;left: 263px;top: 32px;width: 118px;"></ul>
+                    <style>
+                        .secondwzclLessons li {
+                            background-color: #fff;
+                        }
+                        .secondwzclLessons li a {
+                            display: block;
+                            width: 102px;
+                            height: 40px;
+                            padding-left: 16px;
+                            font-size: 14px;
+                            color: #666;
+                            text-align: left;
+                            line-height: 40px;
+                            text-decoration: none;
+                            background: url(__WAPSTATIC__/images/right-arr_a58fb1e.png) no-repeat 95px 16px;
+                        }
+                    </style>
+                    <ul class="thirdwzclLessons" style="position: absolute; left: 381px; top: 32px; width: 118px;"></ul>
+                    <style>
+                        .thirdwzclLessons li {
+                            background-color: #fff;
+                        }
+                        .thirdwzclLessons li a {
+                            display: block;
+                            width: 102px;
+                            height: 40px;
+                            padding-left: 16px;
+                            font-size: 14px;
+                            color: #666;
+                            text-align: left;
+                            line-height: 40px;
+                            text-decoration: none;
+                        }
+                    </style>
+                    <ul class="zixunTags">
+                        <foreach name="news" item="n">
+                            <li><a href="/Wap/News/newList/cid/{$n.id|default=''}" class="zixunItem">{$n.name|default=''}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="courseNav" style="height:0;font-size:0;visibility:0">
+        {}
+    </div>
+</div>

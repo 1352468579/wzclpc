@@ -1,0 +1,89 @@
+<div class="header clearfix">
+    <div class="logo"><img src="__STATIC__/mobile/img/logo.png" />
+    </div>
+    <div class="nav">
+        <div class="navbar_button">
+            <img src="__STATIC__/mobile/img/red_line.png" />
+            <img src="__STATIC__/mobile/img/red_line.png" />
+            <img src="__STATIC__/mobile/img/red_line.png" />
+        </div>
+        <div class="right-menu">
+            <div class="head_logo">
+                <img src="__STATIC__/mobile/img/head_logo.png" />
+            </div>
+            <ul class="subNav">
+                <li onclick="window.location.href='/'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />首页
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/xxue.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />小学辅导
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/cz.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />初中辅导
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/gz.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />高中辅导
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/zkjx.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />中考特训
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/active/indexgg/index.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />儿童学院
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/whcc.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />艺考集训
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/gkfd.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />复读中心
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/gktx.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />高三冲刺
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/mshi.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />师资团队
+                </li>
+                <li onclick="window.location.href='/wap/sprint/trusteeship'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />托管中心
+                </li>
+            </ul>
+        </div>
+        <div class="mask"></div>
+    </div>
+</div>
+<script>
+    //				侧滑开始
+    $('.right-menu').css('display', 'none');
+    $('.navbar_button').click(function() {
+        $('.right-menu').show();
+        $('.right-menu').animate({
+            right: 0
+        });
+        $('.mask').toggle();
+        $('html,body').css({height:"100%",'overflow':'hidden'});
+        $('.btnWraper').css({display:'none'});
+    });
+
+    $('.mask').click(function() {
+        $(this).hide();
+        $('.right-menu').animate({
+            right: '-70%'
+        }, 500, function() {
+            $('.right-menu').hide();
+        });
+        $('html,body').css({height:"auto",'overflow':'auto'});
+        $('.btnWraper').css({display:'block'});
+    })
+    $('.subNav li').on('click', function() {
+        $(this).children("img").css('visibility', 'visible');
+        $(this).siblings().children("img").css('visibility', 'hidden');
+    })
+    //图片切换函数
+    function changeTo(num) {
+        var liWidth = $('.training li').width();
+        var go = num * liWidth;
+        $(".trainingWraper").animate({
+            "left": -go
+        }, 500);
+    }
+    //				侧滑结束
+</script>

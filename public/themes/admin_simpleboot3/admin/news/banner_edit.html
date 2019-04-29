@@ -1,0 +1,92 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <form action="{:url('News/bannerEditPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>banner名</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[title]"
+                                   id="title"  value="{$post.title|default=''}" placeholder="banner名"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>链接</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[href]"  value="{$post.href|default=''}" placeholder="链接必须以http或https开头" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>排序</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[list_order]"  value="{$post.list_order|default=''}" placeholder="排序" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>banner图<span class="form-required">*</span></th>
+                        <td>
+                            <div>
+                                <input type="hidden" name="post[thumbnail]" id="thumbnail" required value="{$post.thumbnail|default=''}">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                    <if condition="empty($post.thumbnail)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($post.thumbnail)}"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="hidden" name="post[id]" value="{$post.id}" />
+                        <input type="hidden" name="post[type]" value="{$post.type}" />
+                        <button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+                        <a class="btn btn-default" href="{:url('Banner/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+    });
+
+</script>
+</body>
+</html>

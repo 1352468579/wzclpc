@@ -1,0 +1,3 @@
+define("desktop:widget/information-hot-article/information-hot-article.js",function(t){{var i=t("common:widget/jquery/1.11.3/jquery.js");t("common:widget/moment/2.8.4/moment.js")}t("desktop:widget/dotdotdot/jquery.dotdotdot.min.js"),function(){var t=i(".articleinnerBox").find(".articleList");
+t.on("click","img",function(){var t=i(this).parents("li").attr("data-tid");location.href="Wap/News/newArticle/id/"+t})
+}()});

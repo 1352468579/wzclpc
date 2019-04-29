@@ -1,0 +1,110 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">礼物列表</a></li>
+        <li><a href="{:url('Activity/giftAdd')}">添加礼物</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('Activity/gift')}">
+        关键字:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入关键字...">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('Activity/gift')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('Activity/listOrder')}">{:lang('SORT')}
+            </button>
+            <!--<button class="btn btn-danger btn-sm js-ajax-submit" type="submit"-->
+                    <!--data-action="{:url('Activity/giftDelete')}" data-subcheck="true" data-msg="您确定删除吗？">-->
+                <!--{:lang('DELETE')}-->
+            <!--</button>-->
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">{:lang('SORT')}</th>
+                <th width="50">ID</th>
+                <th width="60">图片</th>
+                <th>礼物名</th>
+                <th>描述</th>
+                <th width="120">价格</th>
+                <th width="160">反票数</th>
+                <th width="90">操作</th>
+            </tr>
+            </thead>
+            <notempty name="gifts.data">
+                <foreach name="gifts.data" item="a">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                                   value="{$a.id}" title="ID:{$a.id}">
+                        </td>
+                        <td>
+                            <input name="list_orders[{$a.id}]" class="input-order" type="text"
+                                   value="{$a.list_order}">
+                        </td>
+                        <td>{$a.id}</td>
+                        <td><img width="50" src="{:cmf_get_image_preview_url($a.thumbnail)}" /></td>
+                        <td>{$a.name|default=""}</td>
+                        <td>{$a.desc|default=""}</td>
+                        <td>{$a.price|default=""} 元</td>
+                        <td>{$a.ticket_num|default=""}</td>
+                        <td>
+                            <a href="{:url('Activity/giftEdit',array('id'=>$a['id']))}">{:lang('EDIT')}</a>
+                            <a href="{:url('Activity/giftDelete',array('id'=>$a['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">{:lang('SORT')}</th>
+                <th width="50">ID</th>
+                <th width="60">图片</th>
+                <th>礼物名</th>
+                <th>描述</th>
+                <th width="120">价格</th>
+                <th width="160">反票数</th>
+                <th width="90">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('Activity/listOrder')}">{:lang('SORT')}
+            </button>
+            <!--<button class="btn btn-danger btn-sm js-ajax-submit" type="submit"-->
+                    <!--data-action="{:url('Activity/giftDelete')}" data-subcheck="true" data-msg="您确定删除吗？">-->
+                <!--{:lang('DELETE')}-->
+            <!--</button>-->
+        </div>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+    $(function () {
+        setCookie("refersh_time", 0);
+    });
+</script>
+</body>
+</html>

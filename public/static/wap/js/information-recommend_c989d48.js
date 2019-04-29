@@ -1,0 +1,1 @@
+define("desktop:widget/information-recommend/information-recommend.js",function(){});

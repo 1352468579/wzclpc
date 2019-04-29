@@ -1,0 +1,84 @@
+<include file="public@header" />
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('Attributes/index')}">属性管理</a></li>
+        <li><a href="{:url('Attributes/add')}">添加属性</a></li>
+        <li><a href="{:url('Attributes/lists')}">属性列表</a></li>
+    </ul>
+    <form class="js-ajax-form" action="{:url('Attributes/listOrder')}" method="post">
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit">{:lang('SORT')}</button>
+        </div>
+        <table class="table table-hover table-bordered table-list" id="menus-table">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="80">{:lang('SORT')}</th>
+                <th width="50">ID</th>
+                <th>{:lang('NAME')}</th>
+                <th>属性值</th>
+                <th width="180">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>
+                        <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                               value="{$vo.id}" title="ID:{$vo.id}">
+                    </td>
+                    <td>
+                        <input name="list_orders" class="input-order" type="text"
+                               value="{$vo.list_order}">
+                    </td>
+                    <td><b>{$vo.id}</b></td>
+
+                    <td>{$vo.name|default=''}</td>
+                    <td>{$vo.value|default=''}</td>
+                    <td>
+                        <a href="{:url('Attributes/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a href="{:url('Attributes/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="80">{:lang('SORT')}</th>
+                <th width="50">ID</th>
+                <th>{:lang('NAME')}</th>
+                <th>属性值</th>
+                <th width="180">{:lang('ACTIONS')}</th>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit">{:lang('SORT')}</button>
+        </div>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+    $(document).ready(function() {
+        Wind.css('treeTable');
+        Wind.use('treeTable', function() {
+            $("#menus-table").treeTable({
+                indent : 20
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">文件分类管理</a></li>
+        <li><a href="{:url('Files/fileCategoryAdd')}">添加年级分类</a></li>
+        <li><a href="{:url('Files/fileCategoryClass')}">科目管理</a></li>
+        <li><a href="{:url('Files/fileCategoryClassAdd')}">添加科目</a></li>
+    </ul>
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('Files/fileCategoryDelete')}" data-subcheck="true" data-msg="您确定删除吗？">
+                {:lang('DELETE')}
+            </button>
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">年级</th>
+                <th width="90">操作</th>
+            </tr>
+            </thead>
+            <notempty name="categories">
+                <foreach name="categories" item="a">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                                   value="{$a.id}" title="ID:{$a.id}">
+                        </td>
+                        <td>{$a.grade|default=''}</td>
+                        <td>
+                            <a href="{:url('Files/fileCategoryEdit',array('id'=>$a['id']))}">编辑</a>
+                            <a href="{:url('Files/fileCategoryDelete',array('id'=>$a['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </notempty>
+            <tfoot>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">年级</th>
+                <th width="90">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('Files/fileCategoryDelete')}" data-subcheck="true" data-msg="您确定删除吗？">
+                {:lang('DELETE')}
+            </button>
+        </div>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

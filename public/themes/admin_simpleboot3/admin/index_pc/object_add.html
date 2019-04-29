@@ -1,0 +1,223 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+<script type="text/html" id="files-item-tpl">
+    <li id="saved-file{id}">
+        <input id="file-{id}" type="hidden" name="post[more][video][file_urls]" value="{filepath}">
+        <input class="form-control" id="file-{id}-name" type="text" name="post[more][video][file_names]" value="{name}"
+               style="width: 200px;" title="文件名称">
+        <a id="file-{id}-preview" href="{preview_url}" target="_blank">下载</a>
+        <a href="javascript:uploadOne('文件上传','#file-{id}','video');">替换</a>
+        <a href="javascript:(function(){$('#saved-file{id}').remove();})();">移除</a>
+    </li>
+</script>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('IndexPc/object')}">课程体系列表</a></li>
+        <li class="active"><a href="{:url('IndexPc/objectAdd')}">添加课程体系</a></li>
+    </ul>
+    <form action="{:url('IndexPc/objectAddPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <if condition="$parent_id eq 0">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>名称</th>
+                            <td>
+                                <input class="form-control" type="text" name="post[model_name]" value="" placeholder="名称"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>标题<span class="form-required">*</span></th>
+                            <td>
+                                <input class="form-control" type="text" name="post[title]"
+                                       id="title"  value="" placeholder="标题"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>描述</th>
+                            <td>
+                                <textarea class="form-control" name="post[descript]" style="height: 50px;"                                       placeholder="描述"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>背景图</th>
+                            <td>
+                                <div>
+                                    <input type="hidden" name="post[background]" id="thumbnail" required value="">
+                                    <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                    </a>
+                                    <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <else />
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>当前年级</th>
+                            <td>
+                                <select class="form-control"  name="post[parent_id]">
+                                    {$categories_tree}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>名称</th>
+                            <td>
+                                <input class="form-control" type="text" name="post[model_name]" value="" placeholder="名称"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>标题<span class="form-required">*</span></th>
+                            <td>
+                                <input class="form-control" type="text" name="post[title]"
+                                       id="title"  value="" placeholder="标题"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>描述</th>
+                            <td>
+                                <textarea class="form-control" name="post[descript]" style="height: 50px;" placeholder="描述"></textarea>
+                            </td>
+                        </tr>
+                        <tr hidden>
+                            <th>背景图</th>
+                            <td>
+                                <div>
+                                    <input type="hidden" name="post[background]" id="thumbnail" required value="">
+                                    <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                    </a>
+                                    <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr hidden>
+                            <th>视频</th>
+                            <td>
+                                <ul class="pic-list list-unstyled form-inline">
+                                    <a href="javascript:uploadOne('视频上传','#files','video');"
+                                       class="btn btn-sm btn-default">选择文件</a>
+                                    <input type="hidden" name="post[more][video][file_urls]" id="files"  value="">
+                                    <input class="form-control" type="text" name="post[more][video][file_names]" id="files-name" value=""
+                                           style="width: 200px;" title="文件名称">
+                                    <a href="javascript:(function(){$('#files').val('');$('#files-name').val('');})();">移除</a>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="append_field">
+                            <th>LV1</th>
+                            <td>
+                                <input style="width: 20%;display: inline-block" class="form-control" type="text" name="post[more][append][name][]"  value="" placeholder="标题" />
+                                <textarea class="form-control" name="post[more][append][value][]" style="height: 50px;width: 300px;" placeholder="描述"></textarea>
+                                <!--<textarea class="form-control" name="post[more][append][value][]" style="height: 50px;" placeholder="描述"></textarea>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>LV2</th>
+                            <td>
+                                <input style="width: 20%;display: inline-block" class="form-control" type="text" name="post[more][append][name][]"  value="" placeholder="标题" />
+                                <textarea class="form-control" name="post[more][append][value][]" style="height: 50px;width: 300px;" placeholder="描述"></textarea>
+                                <!--<textarea class="form-control" name="post[more][append][value][]" style="height: 50px;" placeholder="描述"></textarea>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>LV3</th>
+                            <td>
+                                <input style="width: 20%;display: inline-block" class="form-control" type="text" name="post[more][append][name][]"  value="" placeholder="标题" />
+                                <textarea class="form-control" name="post[more][append][value][]" style="height: 50px;width: 300px;" placeholder="描述"></textarea>
+                                <!--<textarea class="form-control" name="post[more][append][value][]" style="height: 50px;" placeholder="描述"></textarea>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>LV4</th>
+                            <td>
+                                <input style="width: 20%;display: inline-block" class="form-control" type="text" name="post[more][append][name][]"  value="" placeholder="标题" />
+                                <textarea class="form-control" name="post[more][append][value][]" style="height: 50px;width: 300px;" placeholder="描述"></textarea>
+                                <!--<textarea class="form-control" name="post[more][append][value][]" style="height: 50px;" placeholder="描述"></textarea>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>LV5</th>
+                            <td>
+                                <input style="width: 20%;display: inline-block" class="form-control" type="text" name="post[more][append][name][]"  value="" placeholder="标题" />
+                                <textarea class="form-control" name="post[more][append][value][]" style="height: 50px;width: 300px;" placeholder="描述"></textarea>
+                                <!--<textarea class="form-control" name="post[more][append][value][]" style="height: 50px;" placeholder="描述"></textarea>-->
+                            </td>
+                        </tr>
+                    </table>
+                    <!--<button class="append" type="button">附加</button>-->
+                </if>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('IndexPc/object')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+        $('.btn-cancel-thumbnail_1').click(function () {
+            $('#thumbnail_1-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail_1').val('');
+        });
+        var i = 2;
+        $('.append').on('click',function () {
+            var append_field = $('.append_field').clone()
+            $(append_field).find('input[id="thumbnail_1"]').attr('id','thumbnail_'+i)
+            $(append_field).find('a').attr('href',"javascript:uploadOneImage('图片上传','#thumbnail_"+i+"');");
+            $(append_field).find('img').attr('id',"thumbnail_"+i+"-preview");
+            $(append_field).find('.btn-cancel-thumbnail_1').attr('class','btn btn-sm btn-cancel-thumbnail_'+i)
+            $(append_field).removeClass().children('td').append('<i class="fa fa-times fa-2x minus" aria-hidden="true"></i>');
+            $(append_field).find('.btn-cancel-thumbnail_'+i+'').on('click',function () {
+                $(this).parent().find('a>img').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+                $(this).parent().find('input[id^="thumbnail_"]').val('');
+            });
+            $(append_field).find('.minus').on('click',function () {
+                $(this).parent().parent().remove()
+            });
+            $(append_field).each(function(){
+                $(this).find("input[name^='post']").val('')
+                $(this).find("img[id^='thumbnail_']").attr('src','__TMPL__/public/assets/images/default-thumbnail.png')
+            })
+            $('.table.table-bordered').append(append_field)
+            i++;
+        });
+    });
+</script>
+</body>
+</html>

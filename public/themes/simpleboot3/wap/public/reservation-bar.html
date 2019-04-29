@@ -1,0 +1,43 @@
+<div id="reservation-bar" class="huanglei-bar">
+    <div class="bg-box"></div>
+    <div class="bar-box">
+        <form class="form" name="form_footer">
+            <div class="ui-form-item">
+                <div class="input-wrap">
+                    <input data-v-label="姓名" data-v-required="1" data-v-errmsg="请输入1—14位中英文"
+                           data-v-rule="chineseAndWord" type="text" class="ui-input" name="name"
+                           placeholder="学生姓名"/>
+                </div>
+            </div>
+            <div class="ui-form-item">
+                <div class="input-wrap">
+                    <input value="" data-v-label="手机号" data-v-required="1" data-v-rule="mobile validateMobile"
+                           class="ui-input" type="text" placeholder="请输入您的手机" name="mobile"/>
+                </div>
+            </div>
+            <div class="ui-form-item">
+                <select data-v-label="年级" data-v-required="1" data-v-errmsg="请选择年级" name="grade"
+                        class="stu-grade">
+                    <option value="">年级</option>
+                    {$applyClasses|default=''}
+                </select>
+            </div>
+            <div class="ui-form-item">
+                <select data-v-label="科目" data-v-required="1" data-v-errmsg="请选择科目" name="weakSubject"
+                        class="stu-subject">
+                    <option value="">科目</option>
+                </select>
+            </div>
+
+            <div class="ui-form-item btn-box-bar">
+                <input type="hidden" name="completed" value="0"/>
+                <input type="hidden" name="comeFrom" value="网站">
+                <input type="hidden" name="program" value="pc">
+
+                <button class="ui-button" type="submit" id="signup">立即报名</button>
+
+            </div>
+
+        </form>
+    </div>
+</div>

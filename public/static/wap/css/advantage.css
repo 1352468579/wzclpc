@@ -1,0 +1,616 @@
+﻿.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.pull-right {
+    float: right !important
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 36px;
+    color: #3f3e41;
+    text-align: center;
+    line-height: 52px
+}
+
+.tit {
+    font-size: 20px;
+    line-height: 36px;
+    color: #666;
+    text-align: center
+}
+
+.attached-bg {
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0, 0, 0)
+}
+
+.whitebtnBox {
+    border: 1px solid #c81432;
+    border-radius: 3px;
+    width: 156px
+}
+
+.whitebtnBox a {
+    height: 38px;
+    line-height: 38px;
+    color: #c81432;
+    font-size: 17px;
+    text-align: center;
+    background-color: #fff;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    border-radius: 3px
+}
+
+.whitebtnBox a:hover {
+    color: #fff;
+    background: #d7073c;
+    transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s
+}
+
+.whitebtnBox a:active {
+    color: #fff;
+    background: #b4002c
+}
+
+#banner {
+    height: 450px;
+    background: url(../images/banner_a25c558.jpg) no-repeat center
+}
+
+#banner .layout .slogan {
+    padding: 87px 0 0 108px
+}
+
+#banner .layout .slogan h2 {
+    font-size: 32px;
+    color: #333;
+    line-height: 44px;
+    font-weight: 700;
+    text-align: left
+}
+
+#banner .layout .slogan h1 {
+    font-size: 52px;
+    line-height: 64px;
+    color: #d22417;
+    font-weight: 700
+}
+
+#banner .layout .slogan p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 28px
+}
+
+#banner .layout .gradientLine {
+    width: 770px
+}
+
+#banner .layout .btnBox {
+    margin: 50px 0 0 108px;
+    text-align: left
+}
+
+#banner .layout .btnBox a {
+    width: 170px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: auto;
+    background-color: #d22417;
+    color: #fff;
+    border-radius: 6px
+}
+
+#banner .layout .btnBox a:hover {
+    background: #d7073c
+}
+
+#banner .layout .btnBox a:active {
+    background: #b4002c
+}
+
+#banner .layout .btnBox .freeLesson {
+    cursor: pointer
+}
+
+#strictSelection .layout {
+    padding: 56px 0 64px
+}
+
+#strictSelection .layout .selectionSteps {
+    position: relative
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc {
+    position: absolute
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc h3 {
+    font-size: 24px;
+    color: #3f3e41;
+    font-weight: 700
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc h4 {
+    font-size: 20px;
+    color: #666
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc.first {
+    top: 10px;
+    left: 905px
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc.second {
+    top: 80px;
+    left: 90px
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc.third {
+    top: 163px;
+    left: 850px
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc.fourth {
+    top: 248px;
+    left: 250px
+}
+
+#strictSelection .layout .selectionSteps .stepsDesc.fifth {
+    top: 305px;
+    left: 730px
+}
+
+#strictSelection .layout .selectionSteps .stepsNum {
+    position: absolute;
+    font-size: 20px;
+    color: #fff
+}
+
+#strictSelection .layout .selectionSteps .stepsNum.firstNum {
+    top: 12px;
+    left: 545px
+}
+
+#strictSelection .layout .selectionSteps .stepsNum.secondNum {
+    top: 87px;
+    left: 547px
+}
+
+#strictSelection .layout .selectionSteps .stepsNum.thirdNum {
+    top: 165px;
+    left: 550px
+}
+
+#strictSelection .layout .selectionSteps .stepsNum.fourthNum {
+    top: 242px;
+    left: 545px
+}
+
+#strictSelection .layout .selectionSteps .stepsNum.fifthNum {
+    top: 320px;
+    left: 542px
+}
+
+#strictSelection .layout .selectionSteps .stepsModule {
+    margin: 36px auto 0;
+    width: 622px;
+    height: 366px;
+    background: url(../images/selectionsteps_6794dfa.png) no-repeat center
+}
+
+#presentationSkill {
+    height: 722px;
+    background: url(../images/presentationskillbg_9e30fd5.jpg) no-repeat center
+}
+
+#presentationSkill .layout {
+    padding-top: 56px;
+    height: 664px;
+    margin: 0 auto
+}
+
+#presentationSkill .layout .eachSkill {
+    margin-left: 262px;
+    width: 945px;
+    height: 435px;
+    background: url(../images/skills_2f01e49.png) no-repeat center;
+    background-size: 100% 100%;
+    position: relative
+}
+
+#presentationSkill .layout .eachSkill .eachMark {
+    position: absolute
+}
+
+#presentationSkill .layout .eachSkill .eachMark h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 12px
+}
+
+#presentationSkill .layout .eachSkill .eachMark h3 b {
+    font-size: 26px
+}
+
+#presentationSkill .layout .eachSkill .eachMark h4 {
+    color: #fff;
+    font-size: 18px
+}
+
+#presentationSkill .layout .eachSkill .eachMark.red {
+    top: 170px;
+    left: 32px
+}
+
+#presentationSkill .layout .eachSkill .eachMark.orange {
+    top: 175px;
+    left: 262px
+}
+
+#presentationSkill .layout .eachSkill .eachMark.blue {
+    top: 130px;
+    left: 472px
+}
+
+#presentationSkill .layout .eachSkill .eachMark.green {
+    top: 50px;
+    left: 676px
+}
+
+#presentationSkill .layout .eachSkill .eachInfo {
+    position: absolute
+}
+
+#presentationSkill .layout .eachSkill .eachInfo span {
+    color: #666;
+    font-size: 16px
+}
+
+#presentationSkill .layout .eachSkill .eachInfo.redInfo {
+    top: 376px;
+    left: 15px
+}
+
+#presentationSkill .layout .eachSkill .eachInfo.orangeInfo {
+    top: 375px;
+    left: 275px
+}
+
+#presentationSkill .layout .eachSkill .eachInfo.blueInfo {
+    top: 328px;
+    left: 558px
+}
+
+#presentationSkill .layout .eachSkill .eachInfo.greenInfo {
+    top: 235px;
+    left: 713px
+}
+
+#presentationSkill .layout .whitebtnBox {
+    margin: 40px auto 62px
+}
+
+#yearsTeach .layout {
+    padding: 56px 0 64px
+}
+
+#yearsTeach .layout ul {
+    *zoom: 1
+}
+
+#yearsTeach .layout ul:before, #yearsTeach .layout ul:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#yearsTeach .layout ul:after {
+    clear: both
+}
+
+#yearsTeach .layout ul li {
+    width: 260px;
+    margin: 60px 11px 0;
+    float: left;
+    background: #fffffd;
+    border-radius: 10px
+}
+
+#yearsTeach .layout ul li img {
+    width: 260px;
+    height: 139px
+}
+.whyChose .layout ul li{
+    border: 1px solid #e6e6e6;
+    position: relative;
+}
+.whyChose .layout ul li img {
+    width: 70px!important;
+    height: 70px!important;
+    overflow: hidden;
+    margin-top: 25px;
+    margin-left: 36%;
+}
+.whyChose .layout ul li .teachCon{
+    border-left: none!important;
+    border-right: none!important;
+    border-bottom: none!important;
+}
+.whyChose .layout ul li .teachCon p.name{
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+.whyChose .layout ul li .teachCon p.teachDetail{
+    font-size: 14px!important;
+    text-align: center;
+}
+.whyChose .choseBox img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#yearsTeach .layout ul li .teachCon {
+    margin-top: -7px;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px 20px 30px;
+    height: 150px
+}
+
+#yearsTeach .layout ul li .teachCon p.name {
+    font-size: 18px;
+    color: #343434;
+    text-align: center
+}
+
+#yearsTeach .layout ul li .teachCon p.goodAt {
+    font-size: 14px;
+    color: #c80032;
+    text-align: center
+}
+
+#yearsTeach .layout ul li .teachCon p.teachDetail {
+    font-size: 12px;
+    color: #868686
+}
+
+#yearsTeach .layout ul li .teachCon span.bottomLine {
+    display: block;
+    margin: 10px auto;
+    width: 30px;
+    height: 1px;
+    background: #ddd
+}
+
+#yearsTeach .layout ul li.first {
+    margin-left: 32px
+}
+
+#yearsTeach .layout ul li.last {
+    margin-right: 0
+}
+
+#vS {
+    background: #f8f8f8;
+    padding: 56px 0 72px
+}
+
+#vS .vsInfo {
+    margin-top: 70px;
+    *zoom: 1
+}
+
+#vS .vsInfo:before, #vS .vsInfo:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#vS .vsInfo:after {
+    clear: both
+}
+/*
+#vS .vsInfo ul {
+    width: 465px;
+    *zoom: 1
+}
+
+#vS .vsInfo ul:before, #vS .vsInfo ul:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#vS .vsInfo ul:after {
+    clear: both
+}
+
+#vS .vsInfo ul li {
+    float: left;
+    position: relative;
+    margin: 10px 0
+}
+
+#vS .vsInfo ul li img {
+    width: 465px;
+    height: 140px
+}
+
+#vS .vsInfo ul li span {
+    position: absolute;
+    top: 50px;
+    left: 340px;
+    color: #fff;
+    font-size: 16px
+}
+
+#vS .vsInfo ul.zmOnline {
+    float: left;
+    margin-left: 30px
+}
+
+#vS .vsInfo ul.otherUnderLine {
+    float: right;
+    margin-right: 30px
+}
+
+#vS .vsInfo .zmlogoVs {
+    float: left;
+    margin: 185px auto auto 28px;
+    width: 124px;
+    height: 121px;
+    display: block;
+    background: url(../images/zhangmen_e9000a6.png) no-repeat center
+}
+*/
+#onKeyAppointment {
+    height: 230px;
+    background: url(../images/advert_bg_1.png) rgba(0,0,0,.5);
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0, 0, 0)
+}
+
+#onKeyAppointment .layout {
+    padding: 75px 0 0
+}
+
+#onKeyAppointment .layout h2, #onKeyAppointment .layout p {
+    color: #fff
+}
+
+#onlineBenefits .layout {
+    padding: 83px 0 75px
+}
+
+#onlineBenefits .layout ul {
+    *zoom: 1
+}
+
+#onlineBenefits .layout ul:before, #onlineBenefits .layout ul:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#onlineBenefits .layout ul:after {
+    clear: both
+}
+
+#onlineBenefits .layout ul li {
+    float: left;
+    margin: 0 91px;
+    text-align: center
+}
+
+#onlineBenefits .layout ul li p {
+    text-align: center
+}
+
+#onlineBenefits .layout ul li p.benefitsTit {
+    font-size: 20px;
+    color: #3f3e41;
+    line-height: 36px;
+    margin-top: 12px;
+    font-weight: 700
+}
+
+#onlineBenefits .layout ul li p.benefitsInfo {
+    font-size: 16px;
+    color: #666;
+    line-height: 32px
+}
+
+#dataService {
+    background: #f8f8f8;
+    padding: 75px 0 130px
+}
+
+#dataService h2 {
+    color: #3f3e41
+}
+
+#dataService .tit {
+    color: #666
+}
+
+#dataService ul {
+    *zoom: 1
+}
+
+#dataService ul:before, #dataService ul:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+#dataService ul:after {
+    clear: both
+}
+
+#dataService ul li {
+    float: left;
+    margin: 58px 85px 0
+}
+
+#dataService ul li p {
+    text-align: center
+}
+
+#dataService ul li p.dataNum {
+    vertical-align: bottom;
+    color: #c81432;
+    line-height: 70px
+}
+
+#dataService ul li p.dataNum b {
+    font-weight: 400
+}
+
+#dataService ul li p.dataNum b.number {
+    font-size: 50px;
+    vertical-align: baseline
+}
+
+#dataService ul li p.dataNum b.millon {
+    font-size: 30px;
+    vertical-align: baseline
+}
+
+#dataService ul li p.dataNum b.add {
+    font-size: 40px;
+    vertical-align: sub
+}
+
+#dataService ul li p.numInfo {
+    color: #666;
+    font-size: 16px;
+    line-height: 36px
+}

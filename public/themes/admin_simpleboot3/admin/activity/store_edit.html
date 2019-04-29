@@ -1,0 +1,103 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+    .table-bordered>tbody>tr>th{
+        width: 120px;
+    }
+    .append_users li{
+        list-style-type: none;
+        padding: 5px;
+    }
+    .icon {
+        float: right;
+        position: relative;
+    }
+    .append_users li {
+        display:block;
+    }
+    .append_users li:hover {background:#ccc6c5;}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('Activity/store')}">门店管理</a></li>
+        <li><a href="{:url('Activity/storeAdd')}">添加门店</a></li>
+        <li class="active"><a href="#">门店编辑</a></li>
+    </ul>
+    <form action="{:url('Activity/storeEditPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>门店名称<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="name" value="{$store.name|default=''}"
+                                   id="title" required placeholder="门店名称"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>活动区域<span class="form-required">*</span></th>
+                        <td>
+                            <div class="js-address-select" url="{:url('Activity/getRegion')}">
+                                <select class="province-select" name="province">
+                                    {$store.province|default='<option value="0">请选择一项</option>'}
+                                </select>
+                                <select class="city-select" name="city">
+                                    {$store.city|default='<option value="0">请选择一项</option>'}
+                                </select>
+                                <select class="district-select" name="district">
+                                    {$store.district|default='<option value="0">请选择一项</option>'}
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>详细地址<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="address"
+                                   required value="{$store.address|default=''}" placeholder="详细地址"/>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('EDIT')}</button>
+                        <a class="btn btn-default" href="{:url('Activity/store')}">{:lang('BACK')}</a>
+                        <input type="hidden" name="id" value="{$id|default=''}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+        $('.province-select,.city-select,.district-select').change(function () {
+            var $this = $(this)
+            var url = $this.parent().attr('url')
+            var id = $this.selected().val()
+            $.ajax({url:url,data:{id:id},type:"POST",dataType:"JSON",success:function(data){
+                    if(data.code == 200)
+                    {
+                        id!=0?$this.next().html('<option value="0">请选择一项</option>'+data.data):$this.nextAll().html('<option value="0">请选择一项</option>')
+                    }
+                },error:function (e) {
+                    console.log(e)
+                }})
+        })
+    });
+</script>
+</body>
+</html>

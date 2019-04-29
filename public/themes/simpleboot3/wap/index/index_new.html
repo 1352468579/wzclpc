@@ -1,0 +1,752 @@
+<extend name="public/layout"/>
+<block name="head">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$site_info.site_name|default='望子成龙'}</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <!--<link rel="shortcut icon" href="/static/common/static/lib/img/favicon.ico">-->
+    <!--[if lt IE 9]>
+    <script src="__WAPSTATIC__/js_new/html5shiv.min_831d9bc.js"></script>
+    <script src="__WAPSTATIC__/js_new/es5-shim.min_02d3aac.js"></script>
+
+    <!--[endif]-->
+    <!-- Piwik -->
+    <!-- End Piwik Code -->
+
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/bootstrap.min.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/all_87c2b88.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/minimalist_04aeee2.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/common_40bb2b7.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/widget_523a7b5.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/lessons.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/declaration-popup_e299361.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/activity-rule_2be29b7.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/activity-rule_e825414.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/player.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/swiper_cd50bb3.css"/>
+    <link rel="stylesheet" href="__WAPSTATIC__/css_new/index_35c5b5e.css"/>
+    <style>
+        #strictSelection .layout .selectionSteps .stepsDesc h4 {
+            width: 240px;
+            font-size: 18px;
+            line-height: 30px;
+            margin-top: 15px;
+        }
+    </style>
+</block>
+<block name="body">
+    <!--[if lt IE 7]>
+    <body class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>
+    <body class="lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+    <!--[if IE 8]>
+    <body class="lt-ie10 lt-ie9 ie8"> <![endif]-->
+    <!--[if IE 9]>
+    <body class="lt-ie10 ie9"> <![endif]-->
+    <!--[if gt IE 9]> -->
+    <body>
+    <!-- <![endif]-->
+
+    <script>
+        (function () {
+            if (window.location.href === "http://www.wzclxx.com/" || window.location.href === "http://www.wzclxx.com/") {
+                window.location.href = "http://www.wzclxx.com/";
+            }
+        })();
+    </script>
+    <div id="wrapper">
+        <!---------nav导航---------->
+        <include file="public/header" />
+        <!------banner轮播图------>
+        <div id="banner">
+            <div id="slideBox" class="slideBox">
+                <div class="hd">
+                    <ul>
+                        <li class="on"></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <notempty name="banner">
+                            <foreach name="banner" item="b">
+                                <li>
+                                    <if condition="strlen($b.href) gt 8">
+                                        <a href="{:strlen($b.href)>8?$b.href:'#'}">
+                                            <img src="{:cmf_get_image_preview_url($b.thumbnail)}"/>
+                                        </a>
+                                        <else />
+                                        <a class="J-trigger-reservation-form" >
+                                            <img src="{:cmf_get_image_preview_url($b.thumbnail)}"/>
+                                        </a>
+                                    </if>
+
+                                </li>
+                            </foreach>
+                        </notempty>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-------中间部分------>
+        <!--模块二-->
+        <div id="Energy">
+            <ul class="layout">
+                <notempty name="index_2.more.append">
+                    <foreach name="index_2.more.append" item="i2">
+                        <li>
+                            <img src="{:cmf_get_image_preview_url($i2.thumbnail)}" alt="$i2.name"/>
+                            <div class="con">
+                                <p class="EnergyTit">{$i2.name|default=''}</p>
+                                <p class="EnergyDescri">{$i2.value|default=''}</p>
+                            </div>
+                        </li>
+                    </foreach>
+                </notempty>
+            </ul>
+        </div>
+        <!--模块三-->
+        <div id="teachPosition">
+            <div class="layout">
+                <h2>{$index_3.title|default='四大教研组 汇聚行业权威专家'}</h2>
+                <p class="info">{$index_3.descript|default='高考命题方向的把脉者&nbsp;&nbsp;&nbsp;&nbsp;优质教学方法的指点者&nbsp;&nbsp;&nbsp;&nbsp;高效学习方法的献计者'}</p>
+                <!--------轮播开始------->
+                <div class="banner_wrap">
+                    <div id="myCarouse1" class="carousel slide">
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            <notempty name="index_3.more.append">
+                                <foreach name="index_3.more.append" item="i3" key="i3k">
+                                    <div class="item {$i3k==0?'active':''}">
+                                        <div class="slide_left">
+                                            <p class="slideTitle"><span>{$i3k+1}</span>{$i3.name|default='魅力语文组'}</p>
+                                            <p class="slideDetail">{$i3.value|default='打基础、抓考点、练技能、冲写作，把握各年级重难点和命题趋势，让学生快速掌握考试技巧和得高分技能，以中高考满分作文为标杆，锻造写作高手。'}</p>
+                                            <!--<a onclick="_mvq.push(['custom', 'jzqu1', Math.random(),  '']);_mvq.push(['$logConversion']);"-->
+                                               <!--href="javascript:;" class="small-btn appointment-btn J-trigger-reservation-form">0元试听</a>-->
+                                            <a href="javascript:;" class="small-btn appointment-btn J-trigger-reservation-form">0元试听</a>
+                                        </div>
+                                        <img src="{:cmf_get_image_preview_url($i3.thumbnail)}" alt="">
+                                    </div>
+                                </foreach>
+                            </notempty>
+                        </div>
+                        <!-- 轮播（Carousel）导航 -->
+                        <a class="carousel-control left" href="#myCarouse1" data-slide="prev">
+                            <img src="__WAPSTATIC__/picture/left.png" alt=""/>
+                        </a>
+                        <a class="carousel-control right" href="#myCarouse1" data-slide="next">
+                            <img src="__WAPSTATIC__/picture/right.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+                <!--轮播结束-->
+            </div>
+        </div>
+        <!--模块四-->
+        <div id="video">
+            <div class="layout">
+                <h2>{$index_4.title|default='经典特色课程'}</h2>
+                <p class="info">{$index_4.descript|default='以STEM科学实验、麦卡赛机器人为特色的儿童学院'}</p>
+                <div class="videoContainer" data-title="{$index_4.more.append.video.file_names|default='在线教育，孩子提分新方式'}"
+                     data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}">
+                    <img class="videoImg" src="__WAPSTATIC__/picture/class.png" alt="全国top名校名师"/>
+                    <div class="playCircle"></div>
+                    <span class="dot" data-title="{$index_4.more.append.video.file_names|default='在线教育，孩子提分新方式'}"
+                          data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}"></span>
+                </div>
+                <div class="videoIconContainer">
+                    <ul>
+                        <notempty name="index_4.more.append">
+                            <foreach name="index_4.more.append" item="i4" key="i4k">
+                                <li class="<switch name='i4k'>
+                                           <case value='0' break='false'>liFirst</case>
+                                           <case value='1' break='false'>liSecond</case>
+                                           <case value='2' break='false'>liThird</case>
+                                           <case value='3' break='false'>liFour</case>
+                                           <default />other
+                                           </switch>">
+                                    <img src="{:cmf_get_image_preview_url($i4.thumbnail)}" alt="">
+                                    <div>
+                                        <p>{$i4.name|default='秋季方法班'}</p>
+                                        <p>{$i4.value|default='方法制胜，锁定高分'}</p>
+                                    </div>
+                                </li>
+                            </foreach>
+                        </notempty>
+                    </ul>
+                    <a href="javascript:;" class="small-btn appointment-btn J-trigger-reservation-form">0元试听</a>
+                    <!--<a onclick="_mvq.push(['custom', 'jzqu1', Math.random(),  '']);_mvq.push(['$logConversion']);"-->
+                       <!--href="javascript:;" class="small-btn appointment-btn J-trigger-reservation-form">0元试听</a>-->
+                </div>
+            </div>
+        </div>
+        <!--模块五-->
+        <div id="onKeyAppointment" class="attached-bg">
+            <div class="layout">
+                <h2>{$index_5.title|default='紧跟时代，探索课堂教学'}</h2>
+                <ul>
+                    <notempty name="index_5.more.append">
+                        <foreach name="index_5.more.append" item="i5" key="i5k">
+                            <li>
+                                <div class="step">
+                                    <span class="onKeyAppointmentDesc">{$i5.name|default='两千余名教师云集，共同探讨课堂教学'}</span>
+                                </div>
+                            </li>
+                        </foreach>
+                    </notempty>
+                </ul>
+            </div>
+        </div>
+        <!--模块六-->
+        <div id="exClusiveSystem">
+            <div class="layout">
+                <h2>{$index_6.title|default='私人定制 全方位高效提分'}</h2>
+                <p class="info">{$index_6.descript|default='一万个学生，一万份不同的教案'}</p>
+                <div class="loading">
+                    <div class="jwq">
+                        <if condition="empty($index_6.more.append.5)">
+                            <img src="__WAPSTATIC__/picture/customized_header.png" alt=""/>
+                            <p>姜文琪老师</p>
+                            <else />
+                            <img src="{:cmf_get_image_preview_url($index_6.more.append.5.thumbnail)}" alt=""/>
+                            <p>{$index_6.more.append.5.name|default='姜文琪老师'}</p>
+                        </if>
+                    </div>
+                    <div class="loadingDot">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <span>课程定制中</span>
+                    </div>
+                    <div class="sw">
+                        <if condition="empty($index_6.more.append.4)">
+                            <img src="__WAPSTATIC__/picture/customized_header.png" alt=""/>
+                            <p>孙文同学</br>(镇江中学高三)</p>
+                            <else />
+                            <img src="{:cmf_get_image_preview_url($index_6.more.append.4.thumbnail)}" alt=""/>
+                            <p>{$index_6.more.append.4.name|default='孙文同学'}</br>{$index_6.more.append.4.value|default='(镇江中学高三)'}</p>
+                        </if>
+                        <!--<img src="__WAPSTATIC__/picture/customized_header.png" alt=""/>-->
+                        <!--<p>孙文同学</br>(镇江中学高三)</p>-->
+                    </div>
+                </div>
+                <div class="flyin">
+                    <div class="in-top">
+                        <div class="user">
+                            <if condition="empty($index_6.more.append.4.thumbnail)">
+                                <div class="userImg" style="background: url('__WAPSTATIC__/picture/customized_header.png') no-repeat center center;">
+                                </div>
+                                <else />
+                                <div class="userImg" style="background: url('{:cmf_get_image_preview_url($index_6.more.append.4.thumbnail)}') no-repeat center center;">
+                                </div>
+                            </if>
+                            <div class="intro">
+                                <if condition="empty($index_6.more.append.4)">
+                                    <p class="flyinName">孙同学</p>
+                                    <p class="flyinDesc">专属订制学习计划</p>
+                                    <else />
+                                    <p class="flyinName">{$index_6.more.append.4.name|default='孙同学'}</p>
+                                    <p class="flyinDesc">{$index_6.more.append.4.value|default='专属订制学习计划'}</p>
+                                </if>
+                                <!--<p class="flyinName">孙同学</p>-->
+                                <!--<p class="flyinDesc">专属订制学习计划</p>-->
+                            </div>
+                        </div>
+                        <a href="javascript:;"
+                           class="small-btn appointment-btn J-trigger-reservation-form evaluate">智能测评</a>
+                        <!--<a onclick="_mvq.push(['custom', 'jzqu1', Math.random(),  '']);_mvq.push(['$logConversion']);"-->
+                           <!--href="javascript:;"-->
+                           <!--class="small-btn appointment-btn J-trigger-reservation-form evaluate">智能测评</a>-->
+                    </div>
+                    <ul>
+                        <notempty name="index_6.more.append">
+                            <foreach name="index_6.more.append" item="i6" key="i6k" length="4">
+                                <li>
+                                    <p>{$i6k+1}</p>
+                                    <div class="plan">
+                                        <img src="{:cmf_get_image_preview_url($i6.thumbnail)}" alt="">
+                                        <span class="iconplan icon1">{$i6.name|default='学习规划师'}</span>
+                                        <div class="greyline">
+                                            <span class="redline"></span>
+                                        </div>
+                                        <p>{$i6.value|default='从心理到学科全方位诊断。契合学生心理、学科基础、学习态度等，做好提升学生成绩的全面规划。'}</p>
+                                    </div>
+                                </li>
+                            </foreach>
+                        </notempty>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--模块七-->
+        <div id="facilitiesAllCan" class="attached-bg">
+            <div class="layout">
+                <h2>{$index_7.title|default='21年历程，80大教学区覆盖成都'}</h2>
+                <p class="info">{$index_7.descript|default='中国西部规模较大、影响力广、口碑好的品牌培训学校'}</p>
+            </div>
+        </div>
+        <!--------五大核心--------->
+        <!--模块八-->
+        <div id="strictSelection" style="padding-bottom: 40px">
+            <div class="layout">
+                <h2>{$index_8.title|default='五大核心 让学习效果翻倍'}</h2>
+                <div class="selectionSteps">
+                    <notempty name="index_8.more.append">
+                        <foreach name="index_8.more.append" item="i8" key="i8k" >
+                            <div class="stepsDesc <switch name='i8k'>
+                                           <case value='0' break='false'>first</case>
+                                           <case value='1' break='false'>second</case>
+                                           <case value='2' break='false'>third</case>
+                                           <case value='3' break='false'>fourth</case>
+                                           <case value='4' break='false'>fifth</case>
+                                           <default />other
+                                           </switch>">
+                                <h3>{$i8.name|default='考情分析'}</h3>
+                                <h4>{$i8.value|default='针对考点，解读考纲，分析考情，让学习更有方向，更有针对性。'}</h4>
+                            </div>
+                        </foreach>
+                    </notempty>
+                    <div class="stepsModule"></div>
+                </div>
+            </div>
+        </div>
+        <!--专业课程体系-->
+        <div id="lessonSystem">
+            <div class="layout">
+                <h2>
+                    专业课程体系，5阶教学标准
+                </h2>
+                <div class="poshelper"></div>
+                <ul class="gradeList clear">
+                </ul>
+                <ul class="subjects">
+                </ul>
+                <div class="cntBox">
+                    <div class="lv1 lv">
+                        <h3 class="level">LV1</h3>
+                        <p class="score">0-60分</p>
+                        <div class="outer">
+                            <div class="content content1">
+                                <p>1.有理数、实数、勾股定理、
+                                    方程、一次函数、三角形
+                                    等基本概念的巩固</p>
+                                <p>2.对应知识点基础专题答疑</p>
+                                <div class="triangle"></div>
+                            </div>
+                            <div class="mask1 mask"></div>
+                        </div>
+                    </div>
+                    <div class="lv2 lv">
+                        <h3 class="level">LV2</h3>
+                        <p class="score">60-70分</p>
+                        <div class="outer">
+                            <div class="content">
+                                <p>1.初一、初二各年级对应
+                                    基础例题讲解</p>
+                                <p>2.各类习题答疑提升</p>
+                                <div class="triangle"></div>
+                            </div>
+                            <div class="mask2 mask"></div>
+                        </div>
+                    </div>
+                    <div class="lv3 lv">
+                        <h3 class="level">LV3</h3>
+                        <p class="score">70-80分</p>
+                        <div class="outer">
+                            <div class="content">
+                                <p>1.代数、几何、函数、统计
+                                    四大专题查漏补缺</p>
+                                <p>2.选取数学典型考点集中训练</p>
+                                <p>3.各类题型解题策略提点</p>
+                                <div class="triangle"></div>
+                            </div>
+                            <div class="mask3 mask"></div>
+                        </div>
+                    </div>
+                    <div class="lv4 lv">
+                        <h3 class="level">LV4</h3>
+                        <p class="score">80-90分</p>
+                        <div class="outer">
+                            <div class="content">
+                                <p>1.中考专题提前预习</p>
+                                <p>2.数学思维拓展训练</p>
+                                <p>3.期末考点轰炸训练</p>
+                                <p>4.单元易错易混题，集中讲解</p>
+                                <div class="triangle"></div>
+                            </div>
+                            <div class="mask4 mask"></div>
+                        </div>
+                    </div>
+                    <div class="lv5 lv">
+                        <h3 class="level">LV5</h3>
+                        <p class="score">90-100分</p>
+                        <div class="outer">
+                            <div class="content">
+                                <p>1.选择题、填空题、计算题
+                                    等专题轰炸训练</p>
+                                <p>2.历年考题难题选讲</p>
+                                <div class="triangle"></div>
+                            </div>
+                            <div class="mask5 mask"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--模块九-->
+        <if condition="empty($index_9.more.video.file_urls)">
+            <div id="starVc"
+                 data-title=" 　　"
+                 data-src="https://ojc93nz4u.qnssl.com/%E4%BB%BB%E6%B3%8914-HD%20720p.mp4">
+                <div class="mask"></div>
+                <div class="layout">
+                    <h2>{$index_9.title|default='望子成龙公益活动'}</h2>
+                    <p class="info">
+                        {$index_9.descript|default='2017年11月25日走基层送温暖，望子成龙千里奔赴甘孜州白玉县献爱心<br/>
+                        2016年11月22日望子成龙寒冬送暖，奉献近30万元助推武胜'}
+                    </p>
+                    <p>{$index_9.descript_1|default=''}</p>
+                    <div class="playCircle"></div>
+
+                    <if condition="empty($index_9.more.video.file_urls)">
+                        <span class="dot"
+                              data-title=" 　　"
+                              data-src="https://ojc93nz4u.qnssl.com/%E4%BB%BB%E6%B3%8914-HD%20720p.mp4"></span>
+                        <else />
+                        <span class="dot"
+                              data-title=" 　　"
+                              data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}"></span>
+                    </if>
+
+                </div>
+            </div>
+            <else />
+            <div id="starVc"
+                 data-title=" 　　"
+                 data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}">
+                <div class="mask"></div>
+                <div class="layout">
+                    <h2>{$index_9.title|default='望子成龙公益活动'}</h2>
+                    <p class="info">
+                        {$index_9.descript|default='2017年11月25日走基层送温暖，望子成龙千里奔赴甘孜州白玉县献爱心<br/>
+                        2016年11月22日望子成龙寒冬送暖，奉献近30万元助推武胜'}
+                    </p>
+                    <p>{$index_9.descript_1|default=''}</p>
+                    <div class="playCircle"></div>
+
+                    <if condition="empty($index_9.more.video.file_urls)">
+                        <span class="dot"
+                              data-title=" 　　"
+                              data-src="https://ojc93nz4u.qnssl.com/%E4%BB%BB%E6%B3%8914-HD%20720p.mp4"></span>
+                        <else />
+                        <span class="dot"
+                              data-title=" 　　"
+                              data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}"></span>
+                    </if>
+
+                </div>
+            </div>
+        </if>
+        <!--模块十-->
+        <div id="Glory">
+            <div class="layout">
+                <h2>{$index_10.title|default='屡获大奖，成绩见证发展'}</h2>
+                <p class="info">{$index_10.descript|default='揽获新浪教育、网易教育等行业教育类奖项'}</p>
+                <ul>
+                    <notempty name="index_10.more.append">
+                        <foreach name="index_10.more.append" item="i10" key="i10k" >
+                            <li>
+                                <img class="CCTV1" src="{:cmf_get_image_preview_url($i10.thumbnail)}" alt="1对1定制学习方案"/>
+                                <p class="gloryType">{$i10.name|default='在线教育创业路演亚军'}</p>
+                                <p class="conferCompany">{$i10.value|default='新浪教育颁发'}</p>
+                            </li>
+                        </foreach>
+                    </notempty>
+                </ul>
+
+            </div>
+        </div>
+        <!--模块十一-->
+        <div id="CCTV" class="attached-bg">
+            <div class="layout">
+                <h2>{$index_11.title|default='CCTV报道 权威媒体发声'}</h2>
+                <p class="info">{$index_11.descript|default='CCTV新闻联播报道、CEO出席第一财经频道《头脑风暴》节目'}</p>
+                <ul>
+                    <notempty name="index_11.more.append">
+                        <foreach name="index_11.more.append" item="i11" key="i11k" >
+                            <li>
+                                <a target="_blank" rel="external nofollow"
+                                   href="{$i11.value|default='#'}">
+                                    <img class="CCTV1" src="{:cmf_get_image_preview_url($i11.thumbnail)}" alt="1对1定制学习方案"/>
+                                    <span>查看相关报道 ></span>
+                                </a>
+                            </li>
+                        </foreach>
+                    </notempty>
+                </ul>
+            </div>
+        </div>
+
+        <div id="wzclStuPlayerPopup">
+            <div class="overlay"></div>
+            <div class="popup-container">
+                <div class="popup-content">
+                    <div class="popup-body">
+                        <div class="stu-player" data-ratio='16:9'></div>
+                    </div>
+                    <div class="popup-foot">
+                        <span class="title">标题</span><span class="btn-close">关闭</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="to-top J-top">-->
+            <!--<img src="__WAPSTATIC__/picture/top.png" alt="">-->
+        <!--</div>-->
+
+        <script>
+            var _bookUserIdentifier = (typeof localStorage == 'undefined' ? '' : localStorage._bookUserIdentifier) || new Date().getTime() + '' + Math.random();
+            localStorage._bookUserIdentifier = _bookUserIdentifier;
+
+            var _trackedPageView = false;
+
+            window.addEventListener && window.addEventListener('load', trackPageView);
+            window.addEventListener && window.addEventListener('DOMContentReady', trackPageView);
+            window.attachEvent && window.attachEvent('onload', trackPageView);
+
+            function trackPageView() {
+                if (_trackedPageView) {
+                    return;
+                }
+
+                _trackedPageView = true;
+
+                // _mvq.push(['$setGeneral', 'goodsdetail', '', '', _bookUserIdentifier]);
+                // _mvq.push(['$logConversion']);
+                //
+                // _mvq.push(['$setGeneral', 'register', '', '', _bookUserIdentifier]);
+                // _mvq.push(['$logConversion']);
+            }
+        </script>
+
+        <div class="img-box">
+            <img class="img" src="__WAPSTATIC__/picture/enroll.png"/>
+        </div>
+
+        <include file="public/reservation-bar" />
+
+        <include file="public/reservation" />
+        <!---------右侧定位---------->
+        <div class="right_location">
+            <p><img src="__WAPSTATIC__/images/suspension_tel.png" alt=""></p>
+            <div class="phone">
+                <img src="__WAPSTATIC__/images/phone.png" alt="">
+                <div class="clickBox">
+                    <div class="clickItem">
+                        <img src="__WAPSTATIC__/images/freePhone.png" alt="">
+                        <input type="text" placeholder="请输入您的电话号码">
+                        <div>确定</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scrollTop fixed-nav-item fixed-nav-to-top"><img src="__WAPSTATIC__/images/scrollTop.png"
+                                                                        alt=""/></div>
+        </div>
+        <!-- <script src="__WAPSTATIC__/js/entrance.js" data-args="manual=true" class="zhiCustomBtn" id="zhichiScript"></script> -->
+        <!----------底部------------>
+        <include file="public/footer" />
+
+        <div id="declaration-popup" class="">
+            <!--<div class="mask"></div>-->
+            <div class="inner-box">
+                <b class="title">声明</b>
+                <b class="member">各位家长学员:</b>
+                <p></p>
+                <p> </p>
+                <div>
+                    <span>望子成龙</span>
+                    <i>2017年2月18日</i>
+                </div>
+                <img class="J-close-btn close" src="__WAPSTATIC__/picture/close_db52052.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="activity-rule" class="">
+        <div class="inner-box">
+            <h2>活动规则</h2>
+            <span class="close-btn"></span>
+            <div class="grey-con">
+                <div class="grey-desc">
+                    1. 活动期间，购买80课时（含）以上的学员可参与冲刺期中考活动；</br>
+                    2. 参与活动的用户可免费获赠所购买课时包的15%课时数（例如购买80课时可额外获赠12课时课程，购买320课时可额外获赠48课时）；</br>
+                    3.若使用学费分期，则可获赠所购买课时包的10%课时数。
+                </div>
+            </div>
+            <div class="know">我知道了</div>
+        </div>
+        <div class="fox"></div>
+    </div>
+
+
+    <!-- <script type="text/javascript"  data-lxb-uid="8042656" data-lxb-gid="211050" src="__WAPSTATIC__/js/api.js' + new Date().getTime() + '" charset="utf-8"></script> -->
+    <script src="__WAPSTATIC__/js/entrance.js" data-args="manual=true"
+            class="zhiCustomBtn" id="zhichiScript"></script>
+    <div id="callbubble-alert-bg">
+        <div class="callbubble-alert">
+            <div class="callbubble-alert-heard">
+                <div class="callbubble-alert-close" id="callbubble-alert-close"></div>
+            </div>
+            <div class="callbubble-alert-body" id="callbubble-alert-success">
+                <img src="__WAPSTATIC__/picture/alert_success_1af4557.png" alt="">
+                <span class="alert-body-word">
+                <h2>提交成功！</h2>
+                <p>敬请留意
+                    <em> 021 </em>开头的客服电话~</p>
+            </span>
+            </div>
+            <div class="callbubble-alert-body" id="callbubble-alert-err">
+                <img src="__WAPSTATIC__/picture/alert_err_01c5680.png" alt="">
+                <span class="alert-body-word">
+                <h2>请输入正确的手机号 !</h2>
+                <p>请按正确的格式填写~</p>
+            </span>
+            </div>
+            <div class="callbubble-alert-bt" id="callbubble-alert-bt">
+                <div>
+                    确定
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="application/json" data-id="wzcl.data.gradeTosubject">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.subjectLabel">
+        {}
+    </script>
+
+
+    <script type="application/json" data-id="wzcl.data.gradeLabel">
+        []
+    </script>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/mod_96dd55b.js"></script>
+    <script type="text/javascript">require.resourceMap({
+        "res": {
+            "common:widget/picker/src/legacy.js": {
+                "url": "/static/common/widget/picker/src/legacy_c9e7119.js",
+                "pkg": "common:p4"
+            },
+            "common:widget/picker/src/picker.js": {
+                "url": "/static/common/widget/picker/src/picker_039f21b.js",
+                "deps": ["common:widget/jquery/1.11.3/jquery.js"],
+                "pkg": "common:p4"
+            },
+            "common:widget/picker/src/picker.date.js": {
+                "url": "/static/common/widget/picker/src/picker.date_99ad5a9.js",
+                "deps": ["common:widget/picker/src/picker.js", "common:widget/jquery/1.11.3/jquery.js"],
+                "pkg": "common:p4"
+            },
+            "common:widget/picker/src/picker.time.js": {
+                "url": "/static/common/widget/picker/src/picker.time_0bf3d0a.js",
+                "deps": ["common:widget/picker/src/picker.js", "common:widget/jquery/1.11.3/jquery.js"],
+                "pkg": "common:p4"
+            },
+            "common:widget/picker/src/translations/zh_CN.js": {
+                "url": "/static/common/widget/picker/src/translations/zh_CN_519689b.js",
+                "deps": ["common:widget/jquery/1.11.3/jquery.js"],
+                "pkg": "common:p4"
+            },
+            "common:widget/picker/picker.js": {
+                "url": "/static/common/widget/picker/picker_dac137e.js",
+                "deps": ["common:widget/picker/src/legacy.js", "common:widget/picker/src/picker.js", "common:widget/picker/src/picker.date.js", "common:widget/picker/src/picker.time.js", "common:widget/picker/src/translations/zh_CN.js"],
+                "pkg": "common:p4"
+            }
+        }, "pkg": {"common:p4": {"url": "/static/common/pkg/picker_b092db4.js"}}
+    });</script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/common_e3a1aa0.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/all_a8d1492.js"></script>
+    <!--<script type="text/javascript" src="__WAPSTATIC__/js_new/tj_6aa9dec.js"></script>-->
+    <script type="text/javascript" src="__WAPSTATIC__/js/evaluate_9c498a1.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/tool_857ec5d.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/widget_eb26251.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/lessonsystem_0967e01.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/declaration-popup_7b4a0f1.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/activity-rule_9853212.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/activity-rule_45235fa.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/media_a50316e.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/embed_c9bf5d9.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/flash-media_ca519b3.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/html5-media_e9a7ea9.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/player.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/swiper.jquery_2bbae26.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js/jquery.superslide.2.1.1_cc074b2.js"></script>
+    <script type="text/javascript" src="__WAPSTATIC__/js_new/index_840ddb9.js"></script>
+    <!--<script type="text/javascript" src="__WAPSTATIC__/js_new/tj.js"></script>-->
+    <script type="text/javascript">
+    !function () {
+        if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+        require('desktop:widget/nav-version5/nav-version5.js');
+    }();
+    !function () {
+        require("desktop:widget/quick-appoint-renew/quick-appoint-renew.js");
+    }();
+    !function () {
+        require("desktop:widget/footer-version-renew/footer-version-renew.js");
+    }();
+    !function () {
+        require("desktop:widget/declaration-popup/declaration-popup.js");
+    }();
+    !function () {
+        require("desktop:widget/activity-rule-year/activity-rule.js");
+    }();
+    !function () {
+        if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+        WZ_CFG.zeroClipboardSwfPath = '/static/common/widget/zeroclipboard/2.0.0/ZeroClipboard_8fd7d9f.swf';
+        require.async('desktop:widget/fixednav-new/fixednav-new.js');
+    }();
+    $('.right_location .phone .clickBox .clickItem>div').on('click',function()
+    {
+        $.ajax({url: "/Wap/api/unknowRegister",type: "POST",dataType: "json",data: {mobile:$('.right_location .phone .clickBox .clickItem>input').val()}
+        }).success(function (e) {
+            alert(e.msg)
+        }).fail(function () {
+            alert("提交失败了，再试一遍吧")
+        })
+    })
+    </script>
+    <!--<script type="text/javascript" src="__WAPSTATIC__/js_new/acc.js" crossorigin defer></script>-->
+    <script type="text/javascript" src="__WAPSTATIC__/js/classes.js"></script>
+</body>
+    <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10179248/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+</block>

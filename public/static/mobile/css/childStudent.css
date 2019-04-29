@@ -1,0 +1,293 @@
+.carousel-caption{
+	bottom: 0 !important;
+}
+.carousel-caption > .recommend{
+	color: #ffffff;
+	font-size: 0.4rem;
+	text-align: center;
+	line-height: 0.6rem;
+}
+.carousel-caption > .improved{
+	color: #ffffff;
+	font-size: 0.26rem;
+	text-align: center;
+	margin-top: 0.2rem;
+	letter-spacing: 1px;
+}
+/*儿童学院简介开始*/
+.head{
+	height: 5.18rem;
+	padding-top: 0.85rem;
+	box-sizing: border-box;
+	background: url(../img/childStudent/child.png);
+	background-size: 100% 100%;
+	text-align: center;
+}
+.head > .introduction{
+	width: 3.2rem;
+}
+
+.videoes{
+	background: url(../img/childStudent/video.png);
+	background-size: 100% 100%;
+	position: relative;
+}
+.medal{
+	position: absolute;
+	width: 0.8rem;
+	top: -0.35rem;
+	right: 8%;
+}
+.tips{
+	margin: 0 0.45rem;
+	background: #ffffff;
+	border-radius: 12px;
+	box-sizing: border-box;
+	padding: 0.45rem 0.4rem 0.2rem;
+}
+.tips > div{
+	font-size: 0.24rem;
+	color: #999999;
+	margin-bottom: 0.2rem;
+	line-height: 0.48rem;
+	letter-spacing: 1px;
+}
+/*儿童视频引用*/
+.videoWraper{
+	height: 5.6rem;
+	margin-top: 1.7rem;
+}
+.videoWraper > img{
+	height: 100%;
+	width: 100%;
+}
+/*儿童视频引用*/
+
+/*课程开始*/
+.course{
+    padding-top: 0.8rem;
+    box-sizing: border-box;
+}
+.caption{
+    height: 0.65rem;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+.caption > img{
+    height: 100%;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 6.6rem;
+    margin: 0 auto;
+}
+.title > li{
+    height: 1rem;
+    flex: 1;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    color: #FFFFFF;
+}
+.title > li:first-child{
+    background: #ffaf24;
+}
+.title > li:nth-child(2){
+    background: #d74c42;
+}
+.title > li:nth-child(3){
+    background: #76e412;
+}
+.detail{
+    position: relative;
+    height: 6.6rem;
+    margin-bottom: 0.6rem;
+    width: 6.6rem;
+    margin: 0 auto;
+}
+.detail > li{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.36rem 0.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.detail > li > div{
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+.improve{
+    font-size: 0.26rem;
+    line-height: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+.detail > li:first-child{
+    background: linear-gradient(#ffaf24,#ffd086);
+    border-radius: 0px 25px 25px 25px;
+}
+.detail > li:nth-child(2){
+    background: linear-gradient(#d74c42,#ff6e64);
+    border-radius: 25px;
+}
+.activedd{
+    z-index: 99;
+}
+.detailWraper.actived{
+    z-index: 99;
+}
+.detail > li:last-child{
+    background: linear-gradient(#76e412,#c5fc46);
+    border-radius: 25px 0px 25px 25px;
+}
+.ability > ul{
+    display: flex;
+    margin-bottom: 0.2rem;
+}
+.ability > ul > li{
+    width: 33.3%;
+    color: #ffffff;
+}
+.ability > ul > li:nth-child(2){
+    text-align: center;
+}
+.ability > ul > li:last-child{
+    text-align: right;
+}
+.special{
+    margin-bottom: 0.7rem;
+}
+.special > div,
+.ability > div{
+    color: #ffffff;
+    line-height: 0.5rem;
+    font-size: 0.28rem;
+}
+.special > h5,
+.ability > h5{
+    font-size: 0.36rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+.play{
+    height: 5rem;
+    margin-top: 1rem;
+}
+.play > img{
+    height: 100%;
+    width: 100%;
+}
+/*收费开始*/
+.charge{
+    height: 22rem;
+    box-sizing: border-box;
+    padding-top: 0.7rem;
+}
+.code{
+    height: 10rem;
+    width: 100%;
+    background: url(../img/childStudent/bg_code.png);
+    background-size: 100% 100%;
+}
+.gift{
+    height: 1.3rem;
+    padding: 0 0.56rem;
+    box-sizing: border-box;
+    margin-bottom: 0.7rem;
+}
+.gift > img{
+    height: 100%;
+    width: 100%;
+}
+.teacher_info{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 0.8rem;
+    margin-bottom: 0.6rem;
+}
+.teacher_info > li{
+    text-align: center;
+    width: 2.6rem;
+    height: 3.4rem;
+    color: #ffffff;
+    font-size: 0.3rem;
+}
+.teacher_info > li > img{
+    width: 100%;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+.detail_charge > .detailWraper:nth-child(1){
+    background: linear-gradient(#ffaf24,#ffd086);
+    border-radius: 0px 20px 20px 20px;
+}
+.detail_charge > .detailWraper:nth-child(2){
+    background: linear-gradient(#d74c42,#ff6e64);
+    border-radius: 20px;
+}
+.detail_charge > .detailWraper:nth-child(3){
+    background: linear-gradient(#76e412,#c5fc46);
+    border-radius: 20px 0px 20px 20px;
+}
+.detailWraper{
+    border-radius: 20px;
+    position: relative;
+}
+.detailWraper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+.detailWraper > ul{
+    display: flex;
+    margin: 0.25rem 0.23rem;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 20px;
+}
+.detailWraper > ul > li{
+    width: 33%;
+    text-align: center;
+    padding-top: 0.4rem;
+}
+.detailWraper > ul > li > h3{
+    font-size: 0.3rem;
+    height: 1rem;
+    color: #e3574c;
+    font-weight: bold;
+}
+.detailWraper > ul > li > h3 > span{
+    font-size: 0.2rem;
+    color: #e3574c;
+}
+.detailWraper > ul > li > ul > li{
+    font-size: 0.26rem;
+    margin-bottom: 0.2rem;
+    color: #e3574c;
+    letter-spacing: 1px;
+    height: 0.7rem;
+}
+.detailWraper:nth-child(1) > ul > li:nth-child(2){
+    border-left: 0.06rem solid;
+    border-right: 0.06rem solid;
+    border-image: linear-gradient(#ffaf24,#ffd086)1 10 1; /* 标准的必须写在最后 */
+}
+.detailWraper:nth-child(2) > ul > li:nth-child(2){
+    border-left: 0.06rem solid;
+    border-right: 0.06rem solid;
+    border-image: linear-gradient(#d74c42,#ff6e64)1 10 1; /* 标准的必须写在最后 */
+}
+.detailWraper:nth-child(3) > ul > li:nth-child(2){
+    border-left: 0.06rem solid;
+    border-right: 0.06rem solid ;
+    border-image: linear-gradient(#76e412,#c5fc46)1 10 1; /* 标准的必须写在最后 */
+}
+
+
+

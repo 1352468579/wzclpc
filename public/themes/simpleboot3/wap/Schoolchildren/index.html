@@ -1,0 +1,621 @@
+<extend name="public/layout"/>
+<block  name="head">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>望子成龙-儿童学院</title>
+  <include file="public/header1" /></block>
+<block name="body">
+<!--[if lt IE 7]>
+		<body class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+		<body class="lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>
+		<body class="lt-ie10 lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>
+		<body class="lt-ie10 ie9"> <![endif]-->
+<!--[if gt IE 9]> -->
+
+		<body>
+			
+		<!-- <![endif]-->
+<div id="wrapper"> 
+  <!---------nav导航----------> 
+  <include file="public/header" /> 
+  <!--分割天与地-->
+  <style>
+		body{
+			font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif","微软雅黑";
+		}
+	  .mfsta{margin: 3% auto 6% auto !important; color:#fff !important; background: #fa3f43 !important;}
+		.banner {
+			background: url(http://www.wzclxx.com/upload/admin/20181113/etxy_01.png) center no-repeat;
+			    
+				}
+		.banner a{
+			color:#fff !important;
+			background: #fa3f43 !important;
+	  }
+		.childa{
+			background:url(http://www.wzclxx.com/upload/admin/20181113/etxy_02.png) center no-repeat; 
+		    padding: 3% 0px;
+		}
+		.childa h2{
+			color: #333;
+		    margin: 0% 0 6% 0;
+            font-size: 24px;
+            text-align: center;
+
+		}
+		.childa p{
+	       line-height: 34px;
+           margin-left: 27%;
+           font-size: 16px;
+           color: #3d3d3d;
+           padding: 0% 0 2% 0;
+		}
+	  	  /*视频*/
+	  #video .layout .videoContainer .videoImg{height:auto !important;}
+	  #video .layout .videoContainer .dot{top:130px!important;}
+		#video{
+			background: url(http://www.wzclxx.com/upload/admin/20181113/etxy_03.png) no-repeat center;
+		    text-align: center;
+			margin: 0 0 6% 0
+		}
+			
+		@media (max-width:1600px){
+					.childa p{
+						margin-left:23%;
+					}
+				}
+        @media (max-width:1440px){
+            .childa p{
+                margin-left:20%;
+            }
+        }
+		#video .layout .videoContainer{float:none!important;}
+		#video .layout .videoContainer .dot{
+					left: 46.7%!important;
+				}
+	  /*课程*/
+	  .childc h2{color:#333;}
+	  #tabs{
+	overflow: hidden;
+	margin: 0 auto;
+	width: 1200px;
+	}
+	#tabs ul{
+	width:56% !important;
+	margin: 30px auto;
+	list-style: none;
+    display: block;
+    line-height: 100px;
+    overflow: hidden;
+	}
+	#tabs ul li{
+	margin-right: 16% ;
+	list-style: none;
+    float: left ;
+    width: 150px;
+	border-radius: 60px;
+	line-height: 44px;
+    margin-left: 2px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+	border:1px #ddd solid;
+	}
+	#tabs ul li:nth-child(3n){
+	margin-right: 0 ;
+	}
+	#lists .activetab{		
+	background:#fa3f43;
+	color:#fff;
+
+	}
+	.hides{
+    text-align: center;
+	display: none;
+    float: left;
+    width: 100%;
+	
+	}
+	div .activetab{
+	display:block;
+	}
+
+	.hides span{
+		font-size:16px;
+		color: #fff; 
+		display: inline-block; 
+		width: 150px;
+		line-height: 44px;
+		margin: 2% 0;
+		font-family: "微软雅黑";
+		letter-spacing:2px;
+		text-align: center;
+		background: #fa3f43;
+		border-radius: 60px;
+	}
+	  .hides div p{
+		  font-size: 16px;
+	  }
+	  .hides div p:nth-child(1){
+		  
+          padding: 6% 0 0 0;
+	  }
+	  #tabs .hides div ul{
+		  margin-top:0;
+	  }
+	 #tabs .hides div ul li{
+	
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+	border:none;
+	  }
+	  /*课程费用*/
+	    /*课程*/
+	  .childd{text-align:center;}
+	  .childd h2{color:#333;}
+	  .childd p{font-size: 16px; color:#969696;}
+	  #tabss{
+	overflow: hidden;
+	margin: 0 auto;
+	width: 1200px;
+	}
+	#tabss ul{
+	width:56% !important;
+	margin: 30px auto;
+	list-style: none;
+    display: block;
+    line-height: 100px;
+    overflow: hidden;
+	}
+	#tabss ul li{
+	margin-right: 16% ;
+	list-style: none;
+    float: left ;
+    width: 150px;
+	border-radius: 60px;
+	line-height: 44px;
+    margin-left: 2px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+	border:1px #ddd solid;
+	}
+	#tabss ul li:nth-child(3n){
+	margin-right: 0 ;
+	}
+	#listss .activetabs{		
+	background:#fa3f43;
+	color:#fff;
+
+	}
+	.hidess{
+    text-align: center;
+	display: none;
+    float: left;
+    width: 100%;
+	
+	}
+	div .activetabs{
+	display:block;
+	}
+	
+	.hidess span{
+		font-size:16px;
+		color: #fff; 
+		display: inline-block; 
+		width: 290px;
+		line-height: 45px;
+		margin: .2% 0;
+		font-family: "微软雅黑";
+		letter-spacing:2px;
+		text-align: center;
+		
+	
+	}
+	  .hidess div p{
+		  font-size: 16px;
+	  }
+	  .hidess div p:nth-child(1){
+		  
+          padding: 0 0 0 0;
+	  }
+	  .hidess div p:nth-child(1) span{
+		  font-size: 18px;
+		  line-height: 76px;
+	  }
+	  #tabss .hidess div ul{
+		  margin-top:0;
+	  }
+	 #tabss .hidess div ul li{
+	
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+	border:none;
+	  }
+	  .hidesstwo p{
+		  
+	  }
+	  .hidesstwo p span{
+		  width: 236px;
+		  line-height: 42px;
+	  }
+	  .hidesstwo p:nth-child(1) span{
+		  font-size: 18px;
+          line-height: 56px !important;
+	  }
+	  .hidessthree p:nth-child(1) span{
+		  line-height: 70px !important;
+	  }
+	  .hidessthree p span{
+		  margin: 0 0;
+		  line-height: 28px;
+		  width: 324px;
+	  }
+	  /*底部二维码*/
+	  .QRcode{
+		  text-align: center;
+		  padding: 8% 0;
+		  background:url(http://www.wzclxx.com/upload/admin/20181113/etxy_11.png) no-repeat top;
+	  }
+	  .QRcode p{
+		  font-size: 16px;
+		  color: #fff;
+		  line-height: 24px;
+	  }
+	  .QRcode ul{
+		  overflow:hidden;
+	      width: 960px;
+		  margin: 3% auto 1% auto;
+	  }
+	  .QRcode ul li{
+		  padding-right: 11%;
+		  float:left;
+	      text-align: center;
+	  }
+	  .QRcode ul li:nth-child(4){
+		  padding-right: 0;
+	  }
+	  .QRcode ul li p{
+		  color:#fff;
+		  font-size:16px;
+		  line-height: 24px;
+	  }
+	</style>
+
+  
+  <!--banner-->
+  <div class="banner">
+    <div class="main">
+      <ul>
+        <li>
+          <h1>儿童学院，全新上线</h1>
+        </li>
+        <li>
+          <h2>8.8折 （团购即享）</h2>
+        </li>
+        <li>
+          <h3>特色课程</h3>
+        </li>
+        <a href="javascript:;" class="contact_btn J-trigger-reservation-form">预约报名</a>
+      </ul>
+    </div>
+  </div>
+  <!--儿童学院简介-->
+  <div class="childa">
+    <h2>儿童学院简介</h2>
+    <p>2-15岁是孩子智能发展的关键期<br>
+      抓住关键期培养孩子的学习能力对孩子优势智能的培养尤为主要。<br>
+      望子成龙儿童学院专注2-15岁幼少儿素质教育20年，<br>
+      以“童商教育”（3Q：IQ智商、EQ情商、AQ逆商）为基础，<br>
+      实践国外先进的教育理念，<br>
+      通过科学、完善的教学体系及多元化的教学方法全面提升孩子的学习能力，<br>
+      达到培养孩子综合智能的目标。<br>
+      儿童学院内设有思维馆、绘本馆及艺术馆，<br>
+      涵盖丰富的智能培训特色课程。</p>
+  </div>
+  <!--视频-->
+	<div id="video">
+            <div class="layout">
+                <h2>望子成龙儿童学院视频</h2>
+                <div class="videoContainer" data-title="在线教育，孩子提分新方式" data-src="http://www.wzclxx.com/vedol/syxc.mp4">
+                    <img class="videoImg" src="http://www.wzclxx.com/upload/admin/20181113/sp_03.png" alt="儿童特色课程">
+                    <div class="playCircle"></div>
+                    <span class="dot" data-title="在线教育，孩子提分新方式" data-src="http://www.wzclxx.com/vedol/syxc.mp4"></span>
+                </div>
+            </div>
+        </div>
+        <div id="wzclStuPlayerPopup">
+            <div class="overlay"></div>
+            <div class="popup-container">
+                <div class="popup-content">
+                    <div class="popup-body">
+                        <div class="stu-player" data-ratio='16:9'></div>
+                    </div>
+                    <div class="popup-foot" style="    margin-top: .4rem;">
+                        <!--<span class="title">标题</span>-->
+                        <span class="btn-close">关闭</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+  <!--<div id="video">
+    <div class="layout">
+      <h2>望子成龙儿童学院视频</h2>
+      <p class="info"></p>
+      <div class="" data-title="儿童学院"  data-src="">
+		  <video src="http://www.wzclxx.com/vedol/syxc.mp4" width="600px" controls=""></video>
+        </div>
+    </div>
+  </div>-->
+  <!--儿童学院课程体系-->
+  <div class="childc">
+    <h2>儿童学院课程体系</h2>
+    <div id="tabs">
+      <ul id="lists">
+        <li class="abc activetab">绘本馆</li>
+        <li class="abc ">思维馆</li>
+        <li class="abc ">艺术馆</li>
+      </ul>
+      <div class="hides     activetab">
+        <div style="background: url(http://www.wzclxx.com/upload/admin/20181113/etxy_06.png) center no-repeat; padding: 3% 0;">
+          <p>多角度培养孩子语文思维、阅读分析、理解表达等能力，让孩子阅古览今、乐于表达善于写作，提升孩子文科综合素养。</p>
+          <span>特色课程</span>
+          <p>国学绘本阅读、龙翼国学、皇家唱诗班、<br>
+            故事拼音、趣味识字、龙言语文<br>
+            硬笔书法、软笔书法、中华写字课、书法考级<br>
+            外教绘本阅读、乐学英语、外教双师班、新国标英语考级<br>
+            新概念英语、托福、雅思、出国英语、全外教口语</p>
+          <span>六大能力</span>
+          <ul>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>阅读力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>欣赏力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>理解力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>语用力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>表达力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>习作力</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hides    ">
+        <div style="background: url(http://www.wzclxx.com/upload/admin/20181113/etxt1_06.png) center no-repeat; padding: 3% 0; background-size:74%;">
+          <p>运用先进思维教学系统，让孩子探究思维课程的奥秘，培养数学思维能力，提升孩子理科综合素养。</p>
+          <span>特色课程</span>
+          <p>STEM科学实验、麦卡赛机器人<br>
+            小小心算师、蒙氏数学、启智数学、满分数学 </p>
+          <span>六大能力</span>
+          <ul>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>运算力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>创新力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>逻辑推理力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>空间想象力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>应用力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>记忆力</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hides  ">
+        <div style="background: url(http://www.wzclxx.com/upload/admin/20181113/etxy_06.png) center no-repeat; padding: 3% 0;">
+          <p>多元化培养孩子的审美力和艺术鉴赏力，让孩子善于交流、快乐自信、阳光积极、闪闪发光、全能发展！</p>
+          <span>特色课程</span>
+          <p>创意儿童画、美术涂鸦、美术考级、DIY设计、美术启蒙<br>
+            小主持与表演、少儿口才与思维、语言艺术与表达、播音主持与艺术<br>
+            拉丁舞、街舞、中国舞、芭蕾舞、爵士舞、古典舞、民族舞、舞蹈启蒙、舞蹈考级<br>
+            钢琴、吉他、萨克斯、琵琶、古筝、竖笛、单簧管、小提琴、器乐启蒙、器乐考级<br>
+            声乐启蒙、声乐考级、乐理知识、小小合唱团、中华武术、散打、跆拳道</p>
+          <span>六大能力</span>
+          <ul>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>审美力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>艺术鉴赏力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>自信表现力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>耐力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>应变力</li>
+            <li><img src="http://www.wzclxx.com/upload/admin/20181113/okicon_07.png" alt=""/>专注力</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+	  <a href="javascript:;" class="contact_btn J-trigger-reservation-form mfsta">预约报名</a>
+  </div>
+  
+  <!--课程费用-->
+  <div class="childd">
+    <h2>儿童学院课程收费</h2>
+    <p>注意：下表中价格为一次课价格 课时为1.5小时/次</p>
+    <div id="tabss">
+      <ul id="listss">
+        <li class="abcd activetabs">绘本馆</li>
+        <li class="abcd ">思维馆</li>
+        <li class="abcd ">艺术馆</li>
+      </ul>
+      <div class="hidess     activetabs">
+        <div style="background: url(http://www.wzclxx.com/upload/admin/20181113/etxy_09.png) center no-repeat; padding: 0 0;">
+          <p><span>课程</span><span>级别</span><span>价格(1.5小时/次)</span></p>
+          <p><span>乐学英语</span><span>1级</span><span>120元</span></p>
+          <p><span>乐学英语</span><span>2级</span><span>130元</span></p>
+          <p><span>乐学英语</span><span>3级</span><span>140元</span></p>
+          <p><span>外教双师班</span><span>1-3级</span><span>150元(一小时)</span></p>
+          <p><span>书法 书法考级</span><span>中华写字课</span><span>80元</span></p>
+          <p><span>书法 书法考级</span><span>2-3级</span><span>80元</span></p>
+          <p><span>书法 书法考级</span><span>4-5级</span><span>90元</span></p>
+          <p><span>书法 书法考级</span><span>6-7级</span><span>110元</span></p>
+          <p><span>书法 书法考级</span><span>8-9级</span><span>130元</span></p>
+          <p><span>书法 书法考级</span><span>10级</span><span>150元</span></p>
+          <p><span>故事拼音</span><span>1-2级</span><span>90元</span></p>
+          <p><span>趣味识字</span><span>1-3级</span><span>100元</span></p>
+          <p><span>小才子语文</span><span>1-3级</span><span>100元</span></p>
+          <p><span>外教绘本阅读</span><span>1-6级</span><span>160元</span></p>
+          <p><span>国学绘本阅读</span><span>1-6级</span><span>140元</span></p>
+          <p><span>乐动唱诗班</span><span>1-4级</span><span>100元</span></p>
+        </div>
+      </div>
+      <div class="hidess    hidesstwo">
+        <div style="background: url(http://www.wzclxx.com/upload/admin/20181113/etxt1_09.png) top no-repeat; padding:0 0 42% 0; background-size:74%;">
+          <p><span>课程</span><span>级别</span><span>价格(1.5小时/次)</span></p>
+          <p><span>科学实验室</span><span>1-6级</span><span>140元</span></p>
+          <p><span>麦卡赛机器人</span><span>1-6级</span><span>140元</span></p>
+          <p><span>珠心算</span><span>1-10级</span><span>100元</span></p>
+          <p><span>启智数学</span><span>1-3级</span><span>100元</span></p>
+        </div>
+      </div>
+      <div class="hidess hidessthree">
+        <div style="background: url(http://www.wzclxx.com/upload/admin/20181113/etxy2_09.png) top no-repeat; padding: 0 0 2% 0; background-size: 81%;">
+          <p><span>课程</span><span>级别</span><span>价格(1.5小时/次)</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>创意儿童画</span><span>80元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>美术涂鸦</span><span>80元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>DIY设计师</span><span>80元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>2-3级</span><span>80元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>4-5级</span><span>90元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>6-7级</span><span>110元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>8-9级</span><span>130元</span></p>
+          <p><span>美术启蒙 美术考级  </span><span>10级</span><span>150元</span></p>
+          <p><span>舞蹈启蒙 舞蹈考级</span><span>幼儿启蒙舞</span><span>60元</span></p>
+          <p><span>舞蹈启蒙 舞蹈考级</span><span>3-4级</span><span>80元</span></p>
+          <p><span>舞蹈启蒙 舞蹈考级</span><span>5-6级</span><span>100元</span></p>
+          <p><span>舞蹈启蒙 舞蹈考级</span><span>7-8级</span><span>120元</span></p>
+          <p><span>舞蹈启蒙 舞蹈考级</span><span>9-10级</span><span>140元</span></p>
+          <p><span>中华武术</span><span>1-6段</span><span>100元</span></p>
+          <p><span>散打王</span><span>1-6段</span><span>100元</span></p>
+          <p><span>跆拳道</span><span>1-6段</span><span>100元</span></p>
+		  <p><span>小主持与表演</span><span>1-3级</span><span>80元</span></p>
+          <p><span>播音与主持</span><span>1-3级</span><span>120元</span></p>
+          <p><span style="width: 80%;">器乐  器乐考级(钢琴、古筝、琵琶、长笛、萨克斯、吉他、小/大提琴等)</span></p>
+          <p><span>器乐 器乐考级</span><span>启蒙</span><span>150元</span></p>
+          <p><span>器乐 器乐考级</span><span>3-4级</span><span>180元</span></p>
+          <p><span>器乐 器乐考级</span><span>5-6级</span><span>200元</span></p>
+          <p><span>器乐 器乐考级</span><span>7-8级</span><span>240元</span></p>
+          <p><span>器乐 器乐考级</span><span>9-10级</span><span>260元</span></p>
+          <p><span>器乐 器乐考级</span><span>乐理知识</span><span>100元</span></p>
+          <p><span>声乐 声乐考级</span><span>声乐启蒙</span><span>150元(1小时/次)</span></p>
+          <p><span>声乐 声乐考级</span><span>小小合唱团</span><span>160元(1小时/次)</span></p>
+          <p><span>声乐 声乐考级</span><span>3-4级</span><span>180元(1小时/次)</span></p>
+          <p><span>声乐 声乐考级</span><span>5-6级</span><span>200元(1小时/次)</span></p>
+          <p><span>声乐 声乐考级</span><span>7-8级</span><span>240元(1小时/次)</span></p>
+          <p><span>声乐 声乐考级</span><span>9-10级</span><span>260元(1小时/次)</span></p>
+          <p style="padding-top: .5%;"><span>声乐 声乐考级</span><span>乐理知识</span><span>100元(1小时/次)</span></p>
+        </div>
+      </div>
+    </div>
+	  	<a href="javascript:;" class="contact_btn J-trigger-reservation-form mfsta">预约报名</a>
+  </div>
+
+  <script type="text/javascript"> 
+		function $(obj){return document.getElementById(obj);}    
+window.onload=function(){    
+   onload1();    
+   onload2();    
+}    
+function onload1(){    
+//获取tabs下的所有div
+var tabs = document.getElementById("tabs");
+var tabs_divs = tabs.getElementsByClassName("hides");
+//获取lists下的所有li
+var tabs_ul = document.getElementById("lists");
+var tabs_lis = tabs_ul.getElementsByTagName("li");
+//给元素添加className
+function addClass(elem,value){
+if(!elem.className){
+elem.className = value;
+}else{
+var newClassName = elem.className;
+newClassName +=" ";
+newClassName +=value;
+elem.className = newClassName;
+}
+}
+//清除默认名
+function deleteClass(elem,value) {
+var newClassName = elem.className;
+if(newClassName.indexOf(value)) elem.className = newClassName.replace(value," ")
+}
+for(var i =0,len = tabs_lis.length; i<len;i++){
+tabs_lis[i].index = i;
+tabs_lis[i].onmouseover = function(){
+for(var j = 0;j<len;j++){
+deleteClass(tabs_lis[j],"activetab");
+deleteClass(tabs_divs[j],"activetab")
+}
+addClass(this,"activetab");
+addClass(tabs_divs[this.index],"activetab")
+}
+}
+}    
+function onload2(){    
+//获取tabs下的所有div
+var tabss = document.getElementById("tabss");
+var tabss_divs = tabss.getElementsByClassName("hidess");
+//获取lists下的所有li
+var tabss_ul = document.getElementById("listss");
+var tabss_lis = tabss_ul.getElementsByTagName("li");
+//给元素添加className
+function addClass(elem,value){
+if(!elem.className){
+elem.className = value;
+}else{
+var newClassName = elem.className;
+newClassName +=" ";
+newClassName +=value;
+elem.className = newClassName;
+}
+}
+//清除默认名
+function deleteClass(elem,value) {
+var newClassName = elem.className;
+if(newClassName.indexOf(value)) elem.className = newClassName.replace(value," ")
+}
+for(var i =0,len = tabss_lis.length; i<len;i++){
+tabss_lis[i].index = i;
+tabss_lis[i].onmouseover = function(){
+for(var j = 0;j<len;j++){
+deleteClass(tabss_lis[j],"activetabs");
+deleteClass(tabss_divs[j],"activetabs")
+}
+addClass(this,"activetabs");
+addClass(tabss_divs[this.index],"activetabs")
+}
+}
+}
+</script> 
+<!--底部二维码板块-->
+	<div class="QRcode">
+	  <h2>报名领取688元大礼包</h2>
+	  <p>微信扫码添加任意一位老师好友咨询活动详情</p>
+		<ul>
+		  <li><img src="http://www.wzclxx.com/upload/admin/20181113/wei_03.png" alt="" title=""/><p>望望老师</p></li>
+		  <li><img src="http://www.wzclxx.com/upload/admin/20181113/wei_05.png" alt="" title=""/><p>子子老师</p></li>
+		  <li><img src="http://www.wzclxx.com/upload/admin/20181113/wei_07.png" alt="" title=""/><p>成成老师</p></li>
+		  <li><img src="http://www.wzclxx.com/upload/admin/20181113/wei_09.png" alt="" title=""/><p>龙龙老师</p></li>	
+		</ul>
+	</div>
+  <!--勿删  右侧与底部--> 
+  <script>
+				var _bookUserIdentifier = (typeof localStorage == 'undefined' ? '' : localStorage._bookUserIdentifier) || new Date().getTime() + '' + Math.random();
+				localStorage._bookUserIdentifier = _bookUserIdentifier;
+				var _trackedPageView = false;
+				window.addEventListener && window.addEventListener('load', trackPageView);
+				window.addEventListener && window.addEventListener('DOMContentReady', trackPageView);
+				window.attachEvent && window.attachEvent('onload', trackPageView);
+				function trackPageView() {
+					if(_trackedPageView) {
+						return;
+					}
+					_trackedPageView = true;
+				}
+			</script>
+  <div class="img-box"> <img class="img" src="__WAPSTATIC__/curriculum/img/enroll.png" style="display: block; opacity: 1;"> </div>
+  <include file="public/reservation-bar" /> <include file="public/reservation" /> 
+  <!---------右侧定位----------> 
+  <include file="public/right" /> 
+  <!----------底部------------> 
+  <include file="public/footer" /> <include file="public/sm" /> </div>
+<include file="public/activity-rule" /> <include file="public/callbubble-alert-bg" /> <include file="public/js" />
+</body>
+    <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10179248/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+</block>

@@ -1,0 +1,178 @@
+<script type="application/json" data-id="wzcl.data.gradeTosubject">		{}</script>
+<script type="application/json" data-id="wzcl.data.subjectLabel">{}</script>
+<script type="application/json" data-id="wzcl.data.gradeLabel">[]</script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/mod_96dd55b.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/common_e3a1aa0.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/all_a8d1492.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/evaluate_9c498a1.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/tool_857ec5d.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/widget_eb26251.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/lessonsystem_0967e01.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/declaration-popup_7b4a0f1.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/activity-rule_9853212.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/activity-rule_45235fa.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/media_a50316e.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/embed_c9bf5d9.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/flash-media_ca519b3.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/html5-media_e9a7ea9.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/player.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/swiper.jquery_2bbae26.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js/jquery.superslide.2.1.1_cc074b2.js"></script>
+<script type="text/javascript" src="__WAPSTATIC__/js_new/index_840ddb9.js"></script>
+<script type="text/javascript">
+    !function () {
+        if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+        require('desktop:widget/nav-version5/nav-version5.js');
+    }();
+    !function () {
+        require("desktop:widget/quick-appoint-renew/quick-appoint-renew.js");
+    }();
+    !function () {
+        require("desktop:widget/footer-version-renew/footer-version-renew.js");
+    }();
+    !function () {
+        require("desktop:widget/declaration-popup/declaration-popup.js");
+    }();
+    !function () {
+        require("desktop:widget/activity-rule-year/activity-rule.js");
+    }();
+    !function () {
+        if (window.WZ_CFG === undefined) window.WZ_CFG = {};
+        WZ_CFG.zeroClipboardSwfPath = '/static/common/widget/zeroclipboard/2.0.0/ZeroClipboard_8fd7d9f.swf';
+        require.async('desktop:widget/fixednav-new/fixednav-new.js');
+        $('#n-nav-area').find('a').removeClass('current');
+        $('#n-nav-area a:first-child').addClass('current');
+    }();
+    $('.right_location .phone .clickBox .clickItem>div').on('click',function()
+    {
+        $.ajax({url: "/Wap/api/unknowRegister",type: "POST",dataType: "json",data: {mobile:$('.right_location .phone .clickBox .clickItem>input').val()}
+        }).success(function (e) {
+            alert(e.msg)
+        }).fail(function () {
+            alert("提交失败了，再试一遍吧")
+        })
+    })
+</script>
+<script type="text/javascript" src="__WAPSTATIC__/js/classes.js"></script>
+<script type="text/javascript">
+    (function() {
+        var tab_tit = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
+        var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
+        var open = document.getElementById('think_page_trace_open');
+        var close = document.getElementById('think_page_trace_close').children[0];
+        var trace = document.getElementById('think_page_trace_tab');
+        var cookie = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
+        var history = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0, 0];
+        open.onclick = function() {
+            trace.style.display = 'block';
+            this.style.display = 'none';
+            close.parentNode.style.display = 'block';
+            history[0] = 1;
+            document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
+        }
+        close.onclick = function() {
+            trace.style.display = 'none';
+            this.parentNode.style.display = 'none';
+            open.style.display = 'block';
+            history[0] = 0;
+            document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
+        }
+        for(var i = 0; i < tab_tit.length; i++) {
+            tab_tit[i].onclick = (function(i) {
+                return function() {
+                    for(var j = 0; j < tab_cont.length; j++) {
+                        tab_cont[j].style.display = 'none';
+                        tab_tit[j].style.color = '#999';
+                    }
+                    tab_cont[i].style.display = 'block';
+                    tab_tit[i].style.color = '#000';
+                    history[1] = i;
+                    document.cookie = 'thinkphp_show_page_trace=' + history.join('|')
+                }
+            })(i)
+        }
+        parseInt(history[0]) && open.click();
+        tab_tit[history[1]].click();
+    })();
+</script>
+<script>
+    //追加动画 part3
+    $(document).ready(function() {
+        $(".part3 ul li").mouseenter(function() {
+            var a = $(this).children();
+            a.animate({
+                top: '-=10px'
+            }, "100");
+            a.animate({
+                top: '+=10px'
+            }, "100");
+        });
+        $(".part4 ul li").mouseenter(function() {
+            $(this).children().animate({
+                height: '+=10px',
+                width: '+=10px',
+                top: -5,
+                left: -5
+            }, 100);
+        });
+        $(".part4 ul li").mouseleave(function() {
+            $(this).children().animate({
+                height: '-=10px',
+                width: '-=10px',
+                top: 0,
+                left: 0
+            }, 300);
+        });
+    });
+</script>
+<script>
+    //追加动画part5
+    $(document).ready(function() {
+        $(".part5 ul li").mouseenter(function() {
+            $(this).children(".inp5").animate({
+                height: '+=14px',
+                width: '+=14px',
+                left: '-=7px',
+                top: '-=7px'
+            }, 200);
+        });
+        $(".part5 ul li").mouseenter(function() {
+            $(this).children().children(".zhe").animate({
+                height: '100%'
+            }, 200);
+        });
+        $(".part5 ul li").mouseenter(function() {
+            $(this).children().children().children("*").css("color", "#fff");
+        });
+        $(".part5 ul li").mouseenter(function() {
+            $(this).children().children().children("h3").children(".right").children("span").css("background-image", "url(__WAPSTATIC__/curriculum/img/fire_hover.gif)");
+        });
+        $(".part5 ul li").mouseenter(function() {
+            $(this).children().children().children("h3").children(".right").children(".nofire").css("background-image", "url(__WAPSTATIC__/curriculum/img/nofire_hover.png)");
+        });
+        $(".part5 ul li").mouseleave(function() {
+            $(this).children(".inp5").animate({
+                height: '-=14px',
+                width: '-=14px',
+                left: '+=7px',
+                top: '+=7px'
+            }, 200);
+        });
+        $(".part5 ul li").mouseleave(function() {
+            $(this).children().children(".zhe").animate({
+                height: '0'
+            }, 200);
+        });
+        $(".part5 ul li").mouseleave(function() {
+            $(this).children().children().children("*").css("color", "#5e5e5e");
+        });
+        $(".part5 ul li").mouseleave(function() {
+            $(this).children().children().children("h3").children(".right").children("span").css("background-image", "url(__WAPSTATIC__/curriculum/img/fire.gif)");
+        });
+        $(".part5 ul li").mouseleave(function() {
+            $(this).children().children().children("h3").children(".right").children(".nofire").css("background-image", "url(__WAPSTATIC__/curriculum/img/nofire.png)");
+        });
+    });
+</script>

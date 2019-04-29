@@ -1,0 +1,90 @@
+<extend name="Layout/layout" />
+<block name="css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/campusAddress.css" />
+</block>
+<block name="banner"></block>
+<block name="main">
+    <div class="content">
+        <div class="classroom">
+            <div class="explain_text">
+                <div class="text_1">超80个精品校区 </div>
+                <div class="text_1">覆盖整个成都市</div>
+                <div class="text_2"> 规模庞大，资源丰富，是您不二的选择</div>
+            </div>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <foreach name="area_list" item="area">
+                    <div class="swiper-slide" data-area='{$area.area}' data-id='{$area.area_id}' >
+                        <div class="img_address">
+                            <if condition="empty($area.logo)">
+                                <img src="__STATIC__/mobile/img/others/address.png" alt="">
+                                <else/>
+                                <img src="{:cmf_get_image_preview_url($area.logo)}" alt="">
+                            </if>
+                            <if  condition="$area.area_id eq $current_area.area_id">
+                                <div class="mask_address choosed">
+                                    {$area.count}个精品校区
+                                </div>
+                                <else />
+                                <div class="mask_address">
+                                    {$area.count}个精品校区
+                                </div>
+                            </if>
+                        </div>
+                        <if  condition="$area.area_id eq $current_area.area_id">
+                            <div class="region actived">{$area.area}</div>
+                            <else />
+                            <div class="region">{$area.area}</div>
+                        </if>
+                    </div>
+                </foreach>
+            </div>
+            <ul class="routh_info">
+                <li id="area-notice">您选择的是{$current_area.area}</li>
+                <li onclick="window.location.href='/Mobile/Index/school'">查看所有校区》</li>
+            </ul>
+            <div class="schoolList">
+                {$school_list}
+            </div>
+        </div>
+    </div>
+</block>
+<block name="footerJs">
+    <script>
+        //侧滑点击事件
+        $('.subNav li').on('click', function() {
+            $(this).children("img").css('visibility', 'visible');
+            $(this).siblings().children("img").css('visibility', 'hidden');
+        })
+        $('.swiper-slide').on('click',function(){
+            $(this).find('.mask_address').addClass('choosed');
+            $(this).siblings().find('.mask_address').removeClass('choosed');
+            $(this).find('.region').addClass('actived');
+            $(this).siblings().find('.region').removeClass('actived');
+            $('#area-notice').html("您选择的是"+$(this).data('area'));
+            /**********=====---- 执行ajax动态读出校区 ----Mod by w 2019/4/16 14:49=====**********/
+            var id = $(this).data('id'),url = "{:url()}";
+            $.ajax({
+                type:"POST",
+                url:url,
+                data:{id:id},
+                success:function(res){
+                    $(".schoolList").html(res)
+                },
+                beforeSend:function(){
+                    console.log("请求之前！")
+                },
+                complete:function(){
+                    console.log("请求完成！")
+                }
+            });
+        })
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            freeMode: true,
+        });
+    </script>
+</block>
+<block name="register"></block>

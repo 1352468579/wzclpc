@@ -1,0 +1,59 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('About/areaList')}">区域列表</a></li>
+        <li class="active"><a href="{:url('About/areaAdd')}">添加区域</a></li>
+    </ul>
+    <form action="{:url('About/areaAddPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div >
+                <table class="table table-bordered">
+                    <tr>
+                        <th>区域<span class="form-required">*</span></th>
+                        <td>
+                            <div class="js-address-select" url="{:url('About/getRegion')}">
+                                <select class="province-select" name="province">
+                                    <option value="0">请选择一项</option>
+                                    {$province|default=''}
+                                </select>
+                                <select class="city-select" name="city">
+                                    <option value="0">请选择一项</option>
+                                </select>
+                                <select class="district-select" name="district">
+                                    <option value="0">请选择一项</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('About/areaList')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript" >
+    $('.province-select,.city-select,.district-select').change(function () {
+        var $this = $(this)
+        var url = $this.parent().attr('url')
+        var id = $this.selected().val()
+        $.ajax({url:url,data:{id:id},type:"POST",dataType:"JSON",success:function(data){
+                if(data.code == 200)
+                {
+                    $this.selected().val()!=0?$this.next().html('<option value="0">请选择一项</option>'+data.data):$this.nextAll().html('<option value="0">请选择一项</option>')
+                }
+            },error:function (e) {
+                console.log(e)
+            }
+        })
+    })
+</script>
+</body>
+</html>

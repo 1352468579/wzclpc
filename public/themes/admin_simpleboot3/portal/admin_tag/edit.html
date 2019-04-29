@@ -1,0 +1,47 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminTag/index')}">{:lang('ADMIN_TAG_INDEX')}</a></li>
+        <li><a href="{:url('AdminTag/add')}">{:lang('ADMIN_TAG_ADD')}</a></li>
+        <li class="active"><a  href="{:url('AdminTag/edit')}" >{:lang('ADMIN_NAV_EDIT')}</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('AdminTag/editPost')}">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>标签名称:</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" required class="form-control" name="name" value="{$tag.name|default=''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">状态:</label>
+            <div class="col-md-6 col-sm-10">
+                <select name="status" class="form-control">
+                    <foreach name="arrStatus" key="k" item="vo">
+                        <option value="{$k}" {$tag.type=={$k}?"selected":""}>{$vo}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">页面:</label>
+            <div class="col-md-6 col-sm-10">
+                <select name="type" class="form-control">
+                    <option value="news" {$tag.status=="news"?"selected":""}>新闻页</option>
+                    <option value="newsList" {$tag.status=="newsList"?"selected":""}>新闻列表页</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="hidden" name="id" value="{$tag.id|default=''}">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:lang("SAVE")}</button>
+            <a class="btn btn-default" href="__URL__">返回</a>
+        </div>
+    </form>
+
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<include file="public@header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('Attributes/index')}">属性管理</a></li>
+        <li><a href="{:url('Attributes/add')}">添加属性</a></li>
+        <li class="active"><a href="#">属性编辑</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('Attributes/editPost')}">
+        <div class="form-group">
+            <label for="input-name" class="col-sm-2 control-label"><span class="form-required">*</span>名称</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-name" name="name" value="{$attr.name|default=''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-app" class="col-sm-2 control-label"><span class="form-required">*</span>属性值</label>
+            <div class="col-md-6 col-sm-10">
+                <textarea type="text" class="form-control" id="input-app" name="value" >{$attr.value|default=''}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-name" class="col-sm-2 control-label"><span class="form-required"></span>排序</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-list_order" name="list_order" value="10000">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-param" class="col-sm-2 control-label">备注</label>
+            <div class="col-md-6 col-sm-10">
+                <textarea type="text" class="form-control" id="input-param" name="remark" value="{$attr.remark|default=''}"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-param" class="col-sm-2 control-label">图标</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="hidden" name="more[icon]" id="icon" value="{$attr.more.icon|default=''}">
+                <a href="javascript:uploadOneImage('图片上传','#icon');">
+                    <if condition="empty($attr.more.icon)">
+                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                             id="thumbnail-preview"
+                             width="135" style="cursor: pointer"/>
+                        <else/>
+                        <img src="{:cmf_get_image_preview_url($attr.more.icon)}"
+                             id="thumbnail-preview"
+                             width="135" style="cursor: pointer"/>
+                    </if>
+                </a>
+                <input type="button" class="btn btn-sm btn-cancel-icon" value="取消图片">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="id" value="{$attr.id}" />
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('EDIT')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    $('.btn-cancel-icon').click(function () {
+        $('#icon-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+        $('#icon').val('');
+    });
+</script>
+</body>
+</html>

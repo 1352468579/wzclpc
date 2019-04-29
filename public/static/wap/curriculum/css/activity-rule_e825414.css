@@ -1,0 +1,150 @@
+﻿.flexbox {
+	display: -webkit-box!important;
+	display: -webkit-flex!important;
+	display: -ms-flexbox!important;
+	display: flex!important;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap
+}
+
+.clearfix-b {
+	overflow: hidden
+}
+
+#activity-rule {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1999;
+	display: none
+}
+
+#activity-rule.show {
+	display: block
+}
+
+#activity-rule.show:after {
+	background: rgba(0, 0, 0, .5);
+	animation: showMask000 linear .3s;
+	-webkit-animation: showMask000 linear .3s
+}
+
+#activity-rule:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	z-index: -1;
+	background: rgba(0, 0, 0, 0)
+}
+
+#activity-rule .inner-box {
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	top: -100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #fff;
+	background-size: 100% 100%
+}
+
+#activity-rule .inner-box h2 {
+	font-size: 18px;
+	line-height: 18px;
+	color: #2b2b2b;
+	font-weight: 700;
+	margin: 25px auto 15px
+}
+
+#activity-rule .inner-box .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url(../images/close-btn-pc_6c54fa2.png) no-repeat center;
+	background-size: 10px 10px;
+	cursor: pointer
+}
+
+#activity-rule .inner-box .grey-con {
+	margin: 20px auto 0;
+	background: #f0f0f0;
+	padding: 15px;
+	width: 320px
+}
+
+#activity-rule .inner-box .grey-con .grey-desc {
+	text-align: left;
+	overflow-y: scroll;
+	height: 145px;
+	font-size: 16px;
+	line-height: 34px;
+	color: #666
+}
+
+#activity-rule .inner-box .know {
+	width: 160px;
+	height: 40px;
+	border-radius: 4px;
+	background: #ea4949;
+	color: #fff;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+	margin: 11px auto;
+	cursor: pointer
+}
+
+#activity-rule .inner-box .J-close-btn {
+	background: url(../images/iknow.png) no-repeat center;
+	background-size: contain;
+	width: 198px;
+	height: 100px;
+	position: relative;
+	cursor: pointer
+}
+
+#activity-rule .fox {
+	position: absolute;
+	width: 139px;
+	height: 110px;
+	top: 330px;
+	left: 100px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(../images/fox_e1f1105.png) no-repeat center;
+	background-size: 100% 100%
+}
+
+@keyframes showMask000 {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: .5
+	}
+}
+
+@-webkit-keyframes showMask000 {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: .5
+	}
+}

@@ -1,0 +1,413 @@
+﻿.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.pull-right {
+    float: right !important
+}
+
+.main-content {
+    margin: 30px 0 40px;
+    min-height: 432px;
+    *zoom: 1
+}
+
+.main-content:before, .main-content:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.main-content:after {
+    clear: both
+}
+
+.main-content #banner {
+    position: relative;
+    z-index: 1
+}
+
+.main-content #banner .ques-banner {
+    border: 6px solid #fff;
+    cursor: pointer
+}
+
+.main-content #banner .ques-banner img {
+    width: 100%;
+    height: 100%
+}
+
+.main-content .article-content {
+    display: inline-block;
+    width: 790px;
+    margin: 0 15px 0 24px;
+    overflow: hidden
+}
+
+.main-content .article-content .breadNav a, .main-content .article-content .breadNav i {
+    font-size: 14px;
+    color: #414141;
+    display: inline-block;
+    margin-right: 4px
+}
+
+.main-content .article-content .breadNav .article-current {
+    text-decoration: none
+}
+
+.main-content .article-content .articleTabs {
+    margin-top: 18px;
+    *zoom: 1
+}
+
+.main-content .article-content .articleTabs:before, .main-content .article-content .articleTabs:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.main-content .article-content .articleTabs:after {
+    clear: both
+}
+
+.main-content .article-content .articleTabs li {
+    float: left;
+    margin-right: 10px
+}
+
+.main-content .article-content .articleTabs li span.label {
+    display: inline-block;
+    padding: 0 12px;
+    height: 26px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 26px;
+    color: #a0a0a0
+}
+
+.main-content .article-content .articleTabs li span.label a {
+    color: #666;
+    text-decoration: none
+}
+
+.main-content .article-content .articleDetail {
+    margin-top: 11px;
+    margin-right: 20px;
+    color: #000;
+    font-size: 16px;
+    word-wrap: break-word
+}
+
+.main-content .article-content .articleDetail h1.title {
+    color: #000;
+    font-size: 24px;
+    line-height: 41px
+}
+
+.main-content .article-content .articleDetail p.info {
+    line-height: 32px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e7e7e7
+}
+
+.main-content .article-content .articleDetail p.info span {
+    display: inline-block;
+    margin-right: 10px
+}
+
+.main-content .article-content .articleDetail p.info span.author {
+    font-size: 14px;
+    color: #707070
+}
+
+.main-content .article-content .articleDetail p.info span.inTime {
+    color: #a0a0a0
+}
+
+.main-content .article-content .articleDetail p.info span.section a {
+    color: #a0a0a0
+}
+
+.main-content .article-content .articleDetail .article {
+    padding-top: 30px;
+    min-height: 258px
+}
+
+.main-content .article-content .articleDetail .article p {
+    margin: 0 0 16px
+}
+
+.main-content .article-content .articleDetail .article p a.inner-link {
+    color: #000
+}
+
+.main-content .article-content .articleDetail .article p a.inner-link:hover {
+    text-decoration: none
+}
+
+.main-content .article-content .articleDetail .article img {
+    max-width: 700px;
+    display: block;
+    margin: 0 auto
+}
+
+.main-content #SOHUCS {
+    width: 770px;
+    margin: 0 15px 0 24px
+}
+
+.main-content #feedAv {
+    margin-top: -250px !important;
+    transform: scale(0)
+}
+
+.main-content .pageTurningAndshare {
+    width: 750px;
+    height: 100px;
+    margin: 20px 0 0 40px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0
+}
+
+.main-content .pageTurningAndshare .pageTurning {
+    width: 448px;
+    height: 74px;
+    float: left;
+    margin-top: 15px
+}
+
+.main-content .pageTurningAndshare .pageTurning .previous, .main-content .pageTurningAndshare .pageTurning .next {
+    height: 26px
+}
+
+.main-content .pageTurningAndshare .pageTurning a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    width: 410px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.main-content .pageTurningAndshare .pageTurning a span {
+    font-size: 14px
+}
+
+.main-content .pageTurningAndshare .pageTurning a:hover {
+    color: #f09586
+}
+
+.main-content .pageTurningAndshare #qrcode {
+    display: inline-block;
+    float: left;
+    margin-top: -15px;
+    display: none
+}
+
+.main-content .pageTurningAndshare .share {
+    width: 180px;
+    height: 74px;
+    float: right
+}
+
+.main-content .pageTurningAndshare .share .share-box-weixin {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #c4bfbf;
+    margin: 20px 15px 0 0;
+    padding: 9px 0 0 7px;
+    cursor: pointer
+}
+
+.main-content .pageTurningAndshare .share .share-box-xinlang {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #c4bfbf;
+    margin-right: 15px;
+    padding: 11px 0 0 9px;
+    cursor: pointer
+}
+
+.main-content .pageTurningAndshare .share .share-box-kongjian {
+    width: 38px;
+    height: 39px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #c4bfbf;
+    padding: 7px 0 0 6px;
+    cursor: pointer
+}
+
+.main-content .relatedArticles {
+    border-radius: 3px;
+    padding: 20px;
+    width: 750px;
+    margin-left: 20px;
+    height: 208px;
+    font-size: 16px;
+    *zoom: 1
+}
+
+.main-content .relatedArticles:before, .main-content .relatedArticles:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.main-content .relatedArticles:after {
+    clear: both
+}
+
+.main-content .relatedArticles h3 {
+    color: #333;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px
+}
+
+.main-content .relatedArticles ul {
+    float: left
+}
+
+.main-content .relatedArticles ul.leftList {
+    margin-right: 70px
+}
+
+.main-content .relatedArticles ul li a {
+    color: #000;
+    display: inline-block;
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1.7em
+}
+
+.main-content .recommend-plate {
+    font-size: 18px;
+    color: #7a7a7a;
+    margin: 30px 0 0 20px
+}
+
+.main-content .recommend-plate-content {
+    margin: 20px 0 0 20px;
+    width: 853px;
+    height: 90px;
+    display: block
+}
+
+.main-content .recommend-plate-content li {
+    float: left;
+    margin-right: 20px;
+    line-height: 26px
+}
+
+.main-content .recommend-plate-content li a {
+    color: #999
+}
+
+.main-content .hot-side-bar {
+    width: 280px;
+    position: relative;
+    right: 38px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px
+}
+
+.main-content .hot-side-bar .search-box {
+    position: relative
+}
+
+.main-content .hot-side-bar .search-box .search {
+    width: 260px;
+    padding: 10px;
+    height: 12px;
+    line-height: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: 0
+}
+
+.main-content .hot-side-bar .search-box .go2search {
+    position: absolute;
+    left: 242px;
+    top: 7px;
+    height: 20px;
+    width: 21px;
+    background: url(../images/search_5b21186.png) no-repeat center;
+    cursor: pointer
+}
+
+.main-content .hot-side-bar .appoint-box {
+    margin: 26px 0 0
+}
+
+.main-content .hot-side-bar .appoint-box .appointment-btn {
+    background: url(../images/listen-pic_b31c2fc.jpg) no-repeat 0 0;
+    display: block;
+    width: 272px;
+    height: 348px
+}
+
+.main-content .down-box {
+    width: 790px;
+    height: 85px;
+    font-size: 16px;
+    text-align: center;
+    *zoom: 1
+}
+
+.main-content .down-box:before, .main-content .down-box:after {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.main-content .down-box:after {
+    clear: both
+}
+
+.main-content .down-box .downloadPDF, .main-content .down-box .direct-downloadPDF {
+    display: inline-block;
+    height: 40px;
+    width: 140px;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fe5b56;
+    border-radius: 2px;
+    margin: 20px
+}
+
+.main-content .down-box .downloadPDF a, .main-content .down-box .direct-downloadPDF a {
+    color: #fff;
+    text-decoration: none
+}
+
+.main-content .down-box .downloadPDF:focus, .main-content .down-box .direct-downloadPDF:focus {
+    outline: 0
+}
+
+.main-content .down-box .downloadPDF:hover, .main-content .down-box .direct-downloadPDF:hover {
+    background: #fe3b36
+}
