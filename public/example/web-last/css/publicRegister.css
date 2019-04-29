@@ -1,0 +1,90 @@
+.choose{
+	height: 8.8rem;
+	width: 100%;
+	background: url(../img/choose_bg.png);
+	background-size: 100% 100%;
+	text-align: center;
+	box-sizing: border-box;
+    padding-top: 0.1rem;
+}
+.choose > h3{
+	height: 1.6rem;
+    line-height: 1.6rem;
+    color: #333333;
+    font-size: 0.44rem;
+}
+.register_info > input,
+.register_info >.gradeWraper{
+	display: inline-block;
+	width: 80.8%;
+	height: 0.8rem;
+	margin-bottom: 0.3rem;
+}
+.register_info > input,
+.gradeWraper> select{
+	padding-left: 0.2rem;
+	border: 1px solid #d6d6d6;
+	background: #ffffff;
+	outline: none;	
+	box-sizing: border-box;	
+	color: #666666;
+	border: 0;
+    box-shadow: 0px 2px 5px #e5e6ec;
+}
+.gradeWraper> select{
+	width: 100%;
+	height: 100%;
+}
+.gradeWraper{
+	position: relative;
+}
+.gradeWraper>img{
+	position: absolute;
+	display: inline-block;
+	width: 0.4rem;
+	top: 0.25rem;
+    right: 0.1rem;
+}
+.register_info > input::-webkit-input-placeholder{
+        color:#cccccc;
+    }
+ .register_info > input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color:#cccccc;
+    }
+.register_info > input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color:#cccccc;
+    }
+.register_info > input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+        color:#cccccc;
+    }
+.agree{
+	font-size: 0.2rem;
+	color: #333333;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	box-sizing: border-box;
+	margin-bottom: 0.2rem;
+}
+.agree > span{
+	letter-spacing: 1px;
+	color:#d74c42;
+}
+.agree > input{
+	vertical-align: sub;
+	margin-right: 0.25rem;
+	background: #ffffff;
+	border: 1px solid #d6d6d6;
+	height: 0.3rem;
+	width: 0.3rem;
+}
+.register_info > button{
+	height:0.8rem;
+	background: #d74c42;
+	width: 80.8%;
+	letter-spacing: 1px;
+	border-radius: 25px;
+	color: #ffffff;
+	font-size: 0.32rem;
+	outline: none;
+	border: 0;
+}

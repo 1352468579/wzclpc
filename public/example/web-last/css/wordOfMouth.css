@@ -1,0 +1,124 @@
+.carousel-caption{
+	bottom: 0 !important;
+}
+/*头部轮播*/
+.carousel-caption > .recommend{
+	color: #ffffff;
+	font-size: 0.4rem;
+	text-align: center;
+	line-height: 0.6rem;
+}
+.carousel-caption > .improve{
+	color: #ffffff;
+	font-size: 0.26rem;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+/*头部轮播结束*/
+.primary_school,
+.junior_high_school,
+.high_school{
+	height: 10rem;
+	box-sizing: border-box;
+	padding-top: 0.9rem;
+	position: relative;
+}
+.border-dash{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+.primary_school > h3,
+.junior_high_school > h3,
+.high_school > h3{
+	text-align: center;
+	color: #333333;
+	margin-bottom: 0.1rem;
+	font-size: 0.4rem;
+	height: 0.4rem;
+}
+.primary_school > h3 > img,
+.junior_high_school > h3 > img,
+.high_school > h3 > img{
+	display: inline-block;
+	margin: 0 0.2rem;
+	width: 0.2rem;
+}
+.English_cap{
+	color: #999999;
+	font-size: 0.14rem;
+	text-align: center;
+    margin-bottom: 0.7rem;
+}
+/*swiper事件开始*/
+ .swiper-container {
+      width: 100%;
+      height: 6.8rem;
+      padding-bottom: 1rem;
+    }
+    .swiper-slide {
+      width: 4.4rem !important;
+      height: 6.1rem !important;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      transition: 300ms;
+      box-shadow: 0px 5px 5px #f5f5f5;
+      border-radius: 12px;
+    }
+  .swiper-slide:not(.swiper-slide-active){
+      transform: scale(0.9);
+  }
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom: 0 !important;
+}
+.swiper-pagination-bullet-active{
+	background: #ff554f !important;
+}
+/*swiper事件结束*/
+.personal{
+	height: 3.2rem;
+	width: 100%;
+	position: relative;
+	border-radius: 12px 12px 0 0;
+}
+.personal > img{
+	height: 100%;
+	width: 100%;
+	border-radius: 12px 12px 0 0;
+}
+.school{
+	height: 0.55rem;
+	line-height: 0.55rem;
+	background: rgba(255,255,255,0.8);
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	font-size: 0.28rem;
+	text-align: center;
+	color: #b1b1b1;
+}
+.school > img{
+	position: absolute;
+	width: 0.93rem;
+	bottom: -0.2rem;
+	right: 0.2rem;
+}
+.name{
+	font-size: 0.32rem;
+	color: #666666;
+	margin: 0.26rem 0;
+	text-align: center;
+	font-weight: bold;
+}
+.hobby{
+	font-size: 0.28rem;
+	line-height: 0.44rem;
+	padding: 0 0.3rem;
+    text-align: left;
+    color:#b1b1b1;
+}
+.choose{
+	background: #ffffff !important;
+}

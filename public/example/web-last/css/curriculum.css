@@ -1,0 +1,238 @@
+.carousel-caption{
+	bottom: 0 !important;
+}
+.carousel-caption > .recommend{
+	color: #ffffff;
+	font-size: 0.4rem;
+	text-align: center;
+	line-height: 0.6rem;
+}
+.carousel-caption > .improve{
+	color: #ffffff;
+	font-size: 0.26rem;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+/*课程设置开始*/
+.curriculum{
+	box-sizing: border-box;
+	padding-top: 0.8rem;
+}
+.grade{
+	display: flex;
+	justify-content: space-around;
+	border-top:1px solid #f2f2f2;
+	border-bottom:1px solid #f2f2f2;
+}
+.grade > li{
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 0.4rem;
+	text-align: center;
+	position: relative;
+	color: #bebebe;
+	width: 1rem;
+	font-weight: bold;
+}
+.show{
+	display: none !important;
+}
+.actived{
+	color: #ff493c !important;
+	display: block !important;
+}
+.grade > li > img{
+	position: absolute;
+	bottom: -0.1rem;
+	width: 1rem;
+	left: 0;
+	display: none;
+	z-index: 99;
+}
+.showWraper{
+	height: 9.3rem;
+	width: 100%;
+	position: relative;
+	box-shadow: 3px 0 5px #ddd;
+}
+.showWraper > .show{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+.choose_grade{
+	display: flex;
+	justify-content: space-around;
+	height: 2rem;
+	line-height: 2rem;
+}
+.choose_grade > li{
+	color: #666666;
+	font-size: 0.3rem;
+}
+.choose_result{
+	display: flex;
+	justify-content: space-around;
+}
+.choose_result{
+	height: 7.3rem;
+}
+.choosed{
+	font-weight: bold;
+	color: #000000 !important;
+    font-size: 0.4rem !important;
+}
+.choose_result > ul{
+	height: 100%;
+	text-align: center;
+	visibility: hidden;
+}
+.choose_result > ul > li{
+	height: 1rem;
+	line-height: 1rem;
+	margin-bottom: 0.55rem;
+}
+.choose_result > ul > li > img{
+	height: 80%;
+	vertical-align: middle;
+}
+/*私人定制*/
+.custom_class > .wraper > h3,
+.curriculum > h3{
+	text-align: center;
+	color: #ffffff;
+	margin-bottom: 0.1rem;
+	font-size: 0.4rem;
+	height: 0.4rem;
+}
+.custom_class > .wraper > h3 > img
+.curriculum > h3 > img{
+	display: inline-block;
+	margin: 0 0.2rem !important;
+	width: 0.2rem !important;
+}
+.custom_class{
+	position: relative;
+	height: 10.5rem;
+}
+.study_plans{
+	position: relative;
+}
+.study_plans > ul{
+	box-sizing: border-box;
+	padding-left: 2rem;
+	background: #ffffff;
+}
+.study_plans > ul > li{
+	line-height: 0.9rem;
+	padding: 0 0.6rem 0 0.4rem;
+	box-sizing: border-box;
+}
+.study{
+	display: flex;
+	justify-content: space-between;
+}
+.study > div{
+	color: #666666;
+	font-size: 0.34rem;
+}
+.study > div:nth-child(1) > img{
+	margin-right: 0.2rem;
+}
+.study > div:nth-child(2) > img{
+	width: 0.2rem;
+	height: 0.2rem;
+}
+.study > div > img{
+	height: 0.3rem;
+	vertical-align: middle;
+}
+.class_mask{
+	background: rgba(255,255,255,0.7);
+}
+.study_explain{
+	width: 100%;
+	padding: 0 0.35rem 0.18rem;
+	line-height: 0.48rem;
+	letter-spacing: 1px;
+	box-sizing: border-box;
+	font-size: 0.25rem;
+	display: none;
+	height: 2.15rem;
+}
+.leftFixes{
+	position: absolute;
+	height: 100%;
+	width: 2rem;
+	left: 0;
+	top: 0;
+	background: #d74c42;
+	display: flex;
+	justify-content: space-around;
+    padding-top: 1.8rem;
+	box-sizing: border-box;
+}
+.leftFixesWraper{
+	width: 7rem;
+	text-align: center;
+	color: #ffffff;
+	letter-spacing: 1px;
+}
+.avatar{
+	border-radius: 50px;
+	margin: 0 auto 0.3rem;
+	box-shadow: 0px 5px 8px #bbbbbb inset, 0px 1px 0px #c9ccd2;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.avatar > img{
+	width: 100%;
+	border-radius: 50px;
+}
+.start_evaluation{
+	padding-top: 0.7rem;
+	text-align: center;
+}
+.start_evaluation > button{
+	width: 80.8%;
+	height: 0.8rem;
+	color: #ffffff;
+	font-size: 0.34rem;
+	letter-spacing: 1px;
+	background: #d74c42;
+	outline: none;
+	border: 0;
+	border-radius: 25px;
+}
+.block_mask{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(35,35,35,0.9);
+	top: 0;
+	left: 0;	
+	z-index: -1;
+}
+.class_mask{
+	background: rgba(255,255,255,0.7);
+}
+.bg_girl{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	z-index: -2;
+}
+.wraper {
+    z-index: 99;
+    /* padding: 1rem 0 1.1rem 0; */
+    padding-top: 1rem;
+}
+.English_cap {
+    color: #999999;
+    font-size: 0.14rem;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
