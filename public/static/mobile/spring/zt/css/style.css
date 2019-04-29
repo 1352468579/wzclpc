@@ -1,0 +1,832 @@
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	outline: none;
+	border: none;
+}
+input, select {
+	outline: none;
+}
+area {
+	outline: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+i, em {
+	font-style: normal;
+}
+body {
+	font-family: "微软雅黑";
+}
+/*字体定义*/
+html {
+	font-size : 20px;
+}
+
+@media screen and (min-width: 641px) {
+html {
+	font-size: 26px !important;
+}
+}
+/*banner*/
+
+.hj_banner {
+	position: relative;
+}
+.hj_banner img {
+	width: 100%;
+	display: inline-block;
+}
+.hj_banner a {
+	display: inline-block;
+	width: 40%;
+	line-height: 2.5rem;
+	border-radius: 0.87rem;
+	text-align: center;
+	border-radius: 20px;
+	color: #666;
+	position: absolute;
+	bottom: 3%;
+	left: 30.5%;
+	font-size: 1.3rem;
+	background: rgba(255,255,255,1);
+}
+.hj_banner a span {
+	color: red;
+}
+.banner_top {
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	width: 100%;
+}
+.banner_top a {
+	position: static;
+	background: rgba(0,0,0,0)
+}
+.banner_top a:nth-child(1) {
+	padding-left: 2rem;
+	width: 13rem;
+}
+.banner_top a:nth-child(2) {
+	float: right;
+	/* padding-right: 2rem; */
+	width: 11rem;
+}
+.header_telimg{
+	width:28% !important;
+}
+/*诊断期中*/
+.diagnosis {
+	text-align: center;
+	padding: 42px 0 30px 0;
+}
+.diagnosis_conten {
+	width: 100%;
+	margin: 0 auto;
+}
+.diagnosis_conten p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.diagnosis_conten p font {
+	color: #0160b4;
+}
+.diagnosis_conten span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.analysis {
+	overflow: hidden;
+	width: 100%;
+	margin: 42px 0;
+	background: url(../images/mhj_04.png) no-repeat center top;
+	background-size: 100%;
+}
+.analysis li {
+	float: left;
+	margin: 14% 8% 0 7.4%;
+	width: 34%;
+	text-align: center;
+}
+.analysis li:nth-child(3) {
+	margin-top: 20.1%;
+	margin-bottom: 6%;
+}
+.analysis li:nth-child(4) {
+	margin-top: 20.1%;
+	margin-bottom: 6%;
+}
+.analysis li img {
+	display: inline-block;
+	width: 100%;
+}
+.analysis li p {
+	font-size: 1rem;
+	line-height: 2rem;
+}
+.analysis li span {
+	font-size: 1rem;
+}
+.diagnosis_conten a {
+	display: inline-block;
+	width: 42%;
+	line-height: 3.1rem;
+	font-size: 1.2rem;
+	border-radius: 2rem; /*background:rgba(239,76,79,1);*/
+	background-size: 100% 100%;
+	background: url(../images/btu.png) center no-repeat;
+	color: #222;
+	font-weight: 600;
+}
+/*找学习方法*/
+.method {
+	background: rgba(248,248,248,1);
+	overflow: hidden;
+	padding: 42px 0 30px 0;
+	text-align: center;
+}
+.method_title {
+	width: 100%;
+	text-align: center;
+}
+.method_title p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.method_title font {
+	color: #0160b4;
+}
+.method_title span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.method_conten {
+	width: 100%;
+	margin: 30px auto;
+	overflow: hidden;
+	background: url(../images/mhj_02.png) no-repeat left top;
+	background-size: 100%;
+}
+.method_conten img {
+	float: left;
+	padding: 2% 1%;
+}
+.method_conten div {
+	width: 92%;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 0.6rem;
+	hight: 3rem;
+}
+.method_conten div font {
+	float: left;
+	line-height: 3rem;
+	padding: 0 11.5% 0 1%;
+	font-size: 1.2rem;
+	display: inline-block;
+	font-weight: 600;
+}
+.method_conten div p {
+	height: 3rem;
+	float: left;
+	width: 69%;
+	font-size: 1rem;
+	color: #ef4c4f;
+	display: inline-block;
+	text-align: left;
+	color: #fff;
+	line-height: 1.4rem;
+}
+.method a {
+	display: inline-block;
+	width: 42%;
+	line-height: 3.1rem;
+	font-size: 1.2rem;
+	border-radius: 2rem; /*background:rgba(239,76,79,1);*/
+	background-size: 100% 100%;
+	background: url(../images/btu.png) center no-repeat;
+	color: #222;
+	font-weight: 600;
+}
+/*全科三步走*/
+.steps {
+	background: rgba(242,242,242,1);
+	text-align: center;
+	padding: 15px 0 30px 0;
+}
+.steps p {
+	font-size: 2.1rem;
+	color: #0160b4;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	line-height: 3.2rem;
+}
+.steps p b {
+	color: #222;
+}
+.steps span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.steps_center {
+	background: url(../images/mhj_07.png) no-repeat center top;
+	background-size: 100%;
+	width: 100%;
+	height: 37rem;
+	margin: 30px 0;
+}
+.steps_center ul {
+	overflow: hidden;
+	margin-bottom: 6%;
+}
+.steps_center ul li {
+	float: left;
+	width: 41.5%;
+	margin: 5.6% 0 0 6%;
+}
+.steps_center ul li:nth-child(3) {
+	margin-top: 7.5%;
+}
+.steps_center ul li:nth-child(4) {
+	margin-top: 7.5%;
+}
+.steps_center ul li h3 {
+	font-size: .87rem;
+	font-weight: 600;
+	text-align: left;
+}
+.steps_center ul li h2 {
+	font-size: 1.2rem;
+	color: #0160b4;
+	font-weight: 600;
+	padding: 13% 0 7% 0;
+}
+.steps_center ul li p {
+	font-size: 1rem;
+	color: #222;
+	line-height: 1.4rem;
+}
+.steps_center a {
+	display: inline-block;
+	width: 42%;
+	line-height: 3.1rem;
+	font-size: 1.2rem;
+	border-radius: 2rem; /*background:rgba(239,76,79,1);*/
+	background-size: 100% 100%;
+	background: url(../images/btu.png) center no-repeat;
+	color: #222;
+	font-weight: 600;
+}
+/*高效半期课程*/
+.course {
+	text-align: center;
+	padding: 42px 0 0 0;
+}
+.course p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.course font {
+	color: #0160b4;
+}
+.course span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.course .three_c {
+	width: 100%;
+	background: #ffc000;
+	overflow: hidden;
+	margin: 30px 0;
+}
+.course .three_c div {
+	float: left;
+	width: 29.3%;
+	padding: 0 2% 3% 2%
+}
+.course .three_c div h2 {
+	font-size: 2rem;
+	line-height: 3rem;
+}
+.course .three_c div p {
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+}
+.course ul {
+	overflow: hidden;
+	width: 96%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+.course ul li {
+	width: 99%;
+	text-align: left;
+	border: 1px solid #ddd;
+	margin: 0 0 1.2rem 0;
+	padding: 1.5rem 0 0 0;
+	border-radius: 0.8rem;
+	height: 8rem;
+	background: #f9f9f9;
+	box-shadow: 1px 1px 4px #888888;
+}
+.course ul li div {
+	width: 94%;
+	margin: 0 auto;
+}
+.course .linegx {
+	width: 100%;
+	height: 2px;
+	margin: 1rem 0;
+}
+.course .linegx .left {
+	width: 10%;
+	height: 100%;
+	background: #0160b4;
+	float: left;
+}
+.course .linegx .right {
+	width: 90%;
+	height: 100%;
+	background: #e9e9e9;
+	float: left;
+}
+.course ul li h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #0160b4;
+}
+.course ul li p {
+	line-height: 1.6rem;
+	font-size: 1.2rem;
+	font-weight: normal;
+	color: #555;
+}
+/*tel*/
+.gg {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 2rem;
+}
+.gg a {
+	display: inline-block;
+	width: 60%;
+	line-height: 3rem;
+	border-radius: 2rem;
+	text-align: center;
+	background: rgba(239,76,79,1);
+	color: #fff;
+	border: 1px solid #ef4c4f;
+	font-size: 1.2rem;
+}
+.gg a img {
+	vertical-align: middle;
+	width: 1.5rem;
+	padding-right: 1rem;
+}
+.gg p {
+	font-size: 1rem;
+	font-weight: normal;
+	color: #ef4c4f;
+}
+/*精细化课程安排*/
+.fine {
+	background: #f8f8f8;
+	padding: 42px 0;
+	text-align: center;
+}
+.fine_title {
+	width: 100%;
+}
+.fine_title p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.fine_title span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.fine a {
+	display: inline-block;
+	width: 42%;
+	line-height: 3.1rem;
+	font-size: 1.2rem;
+	border-radius: 2rem; /*background:rgba(239,76,79,1);*/
+	background-size: 100% 100%;
+	background: url(../images/btu.png) center no-repeat;
+	color: #222;
+	font-weight: 600;
+}
+/*选项卡*/
+.tab-wrapper {
+	margin: 30px auto;
+	max-width: 96%;
+	background: url(../images/mhj_13.png) no-repeat center top;
+	background-size: 100%;
+}
+.tab-menu {
+	text-align: center;
+}
+.tab-menu li {
+	background-color: #797979;
+	color: #fff;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 23.8%;
+	line-height: 3.5rem;
+	cursor: pointer;
+	margin: 0.1rem 0.1rem 0 0.1rem;
+}
+.tab-menu li.active {
+	padding-bottom: 0.5rem;
+	line-height: 2.5rem;
+	color: #222;
+	background: #fff;
+	border-top: 0.5rem #0160b4 solid;
+}
+.tab-content>div {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 200px;
+	overflow: hidden;
+}
+/*第一个选项卡*/
+.tab-content {
+	padding: 2rem 0;
+	background: #fff;
+}
+.tab-content table {
+	width: 100%;
+	line-height: 3rem;
+}
+.tab-content table th {
+	border-bottom: 1px dashed #d5d5d5;
+	font-weight: normal;
+}
+.tab-content table td {
+	border-bottom: 1px dashed #d5d5d5;
+}
+.tab-content div img {
+	display: inline-block;
+	float: left;
+	padding-top: 1.6rem;
+	width: 45%;
+	padding-right: 0.9rem;
+}
+.tab-content div ul {
+	overflow: hidden;
+	margin: 0 auto;
+	float: left;
+	width: 100%;
+}
+.tab-content div ul li {
+	text-align: left;
+	margin: 1rem 0;
+	color: #666;
+}
+.tab-content div ul li img {
+	padding: 0.5rem 0.5rem 2rem 0;
+	margin-top: 0;
+	width: auto;
+}
+.tab-content div {
+	position: relative;
+}
+/*表格样式*/
+#tabs {
+	width: 100%;
+	display: block !important;
+}
+#tabs ul {
+	list-style: none;
+	display: block;
+	line-height: 100px;
+	float: left;
+	overflow: hidden;
+}
+#tabs ul li {
+	list-style: none;
+	float: left;
+	width: 33%;
+	margin-left: 2px;
+	text-align: center;
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 1rem;
+}
+#tabs ul li:hover {
+	background: #f2f2f2;
+}
+#lists .activetab {
+	border-bottom: 2px solid #0080db;
+	color: #0080db;
+	font-weight: 600;
+}
+#tabs .hides {
+	display: none;
+	float: left;
+	width: 100%;
+}
+div .activetab {
+	display: block !important;
+}
+.tftable {
+	font-size: 1rem;
+	color: #333;
+	width: 100%;
+	border-width: 1px;
+	border-color: #729ea5;
+	border-collapse: collapse;
+}
+.tftable th {
+	font-size: 1rem;
+	background-color: #ef4c4f;
+	border: 1px #ef4c4f solid;
+	padding: 8px;
+	text-align: center;
+	color: #fff;
+	font-family: "微软雅黑";
+	font-weight: normal;
+}
+.tftable tr {
+	background-color: #ffffff;
+}
+.tftable td {
+	font-size: 1rem;
+	border: 1px #e9e9e9 solid;
+	padding: 1rem 0.6rem;
+	text-align: center;
+}
+/*4大升级*/
+.service {
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+}
+.service_title {
+	width: 100%;
+}
+.service_title p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.service_title font {
+	color: #0160b4;
+}
+.service_title span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.service_conten {
+	width: 98%;
+	background: url(../images/mhj_16.png) no-repeat center;
+	background-size: 100%;
+	margin: 0 auto;
+}
+.service_conten ul {
+	overflow: hidden;
+	text-align: left;
+}
+.service_conten ul li {
+	float: left;
+	margin-right: 38%;
+	margin-bottom: 9%;
+	margin-top: 8%;
+}
+.service_conten ul li:nth-child(2n) {
+	margin-right: 0;
+}
+.service_conten ul li:nth-child(3) {
+	margin-right: 29%;
+}
+/*学霸摇篮*/
+.eugenics {
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+}
+.eugenics_title {
+	width: 100%;
+}
+.eugenics_title p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.eugenics_title font {
+	color: #0160b4;
+}
+.eugenics_title span {
+	font-size: 1.2rem;
+	color: #666;
+}
+.eugenics_conten {
+	width: 98%;
+	margin: 0 auto;
+}
+.eugenics_conten img {
+	width: 100%;
+}
+/*望子成龙荣誉*/
+.honor {
+	width: 100%;
+	text-align: center;
+	margin: 60px 0;
+}
+.honor_title {
+	padding-bottom: 1rem;
+}
+.honor_title p {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: #222;
+	display: inline-block;
+	width: 100%;
+	line-height: 3.2rem;
+}
+.honor_title span {
+	font-size: 1.2rem;
+	color: #666;
+}
+/*swiper*/
+.swiper-container {
+	width: 100%;
+	height: auto;
+	margin: 50px auto;
+}
+.swiper-slide {
+	color: #333;
+	text-align: center;
+	line-height: 1.2rem;
+}
+.swiper-slide span {
+	color: #666;
+}
+.swiper-slide img {
+	padding-bottom: 1rem;
+	width: 75%;
+}
+/*返回按键*/
+.return {
+	font-size: 1.6rem;
+	display: inline-block;
+	color: #fff;
+	background: rgba(45,45,45,1);
+	text-align: center;
+	width: 100%;
+	line-height: 4rem;
+}
+/*表单*/
+.container {
+	margin: 0 auto;
+	text-align: center;
+	padding: 2rem 1rem 0 1rem;
+}
+.form-group input {
+	width: 96%;
+	outline: none;
+	height: 3.2rem;
+	margin: 0.5rem 0;
+	border: 1px #ccc solid;
+	font-size: 1.2rem;
+	text-indent: 2rem;
+}
+.container button {
+	-webkit-appearance: none;
+	width: 96%;
+	height: 3.2rem;
+	font-size: 1.2rem;
+	color: #222;
+	background: #ffda6a;
+  background-image: -webkit-linear-gradient(top, #ffda6a, #ffc000);
+  background-image: -moz-linear-gradient(top, #ffda6a, #ffc000);
+  background-image: -ms-linear-gradient(top, #ffda6a, #ffc000);
+  background-image: -o-linear-gradient(top, #ffda6a, #ffc000);
+  background-image: linear-gradient(to bottom, #ffda6a, #ffc000);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  -webkit-box-shadow: 2px 2px 0px 0px #b58e17;
+  -moz-box-shadow: 2px 2px 0px 0px #b58e17;
+  box-shadow: 2px 2px 0px 0px #b58e17;
+  font-family: 微软雅黑;
+  border: solid #ffc000 1px;
+  text-decoration: none;
+}
+/*已经报名组件*/
+.huadong {
+	width: 92%;
+	height: 2rem;
+	padding: 0.5rem 0 5rem 0;
+	position: relative;
+	font: 12px/1.5 "Hiragino Sans GB", "Microsoft YaHei", simsun;
+	margin: 0 auto;
+}
+.huadong .huabox {
+	margin: 0 auto;
+	width: 100%;
+}
+.huadong .huabox img {
+	display: inline-block;
+	float: left;
+	vertical-align: hidden;
+	line-height: 4rem;
+	height: 2rem;
+	margin-right: 1rem;
+}
+.huadong .notice_active {
+	float: left;
+	width: 80%;
+	height: 2rem;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+.huadong .notice_active li {
+	list-style-type: none;
+	line-height: 2rem;
+	overflow: hidden;
+}
+.huadong .notice_active li.notice_active_ch span {
+	color: #656972;
+	font-size: 1.2rem;
+	display: block;
+	overflow: hidden;
+	width: 70%;
+	float: left;
+	overflow: hidden;
+	margin: 0 0 2rem 0;
+}
+.huadong .gg_more .news_ck {
+	float: left;
+	margin: 0 1rem 0 1rem;
+	color: #888;
+	width: 5rem;
+	height: 2rem;
+	line-height: 2rem;
+	display: block;
+	border: 1px solid #656972;
+	text-align: center;
+	border-radius: 0.7rem;
+	font-size: 0.8rem;
+	margin-top: 1rem;
+}
+.huadong .notice_active li.notice_active_ch em {
+	text-align: right;
+	float: left;
+	color: #888;
+	font-size: 1.2rem;
+	font-style: normal;
+}
+/*吸底部件*/
+.gg_bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: rgba(255,192,0,0.9);
+	z-index: 9;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 4rem;
+	color: #222;
+}
+.gg_bottom img {
+	vertical-align: middle;
+	padding-right: 1rem;
+	width: 1.6rem;
+}
