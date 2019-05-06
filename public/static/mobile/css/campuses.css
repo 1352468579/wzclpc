@@ -35,8 +35,7 @@
 }
 .img_address > img{	
 	height: 100%;
-	width: 100%;
-    border-radius: 50%;
+	width: 100%;	
 }
 .mask_address{
 	height: 100%;
@@ -49,7 +48,7 @@
 	top: 0;
 	left: 0;
 	box-sizing: border-box;
-	padding: 0.3rem 0.2rem;
+	padding: 0.35rem 0.2rem;
 	display: none;
 }
 .actived{

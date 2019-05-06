@@ -3,25 +3,32 @@
     <form action="" method="post" class="register_info">
         <input type="text" name="name" value="" placeholder="请输入您的姓名" />
         <input type="text" name="mobile" value="" placeholder="请输入您的电话号码" />
-        <select name="grade" style="-webkit-appearance: none;">
-            <option value="">请选择孩子的年级</option>
-            <foreach name="grade" item="g">
-                <option value="{$g['id']}">{$g['name']}</option>
-            </foreach>
-        </select>
-        <select name="course" style="-webkit-appearance: none;">
-            <option value="">请选择孩子补习科目</option>
-        </select>
+        <div class="gradeWraper">
+            <select name="grade" style="-webkit-appearance: none;">
+                <option value="">请选择孩子的年级</option>
+                <foreach name="grade" item="g">
+                    <option value="{$g['id']}">{$g['name']}</option>
+                </foreach>
+            </select>
+            <img src="__STATIC__/mobile/img/input_down1.png"/>
+        </div>
+        <div class="gradeWraper">
+            <select name="course" style="-webkit-appearance: none;">
+                <option value="">请选择孩子补习科目</option>
+            </select>
+            <img src="__STATIC__/mobile/img/input_down1.png"/>
+        </div>
         <div class="agree"><input type="checkbox" name="agree" value="" />同意我们的<span>《用户隐私条款》</span></div>
         <input type="hidden" name="token" value="{$token}"/>
         <button type="button" class="submit">立即注册 </button>
+        <img src=""/>
     </form>
 </div>
+
 <script>
     $(function(){
         $("select[name=grade]").on('change',function(){
             var grade = $(this).val();
-//            console.log($("select[name=grade] option:selected").html())
             $.post("{:url('getCourseByGrade')}",{grade:grade},function(data){
                 $("select[name=course]").html(data)
             })
@@ -52,7 +59,7 @@
             )
         })
         function myError(msg){
-            layer.msg(msg,{time:1000});
+            layer.msg(msg,{time:1500});
             $('.submit').attr('disabled',false);
         }
         function Trim(str){

@@ -6,6 +6,7 @@
 	font-size: 0.4rem;
 	text-align: center;
 	line-height: 0.6rem;
+    margin-bottom: 0.1rem;
 }
 .carousel-caption > .improved{
 	color: #ffffff;
@@ -31,11 +32,12 @@
 	background: url(../img/childStudent/video.png);
 	background-size: 100% 100%;
 	position: relative;
+	height: 13.6rem;
 }
 .medal{
 	position: absolute;
-	width: 0.8rem;
-	top: -0.35rem;
+	width: 1rem;
+    top: -0.4rem;
 	right: 8%;
 }
 .tips{
@@ -43,7 +45,8 @@
 	background: #ffffff;
 	border-radius: 12px;
 	box-sizing: border-box;
-	padding: 0.45rem 0.4rem 0.2rem;
+	padding: 0.45rem 0.38rem 0.2rem;
+    box-shadow: 0px 1px 5px #333;
 }
 .tips > div{
 	font-size: 0.24rem;
@@ -54,8 +57,8 @@
 }
 /*儿童视频引用*/
 .videoWraper{
-	height: 5.6rem;
-	margin-top: 1.7rem;
+	height: 4.5rem;
+	margin-top: 2rem;
 }
 .videoWraper > img{
 	height: 100%;
@@ -174,7 +177,6 @@
 }
 .play{
     height: 5rem;
-    margin-top: 1rem;
 }
 .play > img{
     height: 100%;

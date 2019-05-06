@@ -2,8 +2,8 @@
     <foreach name="schoolList" item="school">
         <ul class="address_info" onclick="window.location.href='/Mobile/Index/schoolInfo/id/{$school.id}'">
             <li>
-                <div>{$school.title}</div>
-                <div class="number">联系电话：{$school.tel}</div>
+                <div class="address"><img src="__STATIC__/mobile/img/others/adderss.png"/>{$school.title}</div>
+                <div class="number"><img src="__STATIC__/mobile/img/others/number.png"/>联系电话：{$school.tel}</div>
             </li>
             <li>
                 <if condition="empty($school.school_logo)">

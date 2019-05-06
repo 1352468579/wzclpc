@@ -14,101 +14,29 @@
 	margin-top: 0.2rem;
 }
 /*课程设置开始*/
-.curriculum{
+.curriculum > .wraper{
+	height: 2.17rem;
+	background: #edebec;
+	padding-top: 0.8rem !important;
 	box-sizing: border-box;
-	padding-top: 0.8rem;
+	background: url(../img/curriculum/curriculum.png);
+	background-size: 100% 100%;
 }
-.grade{
-	display: flex;
-	justify-content: space-around;
-	border-top:1px solid #f2f2f2;
-	border-bottom:1px solid #f2f2f2;
-}
-.grade > li{
-	height: 1.5rem;
-	line-height: 1.5rem;
-	font-size: 0.4rem;
-	text-align: center;
-	position: relative;
-	color: #bebebe;
-	width: 1rem;
-	font-weight: bold;
-}
-.show{
-	display: none !important;
-}
-.actived{
-	color: #ff493c !important;
-	display: block !important;
-}
-.grade > li > img{
-	position: absolute;
-	bottom: -0.1rem;
-	width: 1rem;
-	left: 0;
-	display: none;
-	z-index: 99;
-}
-.showWraper{
-	height: 9.3rem;
+.curriculum > img{
+	display: block;
 	width: 100%;
-	position: relative;
-	box-shadow: 3px 0 5px #ddd;
-}
-.showWraper > .show{
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-}
-.choose_grade{
-	display: flex;
-	justify-content: space-around;
-	height: 2rem;
-	line-height: 2rem;
-}
-.choose_grade > li{
-	color: #666666;
-	font-size: 0.3rem;
-}
-.choose_result{
-	display: flex;
-	justify-content: space-around;
-}
-.choose_result{
-	height: 7.3rem;
-}
-.choosed{
-	font-weight: bold;
-	color: #000000 !important;
-    font-size: 0.4rem !important;
-}
-.choose_result > ul{
-	height: 100%;
-	text-align: center;
-	visibility: hidden;
-}
-.choose_result > ul > li{
-	height: 1rem;
-	line-height: 1rem;
-	margin-bottom: 0.55rem;
-}
-.choose_result > ul > li > img{
-	height: 80%;
-	vertical-align: middle;
 }
 /*私人定制*/
 .custom_class > .wraper > h3,
-.curriculum > h3{
+.curriculum > .wraper> h3{
 	text-align: center;
 	color: #ffffff;
 	margin-bottom: 0.1rem;
 	font-size: 0.4rem;
 	height: 0.4rem;
 }
-.custom_class > .wraper > h3 > img
-.curriculum > h3 > img{
+.custom_class > .wraper > h3 > img,
+.curriculum > .wraper> h3 > img{
 	display: inline-block;
 	margin: 0 0.2rem !important;
 	width: 0.2rem !important;
@@ -119,7 +47,6 @@
 }
 .study_plans{
 	position: relative;
-	height: 5.7rem;
 }
 .study_plans > ul{
 	box-sizing: border-box;
@@ -137,7 +64,7 @@
 }
 .study > div{
 	color: #666666;
-	font-size: 0.3rem;
+	font-size: 0.34rem;
 }
 .study > div:nth-child(1) > img{
 	margin-right: 0.2rem;
@@ -182,9 +109,11 @@
 	letter-spacing: 1px;
 }
 .avatar{
-	border: 2px solid #ffffff;
 	border-radius: 50px;
-	margin: 0 0.26rem 1rem;
+	margin: 0 auto 0.3rem;
+	box-shadow: 0px 5px 8px #bbbbbb inset, 0px 1px 0px #c9ccd2;
+	width: 1.5rem;
+	height: 1.5rem;
 }
 .avatar > img{
 	width: 100%;
@@ -198,7 +127,7 @@
 	width: 80.8%;
 	height: 0.8rem;
 	color: #ffffff;
-	font-size: 0.3rem;
+	font-size: 0.34rem;
 	letter-spacing: 1px;
 	background: #d74c42;
 	outline: none;
@@ -226,11 +155,10 @@
 }
 .wraper {
     z-index: 99;
-    /* padding: 1rem 0 1.1rem 0; */
     padding-top: 1rem;
 }
 .English_cap {
-    color: #a1a1a1;
+    color: #999999;
     font-size: 0.14rem;
     text-align: center;
     margin-bottom: 0.7rem;

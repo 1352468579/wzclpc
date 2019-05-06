@@ -1,10 +1,16 @@
 * {
 	padding: 0;
 	margin: 0;
-	/*color: #6d6d6d;*/
+	color: #6d6d6d;
 }
 h1, h2, h3,h4,h5{
 	margin: 0;
+}
+.English_cap{
+	font-size: 0.2rem !important;
+}
+h3{
+	font-weight: 500 !important;
 }
 html{
 	font-size: calc(100vw/7.5);
@@ -14,7 +20,6 @@ html{
 body {
 	font-family: '微软雅黑';
 	width:100%;
-    padding-top: 0.2rem;
     overflow-x: hidden;
 }
 
@@ -24,9 +29,6 @@ ul,ol {
 }
 .center{
 	text-align: center;
-}
-.English_cap{
-    font-size: 0.2rem!important;
 }
 /*清除浮动*/
 .clearfix:after{
@@ -61,7 +63,7 @@ ul,ol {
     overflow: hidden;
 }
 .navbar_button{
-	padding-top: 0.4rem;
+	padding-top: 0.35rem;
 }
 .nav > .navbar_button > img{
 	display: block;

@@ -45,7 +45,6 @@
 	margin-bottom: 0.1rem;
 	font-size: 0.4rem;
 	height: 0.4rem;
-    font-weight: bold;
 }
 
 .culturalLessons>h3>img,
@@ -99,7 +98,7 @@
 #banner>.swiper-container-culturalLessons>.swiper-pagination {
 	bottom: 0.95rem !important;
     text-align: right;
-    padding-right: 1.2rem;
+    padding-right: 1.5rem;
 }
 
 .swiper-container-culturalLessons {
@@ -120,7 +119,7 @@
 	position:absolute;
 	width: 100%;
 	height: 100%;
-	top: 0;
+    top: -0.08rem;
 	left: 0;
     z-index: -1;
 }
@@ -156,7 +155,7 @@
 
 /*前行受阻 四大拦路虎开始*/
 .obstruct{
-	height: 19.2rem;
+	height: 19.5rem;
 	background: url(../../img/details/bg_obstruct.png);
 	background-size: 100% 100%;
 	box-sizing: border-box;
@@ -189,7 +188,7 @@
 	width: 6.4rem !important;
 	transition: 300ms;
 	border: 1px solid #f1f1f1;
-	box-shadow: 3px 3px 5px #f1f1f1;
+	box-shadow: 0px 2px 5px #eee;
 	border-radius: 12px;
 	display: flex;
 	align-items: center;
@@ -244,18 +243,20 @@
 	width: 6.9rem;
 	margin: 0 auto;
 	border-radius: 12px;
-	box-shadow: 0px 5px 5px #dbdddc;
+	box-shadow: 0px 3px 5px #ddd;
 }
 .subject_title{
 	display: flex;
-	justify-content: space-between;
-	padding: 0 0.66rem;
-	margin-bottom: 0.6rem;
+    padding: 0 0.66rem;
+    flex-wrap: wrap;
+    border-bottom: 1px dashed #ebebeb;
 }
 .subject_title > li{
-	font-size: 0.4rem;
+    font-size: 0.36rem;
 	color: #bebebe;
 	position: relative;
+	width: 33.3%;
+	margin-bottom: 0.7rem;
 }
 .subject_title > li > img{
 	position: absolute;
@@ -268,19 +269,11 @@
 	display: block !important;
 	color: #333333 !important;
 }
+.fontBlod{
+	font-weight: bold;
+}
 .subject_title > li:first-child > img{
 	left: 0.2rem;
-}
-.subject_text{
-	display: flex;
-	justify-content: space-around;
-	padding-bottom: 0.6rem;
-	border-bottom: 1px dashed #dad8d8;
-}
-.subject_text>li{
-	font-size: 0.33rem;
-	line-height: 0.48rem;
-	color: #bebebe;
 }
 .subjectWraper{
 	position: relative;
@@ -319,6 +312,7 @@
 	border-radius: 0px 12px 12px 0px;
 	box-sizing: border-box;
 	padding-top: 0.3rem;
+	box-shadow: 0px 3px 5px #ddd;
 }
 .obstacles_tips > li > div{
 	text-align: center;
@@ -358,8 +352,10 @@
 	width: 100%;
 	height: 2.9rem;
 }
-
-.pic_surroundings>img{
+.pic_surroundings>.carousel-inner>.item{
+	height: 2.9rem !important;	
+}
+#myCarousel>.carousel-inner>.item>img{
 	width: 100%;
 	height: 100%;
 }
@@ -401,6 +397,7 @@
 	border: 1px solid #f1f1f1;
 	box-shadow: 3px 3px 5px #f1f1f1;
 	border-radius: 12px;
+	background: #ffffff;
 }
 
 .swiper-management>.swiper-wrapper{
