@@ -228,113 +228,23 @@
                     <div class="English_cap" style="margin-bottom: 0.3rem;">Fifth-Level Teaching Standard of Professional Course System</div>
                     <ul class="course_choose">
                         <li>
-                            <select>
-                                <option value="小学">小学</option>
-                                <option value="saab">初中</option>
-                                <option value="opel">高中</option>
+                            <select name="gradeName">
+                                <foreach name="object" item="obj">
+                                    <option value="{$obj.id}">{$obj.title}</option>
+                                </foreach>
                             </select>
                         </li>
                         <li>
-                            <select>
-                                <option value="volvo">数学</option>
-                                <option value="saab">语文</option>
-                                <option value="opel">英语</option>
-                                <option value="audi">物理</option>
+                            <select name="courseName">
+                                <foreach name="object[0]['children']" item="children">
+                                    <option value="{$children.id}">{$children.title}</option>
+                                </foreach>
                             </select>
                         </li>
                     </ul>
-                    <ul class="percentage">
-                        <li>
-                            <div class="level clicked_changeColor">
-                                LV1
-                                <div class="levelBar levelBar_1 clicked">
-                                    <div class="clicked">
-                                        0-60<br />
-                                        分数占比
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="level">
-                                LV2
-                                <div class="levelBar levelBar_2">
-                                    <div>
-                                        60-90<br />
-                                        分数占比
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="level">
-                                LV3
-                                <div class="levelBar levelBar_3">
-                                    <div>
-                                        90-110<br />
-                                        分数占比
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="level">
-                                LV4
-                                <div class="levelBar levelBar_4">
-                                    <div>
-                                        110-130<br />
-                                        分数占比
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="level">
-                                LV5
-                                <div class="levelBar levelBar_5">
-                                    <div>
-                                        130-150<br />
-                                        分数占比
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="percentage_text clicked_changeColor">
-                        <li>1.真题难题新题轰炸 (0)</li>
-                        <li>2.函数、数列、概率、解几、立几五大专题压轴题突破</li>
-                        <li>3.高考模卷考核</li>
-                        <li>4.高分考生心经</li>
-                        <li>5.考前经验传授</li>
-                    </ul>
-                    <ul class="percentage_text">
-                        <li>1.真题难题新题轰炸(1) </li>
-                        <li>2.函数、数列、概率、解几、立几五大专题压轴题突破</li>
-                        <li>3.高考模卷考核</li>
-                        <li>4.高分考生心经</li>
-                        <li>5.考前经验传授</li>
-                    </ul>
-                    <ul class="percentage_text">
-                        <li>1.真题难题新题轰炸(2) </li>
-                        <li>2.函数、数列、概率、解几、立几五大专题压轴题突破</li>
-                        <li>3.高考模卷考核</li>
-                        <li>4.高分考生心经</li>
-                        <li>5.考前经验传授</li>
-                    </ul>
-                    <ul class="percentage_text">
-                        <li>1.真题难题新题轰炸 (3)</li>
-                        <li>2.函数、数列、概率、解几、立几五大专题压轴题突破</li>
-                        <li>3.高考模卷考核</li>
-                        <li>4.高分考生心经</li>
-                        <li>5.考前经验传授</li>
-                    </ul>
-                    <ul class="percentage_text">
-                        <li>1.真题难题新题轰炸(4) </li>
-                        <li>2.函数、数列、概率、解几、立几五大专题压轴题突破</li>
-                        <li>3.高考模卷考核</li>
-                        <li>4.高分考生心经</li>
-                        <li>5.考前经验传授</li>
-                    </ul>
+                    <div class="course-info">
+                        {$courseInfo}
+                    </div>
                 </div>
 
             </div>
@@ -542,21 +452,17 @@
             }
         });
         //				屡获殊荣的swriper结束
-        //			专业课程体系 5阶教学标准里面level的切换
-        $(".level").on('click',function(){
-            $(".level").removeClass('clicked_changeColor');
-            $(this).addClass('clicked_changeColor');
-            $('.levelBar').removeClass('clicked');
-            $(this).find('.levelBar').addClass('clicked');
-            $('.levelBar>div').removeClass('clicked');
-            $(this).find('.levelBar>div').addClass('clicked');
-            var index = $(this).parent('.percentage>li').index();
-//				alert(index);
-            $('.percentage_text').removeClass('clicked_changeColor');
-            $('.percentage_text').eq(index).addClass('clicked_changeColor');
+        $("select[name=courseName]").on('change',function(){
+            var grade = $(this).val();
+            $.post("{:url('getCourseInfoById')}",{course_id:grade},function(data){
+                $(".course-info").html(data)
+            })
         })
-
-
-        //			专业课程体系 5阶教学标准里面level的切换
+        $("select[name=gradeName]").on('change',function(){
+            var grade = $(this).val();
+            $.post("{:url('getCourseByGradeId')}",{grade:grade},function(data){
+                $("select[name=courseName]").html(data)
+            })
+        })
     </script>
 </block>

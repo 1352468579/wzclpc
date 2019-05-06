@@ -1,0 +1,98 @@
+<ul class="percentage">
+    <li>
+        <div class="level clicked_changeColor">
+            LV1
+            <div class="levelBar levelBar_1 clicked">
+                <div class="clicked">
+                    {$course[0]['more']['append'][0]['name']}<br />
+                    分数占比
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="level">
+            LV2
+            <div class="levelBar levelBar_2">
+                <div>
+                    {$course[0]['more']['append'][1]['name']}<br />
+                    分数占比
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="level">
+            LV3
+            <div class="levelBar levelBar_3">
+                <div>
+                    {$course[0]['more']['append'][2]['name']}<br />
+                    分数占比
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="level">
+            LV4
+            <div class="levelBar levelBar_4">
+                <div>
+                    {$course[0]['more']['append'][3]['name']}<br />
+                    分数占比
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="level">
+            LV5
+            <div class="levelBar levelBar_5">
+                <div>
+                    {$course[0]['more']['append'][4]['name']}<br />
+                    分数占比
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<ul class="percentage_text clicked_changeColor">
+    <foreach name="course[0]['more']['append'][0]['value']" item="li">
+        <li>{$li}</li>
+    </foreach>
+</ul>
+<ul class="percentage_text">
+    <foreach name="course[0]['more']['append'][1]['value']" item="li">
+        <li>{$li}</li>
+    </foreach>
+</ul>
+<ul class="percentage_text">
+    <foreach name="course[0]['more']['append'][2]['value']" item="li">
+        <li>{$li}</li>
+    </foreach>
+</ul>
+<ul class="percentage_text">
+    <foreach name="course[0]['more']['append'][3]['value']" item="li">
+        <li>{$li}</li>
+    </foreach>
+</ul>
+<ul class="percentage_text">
+    <foreach name="course[0]['more']['append'][4]['value']" item="li">
+        <li>{$li}</li>
+    </foreach>
+</ul>
+<script>
+    //			专业课程体系 5阶教学标准里面level的切换
+    $(".level").on('click',function(){
+        $(".level").removeClass('clicked_changeColor');
+        $(this).addClass('clicked_changeColor');
+        $('.levelBar').removeClass('clicked');
+        $(this).find('.levelBar').addClass('clicked');
+        $('.levelBar>div').removeClass('clicked');
+        $(this).find('.levelBar>div').addClass('clicked');
+        var index = $(this).parent('.percentage>li').index();
+//				alert(index);
+        $('.percentage_text').removeClass('clicked_changeColor');
+        $('.percentage_text').eq(index).addClass('clicked_changeColor');
+    })
+    //			专业课程体系 5阶教学标准里面level的切换
+</script>

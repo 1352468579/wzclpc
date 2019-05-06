@@ -21,6 +21,7 @@ class IndexController extends MobileBaseController
 {
     const CID = 11;
     const GRADE_ID = 23;
+    const COURSE_ID = 40;
     /************
     *----==== 初始化函数 ====----
     *Created by w 2019/4/21 15:31
@@ -58,10 +59,85 @@ class IndexController extends MobileBaseController
             $c['model_name'] == '模块四' ?$index_4 = $c:'';
             $c['model_name'] == '模块九' ?$index_9 = $c:'';
         }
+        /**********=====---- 获取专业课程详情 ----Mod by w 2019/5/6 10:02=====**********/
+        $where = ['type' => 'object'];
+        $object = $IndexPcModel->field('model_name,title,id,parent_id,descript,create_date,more')->where($where)->select()->toArray();
+        $object = self::_getCourseTree($object);
+//        pref($object);die;
+        $this->assign('object',$object);
         $this->assign('index_4',$index_4);
         $this->assign('index_9',$index_9);
+        $this->assign('courseInfo',$this->getCourseInfoById());
         $this->assign('banner',$banner->toArray());
         return $this->fetch();
+    }
+    /************
+    *----==== 根据年级获取课程 ====----
+    *Created by w 2019/5/6 14:29
+    ************/
+    public function getCourseByGradeId(){
+        $id = $this->request->param('grade');
+        $IndexPcModel = new IndexPcModel();
+        $where = ['type' => 'object'];
+        $object = $IndexPcModel->field('model_name,title,id,parent_id,descript,create_date,more')->where($where)->select()->toArray();
+        $object = self::_getCourseTree($object);
+        $html = '<option value="">选择科目</option>';
+        if ($object) {
+            $option = <<<start
+                <option value="%s">%s</option>
+start;
+            foreach ($object as $k=>$v) {
+                if ($v['id'] == $id) {
+                    foreach ($v['children'] as $key=>$val) {
+                        $new = sprintf($option,$val['id'],$val['title']);
+                        $html .= $new;
+                    }
+                }
+            }
+
+        }
+        return json($html);
+    }
+    /************
+    *----==== 获取年级课程树 ====----
+    *Created by w 2019/5/6 10:28
+    ************/
+    private function _getCourseTree($arr){
+        $res = array();
+        if ($arr && is_array($arr)) {
+            foreach ($arr as $k=>&$v) {
+                if ($v['parent_id'] == 0) {
+                    $res[$k] = $v;
+                    $res[$k]['children'] = array();
+                    foreach ($arr as $key=>$val) {
+                        if ($val['parent_id'] == $v['id']) {
+                            $res[$k]['children'][] = $val;
+                        }
+                    }
+                }
+            }
+        }
+        return $res;
+    }
+    /************
+    *----==== 获取课程体系 ====----
+    *Created by w 2019/5/6 9:38
+    ************/
+    public function getCourseInfoById(){
+        $id = $this->request->param('course_id', self::COURSE_ID, 'intval');
+        $IndexPcModel = new IndexPcModel();
+        $where = ['id' => $id];
+        $course = $IndexPcModel->field('model_name,title,id,parent_id,descript,create_date,more')->where($where)->select()->toArray();
+        foreach ($course as $k=>&$v) {
+            if ($v['more']['append'] && is_array($v['more']['append'])) {
+                foreach ($v['more']['append'] as $key=>&$val) {
+                    $val['value'] = preg_split('/[\r\n]+/s',$val['value']);
+                }
+            }
+        }
+//        pref($course);die;
+        $this->assign('course',$course);
+        return $this->fetch('getCourse');
     }
     /************
      *----==== 优势 ====----
