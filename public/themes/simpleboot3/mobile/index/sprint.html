@@ -352,7 +352,117 @@
 </block>
 <block name="footerJs">
     <script>
+        $(function() {
+            // 初始化轮播
+            $(".start-slide").click(function() {
+                $("#myCarousel").carousel('cycle');
+            });
+            // 停止轮播
+            $(".pause-slide").click(function() {
+                $("#myCarousel").carousel('pause');
+            });
+            // 循环轮播到某个特定的帧
+            $(".slide-one").click(function() {
+                $("#myCarousel").carousel(0);
+            });
+            $(".slide-two").click(function() {
+                $("#myCarousel").carousel(1);
+            });
+            $(".slide-three").click(function() {
+                $("#myCarousel").carousel(2);
+            });
+            $('#myCarousel').carousel({
+                interval: 2000
+            });
+            var WinWidth = $(window).width() / 3;
+            $('.training li').css('width', WinWidth + 'px');
+        });
+        //				侧滑开始
+        $('.navbar_button').click(function() {
+            $('.right-menu').show();
+            $('.right-menu').animate({
+                right: 0
+            });
+            $('.mask').toggle()
+        });
+
+        $('.mask').click(function() {
+            $(this).hide()
+            $('.right-menu').animate({
+                right: '-70%'
+            },500,function(){
+                $('.right-menu').hide();
+            });
+        })
+        //				侧滑结束
+        //侧滑点击事件
+        $('.subNav li').on('click', function() {
+            $(this).children("img").css('visibility', 'visible');
+            $(this).siblings().children("img").css('visibility', 'hidden');
+        })
+
         //      九大维度面试板块逐一突破的swriper开始
+        var myPlugin = {
+            name: 'debugger',
+            params: {
+                debugger: false,
+            },
+            on: {
+                init: function () {
+                    if (!this.params.debugger) return;
+                    console.log('init');
+                },
+                click: function (e) {
+                    if (!this.params.debugger) return;
+                    console.log('click');
+                },
+                tap: function (e) {
+                    if (!this.params.debugger) return;
+                    console.log('tap');
+                },
+                doubleTap: function (e) {
+                    if (!this.params.debugger) return;
+                    console.log('doubleTap');
+                },
+                sliderMove: function (e) {
+                    if (!this.params.debugger) return;
+                    console.log('sliderMove');
+                },
+                slideChange: function () {
+                    if (!this.params.debugger) return;
+                    console.log('slideChange', this.previousIndex, '->', this.activeIndex);
+                },
+                slideChangeTransitionStart: function () {
+                    if (!this.params.debugger) return;
+                    console.log('slideChangeTransitionStart');
+                },
+                slideChangeTransitionEnd: function () {
+                    if (!this.params.debugger) return;
+                    console.log('slideChangeTransitionEnd');
+                },
+                transitionStart: function () {
+                    if (!this.params.debugger) return;
+                    console.log('transitionStart');
+                },
+                transitionEnd: function () {
+                    if (!this.params.debugger) return;
+                    console.log('transitionEnd');
+                },
+                fromEdge: function () {
+                    if (!this.params.debugger) return;
+                    console.log('fromEdge');
+                },
+                reachBeginning: function () {
+                    if (!this.params.debugger) return;
+                    console.log('reachBeginning');
+                },
+                reachEnd: function () {
+                    if (!this.params.debugger) return;
+                    console.log('reachEnd');
+                },
+            },
+        };
+        Swiper.use(myPlugin);
         var swiper = new Swiper('.swiper-container-culturalLessons', {
             slidesPerView: 'auto',
             initialSlide:1,
@@ -399,9 +509,9 @@
 
         //零基础全科冲刺成就大学梦卡片切换开始
         $('.subject_title>li').on('click',function(){
-            $(this).siblings().removeClass('actived');
+            $(this).siblings().removeClass('actived fontBlod');
             $(this).siblings().children('img').removeClass('actived');
-            $(this).addClass('actived');
+            $(this).addClass('actived fontBlod');
             $(this).children('img').addClass('actived');
             var index = $(this).index();
             $(this).parent('.subject_title').siblings('.subjectWraper').children('.subject_explain').removeClass('actived');

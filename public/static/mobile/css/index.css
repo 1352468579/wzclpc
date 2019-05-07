@@ -925,9 +925,9 @@
 	height: 3.5rem;
 }
 .percentage_text{
-	height: 3.4rem;
+	height: 3.5rem;
 	background: linear-gradient(#f5594f,#cb4239);
-	padding: 0.35rem 0 0 0.44rem;
+    padding: 0.35rem 0.44rem 0;
 	position: absolute;
     left: 0;
     bottom: 0;
@@ -952,7 +952,7 @@
     position: relative;
 }
 .weiduduan{
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -984,7 +984,6 @@
     text-align: center;
     font-size: 18px;
     background: #666;
-    transition: 300ms;
     transition: all .5s!important;
 }
 .weiduduan .swiper-slide img{
@@ -992,7 +991,7 @@
     height: 100%;
 }
 .weiduduan .swiper-slide:not(.swiper-slide-active){
-    transform: scale(0.8)!important;
+    transform: scale(0.7)!important;
 }
 .weiduduan .my-active{
     transform: translate3d(0, 0, 260px)!important;}

@@ -80,20 +80,9 @@
 
 /*央视开学第一课开始*/
 
-.report {
-	position: relative;
-}
-
 .report>img {
 	width: 100%;
 }
-
-.plate {
-	position: absolute;
-    width: 2.3rem !important;
-    bottom: -1.5rem;
-}
-
 
 /*央视开学第一课结束*/
 
@@ -106,8 +95,13 @@
 	background-size: 100% 100%;
 	box-sizing: border-box;
 	padding-top: 0.9rem;
+    position: relative;
 }
-
+.plate {
+    position: absolute;
+    width: 2.3rem !important;
+    top: -1.5rem;
+}
 .benefit>.wraper {
 	width: 5.6rem;
 	height: 2rem;
@@ -262,7 +256,7 @@
 }
 
 .code>img {
-	height: 100%;
+	width: 100%;
 }
 
 .zhusinsuan {
