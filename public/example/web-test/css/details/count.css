@@ -1,0 +1,392 @@
+.head {
+	height: 8rem;
+	position: relative;
+}
+
+.head>img {
+	height: 100%;
+	width: 100%;
+}
+
+.head_box {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2.1rem;
+}
+.head_box>div:first-child{
+	text-shadow: 2px 2px 8px #474a48;
+}
+.head_box>div {
+	font-size: 0.4rem;
+	margin-bottom: 0.1rem;
+	text-align: center;
+	color: #ffffff;
+}
+
+.gd_course {
+	font-size: 0.26rem !important;
+	padding-top: 0.1rem;
+}
+
+.surroundings>.wraper>h3,
+.classroom>.wraper>h3,
+.benefit>.wraper>h3,
+.secret>h3,
+.scan_code>h3,
+.popular_world>h3 {
+	text-align: center;
+	color: #ffffff;
+	margin-bottom: 0.1rem;
+	font-size: 0.4rem;
+	height: 0.4rem;
+	font-weight: bold;
+}
+
+.surroundings>.wraper>h3>img,
+.classroom>.wraper>h3>img,
+.benefit>.wraper>h3>img,
+.secret>h3>img,
+.scan_code>h3>img,
+.popular_world>h3>img {
+	display: inline-block;
+	margin: 0 0.2rem;
+	width: 0.2rem;
+}
+
+.surroundings>.wraper,
+.classroom>.wraper {
+	padding: 0.8rem 0;
+	box-sizing: border-box;
+	/*height: 2.9rem;*/
+	color: #ffffff;
+	text-align: center;
+	background: linear-gradient(to right, #ff867d, #d74c42);
+}
+
+.surroundings>.wraper>div,
+.classroom>.wraper>div {
+	color: #ffffff;
+}
+
+.English_cap {
+	color: #999999;
+	font-size: 0.3rem;
+	text-align: center;
+	margin-bottom: 0.7rem;
+}
+
+/*央视开学第一课开始*/
+.report>img{
+	width: 100%;
+}
+
+/*央视开学第一课结束*/
+
+/*珠心算四大好处开始*/
+
+.benefit {
+	height: 16.85rem;
+	background: url(../../img/details/bg_benefit.png);
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	padding-top: 0.9rem;
+	position: relative;
+}
+.plate {
+	position: absolute;
+    width: 2.3rem;
+    top: -1.5rem;
+}
+.benefit>.wraper {
+	width: 5.6rem;
+	height: 2rem;
+	margin: 0 auto 0.9rem;
+	border: 2px solid #ffffff;
+	background: rgba(255, 255, 255, 0.6);
+	box-sizing: border-box;
+	padding-top: 0.6rem;
+}
+
+.improve {
+	font-size: 0.3rem;
+	color: #999999;
+	margin-bottom: 0.36rem;
+	text-align: center;
+}
+
+.improve_polint>li {
+	width: 6.8rem;
+	height: 2.3rem;
+	background: #ffffff;
+	margin: 0 auto 0.34rem;
+	box-sizing: border-box;
+	padding: 0.5rem 0.4rem 0.5rem 1.6rem;
+	position: relative;
+	border-radius: 8px;
+}
+
+.improve_polint>li>img {
+	position: absolute;
+	height: 1.9rem;
+	top: 0.2rem;
+	left: -0.2rem;
+}
+
+.caption {
+	font-size: 0.32rem;
+	color: #666666;
+	margin-bottom: 0.2rem;
+	font-weight: bold;
+}
+
+.details {
+	font-size: 0.27rem;
+	line-height: 0.44rem;
+	color: #b1b1b1;
+}
+
+/*珠心算四大好处结束*/
+
+/*珠心算 脑力开发背后的秘密开始*/
+
+.secret {
+	height: 13rem;
+	background: url(../../img/details/secret.png);
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	padding-top: 1.1rem;
+}
+
+.explain {
+	font-size: 0.26rem;
+	line-height: 0.48rem;
+	color: #ffffff;
+	padding: 0 0.4rem;
+	margin-bottom: 0.5rem;
+}
+
+/*四大教科组轮播引入css开始*/
+
+#banner {
+	height: 5.4rem;
+	text-align: center;
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 0.3rem;
+}
+
+.swiper-container-secret {
+	height: 4.7rem;
+}
+
+.swiper-container-secret>.swiper-wrapper>.swiper-slide:not(.swiper-slide-active) {
+	overflow: hidden;
+}
+
+.swiper-container-secret {
+	width: 100%;
+	height: 5.3rem;
+	padding-bottom: 1rem;
+}
+
+.swiper-container-secret>.swiper-wrapper>.swiper-slide {
+	width: 5rem !important;
+	height: 4.7rem !important;
+	transition: 300ms;
+}
+
+.swiper-container-secret>.swiper-wrapper>.swiper-slide>img {
+	height: 100%;
+	width: 100%;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+	bottom: 0 !important;
+}
+
+.swiper-container-secret .swiper-pagination-bullet-active {
+	background: #53b5b8 !important;
+	border: 1px solid #ffffff;
+}
+
+.swiper-pagination-bullet{
+	background: #ffffff !important;
+}
+/*珠心算 脑力开发背后的秘密结束*/
+
+/*专家力证 珠心算可开发左右脑开始*/
+
+.scan_code {
+	padding-top: 0.8rem;
+	height: 16rem;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.scan_code>.scan_code_bottom {
+	position: absolute;
+	width: 4rem;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.tips {
+	font-size: 0.28rem;
+	color: #999999;
+	text-align: center;
+	margin-bottom: 1.1rem;
+}
+
+.code {
+	height: 3.8rem;
+	text-align: center;
+	margin-bottom: 0.6rem;
+}
+
+.code>img {
+	width: 100%;
+}
+
+.zhusinsuan {
+	height: 6.2rem;
+	width: 6.2rem;
+	margin: 0 auto;
+}
+
+.zhusinsuan>img {
+	width: 100%;
+	height: 100%;
+}
+
+/*专家力证 珠心算可开发左右脑结束*/
+
+/*流行风靡全球开始*/
+
+.popular_world {
+	height: 11rem;
+	position: relative;
+	padding-top: 0.9rem;
+}
+
+.bg_popular_world,
+.popular_world_mask {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+}
+
+.popular_world_mask {
+	background: rgba(0, 0, 0, 0.7);
+	z-index: -1 !important;
+}
+
+/*引入的swriper开始*/
+
+.swiper-popular_world>.swiper-wrapper>.swiper-slide:not(.swiper-slide-active) {
+	overflow: hidden;
+}
+
+.swiper-popular_world {
+	width: 100%;
+	height: 6.7rem;
+	padding-bottom: 1rem;
+}
+
+.swiper-popular_world>.swiper-wrapper>.swiper-slide {
+	width: 4.6rem !important;
+	height: 6.1rem !important;
+	transition: 300ms;
+	border-radius: 18px;
+	background: #ffffff;
+}
+
+.swiper-popular_world>.swiper-wrapper>.swiper-slide>img {
+	height: 100%;
+	width: 100%;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+	bottom: 0 !important;
+}
+
+.bg_popular {
+	height: 3rem;
+	position: relative;
+	margin-bottom: 0.26rem;
+}
+.bg_popular >img{
+	width: 100%;
+	height: 100%;
+}
+.country{
+	position: absolute;
+    width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	text-align: center;
+	background: rgba(255,255,255,0.8);
+	bottom: 0;
+	left: 0;
+	font-size: 0.34rem;
+	color: #666666;	
+}
+.pop_details{
+	padding: 0 0.33rem;
+	font-size: 0.26rem;
+	color: #b1b1b1;
+	line-height: 0.44rem;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:6;
+    -webkit-box-orient: vertical;
+}
+.swiper-popular_world .swiper-pagination-bullet-active {
+	background: #ffb026 !important;
+}
+/*引入的swriper开始*/
+
+/*流行风靡全球结束*/
+
+/*望子成龙珠心算班环境开始*/
+
+.library {
+	height: 4.3rem;
+	margin-bottom: 0.1rem;
+}
+
+.library>img {
+	height: 100%;
+	width: 100%;
+}
+
+.classroom {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.1rem;
+}
+
+.classroom>li {
+	height: 3.3rem !important;
+	width: 49.3%;
+}
+
+.classroom>li>img {
+	width: 100%;
+	height: 100%;
+}
+
+.choose{
+	background: #FFFFFF !important;
+}
+/*望子成龙珠心算班环境结束*/

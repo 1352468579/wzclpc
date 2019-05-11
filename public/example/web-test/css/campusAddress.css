@@ -21,7 +21,6 @@ body{
 .text_1{
 	font-size: 0.4rem;
 	line-height: 0.6rem;
-	font-weight: bold;
 	color: #666666;
 }
 .text_2{
@@ -34,29 +33,25 @@ body{
  .swiper-container {
       width: 100%;
       height: 100%;
+      background: #ffffff;
     }
 .swiper-slide {
   text-align: center;
   font-size: 0.3px;
   background: #fff;
-  display: flex;
-  justify-content: space-around;
-}
-/*swiper演示*/
-.addressWraper{
-	display: flex;
-	width: 100%;
-	justify-content: space-around;
-}
-.addressWraper > li{
 	padding: 0.4rem 0 0.7rem;
 	text-align: center;
+}
+/*swiper演示*/
+.swiper-wrapper{
+	background: #ffffff !important;
 }
 .img_address{
 	height: 1.4rem;
 	width: 1.4rem;	
 	position: relative;
-	margin-bottom: 0.26rem;
+	text-align: center;
+    margin: 0 auto 0.26rem;
 }
 .img_address > img{	
 	height: 100%;
@@ -73,7 +68,7 @@ body{
 	top: 0;
 	left: 0;
 	box-sizing: border-box;
-	padding: 0.3rem 0.2rem;
+    padding: 0.35rem 0.2rem;
 	display: none;
 }
 .actived{
@@ -92,8 +87,6 @@ body{
 	padding: 0 0.2rem;
 	height: 0.6rem;
 	background: #ffffff;
-	box-shadow: 0 5px 5px #e4e4e4;
-	margin-bottom: 0.24rem;
 }
 .routh_info > li:first-child{
 	color: #bebebe;
@@ -103,20 +96,26 @@ body{
 .routh_info > li:last-child{
 	color: #d74c42;
 }
+.address_infoWraper{
+	padding-bottom: 0.2rem;
+}
+.address_infoWraper>ul:nth-child(odd){
+	background: #f5f5f5;
+}
+.address_infoWraper>ul:nth-child(even){
+	background: ffffff;
+}
 .address_info{
-	height: 2rem;
-	padding: 0.25rem 0.3rem 0 0.3rem;
+	padding: 0.25rem 0.3rem 0.2rem 0.3rem;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 0.2rem;
 	background: #ffffff;
 }
 .address_info > li:first-child{
 	width: 4rem;
 }
 .address_info > li:first-child > div{
-	height: 0.8rem;
-	line-height: 0.8rem;
+	line-height: 0.6rem;
 	font-size: 0.26rem;
 	color: #666666;
 }
@@ -128,6 +127,14 @@ body{
 	width: 100%;
 	height: 100%;
 }
+.address_info>li>div>img{
+	width: 0.3rem;
+	margin-right: 0.2rem;
+    vertical-align: baseline;
+}
 .number{
 	color: #999999 !important;
+}
+.address{
+	padding-top: 0.15rem;
 }

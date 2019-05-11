@@ -24,10 +24,6 @@
 					<div class="head_logo">
 						<img src="img/head_logo.png" />
 					</div>
-					<div class="search_input">
-						<input type="" name="" id="" value="" placeholder="输入您想要搜索的内容" />
-						<img src="img/search.png" alt="" />
-					</div>
 					<ul class="subNav">
 						<li>
 							<img src="img/pillar.png" />首页
@@ -293,12 +289,9 @@
 			<ul>
 				<li>新闻资讯</li>
 				<li>校区环境</li>
-				<li>儿童学员</li>
+				<li>儿童学院</li>
 				<li>校区地址</li>
 			</ul>
-			<div class="appDownload">
-				App下载
-			</div>
 		</div>
 		
 		
@@ -308,6 +301,7 @@
 		<script type="text/javascript" src="js/carousel.js"></script>
 		<script type="text/javascript">
 			$(function() {
+				$('.right-menu').css('display','none');
 				// 初始化轮播
 				$(".start-slide").click(function() {
 					$("#myCarousel").carousel('cycle');

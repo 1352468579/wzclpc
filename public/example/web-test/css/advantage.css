@@ -16,12 +16,15 @@
 }
 .fourAdvan > span{
 	color: #ffe96e;
+	display: inline-block;
+	margin-left: 0.3rem;
 }
 .polit{
 	display: flex;
 	flex-wrap: wrap;
 	box-sizing: border-box;
 	padding: 0 1.8rem;
+	height: 1.15rem;
 }
 .polit > li{
 	color: #ffffff;
@@ -67,6 +70,7 @@
 	margin-bottom: 0.1rem;
 	font-size: 0.4rem;
 	height: 0.4rem;
+	font-weight: bold;
 }
 .elite > h3 > img,
 .teaching > h3 > img,
@@ -83,12 +87,12 @@
 }
 .border-dash{
 	position: absolute;
+    width: 100%;
+    left: 0;
     bottom: -0.1rem;
-    width: 106%;
-    left: -0.18rem;
 }
 .English_cap{
-	color: #a1a1a1;
+	color: #999999;
 	font-size: 0.14rem;
 	text-align: center;
     margin-bottom: 0.7rem;
@@ -101,6 +105,7 @@
 	width: 20%;
 	text-align: center;
 	font-size: 0.26rem;
+	font-weight: bold;
 }
 .floors > li:first-child{
 	color: #d74c42;
@@ -126,12 +131,19 @@
 	width: 100%;
 }
 .comeFrom{
-	color: #e2e2e2;
+	color: #bebebe;
 	font-size: 0.26rem;
 	text-align: center;
 }
 .teaching{
-	height: 10rem;
+	height: 10.6rem;
+	position: relative;
+}
+.teaching_bg{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
 }
 .carousel-inner2{
 	height: 6.6rem;
@@ -166,7 +178,6 @@
 .logoWraper{
 	width: 2.1rem;
 	height: 2.1rem;
-	border: 2px solid #ffffff;
 	border-radius: 50px;
 	margin: 0 auto;
 	margin-bottom: 0.4rem;
@@ -193,18 +204,20 @@
 }
 .style_item{
 	font-size: 0.3rem;
-	color: #666666;
-	margin-bottom: 0.2rem;
-	font-weight: bold;
+    color: #666666;
+    line-height: 0.5rem;
 }
 .style_item1{
-	font-size: 0.26rem;
+	font-size: 0.28rem;
 	color: #b1b1b1;
-	margin-top: 0.3rem;
+	line-height: 0.3rem;
+}
+.style_item2{
+	line-height: 0.68rem;
 }
 .surroundings > .wraper,
 .classroom > .wraper{
-	padding: 0.8rem 0;
+	padding: 0.7rem 0;
 	box-sizing: border-box;
 	height: 2.9rem;
 	color: #ffffff;
@@ -232,6 +245,10 @@
 	height: 3.3rem !important;
 	width: 49.3%;
 }
+.classroom > li.wraper{
+	padding: 0.9rem 0 !important;
+}
+
 .classroom > li > img{
 	width: 100%;
 	height: 100%;
@@ -239,18 +256,16 @@
 /*swriper部分开始*/
 .swiper-container {
    width: 100%;
-  height: 6.6rem;
-  padding-bottom: 1rem;
+   height: 7.4rem;
+   padding-bottom: 1rem;
 }
 .swiper-slide {
     width: 4.4rem !important; 
-  height: 6rem !important;
-  text-align: center;
-  transition: 300ms;
-  border: 1px solid #f1f1f1;
-  border: 1px solid #eeeeee;
-  box-shadow: 0px 3px 5px #f0f0f0;
-  border-radius: 25px;
+	height: 6.8rem !important;
+	text-align: center;
+	transition: 300ms;
+	border-radius: 18px;
+	box-shadow: 0px 3px 5px #f0f0f0;
 }
 .swiper-container-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-custom,
@@ -260,6 +275,41 @@
 .swiper-pagination-bullet-active{
 	background: #ff554f !important;
 }
+.pic_group{
+	height: 3.7rem;
+	position: relative;
+}
+.pic_group > .medal{
+	position: absolute;
+	width: 0.9rem;
+	right: 0.4rem;
+	bottom: 0.3rem;
+}
+.pic_group > .math{
+	width: 100%;
+	height: 100%;
+}
+.sort_group{
+	padding: 0 0.4rem;
+	text-align: right;
+    font-size: 0.3rem;
+    line-height: 0.45rem;
+	margin-bottom: 0.2rem;
+	color: #666666;
+	font-weight: bold;
+    margin-top: -0.2rem;
+}
+.detail_group{
+	padding: 0 0.3rem;
+	font-size: 0.26rem;
+	line-height: 0.44rem;
+	color: #b1b1b1;
+	letter-spacing: 1px;
+	text-align: left;
+}
 /*swriper部分接结束*/
 
 /*中间部分结束*/
+.choose{
+	background: #ffffff !important;
+}

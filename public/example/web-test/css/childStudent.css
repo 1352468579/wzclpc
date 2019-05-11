@@ -1,30 +1,52 @@
+.carousel-caption{
+	bottom: 0 !important;
+}
+.carousel-caption > .recommend{
+	color: #ffffff;
+	font-size: 0.4rem;
+	text-align: center;
+	line-height: 0.6rem;
+    margin-bottom: 0.1rem;
+}
+.carousel-caption > .improved{
+	color: #ffffff;
+	font-size: 0.26rem;
+	text-align: center;
+	margin-top: 0.2rem;
+	letter-spacing: 1px;
+}
 /*儿童学院简介开始*/
 .head{
 	height: 5.18rem;
+	padding-top: 0.85rem;
+	box-sizing: border-box;
+	background: url(../img/childStudent/child.png);
+	background-size: 100% 100%;
+	text-align: center;
 }
-.head > img{
-	height: 100%;
-	width: 100%;
+.head > .introduction{
+	width: 3.2rem;
 }
+
 .videoes{
-	height: 13.6rem;
 	background: url(../img/childStudent/video.png);
 	background-size: 100% 100%;
 	position: relative;
+	height: 13.6rem;
 }
 .medal{
 	position: absolute;
-	width: 0.8rem;
-	top: -0.35rem;
+	width: 1rem;
+    top: -0.4rem;
 	right: 8%;
 }
 .tips{
-	height: 6.3rem;
 	margin: 0 0.45rem;
 	background: #ffffff;
 	border-radius: 12px;
 	box-sizing: border-box;
-	padding: 0.45rem 0.4rem 0 0.4rem;
+	padding: 0.45rem 0.38rem 0.2rem;
+    box-shadow: 0px 1px 5px #333;
 }
 .tips > div{
 	font-size: 0.24rem;
@@ -35,8 +57,8 @@
 }
 /*儿童视频引用*/
 .videoWraper{
-	height: 5.6rem;
-	margin-top: 1.7rem;
+	height: 4.5rem;
+	margin-top: 2rem;
 }
 .videoWraper > img{
 	height: 100%;
@@ -46,212 +68,228 @@
 
 /*课程开始*/
 .course{
-	height: 15.4rem;
-	padding-top: 0.8rem;
-	box-sizing: border-box;
+    padding-top: 0.8rem;
+    box-sizing: border-box;
 }
 .caption{
-	height: 0.65rem;
-	text-align: center;
-	margin-bottom: 0.7rem;
+    height: 0.65rem;
+    text-align: center;
+    margin-bottom: 0.7rem;
 }
 .caption > img{
-	height: 100%;
+    height: 100%;
 }
-.pavilion{
-	padding: 0 0.45rem;
-}
+
 .title{
-	display: flex;
+    display: flex;
+    flex-direction: row;
+    width: 6.6rem;
+    margin: 0 auto;
 }
 .title > li{
-	height: 1rem;
-	width: 33.3%;
-	line-height: 1rem;
-	font-size: 0.4rem;
-	text-align: center;
-	border-radius: 20px 20px 0 0;
-	color: #FFFFFF;
+    height: 1rem;
+    flex: 1;
+    line-height: 1rem;
+    font-size: 0.4rem;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    color: #FFFFFF;
 }
 .title > li:first-child{
-	background: linear-gradient(to right,#ffd086,#ffa721);
+    background: #ffaf24;
 }
 .title > li:nth-child(2){
-	background: linear-gradient(to right,#f3645a,#e2564c);
+    background: #d74c42;
 }
 .title > li:nth-child(3){
-	background: linear-gradient(to right,#c9f045,#74e311);
+    background: #76e412;
 }
 .detail{
-	position: relative;
+    position: relative;
     height: 6.6rem;
     margin-bottom: 0.6rem;
+    width: 6.6rem;
+    margin: 0 auto;
 }
 .detail > li{
-	height: 6.6rem;
-	width: 100%;	
-	box-sizing: border-box;
-	padding: 0.6rem 0.36rem 0;
-	position: absolute;
-	top: 0;
-	left: 0;		
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.36rem 0.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .detail > li > div{
-	color: #ffffff;
-	letter-spacing: 1px;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 .improve{
-	font-size: 0.26rem;
-	line-height: 0.5rem;
-	margin-bottom: 0.7rem;
+    font-size: 0.26rem;
+    line-height: 0.5rem;
+    margin-bottom: 0.7rem;
 }
 .detail > li:first-child{
-	background: linear-gradient(to top right,#ffd086,#ffaf24);
-	border-radius: 0px 25px 25px 25px;
+    background: linear-gradient(#ffaf24,#ffd086);
+    border-radius: 0px 25px 25px 25px;
 }
 .detail > li:nth-child(2){
-	background: linear-gradient(to top right,#ff6e64,#d74c42);
-	border-radius: 25px;
+    background: linear-gradient(#d74c42,#ff6e64);
+    border-radius: 25px;
 }
-.actived{
-	z-index: 99;
+.activedd{
+    z-index: 99;
+}
+.detailWraper.actived{
+    z-index: 99;
 }
 .detail > li:last-child{
-	background: linear-gradient(to top right,#c5fc46,#76e412);
-	border-radius: 25px 0px 25px 25px;
+    background: linear-gradient(#76e412,#c5fc46);
+    border-radius: 25px 0px 25px 25px;
 }
 .ability > ul{
-	display: flex;
-    margin-bottom: 0.1rem;
+    display: flex;
+    margin-bottom: 0.2rem;
 }
 .ability > ul > li{
-	width: 33.3%;
-	color: #ffffff;
+    width: 33.3%;
+    color: #ffffff;
 }
 .ability > ul > li:nth-child(2){
-	text-align: center;
+    text-align: center;
 }
 .ability > ul > li:last-child{
-	text-align: right;
+    text-align: right;
 }
 .special{
-	margin-bottom: 0.7rem;
+    margin-bottom: 0.7rem;
 }
 .special > div,
 .ability > div{
-	color: #ffffff;
+    color: #ffffff;
     line-height: 0.5rem;
-    font-size: 0.26rem;
+    font-size: 0.28rem;
 }
 .special > h5,
 .ability > h5{
-	font-size: 0.34rem;
-	margin-bottom: 0.2rem;
-	text-align: center;
+    font-size: 0.36rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
 }
 .play{
-	height: 5rem;
+    height: 5rem;
 }
 .play > img{
-	height: 100%;
-	width: 100%;
+    height: 100%;
+    width: 100%;
 }
 /*收费开始*/
 .charge{
-	height: 25rem;
-	box-sizing: border-box;
-	padding-top: 0.7rem;
+    height: 22rem;
+    box-sizing: border-box;
+    padding-top: 0.7rem;
 }
 .code{
-	height: 10rem;
-	width: 100%;
-	background: url(../img/childStudent/bg_code.png);
-	background-size: 100% 100%;
+    height: 10rem;
+    width: 100%;
+    background: url(../img/childStudent/bg_code.png);
+    background-size: 100% 100%;
 }
 .gift{
-	height: 1.3rem;
-	padding: 0 0.56rem;
-	box-sizing: border-box;
-	margin-bottom: 0.7rem;
+    height: 1.3rem;
+    padding: 0 0.56rem;
+    box-sizing: border-box;
+    margin-bottom: 0.7rem;
 }
 .gift > img{
-	height: 100%;
-	width: 100%;
+    height: 100%;
+    width: 100%;
 }
 .teacher_info{
-	display: flex;
-	justify-content: space-between;
-	box-sizing: border-box;
-	padding: 0 0.8rem;
-	margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 0.8rem;
+    margin-bottom: 0.6rem;
 }
 .teacher_info > li{
-	text-align: center;
+    text-align: center;
     width: 2.6rem;
-	height: 3.4rem;	
-	color: #ffffff;
-	font-size: 0.3rem;
+    height: 3.4rem;
+    color: #ffffff;
+    font-size: 0.3rem;
 }
 .teacher_info > li > img{
-	width: 100%;
-	display: block;
-	margin-bottom: 0.3rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 0.3rem;
 }
 .detail_charge > .detailWraper:nth-child(1){
-	background: linear-gradient(to top right,#ffd086,#ffaf24);
-	border-radius: 0px 20px 20px 20px;
+    background: linear-gradient(#ffaf24,#ffd086);
+    border-radius: 0px 20px 20px 20px;
 }
 .detail_charge > .detailWraper:nth-child(2){
-	background: linear-gradient(to top right,#ff6e64,#d74c42);
-	border-radius: 20px;
+    background: linear-gradient(#d74c42,#ff6e64);
+    border-radius: 20px;
 }
 .detail_charge > .detailWraper:nth-child(3){
-	background: linear-gradient(to top right,#c5fc46,#76e412);
-	border-radius: 20px 0px 20px 20px;
+    background: linear-gradient(#76e412,#c5fc46);
+    border-radius: 20px 0px 20px 20px;
 }
 .detailWraper{
-	/*background: linear-gradient(to top right,#ff6e64,#d74c42);*/
-	border-radius: 20px;
-	position: relative;
+    border-radius: 20px;
+    position: relative;
 }
 .detailWraper{
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 6.6rem;
-	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     margin-bottom: 0.6rem;
 }
 .detailWraper > ul{
-	display: flex;
-    margin: 0.25rem 0.23rem 0;
+    display: flex;
+    margin: 0.25rem 0.23rem;
     box-sizing: border-box;
     background: #ffffff;
     border-radius: 20px;
-    height: 92%;
 }
 .detailWraper > ul > li{
-	width: 33%;
-	text-align: center;
-	padding-top: 0.4rem;
+    width: 33%;
+    text-align: center;
+    padding-top: 0.4rem;
 }
 .detailWraper > ul > li > h3{
-	font-size: 0.3rem;
-	height: 1rem;
-	color: #e3574c;
-	font-weight: bold;
+    font-size: 0.3rem;
+    height: 1rem;
+    color: #e3574c;
+    font-weight: bold;
 }
 .detailWraper > ul > li > h3 > span{
-	font-size: 0.2rem;
-	color: #e3574c;
+    font-size: 0.2rem;
+    color: #e3574c;
 }
 .detailWraper > ul > li > ul > li{
-	font-size: 0.26rem;
-	margin-bottom: 0.2rem;
-	color: #e3574c;
-	letter-spacing: 1px;
+    font-size: 0.26rem;
+    margin-bottom: 0.2rem;
+    color: #e3574c;
+    letter-spacing: 1px;
+    height: 0.7rem;
 }
-.detailWraper > ul > li:nth-child(2){
-	border-left: 0.06rem solid #eb594e;
-	border-right: 0.06rem solid #eb594e;
+.detailWraper:nth-child(1) > ul > li:nth-child(2){
+    border-left: 0.06rem solid;
+    border-right: 0.06rem solid;
+    border-image: linear-gradient(#ffaf24,#ffd086)1 10 1; /* 标准的必须写在最后 */
 }
+.detailWraper:nth-child(2) > ul > li:nth-child(2){
+    border-left: 0.06rem solid;
+    border-right: 0.06rem solid;
+    border-image: linear-gradient(#d74c42,#ff6e64)1 10 1; /* 标准的必须写在最后 */
+}
+.detailWraper:nth-child(3) > ul > li:nth-child(2){
+    border-left: 0.06rem solid;
+    border-right: 0.06rem solid ;
+    border-image: linear-gradient(#76e412,#c5fc46)1 10 1; /* 标准的必须写在最后 */
+}
+
+
+

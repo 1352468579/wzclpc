@@ -290,26 +290,26 @@
                 </li>
                 <li>
                     <div class="Coursework_title">
-                        早晚辅导
+                        “四清”原则
                     </div>
                     <div class="Coursework_text">
-                        封闭式管理，老师全 程监督早晚自习、随 时答疑
+                        知识过关四步检测，本堂知识本堂清、当天知识当天保障知识过关
                     </div>
                 </li>
                 <li>
                     <div class="Coursework_title">
-                        早晚辅导
+                        定期测验
                     </div>
                     <div class="Coursework_text">
-                        封闭式管理，老师全 程监督早晚自习、随 时答疑
+                        随堂测验、周考、月考，同步一二诊考试，及时发现问题、解决问题
                     </div>
                 </li>
                 <li>
                     <div class="Coursework_title">
-                        早晚辅导
+                        教学调整
                     </div>
                     <div class="Coursework_text">
-                        封闭式管理，老师全 程监督早晚自习、随 时答疑
+                        收集学生反馈，调整教学方案、契合学生学习情况
                     </div>
                 </li>
             </ul>
@@ -353,6 +353,18 @@
 <block name="footerJs">
     <script>
         $(function() {
+            var swiper_my = new Swiper('.swiper-container-culturalLessons', {
+                slidesPerView: 'auto',
+                initialSlide:1,
+                spaceBetween: 0,
+                centeredSlides: true,
+                loop:true,
+                debugger: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                }
+            });
             // 初始化轮播
             $(".start-slide").click(function() {
                 $("#myCarousel").carousel('cycle');
@@ -377,24 +389,6 @@
             var WinWidth = $(window).width() / 3;
             $('.training li').css('width', WinWidth + 'px');
         });
-        //				侧滑开始
-        $('.navbar_button').click(function() {
-            $('.right-menu').show();
-            $('.right-menu').animate({
-                right: 0
-            });
-            $('.mask').toggle()
-        });
-
-        $('.mask').click(function() {
-            $(this).hide()
-            $('.right-menu').animate({
-                right: '-70%'
-            },500,function(){
-                $('.right-menu').hide();
-            });
-        })
-        //				侧滑结束
         //侧滑点击事件
         $('.subNav li').on('click', function() {
             $(this).children("img").css('visibility', 'visible');
@@ -463,25 +457,13 @@
             },
         };
         Swiper.use(myPlugin);
-        var swiper = new Swiper('.swiper-container-culturalLessons', {
-            slidesPerView: 'auto',
-            initialSlide:1,
-            spaceBetween: 20,
-            centeredSlides: true,
-            loop:true,
-            debugger: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            }
-        });
         //      九大维度面试板块逐一突破的swriper结束
 
         //短时间如何快速拿下文化课？的swriper开始
-        var swiper = new Swiper('.swiper-short_time', {
+        var swiper_my1 = new Swiper('.swiper-short_time', {
             slidesPerView: 'auto',
             initialSlide:1,
-            spaceBetween:10,
+            spaceBetween:0,
             centeredSlides: true,
             loop:true,
             debugger: true,
@@ -496,7 +478,7 @@
         var swiper = new Swiper('.swiper-management', {
             slidesPerView: 'auto',
             initialSlide:1,
-            spaceBetween:10,
+            spaceBetween:0,
             centeredSlides: true,
             loop:true,
             debugger: true,
