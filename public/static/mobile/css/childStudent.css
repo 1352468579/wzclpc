@@ -102,7 +102,7 @@
     background: #d74c42;
 }
 .title > li:nth-child(3){
-    background: #76e412;
+    background: #3ecc00;
 }
 .detail{
     position: relative;
@@ -143,7 +143,7 @@
     z-index: 99;
 }
 .detail > li:last-child{
-    background: linear-gradient(#76e412,#c5fc46);
+    background: linear-gradient(#3ecc00,#42ff00);
     border-radius: 25px 0px 25px 25px;
 }
 .ability > ul{
@@ -232,7 +232,7 @@
     border-radius: 20px;
 }
 .detail_charge > .detailWraper:nth-child(3){
-    background: linear-gradient(#76e412,#c5fc46);
+    background: linear-gradient(#3ecc00,#42ff00);
     border-radius: 20px 0px 20px 20px;
 }
 .detailWraper{

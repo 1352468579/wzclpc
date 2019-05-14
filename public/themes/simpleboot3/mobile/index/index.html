@@ -1,472 +1,779 @@
-<extend name="layout/layout" />
-<block name="css">
-    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/index.css" />
-</block>
-<block name="main">
-    <div class="content">
-        <div class="registered">
-            <include file="layout/register"/>
-            <div class="choose_text">为什么选择望子成龙？<img src="__STATIC__/mobile/img/choose_down.png" alt="" /></div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>望子成龙官方首页</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="description" content="不超过150个字符" />
+    <meta name="keywords" content="" />
+    <meta content="caibaojian" name="author" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/index_1.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/publicHead_1.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/publicRegister_1.css"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/css/swiper.min.css" />
+    <link rel="stylesheet" href="__STATIC__/mobile/layer/skin/layer.css" media="all">
+
+    <script type="text/javascript" src="__STATIC__/mobile/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/mobile/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/mobile/js/swiper.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/mobile/js/carousel.js"></script>
+    <script src="__STATIC__/mobile/layer/layer.js"></script>
+</head>
+<body>
+<!--公共头部-->
+<div class="header clearfix">
+    <div class="logo"><img src="__STATIC__/mobile/img/logo.png" />
+    </div>
+    <div class="nav">
+        <div class="navbar_button">
+            <img src="__STATIC__/mobile/img/side_pull.png"/>
         </div>
-        <div class="functions">
-            <div class="reservation">
-                <div class="wraper">
-                    <h3><img src="__STATIC__/mobile/img/white_line.png"/>四大教研组<img src="__STATIC__/mobile/img/white_line.png"/></h3>
-                    <div class="English_cap">Four Teaching and Research Groups</div>
-                    <div id="banner">
-                        <div class="swiper-container swiper-container-reservation">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="__STATIC__/mobile/img/bg_Language.png" />
-                                    <div class="reservation_text">
-                                        <h3>魅力语文组</h3>
-                                        <div class="explain_content">打基础、抓考点、练技能、冲写作，把握各年级重难点和命题趋势，让学生快速掌握考试技巧和得高分技能，以中高考满分作文为标杆，锻造写作高手。 </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="__STATIC__/mobile/img/bg_Math.png" />
-                                    <div class="reservation_text">
-                                        <h3>金牌数学组</h3>
-                                        <div class="explain_content">锁定核心知识点，用最简单高效的方法，让学 生把知识点学透、学精、学准，确保考试不错 丢一分，注重培养学生的学习习惯、数学思维 。</div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="__STATIC__/mobile/img/bg_English.png" />
-                                    <div class="reservation_text">
-                                        <h3>考点英语组</h3>
-                                        <div class="explain_content">特级教师、小升初、中高考骨干教师领衔，由拥有多年教学经验的名师担纲授课，在把握考纲、考点的同时，引爆学习潜能，教会学生高效学法，从而爱上英语、爱上学习。 </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="__STATIC__/mobile/img/bg_Mathematical.png" />
-                                    <div class="reservation_text">
-                                        <h3>满分理化组</h3>
-                                        <div class="explain_content">注重理化学科知识体系梳理，以及知识点之间的相互联系，把理化考点一一剖析，逐一传授每个考点的解题方法，精讲典型题，精炼类型题，寓教于乐，轻松冲刺满分。 </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                        <img src="__STATIC__/mobile/img/bg_box.png" class="bg_box" />
-                    </div>
-                    <button onclick="window.location.href='#register'">预约报名</button>
-                </div>
-                <div class="block_mask"></div>
-                <img src="__STATIC__/mobile/img/banner_3.png" class="banner_3" />
+        <div class="right-menu">
+            <div class="head_logo">
+                <img src="__STATIC__/mobile/img/head_logo.png" />
             </div>
-            <div class="course">
-                <h3><img src="__STATIC__/mobile/img/black_line.png"/>全方位课程<img src="__STATIC__/mobile/img/black_line.png"/></h3>
-                <div class="English_cap">Omni-directional course</div>
-                <ul class="lessons">
-                    <li onclick="window.location.href='/Mobile/Index/sprint'">
-                        <img src="__STATIC__/mobile/img/write.png" />
-                        <div class="box">
-                            <h5>高三全日制中心</h5>
-                            <div style="font-size: 0.12rem;color: #ffffff;">Senior Three Full-time Center</div>
-                            <div>
-                                <img src="__STATIC__/mobile/img/box_clock.png" />
-                            </div>
-                        </div>
-                    </li>
-                    <li onclick="window.location.href='/Mobile/Index/count'">
-                        <img src="__STATIC__/mobile/img/suanpan.png" />
-                        <div class="box">
-                            <h5>少儿珠心算班</h5>
-                            <div style="font-size: 0.12rem;color: #ffffff;">Children's abacus classes</div>
-                            <div>
-                                <img src="__STATIC__/mobile/img/box_suanpan.png" />
-                            </div>
-                        </div>
-                    </li>
-                    <li onclick="window.location.href='/Mobile/Index/training'">
-                        <img src="__STATIC__/mobile/img/smile_boy.png" />
-                        <div class="box">
-                            <h5>全能口才训练班</h5>
-                            <div style="font-size: 0.12rem;color: #ffffff;">Eloquence Training Course</div>
-                            <div>
-                                <img src="__STATIC__/mobile/img/box_info.png" />
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <img src="__STATIC__/mobile/img/lessons_bottom.png" class="lessons_bottom"/>
-            </div>
-            <div class="times">
-                <div class="wraper">
-                    <h3><img src="__STATIC__/mobile/img/white_line.png"/>紧跟时代，探索课堂教学<img src="__STATIC__/mobile/img/white_line.png"/></h3>
-                    <div class="English_cap" style="margin-bottom: 0;">Keep up with the times,Exploring Classroom Teaching</div>
-                    <ul class="less_detail">
-                        <li>
-                            <div><img src="__STATIC__/mobile/img/woman.png" / style="left: 0.2rem;"></div>
-                            <div style="text-align: right;padding-right: 0.3rem;">
-                                <p><span style="color: #d74c42;">两千余名</span>教师云集</p>
-                                <p>共同探讨课堂教学</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div style="text-align: left;padding-left: 0.3rem;">
-                                <p><span style="color: #d74c42;">近20项</span>备课历程</p>
-                                <p>让课堂更加精彩</p>
-                            </div>
-                            <div><img src="__STATIC__/mobile/img/man.png" style="right: 0.2rem;width: 3.6rem;" /></div>
-                        </li>
-                    </ul>
+            <ul class="subNav">
+                <li onclick="window.location.href='/'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />首页
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/xxue.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />小学辅导
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/cz.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />初中辅导
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/gz.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />高中辅导
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/zkjx.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />中考特训
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/active/indexgg/index.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />儿童学院
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/whcc.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />艺考集训
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/gkfd.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />复读中心
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/gktx.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />高三冲刺
+                </li>
+                <li onclick="window.location.href='https://web.wzclxx.com/web/ad/mshi.html'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />师资团队
+                </li>
+                <li onclick="window.location.href='/wap/sprint/trusteeship'">
+                    <img src="__STATIC__/mobile/img/pillar.png" />托管中心
+                </li>
+            </ul>
+        </div>
+        <div class="mask"></div>
+    </div>
+</div>
+<!--内容-->
+<div class="content">
+    <!--banner-->
+    <div class="registered">
+        <div class="swiper-container swiper-container-carousel swiper_registered">
+            <div class="swiper-wrapper">
+                <foreach name="banner" item="banner">
+                <div class="swiper-slide">
+                    <a href="{$banner.href}">
+                        <if condition="empty($banner.thumbnail)">
+                            <img src="__STATIC__/mobile/img/preferential.png" />
+                            <else/>
+                            <img src="{:cmf_get_image_preview_url($banner.thumbnail)}" alt="">
+                        </if>
+                    </a>
                 </div>
-                <img src="__STATIC__/mobile/img/hand_bg.png" class="hand_bg" />
-                <div class="block_mask"></div>
-            </div>
-            <div class="boutique_class">
-                <h3 style="color: #333333;"><img src="__STATIC__/mobile/img/black_line.png"/>特色精品课<img src="__STATIC__/mobile/img/black_line.png"/></h3>
-                <div class="English_cap">Classes with Special Characteristics</div>
-                <div class="videoWraper" data-src="{:cmf_get_asset_url($index_4.more.video.file_urls)}">
-                    <img src="__STATIC__/mobile/img/video.png" />
-                </div>
-                <div class="center">以STEM科学实验、麦卡赛机器人为特色的儿童学院</div>
-                <div class="trainingWraper">
-                    <div class="swiper-container swiper-container-functions">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="training">
-                                    <img src="__STATIC__/mobile/img/plane.png" />
-                                    <h4>高考冲刺班</h4>
-                                    <div>逢讲必考 锁定考点</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="training">
-                                    <img src="__STATIC__/mobile/img/tree.png" />
-                                    <h4>春季集训班</h4>
-                                    <div>方法定制 锁定高分</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="training">
-                                    <img src="__STATIC__/mobile/img/smile.png" />
-                                    <h4>儿童学院</h4>
-                                    <div>三所学院 启蒙思维</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="training">
-                                    <img src="__STATIC__/mobile/img/hat.png" />
-                                    <h4>优学私塾</h4>
-                                    <div>思维馆 绘本馆 艺术馆</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="btnWraper">
-                    <img src="__STATIC__/mobile/img/btn_left.png" alt="" class="btn_left swiper-button-prev" />
-                    <img src="__STATIC__/mobile/img/btn_right.png" alt="" class="btn_right swiper-button-next" />
-                </div>
-            </div>
-            <div class="custom_class">
-                <div class="wraper">
-                    <h3 style="color: #333333;"><img src="__STATIC__/mobile/img/black_line.png"/>私人订制课<img src="__STATIC__/mobile/img/black_line.png"/></h3>
-                    <div class="English_cap">Classes with Special Characteristics</div>
-                    <div class="study_plans">
-                        <ul>
-                            <li>
-                                <div class="study">
-                                    <div><img src="__STATIC__/mobile/img/num1.png" />学习规划师</div>
-                                    <div><img src="__STATIC__/mobile/img/add.png" class="add" /></div>
-                                </div>
-                                <div class="study_explain">
-                                    从心理到学科全方位诊断。契合学生心理、学科基础、学习态度等，做好提升学生成绩的全面规划。
-                                </div>
-                            </li>
-                            <li>
-                                <div class="study">
-                                    <div><img src="__STATIC__/mobile/img/num2.png" />个性化学习方案</div>
-                                    <div><img src="__STATIC__/mobile/img/add.png" class="add" /></div>
-                                </div>
-                                <div class="study_explain">
-                                    结合学生知识盲区，挖掘学生潜能，围绕学科要点量身定制有效增分的教学计划。
-                                </div>
-                            </li>
-                            <li>
-                                <div class="study">
-                                    <div><img src="__STATIC__/mobile/img/num3.png" />资深的学科教师</div>
-                                    <div><img src="__STATIC__/mobile/img/add.png" class="add" /></div>
-                                </div>
-                                <div class="study_explain">
-                                    拥有丰富的教学经验，专项会诊、重难点点拨，学习方法指导，迅速击破学科短板。
-                                </div>
-                            </li>
-                            <li>
-                                <div class="study">
-                                    <div><img src="__STATIC__/mobile/img/num4.png" />专职班主任</div>
-                                    <div><img src="__STATIC__/mobile/img/add.png" class="add" /></div>
-                                </div>
-                                <div class="study_explain">
-                                    全程跟踪学生学习过程，激发学员 斗志、调节心态，实时监督，及时 反馈随时修订辅导方案，保证学生 学习效果。
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="leftFixes">
-                            <div class="leftFixesWraper">
-                                <div class="avatar">
-                                    <img src="__STATIC__/mobile/img/user.png" alt="" />
-                                </div>
-                                王同学
-                            </div>
-                        </div>
-                    </div>
-                    <div class="start_evaluation">
-                        <button onclick="window.location.href='#register'">点击开启您的专属测评</button>
-                    </div>
-                </div>
-                <div class="block_mask class_mask"></div>
-                <img src="__STATIC__/mobile/img/bg_girl.png" class="bg_girl" />
-            </div>
-            <div class="professional_courses">
-                <div class="wraper">
-                    <h3><img src="__STATIC__/mobile/img/white_line.png"/>专业课程体系 5阶教学标准<img src="__STATIC__/mobile/img/white_line.png"/></h3>
-                    <div class="English_cap" style="margin-bottom: 0.3rem;">Fifth-Level Teaching Standard of Professional Course System</div>
-                    <ul class="course_choose">
-                        <li>
-                            <select name="gradeName">
-                                <foreach name="object" item="obj">
-                                    <option value="{$obj.id}">{$obj.title}</option>
-                                </foreach>
-                            </select>
-                        </li>
-                        <li>
-                            <select name="courseName">
-                                <foreach name="object[0]['children']" item="children">
-                                    <option value="{$children.id}">{$children.title}</option>
-                                </foreach>
-                            </select>
-                        </li>
-                    </ul>
-                    <div class="course-info">
-                        {$courseInfo}
-                    </div>
-                </div>
-
-            </div>
-            <div class="sign_up">
-                <img src="__STATIC__/mobile/img/sign_up_top.png" alt="" class="sign_up_top"/>
-                <div class="wraper">
-                    <h3><img src="__STATIC__/mobile/img/white_line.png"/>学校公益<img src="__STATIC__/mobile/img/white_line.png"/></h3>
-                    <div class="English_cap">School public welfare</div>
-                    <div class="videoWraper" data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}">
-                        <div class="vedio_public">
-                            <img src="__STATIC__/mobile/img/bg_child.png" />
-                        </div>
-                        <!--<div class="video_mask"></div>-->
-                    </div>
-                    <div style="margin-top: 0.5rem;color: #c7c7c7;text-align: center;font-size: 0.25rem;">爱心公益，望子成龙人一直在行动！</div>
-                    <img src="__STATIC__/mobile/img/bg_black.png" class="bg_girl" class="bg_black" />
-                </div>
-            </div>
-
-
-            <div class="honor">
-                <h3 style="color: #333333;"><img src="__STATIC__/mobile/img/black_line.png"/>屡获殊荣<img src="__STATIC__/mobile/img/black_line.png"/></h3>
-                <div class="English_cap">Award-winning</div>
-                <div class="weiduduan-parent">
-                    <img class="button-img right" onclick="javascript:swiper2.slideNext(400,false)" src="__STATIC__/mobile/img/next.png" alt="">
-                    <img class="button-img left" onclick="javascript:swiper2.slidePrev(400,false)" src="__STATIC__/mobile/img/pre.png" alt="">
-
-                    <div class="weiduduan clearfix">
-                        <div class="swiper-container-my">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide" data-honorname="2011年度 中国教育行业十大信用典范"><img src="__STATIC__/mobile/img/honor1.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2015年度 中国教育集团领军品牌" data-organization="xxxx2"><img src="__STATIC__/mobile/img/honor2.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2017年度 品牌实力课外辅导机构" data-organization="xxxx3"><img src="__STATIC__/mobile/img/honor3.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2008年度 品牌教育最强师资奖" data-organization="xxxx4"><img src="__STATIC__/mobile/img/honor4.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2014年度  最具口碑影响力课外辅导机构" data-organization="xxxx5"><img src="__STATIC__/mobile/img/honor5.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2017年度 品牌影响力教育集团" data-organization="xxxx6"><img src="__STATIC__/mobile/img/honor6.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2015年度实力教育品牌" data-organization="xxxx7"><img src="__STATIC__/mobile/img/honor7.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="2008年度 影响中国西部 十大培训品牌" data-organization="xxxx8"><img src="__STATIC__/mobile/img/honor8.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="“十二五”中国诚信经营服务AAA示范单位" data-organization="xxxx9"><img src="__STATIC__/mobile/img/honor9.png" alt=""></div>
-                                <div class="swiper-slide" data-honorname="中国民办教育领军人物" data-organization="xxxx10"><img src="__STATIC__/mobile/img/honor10.png" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-bottom: 0.24rem;color: #666666;font-size: 0.3rem;" class="honor-name">2015年度 中国教育集团领军品牌</div>
-                <!--<div style="color: #999999;" class="honor-organization">中国科学研究院颁发</div>-->
-            </div>
-            <div class="media" style="padding-top:0">
-                <h3 style="color: #333333;"><img src="__STATIC__/mobile/img/black_line.png"/>媒体报道<img src="__STATIC__/mobile/img/black_line.png"/></h3>
-                <div class="English_cap">media coverage</div>
-                <div class="report">CCTV,新华网,新浪网,腾讯 教育等权威媒体争相报道</div>
-                <ul class="media-list">
-                    <li><img src="__STATIC__/mobile/img/cctv.png" /></li>
-                    <li><img src="__STATIC__/mobile/img/news.png" /></li>
-                    <li><img src="__STATIC__/mobile/img/sina.png" /></li>
-                    <li><img src="__STATIC__/mobile/img/tencent.png" /></li>
-                </ul>
-                <div class="start_evaluation">
-                    <button onclick="window.location.href='#register'">立刻报名</button>
-                </div>
+                </foreach>
             </div>
         </div>
     </div>
-    <include file="Layout/pop"/>
-</block>
-<block name="register"></block>
-<block name="footerJs">
-    <script type="text/javascript">
-        $(function() {
-            /**********=====---- 视频弹窗 ----Mod by w 2019/4/24 16:59=====**********/
-            $(".videoWraper").on("click",function(){
-                $('.my-phpup>div>video').attr({src:$(this).data('src')});
-                $('.my-phpup').show(300,function(){
-                    $(".my-phpup>div>video").addClass('active');
-                })
-            })
+    <!--免费注册-->
+    <div class="registered">
+        <div class="choose" id="register">
+            <h3>注册<span style="color: #d4001a;">免费</span>获取试听课</h3>
+            <form action="" method="post" class="register_info">
+                <input type="text" name="name" value="" placeholder="请输入您的姓名" />
+                <div class="gradeWraper clearfix">
+                    <select name="grade" style="float: left;">
+                        <option value="">年级</option>
+                        <foreach name="grade" item="g">
+                            <option value="{$g['id']}">{$g['name']}</option>
+                        </foreach>
+                    </select>
 
-            $(".study_plans > ul > li").eq(0).find('.add').attr('src', '__STATIC__/mobile/img/wrong.png');
-            $(".study_plans > ul > li").eq(0).css('background', '#e8e8e8');
-            $(".study_plans > ul > li").eq(0).children('.study_explain').slideDown();
-            var WinWidth = $(window).width() / 3;
-            $('.training li').css('width', WinWidth + 'px');
-            //					学校地址swriper开始
-            var swiper = new Swiper('.swiper-container-school');
-            //					学校地址swriper地址
-            //		    		高考冲刺切换swriper开始
-            var swiper = new Swiper('.swiper-container-functions', {
-                slidesPerView: 3,
-                spaceBetween: 1,
-                //				                  点击右滑时候向左移动的个数
-                slidesPerGroup: 1,
-                loop: true,
-                loopFillGroupWithBlank: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
-            //		    高考冲刺切换swriper结束
-            //四大教科组下的swriper开始
-            var myPlugin = {
-                name: 'debugger',
-                params: {
-                    debugger: false,
-                },
-                on: {
-                    init: function() {
-                        if(!this.params.debugger) return;
-                        console.log('init');
-                    },
-                    click: function(e) {
-                        if(!this.params.debugger) return;
-                        console.log('click');
-                    },
-                    tap: function(e) {
-                        if(!this.params.debugger) return;
-                        console.log('tap');
-                    },
-                    doubleTap: function(e) {
-                        if(!this.params.debugger) return;
-                        console.log('doubleTap');
-                    },
-                    sliderMove: function(e) {
-                        if(!this.params.debugger) return;
-                        console.log('sliderMove');
-                    },
-                    slideChange: function() {
-                        if(!this.params.debugger) return;
-                        console.log('slideChange', this.previousIndex, '->', this.activeIndex);
-                    },
-                    slideChangeTransitionStart: function() {
-                        if(!this.params.debugger) return;
-                        console.log('slideChangeTransitionStart');
-                    },
-                    slideChangeTransitionEnd: function() {
-                        if(!this.params.debugger) return;
-                        console.log('slideChangeTransitionEnd');
-                    },
-                    transitionStart: function() {
-                        if(!this.params.debugger) return;
-                        console.log('transitionStart');
-                    },
-                    transitionEnd: function() {
-                        if(!this.params.debugger) return;
-                        console.log('transitionEnd');
-                    },
-                    fromEdge: function() {
-                        if(!this.params.debugger) return;
-                        console.log('fromEdge');
-                    },
-                    reachBeginning: function() {
-                        if(!this.params.debugger) return;
-                        console.log('reachBeginning');
-                    },
-                    reachEnd: function() {
-                        if(!this.params.debugger) return;
-                        console.log('reachEnd');
-                    },
-                },
-            };
-            Swiper.use(myPlugin);
-            var swiper = new Swiper('.swiper-container-reservation', {
-                slidesPerView: 'auto',
-                initialSlide: 1,
-                spaceBetween: 0,
-                centeredSlides: true,
-                loop: true,
-                autoplay: 1000,
-                autoplayDisableOnInteraction : false,
-                debugger: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                }
-            });
-            //四大教科组下的swriper结束
-            $('.study_plans > ul > li').on('click', function() {
-                $(this).find('.add').attr('src', '__STATIC__/mobile/img/wrong.png');
-                $(this).siblings().find('.add').attr('src', '__STATIC__/mobile/img/add.png');
-                $(this).css('background', '#e8e8e8');
-                $(this).siblings().css('background', '#ffffff');
-                $(this).children('.study_explain').slideDown();
-                $(this).siblings().children('.study_explain').slideUp();
-            })
-        });
-        //				屡获殊荣的swriper开始
-        var swiper2 = new Swiper('.swiper-container-my', {
-            slidesPerView: 'auto',
-            initialSlide: 1,
-            spaceBetween: 0,
-            centeredSlides: true,
-            loop: false,
-            // autoplay:true,
-            slideToClickedSlide: true,
-            effect: 'coverflow',
-            direction: 'horizontal',
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 50,
-                modifier: 1,
-                slideShadows: true,
-            },
-            on: {
-                transitionEnd: function() {
-                    $(".my-active").removeClass("my-active");
-                    $(".swiper-slide-active").addClass("my-active");
-                    $(".honor-name").html($(".honor .swiper-slide-active").data('honorname'));
-                }
+                    <select name="course" style="float: right;">
+                        <option value="">科目</option>
+                    </select>
+                </div>
+                <input type="text" name="mobile" value="" placeholder="请输入您的电话号码" />
+                <div class="agree"><input type="checkbox"  name="agree" id="" value="" />同意我们的<span>《用户隐私条款》</span></div>
+                <input type="hidden" name="token" value="{$token}"/>
+                <button type="button" class="submit">立即预约 </button>
+                <div class="promise">
+                    <img src="__STATIC__/mobile/img/lock.png"/>官网承诺您的信息将不会被泄露
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="functions">
+        <div class="reservation">
+            <div class="wraper">
+                <h3>四大教课组</h3>
+                <div class="English_cap" style="margin-bottom: 0.45rem;">我们有真正的好老师</div>
+                <div class="good_teachers">
+                    <span>WHAT</span>望子成龙有什么样的好老师？
+                </div>
+                <ul class="groups">
+                    <li>
+                        <div class="pic_teachers">
+                            <img src="__STATIC__/mobile/img/Language.png"/>
+                        </div>
+                        <div class="text_teachers">
+                            <div class="title_teach">
+                                魅力语文组
+                            </div>
+                            <div class="content_teach">
+                                打基础、抓考点、练技能、冲写 作，把握重难点和命题趋势
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_teachers">
+                            <img src="__STATIC__/mobile/img/Math.png"/>
+                        </div>
+                        <div class="text_teachers">
+                            <div class="title_teach">
+                                金牌数学组
+                            </div>
+                            <div class="content_teach">
+                                锁定核心知识点，培养学生的学 习习惯、数学思维、解题技巧
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_teachers">
+                            <img src="__STATIC__/mobile/img/English.png"/>
+                        </div>
+                        <div class="text_teachers">
+                            <div class="title_teach">
+                                考点英语组
+                            </div>
+                            <div class="content_teach">
+                                特级教师、骨干教师领衔，由拥 有多年教学经验的名师担纲授课
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_teachers">
+                            <img src="__STATIC__/mobile/img/Mathematical.png"/>
+                        </div>
+                        <div class="text_teachers">
+                            <div class="title_teach">
+                                满分理化组
+                            </div>
+                            <div class="content_teach">
+                                注重理化学科知识体系梳理，逐 一传授每个考点的解题方法
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <span onclick="window.location.href='#register'">立即预约<img src="__STATIC__/mobile/img/red_left.png" alt="" /></span>
+            </div>
+        </div>
+        <div class="boutique_class">
+            <h3 style="color: #010101;">特色精品课</h3>
+            <div class="English_cap" style="color: #010101;">孩子学习新方式</div>
+            <div class="videoWraper"  data-src="{:cmf_get_asset_url($index_4.more.video.file_urls)}">
+                <img src="__STATIC__/mobile/img/video.png" />
+            </div>
+            <div class="training">
+                <img src="__STATIC__/mobile/img/bg_class.png"/>
+                <ul class="training_item">
+                    <li><a href="/Mobile/Index/sprint"></a></li>
+                    <li><a href="/Mobile/Special/summer"></a></li>
+                    <li><a href="/Mobile/Index/children"></a></li>
+                    <li><a href="javascript:"></a></li>
+                </ul>
+            </div>
+            <ul class="steps">
+                <li>
+                    <div>Step <span>01</span></div>
+                    <div class="steps_content">
+                        立即预约<br />
+                        名师试听课
+                    </div>
+                    <img src="__STATIC__/mobile/img/steps_left.png"/>
+                </li>
+                <li>
+                    <div>Step <span>02</span></div>
+                    <div class="steps_content">
+                        专业顾问<br />
+                        致电您排课
+                    </div>
+                    <img src="__STATIC__/mobile/img/steps_left.png"/>
+                </li>
+                <li>
+                    <div>Step <span>03</span></div>
+                    <div class="steps_content" style="width: 1.5rem;">
+                        就近校区<br />
+                        开启学习之旅
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="times">
+            <div class="wraper">
+                <h3 style="color: #010101;">紧跟时代</h3>
+                <div class="English_cap" style="color: #010101;">探索课堂教学</div>
+                <ul class="less_detail">
+                    <li>
+                        <p>两千余名教师云集</p>
+                        <p>共同探讨课堂教学</p>
+                    </li>
+                    <li>
+                        <p>近20项备课历程</p>
+                        <p>让课堂更加精彩</p>
+                    </li>
+                </ul>
+            </div>
+            <img src="__STATIC__/mobile/img/man.png" class="man"/>
+        </div>
+        <!--专业课程-->
+        <div class="professional_courses">
+            <div class="wraper">
+                <h3>专业课程体系  </h3>
+                <div class="English_cap">五阶教学标准</div>
+                <ul class="course_choose">
+                    <li>
+                        <select name="gradeName">
+                            <foreach name="object" item="obj">
+                                <option value="{$obj.id}">{$obj.title}</option>
+                            </foreach>
+                        </select>
+                    </li>
+                    <li>
+                        <select name="courseName">
+                            <foreach name="object[0]['children']" item="children">
+                                <option value="{$children.id}">{$children.title}</option>
+                            </foreach>
+                        </select>
+                    </li>
+                </ul>
+                <div class="course-info">
+                    {$courseInfo}
+                </div>
+            </div>
+        </div>
+        <div class="custom_class">
+            <div class="wraper">
+                <h3 style="color: #333333;">私人订制课</h3>
+                <div class="English_cap" style="color: #333333;margin-bottom: 0.7rem;">一万个学生，一万种方案</div>
+                <ul class="custom_info">
+                    <li>
+                        <img src="__STATIC__/mobile/img/teachers.png"/>
+                        张老师
+                    </li>
+                    <li>
+                        <div class="points">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="customize">
+                            <span>课程定制中</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="__STATIC__/mobile/img/user.png"/>
+                        王同学
+                    </li>
+                </ul>
+                <div class="study_plans">
+                    <ul>
+                        <li>
+                            <div class="study">
+                                <div><img src="__STATIC__/mobile/img/group_1.png" />学习规划师</div>
+                                <div><img src="__STATIC__/mobile/img/add_black.png" class="add" /></div>
+                            </div>
+                            <div class="study_explain">
+                                从心理到学科全方位诊断。契合学生心理、学科基础、学习态度等，做好提升学生成绩的全面规划。
+                            </div>
+                        </li>
+                        <li>
+                            <div class="study">
+                                <div><img src="__STATIC__/mobile/img/group_2.png" />个性化学习方案</div>
+                                <div><img src="__STATIC__/mobile/img/add_black.png" class="add" /></div>
+                            </div>
+                            <div class="study_explain">
+                                结合学生知识盲区，挖掘学生潜能，围绕学科要点量身定制有效增分的教学计划。
+                            </div>
+                        </li>
+                        <li>
+                            <div class="study">
+                                <div><img src="__STATIC__/mobile/img/group_3.png" />资深的学科教师</div>
+                                <div><img src="__STATIC__/mobile/img/add_black.png" class="add" /></div>
+                            </div>
+                            <div class="study_explain">
+                                拥有丰富的教学经验，专项会诊、重难点点拨，学习方法指导，迅速击破学科短板。
+                            </div>
+                        </li>
+                        <li>
+                            <div class="study">
+                                <div><img src="__STATIC__/mobile/img/group_4.png" />专职班主任</div>
+                                <div><img src="__STATIC__/mobile/img/add_black.png" class="add" /></div>
+                            </div>
+                            <div class="study_explain">
+                                全程跟踪学生学习过程，激发学员 斗志、调节心态，实时监督，及时 反馈随时修订辅导方案，保证学生 学习效果。
+                            </div>
+                        </li>
+                    </ul>
+                    <img src="__STATIC__/mobile/img/gray_top.png" class="gray_top"/>
+                </div>
+            </div>
+        </div>
+        <!--优秀学员-->
+        <div class="course">
+            <h3 style="font-size: 0.36rem;">成都市优秀学员  </h3>
+            <div class="English_cap" style="font-size: 0.36rem;">鼎力推荐</div>
+            <div class="swiper-container swiper-container-carousel swiper_course">
+                <div class="swiper-wrapper">
+                    <foreach name="goodStudent.more.append" item="model">
+                        <div class="swiper-slide">
+                            <div class="course_content">
+                                <img src="__STATIC__/mobile/img/comma.png"/>
+                                {$model.value}
+                            </div>
+                            <ul class="student_info">
+                                <li>
+                                    <if condition="empty($model.thumbnail)">
+                                        <img src="__STATIC__/mobile/img/user.png"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($model.thumbnail)}" alt="">
+                                    </if>
+                                </li>
+                                <li>
+                                    <div>{$model.school|default='张同学 / 北京大学录取'}</div>
+                                    <div>{$model.name|default='2017年高考超成都一本线120分'}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </foreach>
+                </div>
+                <div class="swiper-pagination" style="bottom: 0;"></div>
+            </div>
+        </div>
+        <div class="media">
+            <h3 style="color: #333333;">知名企业合作</h3>
+            <div class="English_cap" style="color: #333333;">媒体争相报道</div>
+            <ul class="media-list">
+                <li><img src="__STATIC__/mobile/img/cctv.png" /></li>
+                <li><img src="__STATIC__/mobile/img/news.png" /></li>
+                <li><img src="__STATIC__/mobile/img/sina.png" /></li>
+                <li><img src="__STATIC__/mobile/img/tencent.png" /></li>
+            </ul>
+            <div class="love_charity" data-src="{:cmf_get_asset_url($index_9.more.video.file_urls)}">
+                <img src="__STATIC__/mobile/img/Play_button.png"/>
+                <div class="love_charity_text">
+                    爱心公益，望子成龙人一直在行动
+                </div>
+            </div>
+        </div>
+        <div class="honor">
+            <div class="weiduduan-parent">
+                <div class="weiduduan clearfix">
+                    <div class="swiper-container-my">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" data-honorname="2011年度 中国教育行业十大信用典范">
+                                <img src="__STATIC__/mobile/img/honor1.png" alt="">
+                                <div class="honor_content">
+                                    2011年度<br />
+                                    中国教育行业十大信用典范
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2015年度 中国教育集团领军品牌" data-organization="xxxx2">
+                                <img src="__STATIC__/mobile/img/honor2.png" alt="">
+                                <div class="honor_content">
+                                    2015年度<br />
+                                    中国教育集团领军品牌
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2017年度 品牌实力课外辅导机构" data-organization="xxxx3">
+                                <img src="__STATIC__/mobile/img/honor3.png" alt="">
+                                <div class="honor_content">
+                                    2017年度<br /> 
+                                    品牌实力课外辅导机构
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2008年度 品牌教育最强师资奖" data-organization="xxxx4">
+                                <img src="__STATIC__/mobile/img/honor4.png" alt="">
+                                <div class="honor_content">
+                                    2008年度<br /> 
+                                    品牌教育最强师资奖
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2014年度  最具口碑影响力课外辅导机构" data-organization="xxxx5">
+                                <img src="__STATIC__/mobile/img/honor5.png" alt="">
+                                <div class="honor_content">
+                                    2014年度<br />
+                                    最具口碑影响力课外辅导机构
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2017年度 品牌影响力教育集团" data-organization="xxxx6">
+                                <img src="__STATIC__/mobile/img/honor6.png" alt="">
+                                <div class="honor_content">
+                                    2017年度<br />
+                                    品牌影响力教育集团
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2015年度实力教育品牌" data-organization="xxxx7">
+                                <img src="__STATIC__/mobile/img/honor7.png" alt="">
+                                <div class="honor_content">
+                                    2015年度实力教育品牌
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="2008年度 影响中国西部 十大培训品牌" data-organization="xxxx8">
+                                <img src="__STATIC__/mobile/img/honor8.png" alt="">
+                                <div class="honor_content">
+                                    2008年度<br /> 
+                                    影响中国西部 十大培训品牌
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="“十二五”中国诚信经营服务AAA示范单位" data-organization="xxxx9">
+                                <img src="__STATIC__/mobile/img/honor9.png" alt="">
+                                <div class="honor_content">
+                                    “十二五”中国诚信经营服务AAA示范单位
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-honorname="中国民办教育领军人物" data-organization="xxxx10">
+                                <img src="__STATIC__/mobile/img/honor10.png" alt="">
+                                <div class="honor_content">
+                                    中国民办教育领军人物
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="start_evaluation">
+                <button onclick="window.location.href='#register'">立即预约</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--公共底部-->
+<div class="footer">
+    <div class="plateWraper">
+        <ul>
+            <li onclick="window.location.href='/'">网站首页</li>
+            <li onclick="window.location.href='/Mobile/Index/advantage'">办学优势</li>
+            <li onclick="window.location.href='/Mobile/Index/courseSet'">课程设置</li>
+            <li onclick="window.location.href='/Mobile/Index/influence'">学员口碑</li>
+        </ul>
+        <ul>
+            <li onclick="window.location.href='/Mobile/Index/news'">新闻资讯</li>
+            <!--<li>校区环境</li>-->
+            <li onclick="window.location.href='/Mobile/Index/children'">儿童学院</li>
+            <li onclick="window.location.href='/Mobile/Index/school'">校区地址</li>
+        </ul>
+    </div>
+    <div class="touch">
+        客服电话：028-85565012<br />
+        成都望子成龙外语培训学校 版权所有 蜀ICP备10031431号
+    </div>
+</div>
+<include file="layout/popRegister"/>
+<include file="Layout/pop"/>
+<script type="text/javascript">
+    var changeColor = function(){
+        if($('.points>span').hasClass('clicked_changed')){
+            let num = $('.points>span').length,index = $('.points>span.clicked_changed').index();
+            if(num == index+1){
+                $('.points>span.clicked_changed').removeClass('clicked_changed');
+                $('.points>span:first').addClass('clicked_changed');
+            }else{
+                $('.points>span.clicked_changed').removeClass('clicked_changed').next().addClass('clicked_changed');
             }
+
+        }else
+            $('.points>span:first').addClass('clicked_changed');
+    }
+    $(function() {
+//				$(".study_plans > ul > li").eq(0).find('.add').attr('src', 'img/wrong_black.png');
+//				$(".study_plans > ul > li").eq(0).css('background', '#e8e8e8');
+//				$(".study_plans > ul > li").eq(0).children('.study_explain').slideDown();
+        $('.right-menu').css('display', 'none');
+        setInterval("changeColor()",800);
+//				首页轮播swriper开始
+        var swiper_registered = new Swiper('.swiper_registered', {
+            centeredSlides: true,
+            loop:true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
         });
-        //				屡获殊荣的swriper结束
-        $("select[name=courseName]").on('change',function(){
-            var grade = $(this).val();
-            $.post("{:url('getCourseInfoById')}",{course_id:grade},function(data){
-                $(".course-info").html(data)
+        var swiper_registered = new Swiper('.swiper_course', {
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+//				首页轮播swriper结束
+
+        var WinWidth = $(window).width() / 3;
+        $('.training li').css('width', WinWidth + 'px');
+    });
+    //				侧滑开始
+    $('.navbar_button').click(function() {
+        $('.right-menu').show();
+        $('.right-menu').animate({
+            right: 0
+        });
+        $('.mask').toggle();
+        $('body').css('overflow','hidden');
+    });
+
+    $('.mask').click(function() {
+        $(this).hide();
+        $('.right-menu').animate({
+            right: '-70%'
+        }, 500, function() {
+            $('.right-menu').hide();
+        });
+        $('body').css('overflow','auto');
+    })
+    //				侧滑结束
+
+    //侧滑点击事件
+    $('.subNav li').on('click', function() {
+        $(this).children("img").css('visibility', 'visible');
+        $(this).siblings().children("img").css('visibility', 'hidden');
+    })
+    //		    		高考冲刺切换swriper开始
+    var swiper = new Swiper('.swiper-container-functions', {
+        slidesPerView: 3,
+        spaceBetween: 1,
+        //				                  点击右滑时候向左移动的个数
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    //		    高考冲刺切换swriper结束
+    //图片切换函数
+    function changeTo(num) {
+        var liWidth = $('.training li').width();
+        var go = num * liWidth;
+        console.log(liWidth)
+        $(".trainingWraper").animate({
+            "left": -go
+        }, 500);
+    }
+
+    //四大教科组下的swriper开始
+    var myPlugin = {
+        name: 'debugger',
+        params: {
+            debugger: false,
+        },
+        on: {
+            init: function() {
+                if(!this.params.debugger) return;
+                console.log('init');
+            },
+            click: function(e) {
+                if(!this.params.debugger) return;
+                console.log('click');
+            },
+            tap: function(e) {
+                if(!this.params.debugger) return;
+                console.log('tap');
+            },
+            doubleTap: function(e) {
+                if(!this.params.debugger) return;
+                console.log('doubleTap');
+            },
+            sliderMove: function(e) {
+                if(!this.params.debugger) return;
+                console.log('sliderMove');
+            },
+            slideChange: function() {
+                if(!this.params.debugger) return;
+                console.log('slideChange', this.previousIndex, '->', this.activeIndex);
+            },
+            slideChangeTransitionStart: function() {
+                if(!this.params.debugger) return;
+                console.log('slideChangeTransitionStart');
+            },
+            slideChangeTransitionEnd: function() {
+                if(!this.params.debugger) return;
+                console.log('slideChangeTransitionEnd');
+            },
+            transitionStart: function() {
+                if(!this.params.debugger) return;
+                console.log('transitionStart');
+            },
+            transitionEnd: function() {
+                if(!this.params.debugger) return;
+                console.log('transitionEnd');
+            },
+            fromEdge: function() {
+                if(!this.params.debugger) return;
+                console.log('fromEdge');
+            },
+            reachBeginning: function() {
+                if(!this.params.debugger) return;
+                console.log('reachBeginning');
+            },
+            reachEnd: function() {
+                if(!this.params.debugger) return;
+                console.log('reachEnd');
+            },
+        },
+    };
+    Swiper.use(myPlugin);
+    var swiper = new Swiper('.swiper-container-reservation', {
+        slidesPerView: 'auto',
+        initialSlide: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        autoplay: 1000,
+        autoplayDisableOnInteraction : false,
+        debugger: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        }
+    });
+    //四大教科组下的swriper结束
+    var study = false
+    $('.study').on('click', function() {
+        if($(this).next().css('display') == 'none'){
+            $(this).find('.add').addClass('changed');
+            $(this).next().slideDown(300);
+        }else{
+            $(this).find('.add').removeClass('changed');
+            $(this).next().slideUp(300);
+        }
+    })
+    //				屡获殊荣的swriper开始
+    var swiper2 = new Swiper('.swiper-container-my', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    //				屡获殊荣的swriper结束
+
+    //			专业课程体系 5阶教学标准里面level的切换
+    $(".level").on('click',function(){
+        $(".level").removeClass('clicked_changeColor');
+        $(this).addClass('clicked_changeColor');
+        $('.levelBar').removeClass('clicked');
+        $(this).find('.levelBar').addClass('clicked');
+        $('.levelBar>div').removeClass('clicked');
+        $(this).find('.levelBar>div').addClass('clicked');
+        var index = $(this).parent('.percentage>li').index();
+//				alert(index);
+        $('.percentage_text').removeClass('clicked_changeColor');
+        $('.percentage_text').eq(index).addClass('clicked_changeColor');
+    })
+
+    //			专业课程体系 5阶教学标准里面level的切换
+
+    $(function() {
+        /**********=====---- 视频弹窗 ----Mod by w 2019/4/24 16:59=====**********/
+        $(".videoWraper,.love_charity").on("click",function(){
+            $('.my-phpup>div>video').attr({src:$(this).data('src')});
+            $('.my-phpup').show(300,function(){
+                $(".my-phpup>div>video").addClass('active');
             })
         })
-        $("select[name=gradeName]").on('change',function(){
+    })
+    /*专业课程*/
+    $("select[name=courseName]").on('change',function(){
+        var grade = $(this).val();
+        $.post("{:url('getCourseInfoById')}",{course_id:grade},function(data){
+            $(".course-info").html(data)
+        })
+    })
+    $("select[name=gradeName]").on('change',function(){
+        var grade = $(this).val();
+        $.post("{:url('getCourseByGradeId')}",{grade:grade},function(data){
+            $("select[name=courseName]").html(data)
+        })
+    })
+</script>
+<script>
+    $(function(){
+        $("select[name=grade]").on('change',function(){
             var grade = $(this).val();
-            $.post("{:url('getCourseByGradeId')}",{grade:grade},function(data){
-                $("select[name=courseName]").html(data)
+            $.post("{:url('getCourseByGrade')}",{grade:grade},function(data){
+                $("select[name=course]").html(data)
             })
         })
-    </script>
-</block>
+        $('.submit').on('click',function(){
+            /**********=====---- 防抖 ----Mod by w 2019/4/21 16:22=====**********/
+            $(this).attr('disabled',true)
+            var name = Trim($('input[name=name]').val());
+            var mobile = Trim($('input[name=mobile]').val());
+            var grade = Trim($('select[name=grade]').val());
+            var course = Trim($('select[name=course]').val());
+            var token = $('input[name=token]').val();
+            /**********=====---- 字段为空判断 ----Mod by w 2019/4/21 16:21=====**********/
+            if (name.length == 0) {myError('姓名必须填写！');return false;}
+            if (!mobile.match(/^(1\d{10})$/)) {myError('手机格式不对！');return false;}
+            if (grade.length == 0) {myError('年级必须！');return false;}
+            if (course.length == 0) {myError('课程必须！');return false;}
+            if (!$('input[name=agree]').get(0).checked) {myError('必须同意用户隐私条款！');return false;}
+            $.post("{:url('register')}",{
+                        name:name,
+                        mobile:mobile,
+                        token:token,
+                        grade:$("select[name=grade] option:selected").html(),
+                        weakSubject:$("select[name=course] option:selected").html()},
+                    function(data){
+                        myError(data.msg);
+                    }
+            )
+        })
+        function myError(msg){
+            layer.msg(msg,{time:1500});
+            $('.submit').attr('disabled',false);
+        }
+        function Trim(str){
+            str = str.replace(/(^\s*)|(\s*$)/g, "");
+            return str;
+        }
+    })
+</script>
+</body>
+
+</html>

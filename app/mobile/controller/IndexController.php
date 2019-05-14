@@ -51,13 +51,14 @@ class IndexController extends MobileBaseController
         $banner = $Banner->where($where)->order('list_order desc')->select();
         /**********=====---- 获取视频文件 ----Mod by w 2019/4/24 15:05=====**********/
         $IndexPcModel = new IndexPcModel();
-        $where = ['type' => 'index'];
+        $where = ['type' => ['in',['index','reputation_wap']]];
         $index = $IndexPcModel->where($where)->select()->toArray();
-        $index_4 = $index_9 = [];
+        $index_4 = $index_9 = $goodStudent =[];
         foreach ($index as $c)
         {
             $c['model_name'] == '模块四' ?$index_4 = $c:'';
             $c['model_name'] == '模块九' ?$index_9 = $c:'';
+            $c['model_name'] == '首页优秀学员' ?$goodStudent = $c:'';
         }
         /**********=====---- 获取专业课程详情 ----Mod by w 2019/5/6 10:02=====**********/
         $where = ['type' => 'object'];
@@ -67,6 +68,7 @@ class IndexController extends MobileBaseController
         $this->assign('object',$object);
         $this->assign('index_4',$index_4);
         $this->assign('index_9',$index_9);
+        $this->assign('goodStudent',$goodStudent);
         $this->assign('courseInfo',$this->getCourseInfoById());
         $this->assign('banner',$banner->toArray());
         return $this->fetch();
@@ -440,7 +442,7 @@ start;
             $where = ['delete_time' => 0,'path'=>['Like','0-'.self::GRADE_ID.'%'],'parent_id'=>$id];
             $categories = $portalCategoryModel->order("list_order ASC")->where($where)->select()->toArray();
         }
-        $html = '<option value="">请选择孩子补习科目</option>';
+        $html = '<option value="">科目</option>';
         if ($categories) {
             $option = <<<start
                 <option value="%s">%s</option>

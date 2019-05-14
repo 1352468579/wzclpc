@@ -317,6 +317,7 @@
 	transition: 300ms;
 	border-radius: 18px;
 	background: #ffffff;
+    margin: 0 0.08rem;
 }
 
 .swiper-popular_world>.swiper-wrapper>.swiper-slide>img {
