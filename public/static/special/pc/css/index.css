@@ -1,0 +1,888 @@
+* {
+	padding: 0;
+	margin: 0;
+	color: #6d6d6d;
+}
+
+body {
+	min-width: 1200px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: '微软雅黑';
+	width: 100%;
+	padding-top: 0.2rem;
+}
+
+ul {
+	padding: 0;
+}
+
+.containerWraper {
+	width: 1200px !important;
+	margin: 0 auto !important;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/*清除浮动*/
+
+.clearfix:after {
+	display: block;
+	content: '';
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.wraper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+
+/*header部分开始*/
+
+
+.header {
+	height: 83px;
+	box-sizing: border-box;
+	background: #ffffff;
+}
+
+.header>ul {
+	width: 1200px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+.header>ul>li {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.header>ul>li>img {
+	height: 100%;
+}
+
+.header>ul>li:first-child {
+	float: left;
+    padding: 20px 0 20px 90px;
+	width: 193px;
+}
+.header>ul>li:first-child>img{
+	width: 193px;
+}
+.header>ul>.touch {
+	float: right;
+	padding: 40px 90px 24px 0;
+}
+
+.header>ul>.touch>img {
+	margin-right: 10px;
+}
+
+/*header部分结束*/
+
+
+/*content部分开始*/
+
+
+/*立即预约开始*/
+
+.reservation {
+	padding-bottom: 70px;
+}
+
+.reservation_pic {
+	height: 666px;
+	margin-bottom: 70px;
+	background: url(../img/reservation_pic.png);
+	background-size: 100% 100%;
+}
+
+.reservation_pic>img {
+	height: 100%;
+	width: 100%;
+}
+
+.caption {
+	font-size: 40px;
+	color: #333333;
+	font-weight: bold;
+	height: 80px;
+	position: relative;
+	text-align: center;
+	width: 720px;
+	margin: 0 auto;
+}
+
+.caption>img {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.caption_sub {
+	font-size: 28px;
+	color: #717171;
+	text-align: center;
+	margin-bottom: 70px;
+	margin-top: 10px;
+}
+
+.plans {
+	width: 1000px;
+	margin: 0 auto;
+	height: 345px;
+	background: url(../img/bg_plans.png);
+	background-size: 100% 100%;
+	margin-bottom: 60px;
+}
+
+.plans>li {
+	width: 33.3%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 100px;
+	text-align: center;
+	float: left;
+}
+
+.plans_title {
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 40px;
+	letter-spacing: 1px;
+}
+
+.plans_text {
+	font-size: 20px;
+	color: #ffffff;
+	line-height: 30px;
+	letter-spacing: 1px;
+}
+
+.reservation_btn {
+	text-align: center;
+}
+
+.reservation_btn>span {
+	display: inline-block;
+	width: 275px;
+	background: #d91e16;
+	height: 60px;
+	line-height: 60px;
+	color: #ffffff;
+	font-size: 26px;
+	font-weight: bold;
+	border-radius: 50px;
+	box-shadow: 3px 0 10px rgba(58, 58, 58, 0.42);
+}
+
+
+/*立即预约结束*/
+
+
+/*找到方法开始*/
+
+.find_ways {
+	height: 922px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 50px 0;
+	position: relative;
+}
+
+.bg_find_ways {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+}
+
+.ways {
+	height: 510px;
+	width: 100%;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.ways>img {
+	position: absolute;
+	top: 0;
+	left: 360px;
+	height: 461px;
+	z-index: -1;
+}
+
+.item_one>li,
+.item_three>li,
+.item_four {
+	font-size: 24px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.item_one>li:first-child,
+.item_three>li:first-child {
+	float: left;
+}
+
+.item_one>.item_one_item,
+.item_three>.item_three_item {
+	float: right;
+	padding-top: 10px;
+}
+
+.item_one {
+	width: 800px;
+	margin: 0 auto 100px;
+	padding-top: 20px;
+}
+
+.item_two {
+	text-align: center;
+}
+
+.item_two>div {
+	font-size: 27px;
+	color: #ffffff;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.item_three {
+	width: 960px;
+	margin: 0 auto 180px;
+}
+
+.item_four {
+	text-align: center;
+}
+
+
+/*找到方法结束*/
+
+
+/*辅导开始*/
+
+
+/*辅导结束*/
+
+.Counseling {
+	height: 980px;
+	box-sizing: border-box;
+	padding: 60px 0 90px;
+}
+
+.counseling_tips {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.counseling_tips>li {
+	margin-bottom: 40px;
+	width: 100%;
+	height: 220px;
+	box-sizing: border-box;
+	padding-left: 230px;
+	position: relative;
+}
+
+.counseling_tips>li>img {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.counseling_content {
+	width: 770px;
+	box-sizing: border-box;
+	padding: 55px 43px 0 290px;
+	position: relative;
+}
+
+.counseling_content>img {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.reason {
+	font-size: 26px;
+	color: #585858;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.reason_text {
+	font-size: 20px;
+	line-height: 30px;
+	color: #8d8d8d;
+}
+
+.title {
+	font-size: 36px;
+	color: #343434;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+
+/*快速提升开始*/
+
+.Rapid_improvement {
+	height: 900px;
+	width: 100%;
+	background: url(../img/bg_Rapid_improvement.png);
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	padding: 60px 0;
+	position: relative;
+}
+
+.improve_items {
+	height: 578px;
+}
+
+.improve_items>li {
+	width: 386px;
+	height: 460px;
+	box-sizing: border-box;
+	margin-top: 118px;
+	float: left;
+	background: #ffffff;
+	box-shadow: 1px 0 36px rgba(99, 99, 99, 0.16);
+	border-radius: 8px;
+	padding: 90px 34px 0;
+	position: relative;
+	cursor: pointer;
+}
+
+.improve_items>li:hover {
+	box-shadow: 1px 0 35px rgba(99, 99, 99, 0.39);
+}
+
+.improve_items>li:hover .red_line {
+	display: block;
+}
+
+.improve_pic {
+	position: absolute;
+	top: -110px;
+	left: 135px;
+}
+
+.items_t {
+	margin: 118px 21px 0 !important;
+}
+
+.improve_title {
+	font-size: 26px;
+	font-weight: bold;
+	color: #737373;
+	height: 60px;
+	position: relative;
+	text-align: center;
+	margin-bottom: 26px;
+}
+
+.red_line {
+	position: absolute;
+	bottom: 0;
+	left: 56px;
+	width: 274px;
+	height: 2px;
+	background: #d91e16;
+	display: none;
+}
+
+.improve_title>img {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+.improve_text {
+	font-size: 20px;
+	color: #8d8d8d;
+	line-height: 30px;
+}
+
+
+/*快速提升结束*/
+
+
+/*课程安排开始*/
+
+.class_schedule {
+	height: 830px;
+	padding: 80px 0;
+	box-sizing: border-box;
+	background: url(../img/bg_class_schedule.png);
+	background-size: 100% 100%;
+}
+
+.scheduleWraper {
+	height: 480px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 70px 0 40px;
+}
+
+.scheduleWraper>li:first-child {
+	float: left;
+	width: 690px;
+	position: relative;
+	height: 100%;
+	background: url(../img/pyramid.png);
+	background-size: 100% 100%;
+	padding-top: 40px;
+}
+
+.scheduleWraper>li:first-child>img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 0;
+}
+
+.scheduleWraper>li>div {
+	text-align: center;
+	margin-bottom: 76px;
+	color: #ffffff;
+}
+
+.scheduleWraper>.schedule_item {
+	float: right;
+	width: 380px;
+	padding-left: 20px;
+}
+
+.personalise {
+	font-size: 18px;
+	line-height: 30px;
+	margin-bottom: 71px !important;
+}
+
+.method {
+	font-size: 26px;
+}
+
+.experiment {
+	font-size: 28px;
+}
+
+.Boutique {
+	font-size: 30px;
+}
+
+.schedule_item>ul>li {	
+	line-height: 30px;	
+	margin-bottom: 45px;
+    padding-top: 20px;
+}
+
+.schedule_item>ul>li>div>img {
+	margin-right: 17px;
+}
+.schedule_item>ul>li>div{
+	float: left;
+	font-size: 18px;
+	color: #ffffff;
+	flex: 1;
+}
+
+/*课程安排结束*/
+
+
+/*分班开始*/
+
+.Placement {
+	height: 900px;
+	padding: 60px 0;
+	box-sizing: border-box;
+}
+
+.Placement>.wraper {
+	position: relative;
+}
+
+.girls {
+	position: absolute;
+	width: 400px;
+	left: -60px;
+	top: 260px;
+}
+
+.Placement_titel {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	color: #585858;
+	margin-bottom: 90px;
+}
+
+.Placement_titel>span {
+	width: 94px;
+	height: 2px;
+	display: inline-block;
+	background: #b2b2b2;
+	vertical-align: middle;
+	margin: 0 10px;
+}
+
+.grade {
+	width: 840px;
+	margin: 0 auto 140px;
+}
+
+.grade>li {
+	width: 33.3%;
+	float: left;
+	text-align: center;
+}
+
+.grade>li>span {
+	display: inline-block;
+	text-align: center;
+	width: 156px;
+	height: 50px;
+	line-height: 50px;
+	background: #afafaf;
+	color: #ffffff;
+	border-radius: 50px;
+	font-size: 22px;
+}
+
+.active {
+	background: #d91e16 !important;
+}
+
+.actived {
+	display: inline-block !important;
+}
+
+.grade>li>span>img {
+	vertical-align: baseline;
+	margin-right: 12px;
+}
+
+.grade_content {
+	box-sizing: border-box;
+	margin-left: 330px;
+	height: 300px;
+	position: relative;
+	margin-bottom: 90px;
+}
+
+.grade_content>li {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+.grade_detail {
+	margin-bottom: 12px;
+}
+
+.grade_detail>li {
+	float: left;
+	height: 142px;
+	line-height: 142px;
+	color: #ffffff;
+	background: #fca856;
+	margin-right: 3px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.grade_detail>li:first-child {
+	border-radius: 12px 0 0 12px;
+	font-size: 22px !important;
+	width: 140px !important;
+}
+
+.last_item {
+	border-radius: 0 12px 12px 0;
+}
+
+.grade_project>li {
+	background: #47c171;
+}
+
+.primary>li {
+	width: 140px;
+}
+
+.junior>li {
+	width: 175px;
+}
+
+
+/*分班结束*/
+
+
+/*学校荣耀开始*/
+
+.School_glory {
+	height: 565px;
+	background: #fafafa;
+	box-sizing: border-box;
+	padding-top: 70px;
+}
+
+.weiduduan-parent {
+	position: relative;
+}
+
+.weiduduan {
+	width: 1130px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.button-img {
+	width: 42px;
+	position: absolute;
+	z-index: 9999999;
+	top: 50%;
+	right: -30px;
+}
+
+.button-img.left {
+	left: -30px;
+	right: auto;
+}
+
+.weiduduan .swiper-container {
+	width: 100%;
+	height: 100%;
+	background-color: #e4d0d0;
+}
+
+.weiduduan .swiper-slide {
+	width: 284px;
+	height: 195px;
+	text-align: center;
+	font-size: 18px;
+	background: #666;
+}
+
+.weiduduan .swiper-slide img {
+	width: 100%;
+	height: 100%;
+}
+
+/*学校荣耀结束*/
+
+
+/*立即预约信息开始*/
+
+.reservation_info {
+	height: 620px;
+	width: 100%;
+	background: url(../img/bg_reservation_info.png);
+	/*background-size: 100% 100%;*/
+	box-sizing: border-box;
+	padding: 60px 0;
+}
+.reservation_title{
+	font-size: 40px;
+	color: #343434;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.inputBox{
+	position: relative;
+	text-align: center;
+	width: 750px;
+	height: 60px;
+	margin: 0 auto 10px;
+	box-shadow: 1px 0 10px rgba(99,99,99,0.35);
+	border-radius: 10px;
+	border: 1px solid #e1e1e1;
+	background-color: #ffffff;	
+}
+.inputBox>input{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-left: 180px;
+	border-radius: 10px;
+	font-size: 22px;
+	outline: none;
+	border: 0;
+}
+.inputBox>input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #cacaca;
+    font-size: 20px;
+}
+.inputBox>input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cacaca;
+    font-size: 20px;
+}
+.inputBox>input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cacaca;
+    font-size: 20px;
+}
+.inputBox>input::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #cacaca;
+    font-size: 20px;
+}
+.input_name{
+	width: 155px;
+	height: 45px;
+	line-height: 45px;
+	border-right: 1px solid #cccccc;
+	font-size: 22px;
+	color: #585858;
+	position: absolute;
+	left: 0;
+	top: 8px;
+}
+.inputBox>li{
+	border-radius: 10px;
+}
+.inputBox>li>.input_name{
+	border-right: 0;
+}
+.codeBox{
+	position: absolute;
+	right: 0;
+	top: 0;
+    width: 160px;
+    height: 58px;
+    line-height: 58px;
+	background: #8e0704;
+	color: #ffffff;
+	border-radius: 0 5px 5px 0;
+	text-align: center;
+	font-size: 22px;
+}
+.inputBox>li>select{
+	width: 374px;
+	height: 60px;
+	border: 0;	
+	outline: none;
+	box-sizing: border-box;
+    padding-left: 210px;
+    font-size: 22px;
+     appearance:none;  
+    -moz-appearance:none;  
+    -webkit-appearance:none;
+    /*添加下拉三角图标*/
+    background: url("../img/select_down.png") no-repeat right center transparent;
+    background-position-x:330px ;
+}
+.inputBox>li.select_grade{
+	float: left;
+	position: relative;
+}
+.select_grade>select{
+	border-radius: 10px 0 0 10px;
+}
+.input_line{
+	position: absolute;
+	right: -8px;
+	top: 8px;
+}
+.inputBox>li.select_subject{
+	float: left;
+	position: relative;
+}
+.select_subject>select{
+	border-radius: 0 10px 10px 0 ;
+}
+.submitBtn{
+	text-align: center;
+	margin: 44px 0 12px;
+}
+.submitBtn>span{
+	display: inline-block;
+	width: 342px;
+	height: 60px;
+	line-height: 60px;
+	color: #ffffff;
+	background: #8e0704;
+	text-align: center;
+	border-radius: 10px;
+	font-size: 24px;
+	letter-spacing: 1px;
+}
+.Booking_line{
+	text-align: center;
+	font-size: 14px;
+	color: #000000;
+}
+.Booking_line>img{
+	margin-right: 10px;
+	vertical-align: middle;
+}
+/*立即预约信息结束*/
+
+/*content部分结束*/
+
+
+/*footer部分开始*/
+
+.footer {
+	background: #3c3c3c;
+	padding: 48px 0 20px;
+}
+
+.footer>.wraper>div {
+	font-size: 16px;
+	margin-bottom: 20px;
+	color: #ffffff;
+	text-align: center;
+}
+/*footer部分结束*/
+
+/*媒体查询部分*/
+@media screen and (max-width: 1200px){
+    .button-img{
+    	display: none;
+    }
+}
