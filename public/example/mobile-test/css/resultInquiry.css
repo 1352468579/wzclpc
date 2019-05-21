@@ -1,0 +1,90 @@
+/*主要内容开始*/
+.content{
+	position: relative;
+	padding-bottom: 1.9rem;
+}
+.bg_bottom{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+.educationalHotspots{
+	padding: 0.5rem 0.35rem 0.3rem;	
+    margin-bottom: 0.2rem;
+}
+.caption{
+	font-size: 0.4rem;
+	color: #333333;
+	font-weight: bold;
+}
+.caption_english{
+	font-size: 0.22rem;
+	color: #999999;	
+}
+.caption_english>span{
+	background: #ea4438;
+	color: #ffffff;
+	display: inline-block;
+	padding: 0.05rem;
+}
+.queryBox{
+	margin: 0 0.35rem 0.3rem;
+	box-shadow: 2px 0 16px rgba(12,12,13,0.08);
+	border-radius: 5px;
+}
+.title{
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.32rem;
+	color: #333333;
+    text-align: center;
+}
+.inputWraper{
+	width: 5.5rem;
+	height: 0.9rem;
+	margin: 0 auto;
+}
+.queryBox>li:last-child{
+	padding: 0.4rem 0;
+	border-top: 1px dashed #d2d2d2;
+	margin-top: 0.4rem;
+}
+
+.inputWraper>input{
+	width: 100%;
+	height: 100%;
+	background: #f7f7f7;
+	outline: none;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 0.3rem;
+}
+.inputWraper>input::-webkit-input-placeholder{
+	color: #bebebe;
+	font-size: 0.28rem;
+}
+.inputWraper>input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+   color: #bebebe;
+	font-size: 0.28rem;
+}
+.inputWraper>input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #bebebe;
+	font-size: 0.28rem;
+}
+.inputWraper>input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #bebebe;
+	font-size: 0.28rem;
+}
+.inputWraper>input::-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #bebebe;
+	font-size: 0.28rem;
+}
+.btn_inquire{
+	background: #ea4438 !important;
+	color: #ffffff;
+	font-size: 0.32rem;
+    letter-spacing: 2px;
+}
+/*主要内容结束*/

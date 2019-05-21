@@ -1,0 +1,340 @@
+body{
+	background: #fafafa;
+}
+/*中间内容conten开始*/
+.aboutPresident{
+	padding: 0.6rem 0.25rem 0.3rem;
+	box-sizing: border-box;
+	margin-bottom: 0.2rem;
+	background: #ffffff;
+}
+.caption{
+	font-size: 0.4rem;
+    color: #585858;
+    font-weight: bold;
+    position: relative;
+    height: 0.6rem;
+}
+.caption > img{
+	position: absolute;
+	width: 0.7rem;
+	left: 0;
+	bottom: 0;
+}
+.caption_English{
+	font-size: 0.22rem;
+	color: #8d8d8d;
+	margin-bottom: 0.4rem;
+}
+.caption_English>span{
+	padding: 0 0.05rem;
+	background: #ea4438;
+	color: #ffffff;
+}
+.content{
+	display: flex;
+	justify-content: space-between;
+}
+.content>li:first-child{
+    width: 3.1rem;
+}
+.content>li:first-child>img{
+	width: 100%;
+}
+.content>li:last-child{
+	flex: 1;
+	padding-left: 0.2rem;
+	padding-top: 0.05rem;
+}
+.content_item{
+	display: flex;
+}
+.content_item>div:nth-child(1)>img{
+	 width: 0.1rem;
+    margin-right: 0.2rem;
+}
+.content_item>div:nth-child(2){
+   font-size: 0.28rem;
+	font-weight: bold;
+	color: #333333;
+	margin-bottom: 0.16rem;
+	letter-spacing: 0.01rem;
+	flex: 1;
+}
+.newsInformation{
+	background: #ffffff;
+	padding: 0 0.24rem;
+}
+.see_more{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 1.46rem;
+    margin-bottom: 0.1rem;
+}
+.see_more>li:last-child{
+	color: #a3a3a3;
+	font-size: 0.26rem;
+}
+.see_more>li:last-child>img{
+	width: 0.13rem;
+	margin-left: 0.1rem;
+}
+
+.news > li{
+	display: flex;
+	padding-bottom: 0.24rem;
+}
+.img_news{
+    height: 1.6rem;
+	position: relative;
+}
+.img_news>img{
+	height: 100%;
+}
+.time{
+	position: absolute;
+	width: 100%;
+	height: 0.34rem;
+	line-height: 0.34rem;
+	text-align: center;	
+	background: rgba(0,0,0,0.5);
+	color: #ffffff;
+	font-size: 0.2rem;
+    bottom: 0;
+    left: 0;
+}
+.news_content{
+	padding-top: 0.1rem;
+	padding-left: 0.2rem;
+}
+.title{
+	font-size: 0.32rem;
+    color: #737373;
+    font-weight: bold;
+    margin-bottom: 0.15rem;
+    line-height: 0.45rem;
+    height: 0.9rem;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.news_detail{
+	font-size: 0.28rem;
+	color: #b8b8b8;
+	line-height: 0.46rem;
+	 text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.enterYulei{
+	padding-top: 0.6rem;
+}
+.enterYulei>.caption,
+.enterYulei>.caption_English{
+	margin-left: 0.2rem;
+}
+.EnterYulei{
+	width: 100%;
+}
+.video{
+	position: relative;
+}
+.play{
+	width: 0.77rem;
+	position: absolute;
+	top: 1.6rem;
+    left: 44.9%;
+}
+.enrollmentRegistration{
+	padding: 0.6rem 0.24rem 0;
+}
+.enrollment_info{
+	height: 4rem;
+	overflow: hidden;
+	padding: 0.3rem 0.24rem 1rem;
+	box-sizing: border-box;
+	background:#ffffff;
+	border-radius: 8px;
+	position: relative;
+	box-shadow: 1px 0 10px rgba(191,191,191,0.17);
+	margin-bottom: 0.3rem;
+}
+.caption_info{
+	font-size: 0.32rem;
+	color: #737373;
+	font-weight: bold;
+	margin-bottom: 0.4rem;
+}
+.Plate{
+	margin-bottom: 0.35rem;
+}
+.Plate > div:nth-child(1){
+	font-size: 0.3rem;
+	color: #8d8d8d;
+	font-weight: bold;
+	margin-bottom: 0.1rem;
+}
+.Plate > div:nth-child(2){
+	font-size: 0.28rem;
+	color: #a3a3a3;
+	line-height: 0.44rem;
+	text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.more{
+	position: absolute;
+	height: 1rem;
+	width: 100%;
+	text-align: center;	
+	bottom: 0;
+	left: 0;
+	background: url(../img/bg_more.png);
+	background-size: 100% 100%;
+	box-sizing: border-box;
+    padding-top: 0.4rem;
+}
+.more>span,
+.activity_more{
+	font-size: 0.26rem;
+	color: #b8b8b8;
+}
+.more>img,
+.activity_more>img{
+	height: 0.12rem;
+    margin-left: 0.1rem;
+}
+.sign_up{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.24rem;
+}
+.sign_up > li{
+	width: 3.4rem;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	color: #ffffff;
+	text-align: center;
+	font-size: 0.34rem;
+	font-weight: bold;
+	border-radius: 5px;
+	letter-spacing: 0.01rem;
+	box-shadow: 1px 0 10px rgba(143,143,143,0.48);
+}
+.sign_up > li:first-child{
+	background: #f99446;
+}
+.sign_up > li:last-child{
+	background: #c13030;
+}
+.grade_entry{
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.42rem;
+	font-weight: bold;
+	color: #585858;
+	text-align: center;
+	box-shadow: 1px 0 10px rgba(119,119,119,0.2);
+	border-radius: 5px;
+}
+.grade_entry>img{
+	width: 1rem;
+	margin-right: 0.5rem;
+	letter-spacing: 0.01rem;
+}
+
+.campusActivities{
+	padding: 0.6rem 0.24rem 0;
+}
+.activitiesWraper > li{
+	margin-bottom: 0.26rem;
+	box-shadow: 1px 0 10px rgba(124,124,124,0.17);
+	width: 100%;
+	height: 3rem;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+.activity_pic{
+	width: 2.6rem;
+	height: 2.6rem;
+}
+.activity_pic>img{
+	width: 100%;
+	height: 100%;
+}
+.activities{
+	padding-left: 0.24rem;
+	flex: 1;
+	padding-top: 0.3rem;
+}
+.activity_title{
+	font-size: 0.32rem;
+	font-weight: bold;
+	color: #585858;
+	letter-spacing: 0.01rem;
+	margin-bottom: 0.25rem;
+}
+.activity_content{
+	font-size: 0.28rem;
+	line-height: 0.4rem;
+	color: #b8b8b8;
+	letter-spacing: 0.01rem;
+	text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.activity_more{
+	text-align: center;
+}
+.campusEnvironment{
+	padding: 0 0.24rem 2rem;
+	position: relative;
+}
+.bg_bottom{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+/*里面的swiper开始*/
+.swiper-container {
+  width: 100%;
+  height: 2.85rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /*width: 2.85rem !important;*/
+  height: 2.85rem;
+}
+.swiper-slide>img{
+	width: 2.85rem;
+	height: 100%;
+}
+/*里面的swiper结束*/
+
+/*中间内容conten结束*/
+
+

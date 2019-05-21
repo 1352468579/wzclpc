@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作业清专题</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/video-js.min.css"/>
+	</head>
+	<body>
+		<div class="header">
+			<ul class="clearfix">
+				<li>
+					<img src="img/logo.png"/>
+				</li>
+				<li class="touch">
+					<img src="img/touch.png"/>028-85565012
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<div class="pic_work">
+				<img src="img/bg_work.png"/>
+			</div>
+			<div class="good_idea">
+				<div class="containerWraper">
+					<div class="caption">
+						— 作业辅导 <img src="img/trouble.png"/>  家长现在 <img src="img/good_point.png"/> —
+					</div>
+				</div>
+				<img src="img/good_idea.png"/>
+			</div>
+			<div class="work_trouble">
+				<div class="containerWraper">
+					<div class="caption" style="color: #ffffff;">
+						— 望子成龙 <img src="img/worke.png" style="width: 140px;"/> 解决家长的 <img src="img/work_trouble.png" style="width: 210px;"/> —
+					</div>
+				</div>
+				<img src="img/work.png"/>
+			</div>
+			<div class="three_steps">
+				<div class="containerWraper">
+					<div class="caption">
+						— 操作步骤<img src="img/three_steps.png" alt="" /> —
+					</div>					
+				</div>
+				<img src="img/step_1.png" class="step"/>
+				<img src="img/step_2.png"/>
+				<img src="img/step_3.png"/>
+			</div>
+			<div class="video_introduce">
+				<div class="containerWraper">
+					<div class="caption" style="color: #ffffff;">
+						— 作业清e<img src="img/video_intro.png" style="width: 154px;"/> —
+					</div>
+					<div class="videoWraper">
+						<img src="img/btn.png" class="video_btn"/>
+					</div>
+				</div>
+				<img src="img/video.png"/>
+			</div>
+			<div id="wzclStuPlayerPopup">
+	            <div class="overlay"></div>
+	            <div class="popup-container">
+	                <div class="popup-content">
+	                    <div class="popup-body">
+	                        <div class="stu-player wzcl-player is-ready" data-ratio="16:9"><div class="wzcl-player-container">
+						        <div class="player">
+						        	<video src="http://pc.wzclxx.com/zyq.mp4" id="my_video" width="676" controls="controls" height="380" style="width: 676px; height: 380.25px; margin-top: -2.5px;">				       	
+						        	</video>				        		        	
+	
+						        	</div>					        
+						    	</div>
+	                        </div>
+	                    </div>
+	                    <div class="popup-foot" style="    margin-top: .4rem;">
+	                        <!--<span class="title">标题</span>-->
+	                        <span class="btn-close">关闭</span>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+		<div class="footer">				
+			<div class="Wraper">
+				<ul class="clearfix Applets">
+					<li>
+						微信搜一搜<input type="text" placeholder="作业清e" />
+					</li>
+					<li class="addTo">
+						添加作业清e小程序<img src="img/code.png" alt="" />
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/video.min.js"></script>
+		<script type="text/javascript">
+			$('.video_btn').on('click',function(){
+			   var ov=document.getElementById("my_video");
+				$('#wzclStuPlayerPopup').css('display','block');
+				ov.controls=true;
+				ov.play();
+			})
+			$('.btn-close').on('click',function(){
+				 var ovp=document.getElementById("my_video");
+				$('#wzclStuPlayerPopup').css('display','none');
+				ovp.pause();
+			})
+		</script>
+	</body>
+</html>

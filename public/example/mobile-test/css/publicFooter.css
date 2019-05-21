@@ -1,0 +1,35 @@
+/*底部footer开始*/
+.footer{
+	height: 2.9rem;
+	width: 100%;
+	background: url(../img/bg_footer.png);
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	padding-top: 1rem;
+}
+.address{
+	font-size: 0.3rem;
+    padding-bottom: 0.2rem;
+	color: #ffffff;
+	border-bottom: 2px solid #ffffff;
+}
+.phone{
+	height: 0.7rem;
+	line-height: 0.7rem;
+	color: #ffffff;
+	font-size: 0.3rem;
+	margin-bottom: 0.1rem;
+}
+.addressWraper{
+	padding: 0 1.08rem;
+}
+.copyright{
+	display: flex;
+	justify-content: space-between;
+}
+.copyright>li{
+	color: #bfa09f;
+	font-size: 0.17rem;
+}
+/*底部footer结束*/
+

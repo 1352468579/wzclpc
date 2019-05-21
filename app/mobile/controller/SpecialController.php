@@ -53,6 +53,13 @@ class SpecialController extends WebBaseController
         return $this->fetch();
     }
     /************
+     *----==== 作业清 ====----
+     *Created by w 2019/4/29 14:56
+     ************/
+    public function work(){
+        return $this->fetch();
+    }
+    /************
      *----==== 把脉期中PC ====----
      *Created by w 2019/4/29 14:56
      ************/

@@ -59,7 +59,7 @@ class RouteModel extends Model
 
             $fullUrl = $path . (empty($vars) ? "" : "?") . http_build_query($vars);
 
-            $url = htmlspecialchars_decode($er['url']);
+            $url = htmlspecialchars_decode($er['url']); $url = str_replace('\'','', $url);
 
             if (isset($cacheRoutes[$path])) {
                 array_push($cacheRoutes[$path], ['vars' => $vars]);

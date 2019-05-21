@@ -1,0 +1,250 @@
+* {
+	padding: 0;
+	margin: 0;
+	color: #6d6d6d;
+}
+h1, h2, h3,h4,h5{
+	margin: 0;
+}
+.English_cap{
+	font-size: 0.2rem !important;
+}
+h3{
+	font-weight: 500 !important;
+}
+html{
+	font-size: calc(100vw/7.5);
+	width: 100%;
+	height: 100%;
+}
+body {
+	font-family: '微软雅黑';
+	width:100%;
+    overflow-x: hidden;
+}
+
+ul,ol {
+	list-style: none;
+	margin: 0;
+}
+.center{
+	text-align: center;
+}
+.active span{
+	color: #FFFFFF;
+}
+/*清除浮动*/
+.clearfix:after{
+	display: block;
+	content: '';
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	zoom: 1
+}
+/*头部开始*/
+.header>.logo{
+	width: 100%;
+	height: 2.2rem;
+}
+.logo > img{
+	width: 100%;
+}
+.navWraper{
+	/*position: relative;*/
+}
+.navWraper > .nav{
+	position: absolute;
+	/*top: 0;*/
+	top: 2.2rem;
+	left: 0;
+	padding: 0.2rem;
+	box-sizing: border-box;
+}
+.nav{
+	width: 100%;
+	height: 0.9rem;
+	background: rgba(0,0,0,0.3);
+	text-align: right;
+}
+.nav > a > img{
+	height: 100%;
+	text-align: right;
+}
+.item > img{
+	width: 100%;
+	height: 100%;
+}
+/*头部侧滑开始*/
+.right-menu{
+	position: absolute;
+	top: 0;
+	right: -76%;
+	bottom: 0;
+	width: 5.5rem;
+	background-color: #fff;
+	z-index: 999;
+	transition: all;
+	display: none;    
+	overflow: auto;
+}
+.mask{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 998;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	transition: background 350ms cubic-bezier(.165, .84, .44, 1);
+	background: rgba(0, 0, 0, .4);
+	box-shadow: -4px 0 4px rgba(0, 0, 0, .5), 4px 0 4px rgba(0, 0, 0, .5);
+	-webkit-tap-highlight-color: transparent;
+}
+.head_logo{
+	height: 2.2rem;
+	line-height: 2.2rem;
+	text-align: center;	
+	background: #ffffff;
+}
+.head_logo > img{
+	width: 2.3rem;
+}
+.subNav{
+	border-top: 1px solid #ececec;	
+}
+.nav_menu{
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+.subNav > li{
+	border-bottom: 1px solid #ececec;
+}
+.nav_menu > li{
+	width: 50%;
+	height: 1.7rem;
+	line-height: 1.7rem;
+	text-align: center;
+	background: #ffffff;
+	font-size: 0.34rem;
+	color: #999999;
+}
+.nav_menu>li:nth-child(odd){
+	border-right:1px solid #ececec;
+}
+.nav_menu>li:nth-child(even){
+}
+.menu_logo{
+	display: inline-block;
+    width: 0.35rem;
+    margin-right: 0.1rem;
+}
+
+.Home_pic{
+	height: 0.35rem;
+	background: url(../img/Home.png);
+	background-size: 100% 100%;
+}
+.active>.actived_Home{
+	background: url(../img/Home_click.png) !important;
+	background-size: 100% 100% !important;
+	height: 0.35rem;
+}
+
+.news_annouce_pic{
+	height: 0.35rem;
+	background: url(../img/news.png);
+	background-size: 100% 100%;
+}
+.active>.actived_news{
+	background: url(../img/news_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.yulei_pic{
+	height: 0.35rem;
+	background: url(../img/yulei.png);
+	background-size: 100% 100%;
+}
+.active>.actived_yulei{
+	background: url(../img/yulei_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.teachers_pic{
+	height: 0.45rem;
+	background: url(../img/teachers.png);
+	background-size: 100% 100%;
+}
+.active>.actived_teachers{
+	background: url(../img/teachers_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.schoolLife_pic{
+	height: 0.35rem;
+	background: url(../img/schoolLife.png);
+	background-size: 100% 100%;
+}
+.active>.actived_schoolLife{
+	background: url(../img/schoolLife_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.International_pic{
+	height: 0.35rem;
+	background: url(../img/International.png);
+	background-size: 100% 100%;
+}
+.active>.actived_International{
+	background: url(../img/International_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.Parent_pic{
+	height: 0.35rem;
+	background: url(../img/Parent.png);
+	background-size: 100% 100%;
+}
+.active>.actived_Parent{
+	background: url(../img/Parent_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.Result_pic{
+	height: 0.35rem;
+	background: url(../img/Result.png);
+	background-size: 100% 100%;
+}
+.active>.actived_Result{
+	background: url(../img/Result_click.png) !important;
+	background-size: 100% 100% !important;
+}
+
+.active{
+	color: #ffffff !important;
+	background: #d55454 !important;
+}
+.nav_menu_content{
+	/*display: flex;*/	
+	height: ;
+	background: #d55454;
+	flex-wrap: wrap;
+	display: none;
+}
+.nav_menu_content>li{
+	width: 33.3%;
+	font-size: 0.3rem;
+	height: 1.7rem;
+	line-height: 1.7rem;
+	text-align: center;
+	color: #ffffff;
+}
+/*头部侧滑结束*/
+
+/*头部结束*/

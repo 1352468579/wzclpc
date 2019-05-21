@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+		<meta charset="UTF-8">
+		<title>作业清e专题</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/work.css" />
+		<link rel="stylesheet" type="text/css" href="css/publicHead.css" />
+		<link rel="stylesheet" type="text/css" href="css/publicRegister.css"/>
+		<link rel="stylesheet" type="text/css" href="css/video-js.min.css"/>
+	</head>
+	</head>
+	<body>
+		<div class="content">
+			<img src="img/work_e.png"/>
+			<img src="img/news.png"/>
+			<img src="img/troubles.png"/>
+			<img src="img/applets_1.png"/>
+			<img src="img/applets_2.png"/>
+			<img src="img/applets_3.png"/>
+			<div class="videoWraper">
+				<img src="img/video.png" class="video"/>
+				<img src="img/btn.png" class="video_btn"/>
+				<div id="wzclStuPlayerPopup">
+		            <div class="overlay"></div>
+		            <div class="popup-container">
+		                <div class="popup-content">
+		                    <div class="popup-body">
+		                        <div class="stu-player wzcl-player is-ready" data-ratio="16:9"><div class="wzcl-player-container">
+							        <div class="player">
+							        	<video src="http://pc.wzclxx.com/zyq.mp4" id="my_video" width="80%" controls="controls" height="120" style="width:6.7rem; height: 3.8rem; margin-top: -0.025rem;">				       	
+							        	</video>				        		        	
+		
+							        	</div>					        
+							    	</div>
+		                        </div>
+		                    </div>
+		                    <div class="popup-foot" style="margin-top: .15rem;">
+		                        <!--<span class="title">标题</span>-->
+		                        <span class="btn-close">关闭</span>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+			</div>
+			<img src="img/code.png"/>
+		</div>
+		
+		
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/video.min.js"></script>
+		<script type="text/javascript">
+			$('.video_btn').on('click',function(){
+			   var ov=document.getElementById("my_video");
+				$('#wzclStuPlayerPopup').css('display','block');
+				ov.controls=true;
+				ov.currentTime  =0;
+				console.log(ov.buffered.length)
+				ov.play();
+			})
+			$('.btn-close').on('click',function(){
+				 var ovp=document.getElementById("my_video");
+				$('#wzclStuPlayerPopup').css('display','none');
+				ovp.pause();
+				ovp.startTime = 0;
+			})
+		</script>
+	</body>
+</html>
