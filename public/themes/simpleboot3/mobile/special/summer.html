@@ -507,14 +507,19 @@
     <a href="/" class="return">了解望子成龙更多课程或资讯点击返回首页</a>
     <!--表单-->
     <div class="container" id="1">
-        <form role="form" style="margin-top: 15px;">
+    	<div class="caption">
+    		注册获取课程<span>详细报价</span>
+    	</div>   	
+        <form role="form" style="margin-top: 1.2rem;">
             <div class="form-group">
-
-                <input type="text" class="form-control namein" id="name1" value=""  placeholder="请输入你的姓名" >
-                <input type="text" class="form-control namein" id="nianji" value="" placeholder="请输入你的年级">
-                <input type="text" class="form-control telin" id="tel1" value="" placeholder="请输入你的联系电话">
+                <input type="text" class="form-control namein" id="name1" value=""  placeholder="请输入您孩子的姓名" >
+                <input type="text" class="form-control namein" id="nianji" value="" placeholder="请输入您孩子的年级">
+                <input type="text" class="form-control telin" id="tel1" value="" placeholder="请输入您的联系电话">
             </div>
-            <button type="button" onclick="return check();" class="btn col-sm-12 col-xs-12 col-md-12 col-lg-12 login_bottom">立即获取课程详细报价</button>
+            <button type="button" onclick="return check();" class="btn col-sm-12 col-xs-12 col-md-12 col-lg-12 login_bottom">立即预约</button>
+            <div class="promis">
+            	<img src="__STATIC__/mobile/spring/zt/images/lock.png"/>官网承诺您的信息将不会被泄露
+            </div>
         </form>
     </div>
 
@@ -534,25 +539,26 @@
             }
         }
         urlredirect();
-
         function timer(opj) {
-            $(opj).find('ul').animate({
-                marginTop: "-2rem"
-            }, 500, function () {
-                $(this).css({
-                    marginTop: "0"
-                }).find("li:first").appendTo(this);
-            })
+            if ($(opj).scrollTop() == $(".notice_active>ul:first").height()) {
+                $(opj).scrollTop(0);
+            }else
+                $(opj).scrollTop($(opj).scrollTop()+1);
         }
         $(function () {
+            /**********=====---- 增加一个ul ----Mod by w 2019/5/23 15:34=====**********/
+            $(".notice_active").append($(".notice_active>ul").clone());
+
             var num = $('.notice_active').find('li').length;
+            var m = 10;
             if (num > 1) {
-                var time = setInterval('timer(".notice_active")', 3500);
-                $('.gg_more a').mousemove(function () {
+                var time = setInterval('timer(".notice_active")', m);
+                $('.huadong').mouseenter(function () {
                     clearInterval(time);
-                }).mouseout(function () {
-                    time = setInterval('timer(".notice_active")', 3500);
+                }).mouseleave(function () {
+                    time = setInterval('timer(".notice_active")', m);
                 });
+                
             }
 
             $(".news_ck").click(function () {
@@ -598,41 +604,46 @@
 
 
     <div class="huadong">
-        <div class="huabox">
-
-            <img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
-
-            <div class="notice_active">
-                <ul>
-                    <li class="notice_active_ch">
-                        <span>冯女士&nbsp;&nbsp;&nbsp;&nbsp;1366****834</span>
-                        <em>15分钟前</em>
-                    </li>
-                    <li class="notice_active_ch">
-                        <span>杨女士&nbsp;&nbsp;&nbsp;&nbsp;1838****707</span>
-                        <em>6分钟前</em>
-                    </li>
-                    <li class="notice_active_ch">
-                        <span>梁女士&nbsp;&nbsp;&nbsp;&nbsp;1838****651</span>
-                        <em>9分钟前</em>
-                    </li>
-                    <li class="notice_active_ch">
-                        <span>万女士&nbsp;&nbsp;&nbsp;&nbsp;1877****358</span>
-                        <em>3分钟前</em>
-                    </li>
-                    <li class="notice_active_ch">
-                        <span>钟先生&nbsp;&nbsp;&nbsp;&nbsp;1399****888</span>
-                        <em>7分钟前</em>
-                    </li>
-                    <li class="notice_active_ch">
-                        <span>李先生&nbsp;&nbsp;&nbsp;&nbsp;136****671</span>
-                        <em>9分钟前</em>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-
+    	<div class="wraper">
+    		 <div class="huabox clearfix">
+	            <div class="notice_active clearfix">
+	                <ul>
+	                    <li class="notice_active_ch">
+	                    	<img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
+	                        <span>冯女士&nbsp;&nbsp;&nbsp;&nbsp;1366****834</span>
+	                        <em>15分钟前</em>
+	                    </li>
+	                    <li class="notice_active_ch">
+	                    	<img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
+	                        <span>杨女士&nbsp;&nbsp;&nbsp;&nbsp;1838****707</span>
+	                        <em>6分钟前</em>
+	                    </li>
+	                    <li class="notice_active_ch">
+	                    	<img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
+	                        <span>梁女士&nbsp;&nbsp;&nbsp;&nbsp;1838****651</span>
+	                        <em>9分钟前</em>
+	                    </li>
+	                    <li class="notice_active_ch">
+	                    	<img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
+	                        <span>万女士&nbsp;&nbsp;&nbsp;&nbsp;1877****358</span>
+	                        <em>3分钟前</em>
+	                    </li>
+	                    <li class="notice_active_ch">
+	                    	<img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
+	                        <span>钟先生&nbsp;&nbsp;&nbsp;&nbsp;1399****888</span>
+	                        <em>7分钟前</em>
+	                    </li>
+	                    <li class="notice_active_ch">
+	                    	<img src="https://web.wzclxx.com/public/web/ad/m_qiuji/images/lingdang.png">
+	                        <span>李先生&nbsp;&nbsp;&nbsp;&nbsp;136****671</span>
+	                        <em>9分钟前</em>
+	                    </li>
+	                </ul>
+	
+	            </div>
+	        </div>
+    	</div>
+       
     </div>
 
 

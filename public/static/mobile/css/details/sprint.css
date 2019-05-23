@@ -113,6 +113,7 @@
 	text-align: center;
 	transition: 300ms;
 	position: relative;
+	margin: 0 0.15rem;
 }
 
 .swiper-container-culturalLessons > .swiper-wrapper > .swiper-slide > img{
@@ -138,7 +139,7 @@
 	background: #333333 !important;
 }
 .swiper-pagination-bullet{
-	background: #FFFFFF;
+	/*background: #FFFFFF;*/
 }
 .example{
 	font-size: 0.3rem;

@@ -68,6 +68,7 @@ ul,ol {
 .nav > .navbar_button > img{
 	display: block;
 	width: 0.4rem;
+	height: 0.4rem;
 	margin-bottom: 0.1rem;
 }
 .item{
@@ -163,8 +164,11 @@ ul,ol {
     top: 5%;
     width: 0.1rem;
 }
+
 /*头部侧滑结束*/
+
 /*底部开始*/
+
 .footer{
 	height: 3rem;
 	padding: 0.8rem 0.5rem 0;

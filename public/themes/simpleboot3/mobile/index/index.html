@@ -329,7 +329,7 @@
                                 拥有丰富的教学经验，专项会诊、重难点点拨，学习方法指导，迅速击破学科短板。
                             </div>
                         </li>
-                        <li>
+                        <li style="border-bottom: 0;">
                             <div class="study">
                                 <div><img src="__STATIC__/mobile/img/group_4.png" />专职班主任</div>
                                 <div><img src="__STATIC__/mobile/img/add_black.png" class="add" /></div>
@@ -552,7 +552,8 @@
             right: 0
         });
         $('.mask').toggle();
-        $('body').css('overflow','hidden');
+        $('html,body').css({height:"100%",'overflow':'hidden'});
+        $('.btnWraper').css({display:'none'});
     });
 
     $('.mask').click(function() {
