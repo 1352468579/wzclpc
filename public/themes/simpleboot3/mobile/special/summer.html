@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>2019年望子成龙，暑期班火热报名中！</title>
-
     <meta name="keywords" content="望子成龙,暑期班,暑期班培训,成都培训班,成都学习培训">
     <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="__STATIC__/mobile/spring/zt/css/style.css">
@@ -540,10 +539,17 @@
         }
         urlredirect();
         function timer(opj) {
-            if ($(opj).scrollTop() == $(".notice_active>ul:first").height()) {
+            if ($(opj).scrollTop() == $(".notice_active>ul:first").height()-1) {
                 $(opj).scrollTop(0);
             }else
                 $(opj).scrollTop($(opj).scrollTop()+1);
+
+            /*
+             if ($(opj).scrollTop()%$(".notice_active>ul:first").height()==0)
+            $(".notice_active").append($(".notice_active>ul:first").clone());
+            $(opj).scrollTop($(opj).scrollTop()+1);
+
+            * */
         }
         $(function () {
             /**********=====---- 增加一个ul ----Mod by w 2019/5/23 15:34=====**********/
@@ -639,7 +645,7 @@
 	                        <em>9分钟前</em>
 	                    </li>
 	                </ul>
-	
+
 	            </div>
 	        </div>
     	</div>
