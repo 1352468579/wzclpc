@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+img{display: inline-block; border: 0;}
+
+.w100{width: 100%;}
+.box{width: 100%; max-width: 640px; min-width: 320px; overflow: hidden; margin: 0 auto;}
+
+.zt_imgs{width: 100%;}
+.zt_imgs img{display: block; float: left;}
+
+
+/*导航*/
+.ztbanner{width: 100%; overflow: hidden;}
+
+/*标题*/
+.titBox{width: 90%; overflow: hidden; padding: 5px 5% 5px 5%; background-color: #4b1a09;}
+.titBox span.label{display: inline-block; line-height: 25px; color: #f6c116; font-weight: 200; margin-right: 5%;}
+.titBox span.titContent{display: inline-block; line-height: 25px; color: white; font-weight: 200;}
+
+/*文本*/
+.textBox{width: 90%; overflow: hidden; padding: 10px 5% 10px 5%;}
+.textBox p{text-indent: 2em; margin-bottom: 10px;}
+
+/*专题内容*/
+.zt_main{width: 100%;}
+.main_imgBox{width: 90%; overflow: hidden; padding: 10px 5% 10px 5%;}
+

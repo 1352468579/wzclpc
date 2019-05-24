@@ -17,12 +17,43 @@
             {$newsInfo.post_title}
         </div>
         <ul class="time">
-            <li>来源：{$newsInfo.post_source|default='网络'}</li>
-            <li>发布时间：{$newsInfo.create_time|date="Y-m-d",###} 阅读量：{$newsInfo.post_hits+489}</li>
+            <li>
+            	
+            
+            	{$newsInfo.post_hits+489}人已读
+            </li>
+            <li>{$newsInfo.create_time|date="Y-m-d",###} </li>
         </ul>
+        <div class="comeFrom">
+        	来源：{$newsInfo.post_source|default='网络'}
+        </div>
     </div>
-    <div class="info" style="padding: .1rem;overflow: hidden">
+    <div class="info" style="padding: .4rem;overflow: hidden">
         {$newsInfo.post_content}
+    </div>
+    <div class="Related">
+    	<div class="Related_title">
+    		<span></span>相关资讯
+    	</div>
+    	<div class="plateWraper">
+            <foreach name="newList" item="news" key="k">
+                <if condition="$k egt 3">
+                    <div class="plate" onclick="window.location.href='{:url(\'newsInfo\',[\'id\'=>$news.id])}'">
+                        <div class="title">
+                            <div class="Related_caption">{$news.post_title}</div>
+                            <div class="timer">{$news.name} <span>{$news.create_time|date="Y-m-d h:i:s",###}</span> </div>
+                        </div>
+                        <div class="matching">
+                            <if condition="empty($news.more.thumbnail)">
+                                <img src="__STATIC__/mobile/img/others/matching.png"/>
+                                <else/>
+                                <img src="{:cmf_get_image_preview_url($news.more.thumbnail)}" alt="">
+                            </if>
+                        </div>
+                    </div>
+                </if>
+            </foreach>
+    	</div>    	
     </div>
 </block>
 <block name="footerJs">

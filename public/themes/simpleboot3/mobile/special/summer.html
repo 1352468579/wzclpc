@@ -539,24 +539,18 @@
         }
         urlredirect();
         function timer(opj) {
-            if ($(opj).scrollTop() == $(".notice_active>ul:first").height()-1) {
+            var num = 1;
+            if ($(opj).scrollTop() >= $(".notice_active>ul:first").height()-num) {
                 $(opj).scrollTop(0);
             }else
-                $(opj).scrollTop($(opj).scrollTop()+1);
-
-            /*
-             if ($(opj).scrollTop()%$(".notice_active>ul:first").height()==0)
-            $(".notice_active").append($(".notice_active>ul:first").clone());
-            $(opj).scrollTop($(opj).scrollTop()+1);
-
-            * */
+                $(opj).scrollTop($(opj).scrollTop()+num);
         }
         $(function () {
             /**********=====---- 增加一个ul ----Mod by w 2019/5/23 15:34=====**********/
             $(".notice_active").append($(".notice_active>ul").clone());
 
             var num = $('.notice_active').find('li').length;
-            var m = 10;
+            var m = 1;
             if (num > 1) {
                 var time = setInterval('timer(".notice_active")', m);
                 $('.huadong').mouseenter(function () {

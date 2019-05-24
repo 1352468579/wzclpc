@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+*{font-family:Arial, Helvetica, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;color:#808080;}
+.namein,.telin{color:##555;}
+.namein{margin-bottom:15px;}
+.name:after{content:"*";color:#027ded;}
+.tel:after{content:"*";color:#027ded;}
+.login{background-color:#1b7239;color:white;font-weight:bold;border:none;}
+.login:hover{color:white;}
+.login:active{background-color:#0690d8;box-shadow:none;color:white;}
+
+.login_bottom{background-color:#027ded;color:white;font-weight:bold;border:none;}
+.login_bottom:hover{color:white;}
+.login_bottom:active{background-color:#0690d8;box-shadow:none;color:white;}
+.dial{background-color:#027ded;opacity:0.7;position:fixed;bottom:0;border:none;color:white;box-shadow:none;line-height:32px;font-size:18px;}
+.dial:hover{color:white;}
+.dial:active{color:white;}
+.dial:visited{color:white;}
+.dial:link{color:white;}
+.btn{outline:none;}
+
+
+.huadong {width: 100%;height:4rem;padding: 0.5rem 0 0.3rem 0; position:relative;font: 12px/1.5 "Hiragino Sans GB","Microsoft YaHei",simsun;margin:0 auto;}
+.huadong .huabox {  margin:0 auto; width: 100%; line-height: 4rem;}
+.huadong .hdimg {float:left;line-height:3.5rem;}
+.huadong .hdimg img { width: 100%; vertical-align:middle;}
+.huadong h5 {font-size:1rem;float:left; line-height: 2.2rem; margin: 0.8rem 0 0 0; }
+.huadong .gg_more { float: left;}
+.huadong .gg_more a { font-size: 0.8rem; text-decoration:none;}
+
+.huadong .notice_active {
+    float: left;
+    width: 80%;
+    height: 4rem;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+.huadong .notice_active li{list-style-type:none;line-height: 2.4rem;overflow: hidden;}
+/*.huadong .notice_active li.notice_active_ch {}*/
+.huadong .notice_active li.notice_active_ch span {color:#656972;font-size:14px;display: block;overflow: hidden; width:70%;float: left;
+overflow: hidden;margin:0 0 2rem 0;}
+.huadong .gg_more .news_ck {
+    float: left;
+    margin: 0 1rem 0 1rem;
+    color: #888;
+    width: 5rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: block;
+    border: 1px solid #656972;
+    text-align: center;
+    border-radius: 0.7rem;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+.huadong .gg_more .news_more {
+}
+.huadong .notice_active li.notice_active_ch em {text-align:right;float:left;color:#888;font-size:14px;font-style:normal;  }

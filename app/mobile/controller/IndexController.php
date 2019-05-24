@@ -199,14 +199,14 @@ start;
     *----==== 获取文章的条件 ====----
     *Created by w 2019/4/20 14:14
     ************/
-    private function _getNewsWhere($categoryId = self::CID){
+    private function _getNewsWhere($categoryId = self::CID,$newId = 0){
         $param = $this->request->param();
         $portalCategoryModel = new PortalCategoryModel();
         $where = [
             'a.create_time' => ['>=', 0],
             'a.delete_time' => 0
         ];
-
+        $newId&&$where['a.id']=['neq',$newId];
         $join = [
             ['__USER__ u', 'a.user_id = u.id']
         ];
@@ -261,8 +261,8 @@ start;
     *----==== 获取新闻列表 ====----
     *Created by w 2019/4/20 11:24
     ************/
-    public function getNewsList($categoryId = self::CID){
-        $res = self::_getNewsWhere($categoryId);
+    public function getNewsList($categoryId = self::CID,$newId = 0){
+        $res = self::_getNewsWhere($categoryId,$newId);
         $portalPostModel = new PortalPostModel();
         $articles = $portalPostModel->alias('a')->field($res['field'])
             ->join($res['join'])
@@ -272,6 +272,7 @@ start;
         $articles->appends($res['param']);
         $articlesList = $articles->toArray();
         $this->assign('articles', $articlesList['data']);
+        if ($newId)  return $articlesList['data'];//获取文章列表
         $this->assign('page', $articles->render());
         return $this->fetch('getNewsList');
     }
@@ -282,8 +283,18 @@ start;
     public function newsInfo(){
         $newId = $this->request->param('id',75, 'intval');
         $newModel = new PortalPostModel();
-        $newsInfo = $newModel->find($newId);
-        $this->assign('newsInfo',$newsInfo->toArray());
+        $newsInfo = $newModel
+            ->field("a.*,b.category_id")
+            ->alias('a')
+            ->join('__PORTAL_CATEGORY_POST__ b', 'a.id = b.post_id')
+            ->where(["a.id"=>$newId])
+            ->find();
+        $info = $newsInfo->toArray();
+        /**********=====---- 添加相关新闻 ----Mod by w 2019/5/24 14:54=====**********/
+        $newList = $this->getNewsList($info['category_id'],$newId);
+
+        $this->assign('newsInfo',$info);
+        $this->assign('newList',$newList);
         return $this->fetch('newsInfo');
     }
     /************
