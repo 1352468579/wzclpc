@@ -4,14 +4,6 @@
 </block>
 <block name="banner"></block>
 <block name="main">
-    <div class="header">
-        <ul>
-            <li>新闻动态</li>
-            <li>
-                <img src="__STATIC__/mobile/img/details/icon_bg_tel.png"/><a href="tel:028-85565012">85565012</a>
-            </li>
-        </ul>
-    </div>
     <div class="content" style="width: auto;border-radius: 0">
         <div class="caption">
             {$newsInfo.post_title}
@@ -27,17 +19,18 @@
         <div class="comeFrom">
         	来源：{$newsInfo.post_source|default='网络'}
         </div>
+        <div class="info" style="padding: 0 0.16rem;overflow: hidden">
+	        {$newsInfo.post_content}
+	    </div>
     </div>
-    <div class="info" style="padding: .4rem;overflow: hidden">
-        {$newsInfo.post_content}
-    </div>
+    
     <div class="Related">
     	<div class="Related_title">
     		<span></span>相关资讯
     	</div>
     	<div class="plateWraper">
             <foreach name="newList" item="news" key="k">
-                <if condition="$k egt 3">
+                <if condition="$k elt 3">
                     <div class="plate" onclick="window.location.href='{:url(\'newsInfo\',[\'id\'=>$news.id])}'">
                         <div class="title">
                             <div class="Related_caption">{$news.post_title}</div>

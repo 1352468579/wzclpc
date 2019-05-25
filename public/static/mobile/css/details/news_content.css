@@ -2,7 +2,9 @@ body{
 	background: #f4f5f8;
 }
 .header{
-	margin-bottom: 0.2rem;
+	padding-bottom: 0.2rem;
+	border-bottom: 0.04rem solid #f3f2f3;
+	background: #ffffff;
 }
 .header > ul{
 	display: flex;
@@ -33,6 +35,7 @@ body{
 	border-radius: 12px;
 	margin: 0 auto;
 	background: #ffffff;
+	border-bottom: 0.04rem solid rgba(0,0,0,0.05);
 }
 .caption{
 	font-size: 0.34rem;
@@ -45,7 +48,9 @@ body{
 	padding: 0 0.2rem;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid #f3f2f3;
+	margin-bottom: 0.2rem;
 }
 .time > li{
 	flex: 1;
@@ -59,7 +64,6 @@ body{
 	text-align: center;
 	font-size: 0.24rem;
 	color: #a5a4a6;
-	margin-bottom: 0.4rem;
 }
 .plateWraper>.plate:last-child{
 	border-bottom: 0;
@@ -128,5 +132,7 @@ body{
     top: 0.1rem;
 }
 .Related{
-	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	background: #ffffff;
+	padding-top: 0.48rem;
 }
